@@ -7,7 +7,7 @@ import sys
 import string
 
 #calls to the api from nodenpm package
-resp =  requests.get("http://localhost:3000/api/apps/com.pickme.passenger/reviews/?num=100")
+resp =  requests.get("http://localhost:3000/api/apps/com.pickme.passenger/reviews/?num=10")
 
 #checks if the api works; returns 200
 print(resp.status_code)
@@ -27,8 +27,11 @@ review_list =[]
 for d in results:
    review = d['text']
    review_list.append(review)
-#print(results)
-for review in review_list:
-    print(review)
-    
-#print(review_list)
+###print(results)
+##line =0 
+##for review in review_list:
+##   line+=1
+##   print(line,review)
+
+def getReviewList():
+   return review_list
