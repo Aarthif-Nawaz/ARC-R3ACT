@@ -1,6 +1,3 @@
-#Author Christina Thambirajah
-#upload date:03/01/2020
-
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
@@ -10,8 +7,8 @@ from nltk.corpus import stopwords
 import string
 import re
 
-#get preprocessed reviews from csv
-data = pd.read_csv(r'pickme100.csv')
+
+data = pd.read_csv(r'pickme_allreviews_6167.csv')
 df = pd.DataFrame(data, columns=['Preprocessed_text'], dtype=str)
 
 path = pd.read_csv(r'trainingData.csv')
@@ -31,6 +28,18 @@ train_sentences = []
 for i, row in df_train.iterrows():
     train_sentences.append(df_train['Preprocessed_text'].loc[i])
 
+#train_clean_sentences = []
+#for line in train_sentences:
+ #   train_sentence = text_preprocessing(line)
+  #  train_clean_sentences.append(train_sentence)
+
+#fp = fpNew
+#for line in fp:
+#    line = line.strip()
+#    cleaned = text_preprocessing(line)
+#    cleaned = ' '.join(cleaned)
+#    train_clean_sentences.append(cleaned)
+
 
 vectorizer = TfidfVectorizer(stop_words='english')
 X = vectorizer.fit_transform(train_sentences)
@@ -49,6 +58,16 @@ test_sentences = []
 for i, row in df.iterrows():
     test_sentences.append(df['Preprocessed_text'].loc[i])
 
+#test_clean_sentence = []
+#for test in test_sentences:
+#    cleaned_test = text_preprocessing(test)
+#    cleaned = ' '.join(cleaned_test)
+#    cleaned = re.sub(r"\d+", "", cleaned)
+#    test_clean_sentence.append(cleaned)
+
+#for test in test_sentences:
+ #   test_sentence= text_preprocessing(test)
+  #  test_clean_sentence.append(test_sentences)
 
 Test = vectorizer.transform(test_sentences)
 
@@ -58,8 +77,6 @@ predicted_labels_knn = modelknn.predict(Test)
 z = []
 for i, row in df.iterrows():
     z.append((true_test_labels[np.int(predicted_labels_knn[i])]))
-    
-df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
 
 df['cluster'] = z
 df.to_csv("results.csv")

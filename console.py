@@ -1,32 +1,18 @@
-import pandas as pd
+#In this console request for the user whatoption he would like to see.
+#1 - View Feature Requests
+         
+        #features = pd.read_csv(r'pickme_allreviews_6167.csv')
+        #df = pd.DataFrame(features, columns=['Reviews'],[''Keywords'], dtype=str) 
+        #print(df)  
 
-def featureRequest():
-    features = pd.read_csv(r'bug_fix_results.csv')
-    df_reviews = pd.DataFrame(features, columns=['text','Reviews','KeyWords'])
-    print(df_reviews)
-def bugFix():
-    bugs = pd.read_csv(r'feature_reqs_result.csv')
-    df_reviews = pd.DataFrame(bugs, columns=['Reviews','KeyWords'])
-    print(df_reviews)
 
-def main():
-    print("Application Review Classifier")
-    print("=============================")
-    print("1 - View Feature Requests")
-    print("2 - View Bug Fix")
-    print("3 - View Sentiment")
-    print("4 - Exit")
-    choice = int(input("Enter Your Choice : "))
-    while(choice != 4):
-        if(choice==1):
-            featureRequest()
-        elif (choice==2):
-            bugFix()
-        elif(choice==3):
-            print("Sentiment Code needed ")
-            #sentiment()
-        else:
-            print("invalid Choice !")
-        choice = int(input("Enter Your Choice : "))
-main()
+#2 - View Bug Fixes
+
+        #bugs = pd.read_csv(r'feature_reqs_result.csv')
+        #df = pd.DataFrame(features, columns=['Reviews'],[''Keywords'], dtype=str) 
+        #print(df) 
+
+#3 - View Sentiment
+
+        
 
