@@ -58,6 +58,8 @@ predicted_labels_knn = modelknn.predict(Test)
 z = []
 for i, row in df.iterrows():
     z.append((true_test_labels[np.int(predicted_labels_knn[i])]))
+    
+df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
 
 df['cluster'] = z
 df.to_csv("results.csv")

@@ -2,7 +2,7 @@ import pandas as pd
 
 def featureRequest():
     features = pd.read_csv(r'bug_fix_results.csv')
-    df_reviews = pd.DataFrame(features, columns=['Reviews','KeyWords'])
+    df_reviews = pd.DataFrame(features, columns=['text','Reviews','KeyWords'])
     print(df_reviews)
 def bugFix():
     bugs = pd.read_csv(r'feature_reqs_result.csv')

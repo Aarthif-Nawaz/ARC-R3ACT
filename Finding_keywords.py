@@ -75,18 +75,20 @@ def find_keywords(clusterd_corpus):
     return key_list
 
 def find_BugFixes():
-    reviews = clustered_bug_fixes()
-    df = pd.DataFrame(reviews, columns=['Reviews'])
-    key_list=find_keywords(reviews)
+    result = clustered_bug_fixes()
+    df = pd.DataFrame(result[0], columns=['Reviews'])
+    key_list=find_keywords(result[0])
     df['KeyWords'] = key_list
+    df['text'] = result[1]
     df.to_csv("bug_fix_results.csv")
     print("check bug_fix_results.csv for bug fixes")
 
 def find_FeatureRequests():
-    reviews = clustered_feature_reqs()
-    df = pd.DataFrame(reviews, columns=['Reviews'])
-    key_list = find_keywords(reviews)
+    result= clustered_feature_reqs()
+    df = pd.DataFrame(result[0], columns=['Reviews'])
+    key_list = find_keywords(result[0])
     df['KeyWords'] = key_list
+    df['text'] = result[1]
     df.to_csv("bug_fix_results.csv")
     print("check bug_fix_results.csv for bug fixes")
 
