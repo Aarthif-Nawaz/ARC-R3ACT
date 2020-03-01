@@ -2,14 +2,12 @@ import pandas as pd
 
 def featureRequest():
     features = pd.read_csv(r'bug_fix_results.csv')
-    df_reviews = pd.DataFrame(features, columns=['Reviews'])
-    df_keywords = pd.DataFrame(features, columns=['KeyWords'])
-    print(df_reviews, " ", df_keywords)
+    df_reviews = pd.DataFrame(features, columns=['Reviews','KeyWords'])
+    print(df_reviews)
 def bugFix():
     bugs = pd.read_csv(r'feature_reqs_result.csv')
-    df_reviews = pd.DataFrame(bugs, columns=['Reviews'])
-    df_keywords = pd.DataFrame(bugs, columns=['KeyWords'])
-    print(df_reviews," ",df_keywords)
+    df_reviews = pd.DataFrame(bugs, columns=['Reviews','KeyWords'])
+    print(df_reviews)
 
 def main():
     print("Application Review Classifier")
