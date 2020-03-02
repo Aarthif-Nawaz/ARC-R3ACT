@@ -14,6 +14,7 @@ def label_reviews(file_name, packageName, size):
     train_data = [[0] * 2] * len(review_list)
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
     for i in range(len(review_list) - 1):
+        print(i)
         preProcessedText = reg_preprocessing(review_list[i])
         results = vaderSentimentAnalyzer.polarity_scores(preProcessedText)
         negScore = -1 * results["neg"]
@@ -27,7 +28,6 @@ def label_reviews(file_name, packageName, size):
         file.close()
 
 
-label_reviews("LabelledData.csv", "com.facebook.orca", "20000")
-label_reviews("LabelledData.csv", "com.instagram.android", "20000")
+label_reviews("LabelledData.csv", "com.instagram.android", "10000")
 label_reviews("LabelledData.csv", "com.snapchat.android", "20000")
 label_reviews("LabelledData.csv", "com.whatsapp", "20000")

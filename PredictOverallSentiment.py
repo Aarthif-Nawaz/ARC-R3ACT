@@ -7,23 +7,21 @@ import numpy as np
 
 from PreProcessing import pre_processing_labelled_data
 
-sentiment_score = [-2, -1, 0, 1, 2]
-star_rating = [1, 2, 3, 4, 5]
-# label_reviews("TestLabelledData.csv", "com.olacabs.customer", "20000")
-# file = open('TestLabelledData.csv', 'r')
-# all the records in the file are converted to a 2d array
-file = open('LabelledData.csv', 'r')
-data = list(csv.reader(file, delimiter=','))
-testData = []
-testLabel = []
-overall_sentiment = 0
-print(len(data))
-# append the pre-processed the review and the sentiment, to trainData and trainLabel
-for i in range(1, 30000):
-    testData.append(pre_processing_labelled_data(data[i][0]))
-    testLabel.append(str(data[i][1]))
-    overall_sentiment += float(data[i][1])
-for i in range(10):
+
+def predict_sentiment(filename):
+    sentiment_score = [-2, -1, 0, 1, 2]
+    star_rating = [1, 2, 3, 4, 5]
+    # all the records in the file are converted to a 2d array
+    file = open(filename, 'r')
+    data = list(csv.reader(file, delimiter=','))
+    testData = []
+    testLabel = []
+    overall_sentiment = 0
+    # append the pre-processed the review and the sentiment, to trainData and trainLabel
+    for i in range(1, len(data)):
+        testData.append(pre_processing_labelled_data(data[i][0]))
+        testLabel.append(str(data[i][1]))
+        overall_sentiment += float(data[i][1])
     ovrll_sentiment = 0
     filename = 'vectorizer.pk'
     count_vect = pickle.load(open(filename, 'rb'))
