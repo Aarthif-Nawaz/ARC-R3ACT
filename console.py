@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import pandas as pd
 
 from PredictOverallSentiment import predict_sentiment
@@ -30,7 +30,6 @@ def main():
         elif (choice == 2):
             bugFix()
         elif (choice == 3):
-            print("Sentiment Code needed ")
             predict_sentiment("TestLabelledData.csv")
         else:
             print("invalid Choice !")

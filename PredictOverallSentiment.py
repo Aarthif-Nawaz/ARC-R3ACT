@@ -19,7 +19,8 @@ def predict_sentiment(filename):
     overall_sentiment = 0
     # append the pre-processed the review and the sentiment, to trainData and trainLabel
     for i in range(1, len(data)):
-        testData.append(pre_processing_labelled_data(data[i][0]))
+        #testData.append(pre_processing_labelled_data(data[i][0]))
+        testData.append(data[i][0])
         testLabel.append(str(data[i][1]))
         overall_sentiment += float(data[i][1])
     ovrll_sentiment = 0
