@@ -1,5 +1,5 @@
 #Author Christina Thambirajah
-#upload date:03/01/2020
+#upload date:03/02/2020
 
 import pandas as pd
 import numpy as np
@@ -58,9 +58,9 @@ predicted_labels_knn = modelknn.predict(Test)
 z = []
 for i, row in df.iterrows():
     z.append((true_test_labels[np.int(predicted_labels_knn[i])]))
-    
+
 df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
 
 df['cluster'] = z
 df.to_csv("results.csv")
-print("check results.csv for clusters")
+print("check results.csv for clusters") 
