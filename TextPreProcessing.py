@@ -1,3 +1,5 @@
+''' Authour - Aarthif Nawaz '''
+''' Part - Text Pre Processing Using all techniques required for text classification '''
 ''' Importing all modules needed for text pre processing'''
 import string
 import nltk
