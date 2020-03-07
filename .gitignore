@@ -30,7 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 
-
-/.idea/
-/__pycache__/
-/venv/
+/bin/
+/node_modules/
+/public/
+/views/
