@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import MenuBox from './components/MenuBox';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import BugFix from './components/BugFix';
+import FeatureRequest from './components/FeatureRequest';
+import OverallSentiment from './components/OverallSentiment';
+import ViewAllReviews from './components/ViewReviews';
+import NavBar from './components/Navbar';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+       
+          <NavBar/>
+          <Switch>
+            <Route path="/" exact component={MenuBox}/>
+            <Route path="/bugfix" component={BugFix}/>
+            <Route path="/featureRequest" component={FeatureRequest}/>
+            <Route path="/overallSentiment" component={OverallSentiment}/>
+            <Route path="/allReviews" component={ViewAllReviews}/>
+        </Switch>
+      </div>
+      
+    </Router>
   );
 }
 
