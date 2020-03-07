@@ -30,7 +30,6 @@ build/
 ### VS Code ###
 .vscode/
 
-/bin/
 /node_modules/
 /public/
 /views/
