@@ -6,7 +6,7 @@ const Review = require("../models/review")
 router.get("/", async (req, res) => {
     try{
         let reviews = await Review.find()
-        .sort({userName: "asc"})
+        .sort({date: "desc"})
         return res.send(reviews);
     }catch(e){
         return res.status(500).send(e.message);
@@ -26,12 +26,12 @@ router.get("/:reviewId", async (req, res) => {
 // POST
 router.post("/", async (req, res) => {
     // validation
-    if (!req.body.userName || !req.body.text) {
+    if (!req.body.userName || !req.body.date || !req.body.text || !req.body.version) {
         return res.status(400).send("Required values are not set.");
     }
 
     try {
-        let review = new Avenger ({
+        let review = new Review ({
             userName: req.body.userName,
             date: req.body.date,
             text: req.body.text,
@@ -46,34 +46,34 @@ router.post("/", async (req, res) => {
 });
 
 // PUT
-router.put("/:avengerId", async (req, res) => {
-    let avenger = await Avenger.findById(req.params.avengerId);
+router.put("/:reviewId", async (req, res) => {
+    let review = await Review.findById(req.params.reviewId);
 
     // validation
-    if (!avenger) {
+    if (!review) {
         return res.status(404).send("The given Id does not exist.");
     }
 
-    if (!req.body.birthname) {
+    if (!req.body.userName || !req.body.date || !req.body.text || !req.body.version) {
         return res.status(400).send("Required values are not set.");
     }
 
-    avenger.birthname = req.body.birthname;
-    avenger = await avenger.save(); 
-    
+    review.userName = req.body.userName;
+    review.date = req.body.date;
+    review.text = req.body.text;
+    review.version = req.body.version;
+
+    review = await review.save(); 
 });
 
 // DELETE
-router.delete("/:avengerId", async (req, res) => {
-    let avengerDelete = await Avenger.findOneAndDelete({_id : req.params.avengerId});
+router.delete("/:reviewId", async (req, res) => {
+    let reviewDelete = await Review.findOneAndDelete({_id : req.params.reviewId});
 
     // validation
-    if (!avengerDelete) {
+    if (!reviewDelete) {
         return res.status(404).send("The given Id does not exist.");
     }
-
-    let indexOfAvenger = avengerArray.indexOf(avenger);
-    avengerArray.splice(indexOfAvenger, 1);
 
     res.send("Successfully Deleted!");
 });
