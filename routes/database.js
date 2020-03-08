@@ -2,6 +2,13 @@ const express = require("express");
 const router = express.Router();
 const Review = require("../models/review")
 
+// {
+// 	"userName": "User",
+// 	"date": "PyMongo 101-A6",
+// 	"text": "User",
+// 	"version": "1001.21.32"
+// }
+
 // GET
 router.get("/", async (req, res) => {
     try{
@@ -39,7 +46,7 @@ router.post("/", async (req, res) => {
         });
 
         review = await review.save();
-        return res.send(review);
+        return res.write(review);
     } catch(e) {
         return res.status(500).send(e.message);
     }

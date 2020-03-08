@@ -12,6 +12,6 @@ const reviewSchema = new mongoose.Schema({
     version: Number
 });
 
-const Review = mongoose.model("reviews", reviewSchema);
+const Review = mongoose.model("feature_requests", reviewSchema);
 
 module.exports = Review;
