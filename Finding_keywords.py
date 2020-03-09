@@ -81,7 +81,7 @@ def find_BugFixes():
     df['KeyWords'] = key_list
     df['text'] = result[1]
     df.to_csv("bug_fix_results.csv")
-    print("check bug_fix_results.csv for bug fixes")
+    # print("check bug_fix_results.csv for bug fixes")
 
 def find_FeatureRequests():
     result= clustered_feature_reqs()
@@ -90,10 +90,9 @@ def find_FeatureRequests():
     df['KeyWords'] = key_list
     df['text'] = result[1]
     df.to_csv("bug_fix_results.csv")
-    print("check bug_fix_results.csv for bug fixes")
+    # print("check bug_fix_results.csv for bug fixes")
 
-find_FeatureRequests()
-find_BugFixes()
+
 
 
 
