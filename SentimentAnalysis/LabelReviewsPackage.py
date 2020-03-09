@@ -3,11 +3,10 @@
 # pip install csv, pickle, vaderSentiment, nltk
 import csv
 
-import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from PreProcessing import *
-from RetrieveReviews import getReviews
+from GetReviews.RetrieveReviews import getReviews
 
 
 def label_reviews(file_name, packageName, size):
@@ -49,6 +48,6 @@ def label_reviews(file_name, packageName, size):
 # label_reviews("LabelledData.csv", "com.microsoft.emmx", "10000")
 # label_reviews("LabelledData.csv", "com.microsoft.office.onenote", "10000")
 # label_reviews("LabelledData.csv", "com.microsoft.math", "10000")
-label_reviews("TestLabelledData.csv", "com.microsoft.office.outlook", "10000")
+label_reviews("../CSVFiles/TestLabelledData.csv", "com.microsoft.office.outlook", "10000")
 
 

@@ -7,7 +7,6 @@ import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from PreProcessing import *
-from RetrieveReviews import getReviews
 
 
 def label_reviews(file_name, packageName, size):
@@ -25,7 +24,7 @@ def label_reviews(file_name, packageName, size):
         sentiment = posScore + negScore
         train_data[i][0] = preProcessedText
         train_data[i][1] = sentiment
-        with open('TestLabelledData.csv', 'a', newline='') as file:
+        with open('../CSVFiles/TestLabelledData.csv', 'a', newline='') as file:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(train_data[i])
         file.close()
@@ -33,4 +32,4 @@ def label_reviews(file_name, packageName, size):
 
 # label_reviews("LabelledData.csv", "com.instagram.android", "10000")
 # label_reviews("LabelledData.csv", "com.snapchat.android", "20000")
-label_reviews("LabelledData.csv", "com.whatsapp", "20000")
+label_reviews("../CSVFiles/LabelledData.csv", "com.whatsapp", "20000")

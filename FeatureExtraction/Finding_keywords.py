@@ -5,9 +5,8 @@
 # output - gives the keywords of each categorized reviews
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from Cluster_reviews import clustered_feature_reqs,clustered_bug_fixes
+from Clustering.Cluster_reviews import clustered_feature_reqs,clustered_bug_fixes
 
-from pandas.core.frame import DataFrame
 import pandas as pd
 
 #get the topn items' feature names and tf-idf score
