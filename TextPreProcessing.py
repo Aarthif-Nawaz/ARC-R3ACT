@@ -1,5 +1,5 @@
 ''' Authour - Aarthif Nawaz '''
-''' Part - Text Pre Processing Using all techniques required for text classification '''
+''' Purpose - Text Pre Processing Using all techniques required for text classification '''
 
 #pip install nltk
 #pip install beatufiulSoup
@@ -30,14 +30,14 @@ nlp = spacy.load('en_core_web_sm')
 
 def listToString(s):
     # initialize an empty string
-    str1 = ""
+    string1 = ""
 
     # traverse in the string
     for ele in s:
-        str1 += ele + " "
+        string1 += ele + " "
 
         # return string
-    return str1
+    return string1
 '''all possible contractions that could possibly be in any english sentence appended to a dictionary in order to be exapnded'''
 stop_words_real = set(stopwords.words('english'))
 deselect_stop_words = ['no', 'not']
@@ -45,10 +45,8 @@ for w in deselect_stop_words:
     nlp.vocab[w].is_stop = False
 '''Removing all stop words except for no and not as they come into use for sentiment analysis'''
 def removeStopWordsWithoutPOS(text):
-    stop_words = set(stopwords.words('english'))
-    word_tokens = word_tokenize(text)
-
-    filtered_sentence = [w for w in word_tokens if not w in stop_words]
+    stop_words = set(stopwords.words('english')) # Get all the stop words in english
+    word_tokens = word_tokenize(text) # Word tokenize splitted into list
 
     filtered_sentence = []
 
@@ -56,7 +54,7 @@ def removeStopWordsWithoutPOS(text):
         if w not in stop_words:
             filtered_sentence.append(w)
             filtered_sentence.append(" ")
-    text = listToString(filtered_sentence)
+    text = listToString(filtered_sentence) # return the filtered sentences that are not in the stop word dictionary
     return text
 def convertIntegerWordsToNumbers(text):
     return w2n.word_to_num(text)
