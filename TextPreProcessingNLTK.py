@@ -1,3 +1,14 @@
+# Authour - Mohammed Aarthif Nawaz
+# Purpose - Text Preprocessing
+
+#pip install nltk
+#pip install beatufiulSoup
+#pip install spacy
+#pip install google-play-scraper
+#pip install play-scraper
+#pip install emoji
+#pip install word2number
+
 ''' Importing all modules needed for text pre processing'''
 import string
 import nltk
