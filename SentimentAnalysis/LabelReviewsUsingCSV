@@ -11,12 +11,12 @@ from GetReviews.RetrieveReviews import getReviews
 
 def label_reviews(file_name):
     #get the list of reviews using the file
-    data = pd.read_csv('../CSVFiles/TestReviews.csv')
+    data = pd.read_csv('../CSVFiles/uberEats.csv')
     review_list = pd.DataFrame(data, columns=['text'], dtype=str)
     #train_data is a 2d array of a length equal to the number od reviews
     train_data = [[0] * 2] * len(review_list)
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
-    for i in range(len(review_list)):
+    for i in range(512, len(review_list)):
         print(i)
         #preprocess the review
         preProcessedText = reg_preprocessing(review_list["text"].iloc[i])

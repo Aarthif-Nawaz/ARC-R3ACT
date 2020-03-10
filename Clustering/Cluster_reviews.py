@@ -4,7 +4,7 @@ import csv
 def clustered_bug_fixes():
     corpus=[]
     original = []
-    with open('CSVFiles/results.csv', encoding='utf-8') as file:
+    with open('CSVFiles/results.csv',encoding='utf-8') as file:
        reader = csv.reader(file)
        for row in reader:
            for column in row:
@@ -26,4 +26,3 @@ def clustered_feature_reqs():
                     original.append(row[1])
 
     return corpus,original
-
