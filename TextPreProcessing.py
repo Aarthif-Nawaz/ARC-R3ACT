@@ -1,5 +1,14 @@
 ''' Authour - Aarthif Nawaz '''
 ''' Part - Text Pre Processing Using all techniques required for text classification '''
+
+#pip install nltk
+#pip install beatufiulSoup
+#pip install spacy
+#pip install google-play-scraper
+#pip install play-scraper
+#pip install emoji
+#pip install word2number
+#pip install spacy
 ''' Importing all modules needed for text pre processing'''
 import string
 import nltk
