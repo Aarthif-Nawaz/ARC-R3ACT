@@ -79,7 +79,7 @@ def find_BugFixes():
     key_list=find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("bug_fix_results.csv")
+    df.to_csv("CSVFiles/bug_fix_results.csv")
     # print("check bug_fix_results.csv for bug fixes")
 
 def find_FeatureRequests():
@@ -88,7 +88,7 @@ def find_FeatureRequests():
     key_list = find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("bug_fix_results.csv")
+    df.to_csv("CSVFiles/bug_fix_results.csv")
     # print("check bug_fix_results.csv for bug fixes")
 
 

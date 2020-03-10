@@ -9,11 +9,11 @@ from sklearn.naive_bayes import *
 
 def clusterReviews():
     #get preprocessed reviews from csv
-    data = pd.read_csv(r'../CSVFiles/pickme_allreviews_6167.csv')
+    data = pd.read_csv('CSVFiles/pickme_allreviews_6167.csv')
     df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
     df['word_count'] = df['text'].apply(lambda x: len(str(x).split(" ")))
 
-    path = pd.read_csv(r'../CSVFiles/trainingData.csv')
+    path = pd.read_csv(r'CSVFiles/trainingData.csv')
     df_train = pd.DataFrame(path, columns=['Preprocessed_text'],dtype=str)
 
     vectorizer = TfidfVectorizer(stop_words='english')
@@ -54,7 +54,7 @@ def clusterReviews():
 
     df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
     df['cluster'] = result
-    df.to_csv("results.csv")
+    df.to_csv("CSVFiles/results.csv")
 
     #print("check results.csv for clusters") 
 

@@ -1,5 +1,5 @@
 import pandas as pd
-from Preprocessing import text_preprocessingNLP
+from TextPreprocessing.TextPreProcessing import text_preprocessingNLP
 
 #write all reviews to csv
 data = pd.read_csv('../CSVFiles/pickme_allreviews_6167.csv')

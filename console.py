@@ -40,7 +40,7 @@ def main():
         elif (choice == 2):
             bugFix()
         if (choice == 3):
-            predict_sentiment("E:\\2nd Year\SDGP\ARC-R3ACT\CSVFiles\TestLabelledData.csv")
+            predict_sentiment("CSVFiles\TestLabelledData.csv")
         else:
             print("invalid Choice !")
         choice = int(input("Enter Your Choice : "))

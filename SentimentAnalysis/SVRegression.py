@@ -1,7 +1,7 @@
 import csv
 import pickle
 
-from PreProcessing import pre_processing_labelled_data
+from TextPreprocessing.PreProcessing import pre_processing_labelled_data
 
 # file which contains the pre-processed reviews
 file = open('../CSVFiles/LabelledData.csv', 'r')
@@ -18,8 +18,6 @@ for j in range(202000,404401):
 # upload the vectorizer from the file
 filename = '../Models/vectorizer.pk'
 count_vect = pickle.load(open(filename, 'rb'))
-#count_vect = CountVectorizer()
-# store vectorized data
 X_train_counts = count_vect.fit_transform(trainData)
 # store the vectorizer
 with open(filename, 'wb') as vec_file:
@@ -29,5 +27,7 @@ vec_file.close()
 # load the model from file and train and store the model in the same file
 filename = '../Models/trained_model.sav'
 loaded_model = pickle.load(open(filename, 'rb'))
+#train the model
 loaded_model.fit(X_train_counts, trainLabel)
+#store the model
 pickle.dump(loaded_model, open(filename, 'wb'))
