@@ -1,3 +1,11 @@
+/* 
+This file retrieves reviews using external API call and saves them to the database.
+Author: Shiromi Thevarajan
+IIT ID: 2018117
+
+Dependencies: express, request
+*/
+
 var express = require('express');
 var router = express.Router();
 var request = require('request');

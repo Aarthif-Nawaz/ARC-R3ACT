@@ -1,3 +1,11 @@
+/* 
+This file is main start script.
+Author: Shiromi Thevarajan
+IIT ID: 2018117
+
+Dependencies: express, mongoose
+*/
+
 var express = require('express');
 var router = express.Router();
 const mongoose = require("mongoose");

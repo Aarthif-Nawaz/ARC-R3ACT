@@ -1,3 +1,11 @@
+/* 
+This file handles all the API to and from mongodb database.
+Author: Shiromi Thevarajan
+IIT ID: 2018117
+
+Dependencies: express
+*/
+
 const express = require("express");
 const router = express.Router();
 const Review = require("../models/review")
