@@ -8,6 +8,8 @@ import FeatureRequest from './components/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment';
 import ViewAllReviews from './components/ViewReviews';
 import NavBar from './components/Navbar';
+import SearchApps from './components/searchapps';
+import LoadingBox from './components/LoadingBox';
 
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
        
           <NavBar/>
           <Switch>
-            <Route path="/" exact component={MenuBox}/>
+            <Route path="/" exact component={SearchApps}/>
+            <Route path='/loading' component={LoadingBox}/>
+            <Route path='/menu' component={MenuBox}/>
             <Route path="/bugfix" component={BugFix}/>
             <Route path="/featureRequest" component={FeatureRequest}/>
             <Route path="/overallSentiment" component={OverallSentiment}/>

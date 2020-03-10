@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 function OverallSentiment(){
     return(
-        <Container className='mt-5'>
+        <Container className='mt-5 sentiment_box'>
             <Row>
                 <Col><Container>App Logo</Container></Col>
                 <Col>

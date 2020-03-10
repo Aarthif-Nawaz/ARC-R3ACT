@@ -12,9 +12,9 @@ function NavBar(){
         <Navbar.Collapse id="basic-navbar-nav">
          
                 <Nav className="mr-auto">
-                    <Nav.Link >Navigation Link</Nav.Link>
-                    <Nav.Link >Navigation Link</Nav.Link>
-                    <Nav.Link>Navigation Link</Nav.Link>
+                    <Nav.Link >About Us</Nav.Link>
+                    <Nav.Link >Support</Nav.Link>
+                    <Nav.Link>Contact Us</Nav.Link>
                 </Nav>
         
         </Navbar.Collapse>

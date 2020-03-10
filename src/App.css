@@ -1,6 +1,77 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'SourceCodePro';
+  src: local('SourceCodePro'), url(./fonts/source-code-pro/SourceCodePro-Black.otf) format('opentype');
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+  font-family: SourceCodePro;
+}
+.backgroundimg{
+  position: absolute;
+  height: 50px;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.intro-heading{
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 59%;
+  font-size: 28px;
+}
+.intro-para{
+  color: white;
+  text-align: justify;
+  position: absolute;
+  padding-right: 65px;
+  top: 35%;
+  left: 59%;
+}
+.search-bar {
+  width: 400px;
+  position: absolute;
+  padding: 10px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: white;
+  top: 67%;
+  left: 73.5%;
+  transform: translate(-50%, -50%);
+}
+
+.search-button{
+  color: white;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #282c34;
+}
+
+.search-icon{
+  width:18px;
+  height: 14px;
+}
+.search-text{
+  background: none;
+  border: none;
+  outline: none;
+  color: #282c34;
+  padding: 0;
+  float: left;
+  font-size: 16px;
+  width: 250px;
+  line-height: 30px;
+  font-family: SourceCodePro;
+}
+
 .star{
   display: inline-block;
   padding: 3px;
@@ -9,6 +80,9 @@
   font-size: 1.5em;
   color: #ABABAB;
   transition: color .2s ease-out;
+}
+.sentiment_box{
+  color:white;
 }
 
 
