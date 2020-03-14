@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 function NavBar(){
     return(
         <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">ARC Logo</Navbar.Brand>
+     
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
          
