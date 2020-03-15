@@ -17,7 +17,7 @@ function App() {
     <Router>
       <div>
        
-          <NavBar/>
+         <NavBar/>
           <Switch>
             <Route path="/" exact component={SearchApps}/>
             <Route path='/loading' component={LoadingBox}/>

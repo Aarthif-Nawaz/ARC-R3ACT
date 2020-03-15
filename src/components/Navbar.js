@@ -1,25 +1,29 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import Navbar from 'react-bootstrap/Navbar';
+import { slide as Menu } from 'react-burger-menu';
+import '../App.css';
 
 function NavBar() {
+ 
   return (
-    <Navbar className="navBar">
+   
+    <Navbar>
       <Navbar.Brand href="/">
         <img
           className="bugLogo"
           src={process.env.PUBLIC_URL + "/images/bugLogo.png"}
           alt="ARC Logo"
+          style={{margin:20,position:"absolute",zIndex:1000}}
         />
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav variant="pills" className="navLinks">
-          <Nav.Link className="navOneLink">About </Nav.Link>
-          <Nav.Link className="navOneLink">Support</Nav.Link>
-          <Nav.Link className="navOneLink">Contact </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+      <Menu>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        <a id="contact" className="menu-item" href="/support">Support</a>
+        
+      </Menu>
+      
     </Navbar>
   );
 }
