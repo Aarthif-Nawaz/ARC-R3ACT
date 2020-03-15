@@ -79,6 +79,7 @@ body {
 }
 
 /*Burger menu bar*/
+/* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -107,13 +108,14 @@ body {
 .bm-cross {
   background: #bdc3c7;
 }
+ 
 /*
-Sidebar wrapper styles*/
-.bm-menu-wrap{
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
   position: fixed;
   height: 100%;
- /* transform: translate3d(-110%,0px,0px); */
- 
 }
  
 /* General sidebar styles */
@@ -143,4 +145,3 @@ Sidebar wrapper styles*/
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
- 
