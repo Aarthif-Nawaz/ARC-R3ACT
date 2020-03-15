@@ -14,10 +14,13 @@ function SearchApps() {
         <div class="video-container">
           <video className="videoBg" autoPlay loop muted>
             <source
-              src={process.env.PUBLIC_URL + "/images/bgvideo.mp4"}
+              src={process.env.PUBLIC_URL + "/images/bgvideo2.mp4"}
               type="video/mp4"
             />
           </video>
+          <div class="content">
+            <p>We analyse mobile app reviews.</p>
+          </div>
         </div>
       </body>
     </html>
