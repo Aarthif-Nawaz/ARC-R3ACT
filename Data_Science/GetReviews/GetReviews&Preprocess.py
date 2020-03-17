@@ -1,3 +1,12 @@
+# Authour - Aarthif Nawaz
+# Purpose - To get reviews from an app searched pre process the reviews ans send it to a CSV file
+
+# Dependencies needed to be downloaded
+# pip install play-scraper
+# pip install google-play-scraper
+# pip install pandas
+# pip install numpy
+# pip insatll sklearn
 import play_scraper
 from google_play_scraper import reviews, Sort
 import pandas as pd
@@ -8,10 +17,13 @@ from sklearn.naive_bayes import *
 
 
 from Preprocessing import text_preprocessingNLP
-
+# get the app name
 app = input("Enter App Name : ")
+# Search for the app
 details = play_scraper.search(app)
+# get the app id
 app_id  = details[0]['app_id']
+# get reviews from that particular app
 result = reviews(
     app_id,
     lang='en', # defaults to 'en'
@@ -21,11 +33,11 @@ result = reviews(
 )
 review_csv = []
 for i in result:
-    review = i['content']
-    review_csv.append(review)
+    review = i['content'] # get only the reviews
+    review_csv.append(review) # append the reviews to an array
 
 
-
+# function to write the array of reviews to a CSV file
 def write_list_to_file(guest_list, filename):
     """Write the list to csv file."""
 
@@ -35,19 +47,21 @@ def write_list_to_file(guest_list, filename):
             writer.writerow([val])
 
 write_list_to_file(review_csv,'ubereats.csv')
-
+# Read the csv file that was created
 data = pd.read_csv('ubereats.csv',encoding= 'unicode_escape')
+# Create a dataframe out of it to get only the reviews
 df = pd.DataFrame(data, columns=['Reviews'],dtype=str)
 
+# use an array to get the reviews and store it
 test_sentences = []
 for i, row in df.iterrows():
     test_sentences.append(df['Reviews'].dropna().loc[i])
-
+# use the array to store the pre processed reviews
 test_clean_sentence = []
 for test in test_sentences:
     test_clean_sentence.append(str(text_preprocessingNLP(test)))
-df['Preprocessed_text'] = test_clean_sentence
-df.to_csv("ubereats.csv",index=False)
+df['Preprocessed_text'] = test_clean_sentence # create a pre processed colum and store the pre processed reviews
+df.to_csv("ubereats.csv",index=False) # Convert the whole file to csv
 
 # cv = CountVectorizer(max_features=1242)
 # data = pd.read_csv('pickme_allreviews_6167.csv')
