@@ -1,4 +1,11 @@
+# Authour - Aarthif Nawaz
+# Purpose -  Pre processing all the texts of that is recieved
+
 ''' Importing all modules needed for text pre processing'''
+# pip install bs4
+# pip install spacy
+# pip install NLTk
+# pip install emoji
 import string
 import nltk
 from bs4 import BeautifulSoup
@@ -11,7 +18,7 @@ import re
 
 from nltk.corpus import stopwords
 
-alpha = list(string.ascii_lowercase)
+alphabet = list(string.ascii_lowercase)
 ''' Getting all the alphabets lowercase letters into a list'''
 nlp = spacy.load('en_core_web_sm')
 '''Load the spacy model to check all the words that do not come under english dictionary'''
@@ -28,8 +35,8 @@ def listToString(s):
     return str1
 '''all possible contractions that could possibly be in any english sentence appended to a dictionary in order to be exapnded'''
 stop_words_real = set(stopwords.words('english'))
-deselect_stop_words = ['no', 'not']
-for w in deselect_stop_words:
+deselected_stop_words = ['no', 'not'] # these words should not be selected
+for w in deselected_stop_words:
     nlp.vocab[w].is_stop = False
 '''Removing all stop words except for no and not as they come into use for sentiment analysis'''
 def removeStopWordsWithoutPOS(text):
