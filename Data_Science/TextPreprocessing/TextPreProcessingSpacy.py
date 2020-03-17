@@ -1,7 +1,7 @@
 # Author - Mohamed Aarthif Nawaz
 # Purpose - Text preprocessing
 
-from Data_Science.TextPreprocessing.TextPreProcessing import *
+from Data_Science.TextPreprocessing.TextPreProcessingNLTK import *
 # convert a list to string
 def listToString(s):
     # initialize an empty string
