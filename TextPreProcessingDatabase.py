@@ -21,7 +21,7 @@ for x in client.arc.MobileAppReviews.find():
     # Running this if statement becuase mongodb doesnt accept key values with a "." in it
     if(review.startswith(".") or review.endswith(".") or review.__contains__(".")):
         review = review.replace(".","")
-    # Pre process the reviews
+    # Pre process the reviews so that you can add it to the database
     preProcessed_review = text_preprocessingNLP(review)
     # Put the reviews as a JSON object
     data_set = {
