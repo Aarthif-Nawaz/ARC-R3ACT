@@ -1,7 +1,21 @@
 # Author - Mohamed Aarthif Nawaz
 # Purpose - Text preprocessing
+import string
 
-from Data_Science.TextPreprocessing.TextPreProcessing import *
+import emoji
+import re
+import spacy
+nlp = spacy.load('en_core_web_sm')
+'''Load the spacy model to check all the words that do not come under english dictionary'''
+alpha = list(string.ascii_lowercase)
+''' Getting all the alphabets lowercase letters into a list'''
+def remove_whitespace(text):
+    """remove extra whitespaces from text"""
+    text = text.strip()
+    return " ".join(text.split())
+def de_emojize(text):
+    return emoji.demojize(text)
+'''Demojize the emojis in a text for better sentiment scores'''
 # convert a list to string
 def listToString(s):
     # initialize an empty string
@@ -35,7 +49,7 @@ def reg_preprocessing(notProcessedText):
             flag = True
             edit = token.text
             # remove stop words
-            if token.is_stop and token.pos_ != 'NUM' and edit.lower() != "not" and edit.lower() != "no":
+            if token.is_stop and token.pos_ != 'NUM' and edit.lower() != "not" and edit.lower() != "no" and edit.lower() != "very":
                 flag = False
                 # append tokens edited and not removed to list
             if edit != "" and flag:
