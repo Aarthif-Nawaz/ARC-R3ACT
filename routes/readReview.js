@@ -1,6 +1,8 @@
+// Authour - Aarthif Nawaz
+// Purpose -  To make an asynchronous call to the databse while recieving a user input
 function doSomething() {
 
-      // callback sets the received data to a global var
+      // callback sets the received data to a global variable
   function callBack(d) {
       window.data = d;
   }
@@ -19,9 +21,9 @@ window.data = null
 var intvl = setInterval(function() {
     if (window.data) { 
         clearInterval(intvl);
-        console.log(data);
+        
     }
-}, 100);
+}, 1000);
 
 async function myAsynchronousCall(client,newMany, callBack){
     
