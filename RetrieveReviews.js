@@ -1,3 +1,5 @@
+// Authour - Aarthif Nawaz 
+// Purpose - To retrive reviews of a particular app that is searched and store it into the database
 // Dependecies Needed 
 const http = require('http')
 const gplay = require('google-play-scraper');
