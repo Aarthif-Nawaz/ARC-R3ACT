@@ -12,13 +12,21 @@ def listToString(s):
         # return string
     return str1
 
+def expand_contractions(phrase):
+    """Expand contractions from text"""
+    phrase = re.sub(r"won\'t", "will not", phrase)
+    phrase = re.sub(r"can\'t", "can not", phrase)
+    # general
+    phrase = re.sub(r"n\'t", " not", phrase)
+    phrase = re.sub(r"\'t", " not", phrase)
+    return phrase
+
 # pre_processing required for the lexicon sentiment analysis
 def reg_preprocessing(notProcessedText):
     if notProcessedText is not None:
         notProcessedText = de_emojize(notProcessedText)
         notProcessedText = expand_contractions(notProcessedText)
         notProcessedText = re.sub('[^a-zA-Z\-|&#;@!?()/:\\\{}]', " ", notProcessedText)
-        notProcessedText = nonEnglishWords(notProcessedText)
         notProcessedText = remove_whitespace(notProcessedText)
         # tokenizing the string and removing the stop words
         doc = nlp(notProcessedText)

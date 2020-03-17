@@ -7,6 +7,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from Clustering.Cluster_reviews import clustered_feature_reqs,clustered_bug_fixes
 
+from pandas.core.frame import DataFrame
 import pandas as pd
 
 #get the topn items' feature names and tf-idf score
@@ -75,12 +76,11 @@ def find_keywords(clusterd_corpus):
 
 def find_BugFixes():
     result = clustered_bug_fixes()
-    print(result[0])
     df = pd.DataFrame(result[0], columns=['Reviews'])
     key_list=find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("bug_fix_results.csv")
+    df.to_csv("CSVFiles/bug_fix_results.csv")
     # print("check bug_fix_results.csv for bug fixes")
 
 def find_FeatureRequests():
@@ -89,7 +89,7 @@ def find_FeatureRequests():
     key_list = find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("feature_request_result.csv")
+    df.to_csv("CSVFiles/feature_request_result.csv")
     # print("check feature_request_result.csv for feature requests")
 
 

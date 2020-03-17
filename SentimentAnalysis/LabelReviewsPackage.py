@@ -15,7 +15,6 @@ def label_reviews(file_name, packageName, size):
     reviews=[]
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
     for i in range(len(review_list)):
-        print(review_list[i])
         print(i)
         #preprocess the review
         preProcessedText = reg_preprocessing(review_list[i])
@@ -33,10 +32,6 @@ def label_reviews(file_name, packageName, size):
         with open(file_name, 'a', newline='') as file:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(train_data[i])
-        file.close()
-        with open("../CSVFiles/TestReviews.csv", 'a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(review_list[i])
         file.close()
 
 
@@ -61,5 +56,6 @@ def label_reviews(file_name, packageName, size):
 # label_reviews("LabelledData.csv", "com.microsoft.office.onenote", "10000")
 # label_reviews("LabelledData.csv", "com.microsoft.math", "10000")
 # label_reviews("../CSVFiles/TestLabelledData.csv", "com.ubercab.eats", "10000")
+label_reviews("../CSVFiles/TestReviewsLabelled.csv", "com.imangi.templerun", "10000")
 
 

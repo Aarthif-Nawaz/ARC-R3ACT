@@ -16,7 +16,7 @@ def label_reviews(file_name):
     #train_data is a 2d array of a length equal to the number od reviews
     train_data = [[0] * 2] * len(review_list)
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
-    for i in range(512, len(review_list)):
+    for i in range(len(review_list)):
         print(i)
         #preprocess the review
         preProcessedText = reg_preprocessing(review_list["text"].iloc[i])
@@ -35,4 +35,4 @@ def label_reviews(file_name):
             writer.writerow(train_data[i])
         file.close()
 
-label_reviews("../CSVFiles/TestLabelledData.csv")
+label_reviews("../CSVFiles/TestData.csv")

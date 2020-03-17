@@ -1,11 +1,15 @@
+import re
+import string
 import numpy as np
 import pandas as pd
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import *
 
 def clusterReviews():
     #get preprocessed reviews from csv
-    data = pd.read_csv('CSVFiles/uberEats.csv')
+    data = pd.read_csv(r'CSVFiles/uberEats.csv')
     df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
     df['word_count'] = df['text'].apply(lambda x: len(str(x).split(" ")))
 
@@ -30,6 +34,7 @@ def clusterReviews():
     process_sentences = []
     for i, row in df.iterrows():
         process_sentences.append(df['Preprocessed_text'].loc[i])
+        
 
     Test = vectorizer.transform(process_sentences)
 
@@ -44,6 +49,8 @@ def clusterReviews():
             result.append('Common')
         else:
             result.append((true_test_labels[np.int(predicted_labels_knn[i])]))
+
+
 
     df = pd.DataFrame(data, columns=['text','Preprocessed_text'], dtype=str)
     df['cluster'] = result

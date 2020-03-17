@@ -1,4 +1,4 @@
-#Author - Sadfiyyah Thur Rahman
+#Author - Safiyyah Thur Rahman
 #Purpose - Predict the Overall Sentiment of the App using SVM.SVR and the Vader Lexicon
 #install - pickle, sklearn
 import csv
@@ -18,22 +18,18 @@ def predict_sentiment(filename):
     ##using the index the rating will be identified and 1 being the most negative and 5 being the most positive
     star_rating = [1, 2, 3, 4, 5]
     # all the records in the file are converted to a 2d array
-    file = open("CSVFiles\TestLabelledData.csv", 'r')
+    file = open("CSVFiles\TestData.csv", 'r')
     data = list(csv.reader(file, delimiter=','))
     #stores the test reviews which are preprocessed
     testData = []
     #stores the scores that were predicted using the vader lexicon
     testLabel = []
-    #overall sentiment calcualted by the vader lexicon
-    overall_sentiment = 0
     # append the pre-processed the review and the sentiment, to trainData and trainLabel
     for i in range(0, len(data)):
         #data that is further prerpocessed to predict the sentiment score using the model
         testData.append(pre_processing_labelled_data(data[i][0]))
         #append the scores calculated by vader lexicon
         testLabel.append(float(data[i][1]))
-        #add the score to overall sentiment variable
-        overall_sentiment += float(data[i][1])
     #overall sentiment score predicted by the model
     ovrll_sentiment = 0
     filename = 'Models\\vectorizer.pk'
@@ -55,14 +51,13 @@ def predict_sentiment(filename):
     #add the predicted scores to ovrll_sentiment variable
     for k in range(len(predicted)):
         ovrll_sentiment += float(predicted[k])
-    #add both overall sentiments(predicted by the model and calculated by the lexicon) and divide by 2
-    avg_ovrll_sentiment = (overall_sentiment + ovrll_sentiment) / 2
     #multiply by 2 to get -2, -1, 0, 1 or 2
-    senti_score = floor((avg_ovrll_sentiment / len(data)) * 2)
+    senti_score = floor(ovrll_sentiment / len(data))
     #find the rating using the index of the calculated senti_score
     index = sentiment_score.index(senti_score)
     #convert the predicted list to an array
     predicted = np.array(predicted)
+    print(ovrll_sentiment)
     print("Overall rating in a range of 1 to 5: " + str(star_rating[index]))
     #used to validate the model
     #higher r2score means the model is good
