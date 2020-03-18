@@ -3,10 +3,12 @@
 import pymongo
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+from Data_Science.Classification.ClassifyTest import clusterReviews
+from Data_Science.SentimentAnalysis.PredictOverallSentiment import predict_sentiment
 from Data_Science.TextPreprocessing.PreProcessing import reg_preprocessing, pre_processing_labelled_data
 
 
-def getReviews(packageName, size):
+def getReviews(packageName, size, name):
     # # Step one for every Python app that talks over the web
     # # $ pip install requests
     # # Connecting with nodenpm package to extract app reviews
@@ -27,48 +29,51 @@ def getReviews(packageName, size):
     decoded_json = resp.json()
     results = decoded_json["results"]
     reviews = []
+    lexicon_sentiment = []
+    svr_preprocessed = []
+    lexicon_preprocessed = []
     i = 0
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
     while i < len(results):
         print(i)
-        lexicon_preprocessed = reg_preprocessing(results[i]["text"])
-        result = vaderSentimentAnalyzer.polarity_scores(lexicon_preprocessed)
+        lexicon_preprocessed.append(reg_preprocessing(results[i]["text"]))
+        result = vaderSentimentAnalyzer.polarity_scores(lexicon_preprocessed[i])
         negScore = -1 * result["neg"]
         posScore = result["pos"]
         # add the pos and neg score to get an overall score for the sentiment
         sentiment = posScore + negScore
+        lexicon_sentiment.append(sentiment)
+        svr_preprocessed.append(pre_processing_labelled_data(lexicon_preprocessed[i]))
+        i += 1
+    predicted_results = predict_sentiment(svr_preprocessed, lexicon_sentiment)
+    clusteredResult = clusterReviews(svr_preprocessed)
+    predicted = predicted_results["predicted"]
+    i = 0
+    while i < len(results):
+        print(i)
+        sentiment = predicted[i]
         polarity = "neutral"
-        if (sentiment > 0):
+        if sentiment > 0:
             polarity = "positive"
-        elif (sentiment < 0):
+        elif sentiment < 0:
             polarity = "negative"
-        svr_preprocessed = pre_processing_labelled_data(lexicon_preprocessed)
         review = {"_id": str(i + 1), "userName": results[i]["userName"], "date": results[i]["date"],
                   "text": results[i]["text"], "version": results[i]["version"],
-                  "lexicon_preprocessed": lexicon_preprocessed, "svr_preprocessed": svr_preprocessed,
-                  "sentiment": sentiment, "polarity": polarity}
+                  "lexicon_preprocessed": lexicon_preprocessed[i], "svr_preprocessed": svr_preprocessed[i],
+                  "lexicon_sentiment": lexicon_sentiment[i], "svr_sentiment": sentiment, "polarity": polarity,
+                  "cluster": clusteredResult[i]}
         reviews.append(review)
         i += 1
-
     client = pymongo.MongoClient(
         "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
     db = client['Safiyyah_ARC']
     collection = db["Reviews"]
     x = collection.insert_many(reviews)
-    # print list of the _id values of the inserted documents:
     print(x.inserted_ids)
+    collection = db["MobileApplicationDetails"]
+    mbDetails = {"Name": name, "PackageName": packageName, 'overall_sentiment': predicted_results['overall_sentiment'],
+                 'rating': predicted_results['rating'],
+                 'r2_score': predicted_results['r2_score'], 'mean_square_error': predicted_results['mean_square_error']}
+    collection.insert_one(mbDetails)
 
-
-#     print(reviews)
-# converting String to json
-# final_dict = eval(decoded_json)
-# results = final_dict['results']
-# review_list = []
-# for d in results:
-#     review = d['text']
-#     review_list.append(review)
-
-# return review_list
-
-
-getReviews("com.ubercab", "10000")
+getReviews("com.ubercab", "10000", "Uber")
