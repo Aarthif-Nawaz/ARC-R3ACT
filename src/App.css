@@ -6,6 +6,10 @@
   font-family: "Denver";
   src: local("Denver"), url(./fonts/denver.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Wallington";
+  src: local("Wallington"), url(./fonts/wallington.ttf) format("truetype");
+}
 .video-container {
   position: absolute;
   top: 0;
@@ -34,12 +38,14 @@
 .content {
   position: absolute;
   top: 35%;
-  left: 17%;
+  left: 14%;
   z-index: 1;
-  font-family: Denver;
+  font-family: Wallington;
   font-weight: 900;
-  font-size: 90px;
-  letter-spacing: -2px;
+  font-size: 100px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 4px 4px black;
 }
 .bugLogo {
   height: 130px;
@@ -90,12 +96,12 @@ body {
  
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: white;
 }
  
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: black;
 }
  
 /* Position and sizing of clickable cross button */
@@ -106,7 +112,7 @@ body {
  
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
  
 /*
@@ -120,28 +126,89 @@ Note: Beware of modifying this element as it can break the animations - you shou
  
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background-color: #043b73; 
+  background-image: linear-gradient(to bottom right, #000B18, 	#00172D, #00264D, #02386E, #00498D, #0052A2);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
  
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+ fill: linear-gradient(to bottom right, #000B18, 	#00172D, #00264D, #02386E, #00498D, #0052A2);
 }
  
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+ 
   padding: 0.8em;
 }
  
 /* Individual item */
 .bm-item {
   display: inline-block;
+  font-style: Proxima;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: white;
 }
  
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.11);
+}
+
+.searchBar{
+  width: 900px;
+  position: relative;
+  display: flex;
+  font-family: Proxima;
+  font-size: 50px;
+  margin-top: 50px;
+  left: 15%;
+  color: #fff;
+  border: none;
+}
+.searchPlaceholder{
+  width: 470px;
+  border-radius: 100px;
+  background: inherit;
+  border: none;
+  padding-bottom: 18px;
+  height: 70px;
+  outline: none;
+  font-size: 25px;
+  font-weight: 900;
+}
+.searchPlaceholder:placeholder {
+  color: red;
+}
+.searchPlaceholder:focus{
+  color: white;
+  background: inherit;
+}
+.mb-3{
+  width: 900px;
+  height: 70px;
+  text-align: center;
+  border-radius: 100px;
+  border: solid 5px white;
+  cursor: pointer;
+  
+}
+.button{
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 18px;
+  background: inherit;
+}
+.button:hover{
+  border: none;
+  background: inherit;
+  font-weight: 900;
+  font-size: 22px;
+  color: #fff;
 }
