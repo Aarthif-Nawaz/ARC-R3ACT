@@ -11,7 +11,7 @@ function NavBar() {
       <Navbar.Brand href="/">
         <img
           className="bugLogo"
-          src={process.env.PUBLIC_URL + "/images/bugLogo.png"}
+          src={process.env.PUBLIC_URL + "/images/logo1.png"}
           alt="ARC Logo"
           style={{margin:20,position:"absolute",zIndex:1000}}
         />

@@ -29,6 +29,9 @@ function SearchApps() {
                 </InputGroup.Append>
               </InputGroup>
             </div>
+            <div>
+              <a className="scrollArrow" href="#section2"><img alt="Arrow Down Icon" src={process.env.PUBLIC_URL + "/images/arrowDown.jpg"}></a>
+            </div>
             
           </div>
         </div>
