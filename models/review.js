@@ -1,3 +1,11 @@
+/* 
+This file deciribes the schema of the Review.
+Author: Shiromi Thevarajan
+IIT ID: 2018117
+
+Dependencies: mongoose
+*/
+
 const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema({ 

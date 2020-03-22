@@ -1,3 +1,12 @@
+/* 
+This file handles all the routes.
+Author: Shiromi Thevarajan
+IIT ID: 2018117
+
+Dependencies: express, cookie-parser
+Run 'npm install' before 'npm start'
+*/
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
