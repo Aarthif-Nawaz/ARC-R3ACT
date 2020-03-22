@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 mongoose  // connection to the mongodb
-    .connect("mongodb://localhost:27017/arc", { useNewUrlParser: true, useUnifiedTopology: true})
+    .connect("mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true})
     .then(()=> console.log("Connected to database."))
     .catch(err => console.log("Error has occured: ", err))
 
