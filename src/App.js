@@ -8,9 +8,9 @@ import FeatureRequest from './components/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment';
 import ViewAllReviews from './components/ViewReviews';
 import NavBar from './components/Navbar';
-import SearchApps from './components/searchapps';
-import LoadingBox from './components/LoadingBox';
 
+import LoadingBox from './components/LoadingBox';
+import HomePage from './components/HomePage/HomePage'
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
        
          <NavBar/>
           <Switch>
-            <Route path="/" exact component={SearchApps}/>
+            <Route path="/" exact component={HomePage}/>
             <Route path='/loading' component={LoadingBox}/>
             <Route path='/menu' component={MenuBox}/>
             <Route path="/bugfix" component={BugFix}/>
