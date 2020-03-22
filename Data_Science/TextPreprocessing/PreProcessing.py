@@ -5,17 +5,26 @@ import string
 import emoji
 import re
 import spacy
+
 nlp = spacy.load('en_core_web_sm')
 '''Load the spacy model to check all the words that do not come under english dictionary'''
 alpha = list(string.ascii_lowercase)
 ''' Getting all the alphabets lowercase letters into a list'''
+
+
 def remove_whitespace(text):
     """remove extra whitespaces from text"""
     text = text.strip()
     return " ".join(text.split())
+
+
 def de_emojize(text):
     return emoji.demojize(text)
+
+
 '''Demojize the emojis in a text for better sentiment scores'''
+
+
 # convert a list to string
 def listToString(s):
     # initialize an empty string
@@ -26,6 +35,7 @@ def listToString(s):
         # return string
     return str1
 
+
 def expand_contractions(phrase):
     """Expand contractions from text"""
     phrase = re.sub(r"won\'t", "will not", phrase)
@@ -34,6 +44,7 @@ def expand_contractions(phrase):
     phrase = re.sub(r"n\'t", " not", phrase)
     phrase = re.sub(r"\'t", " not", phrase)
     return phrase
+
 
 # pre_processing required for the lexicon sentiment analysis
 def reg_preprocessing(notProcessedText):
@@ -50,6 +61,24 @@ def reg_preprocessing(notProcessedText):
             edit = token.text
             # remove stop words
             if token.is_stop and token.pos_ != 'NUM' and edit.lower() != "not" and edit.lower() != "no" and edit.lower() != "very":
+                flag = False
+                # append tokens edited and not removed to list
+            if edit != "" and flag:
+                clean_text = clean_text + edit + " "
+        return clean_text
+    else:
+        return ""
+
+
+def preprocessing_fe(notProcessedText):
+    if notProcessedText is not None:
+        doc = nlp(notProcessedText)
+        clean_text = ""
+        for token in doc:
+            flag = True
+            edit = token.text
+            # remove stop words
+            if (token.pos_ == "INTJ" or token.is_stop or token.pos_ == 'NUM' or edit.lower() == "very") and(edit.lower() != "not" and edit.lower() == "no"):
                 flag = False
                 # append tokens edited and not removed to list
             if edit != "" and flag:

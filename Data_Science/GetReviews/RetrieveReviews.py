@@ -49,6 +49,8 @@ def getReviews(packageName, size, name):
     clusteredResult = clusterReviews(svr_preprocessed)
     predicted = predicted_results["predicted"]
     i = 0
+    clusters = clusteredResult["cluster_Results"]
+    keywords = clusteredResult["keywords"]
     while i < len(results):
         print(i)
         sentiment = predicted[i]
@@ -57,11 +59,18 @@ def getReviews(packageName, size, name):
             polarity = "positive"
         elif sentiment < 0:
             polarity = "negative"
-        review = {"_id": str(i + 1), "userName": results[i]["userName"], "date": results[i]["date"],
-                  "text": results[i]["text"], "version": results[i]["version"],
-                  "lexicon_preprocessed": lexicon_preprocessed[i], "svr_preprocessed": svr_preprocessed[i],
-                  "lexicon_sentiment": lexicon_sentiment[i], "svr_sentiment": sentiment, "polarity": polarity,
-                  "cluster": clusteredResult[i]}
+        if clusters[i] != "Common":
+            review = {"_id": str(i + 1), "userName": results[i]["userName"], "date": results[i]["date"],
+                      "text": results[i]["text"], "version": results[i]["version"],
+                      "lexicon_preprocessed": lexicon_preprocessed[i], "svr_preprocessed": svr_preprocessed[i],
+                      "lexicon_sentiment": lexicon_sentiment[i], "svr_sentiment": sentiment, "polarity": polarity,
+                      "cluster": clusters[i], "keywords": keywords[i]}
+        else:
+            review = {"_id": str(i + 1), "userName": results[i]["userName"], "date": results[i]["date"],
+                      "text": results[i]["text"], "version": results[i]["version"],
+                      "lexicon_preprocessed": lexicon_preprocessed[i], "svr_preprocessed": svr_preprocessed[i],
+                      "lexicon_sentiment": lexicon_sentiment[i], "svr_sentiment": sentiment, "polarity": polarity,
+                      "cluster": clusters[i]}
         reviews.append(review)
         i += 1
     client = pymongo.MongoClient(
@@ -75,5 +84,6 @@ def getReviews(packageName, size, name):
                  'rating': predicted_results['rating'],
                  'r2_score': predicted_results['r2_score'], 'mean_square_error': predicted_results['mean_square_error']}
     collection.insert_one(mbDetails)
+
 
 getReviews("com.ubercab", "10000", "Uber")

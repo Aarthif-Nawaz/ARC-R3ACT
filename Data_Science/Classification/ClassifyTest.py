@@ -4,10 +4,9 @@
 import pickle
 
 import numpy as np
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-# A Neural Network Classifier based of Multi Layer Perceptron
-from sklearn.neural_network import MLPClassifier
+
+from Data_Science.FeatureExtraction.Finding_keywords import find_keywords
+from Data_Science.TextPreprocessing.PreProcessing import preprocessing_fe
 
 
 def clusterReviews(preprocessed_reviews):
@@ -34,7 +33,9 @@ def clusterReviews(preprocessed_reviews):
             predicted_labels_knn[i] = 0
 
     result = []
+    fe_preprocessedReviews=[]
     for i in range(len(preprocessed_reviews)):
+        fe_preprocessedReviews.append(preprocessing_fe(preprocessed_reviews[i]))
         result.append((true_test_labels[np.int(predicted_labels_knn[i])]))
-
-    return result
+    keywords_list = find_keywords(fe_preprocessedReviews)
+    return {"cluster_Results": result, "keywords": keywords_list}

@@ -1,7 +1,7 @@
 import csv
 import pickle
 
-from TextPreprocessing.PreProcessing import pre_processing_labelled_data
+from Data_Science.TextPreprocessing.PreProcessing import pre_processing_labelled_data
 
 # file which contains the pre-processed reviews
 file = open('../CSVFiles/LabelledData.csv', 'r')
@@ -11,7 +11,7 @@ trainData = []
 trainLabel = []
 print(len(data))
 # # append the pre-processed the review and the sentiment, to trainData and trainLabel
-for j in range(202000,404401):
+for j in range(404401,490359):
     print(j)
     trainData.append(pre_processing_labelled_data(data[j][0]))
     trainLabel.append(data[j][1])
