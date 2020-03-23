@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 function About() {
   return (
     <Container>
-        
       <div className="aboutPage">
         <div className="bgimg-1">
           <img
@@ -52,7 +51,6 @@ function About() {
             </span>
           </div>
         </div>
-
         <div style={{ position: "relative" }}>
           <div className="descrip-2">
             <p>

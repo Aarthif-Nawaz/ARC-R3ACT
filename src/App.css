@@ -1,3 +1,4 @@
+/*All the font styles used in this website*/
 @font-face {
   font-family: "Proxima";
   src: local("Proxima"), url(./fonts/proxima.ttf) format("truetype");
@@ -11,10 +12,12 @@
   src: local("Wallington"), url(./fonts/wallington.ttf) format("truetype");
 }
 
+/* the ARC logo at the top left of every page*/
 .bugLogo {
   height: 7vw;
   width: auto;
 }
+
 body,
 html {
   margin: 0;
@@ -22,10 +25,13 @@ html {
   font-family: Proxima;
   color: black;
 }
+
+/*Styling for the About.js page*/
 .aboutPage {
   height: 100%;
   margin: 0;
 }
+/*descrip-1, descrip-2 and descrip-3 are the text written in the search for apps page*/
 .descrip-1 {
   color: #777;
   background-color: #fff;
@@ -46,6 +52,8 @@ html {
   text-align: center;
   text-align: justify;
 }
+
+/*the three background images used for the parallax effect*/
 .bgimg-1,
 .bgimg-2,
 .bgimg-3 {
@@ -67,7 +75,7 @@ html {
 .bgimg-3 {
   min-height: 400px;
 }
-
+/*styleing for the heading text - emphasis on the features of ARC*/
 .caption {
   position: absolute;
   left: 0;
@@ -85,6 +93,7 @@ html {
   letter-spacing: 10px;
 }
 
+/*all the h3 heading in the about.js section are style here*/
 h3 {
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -100,6 +109,8 @@ h3 {
     background-attachment: scroll;
   }
 }
+
+/*this is for the related review page*/
 .star {
   display: inline-block;
   padding: 3px;
@@ -112,6 +123,8 @@ h3 {
 .sentiment_box {
   color: white;
 }
+
+/*the main navigation bar*/
 .navbar {
   background-color: inherit;
   z-index: 1;
@@ -119,9 +132,7 @@ h3 {
   padding: 0px;
 }
 .navbar-brand {
-  /* padding:0px; */
   margin-right: 0px;
-
   height: auto;
   width: auto;
 }
@@ -208,6 +219,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.11);
 }
 
+/* the search button styling when not clicked*/
 .button {
   border: none;
   color: white;
@@ -216,6 +228,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-bottom: 18px;
   background: inherit;
 }
+
+/* the search bar styling during hover*/
 .button:hover {
   border: none;
   background: inherit;
@@ -223,12 +237,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 22px;
   color: #fff;
 }
-/*=====HOME PAGE=========*/
+/*syling for the HomePage.js - whihc is the video part of the searchapps.js*/
+
+/*the video will be inside this container */
 .introBox {
   padding-right: 0px;
   padding-left: 0px;
   position: relative;
 }
+
+/*Setting the video container to fit the browser window*/
 .video-container {
   position: relative;
   top: 0;
@@ -240,10 +258,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   overflow: hidden;
   z-index: 0;
 }
+
+/* width of video will exapnd through the browser window*/
 video {
   width: 100%;
 }
 
+/* this is the main heading - we analyse mobile app reviews*/
 .content {
   position: absolute;
   width: 100%;
@@ -257,10 +278,13 @@ video {
   color: #fff;
   text-shadow: 4px 4px black;
 }
+
 #header p {
   padding: 10px;
   margin: auto;
 }
+
+/*the search bar is placed inside this container*/
 .searchBar {
   width: 70%;
   padding: 10px;
@@ -273,6 +297,8 @@ video {
   color: #fff;
   border: none;
 }
+
+/*the input of the search bar is styled here*/
 .mb-3 {
   width: 100%;
   height: 70px;
@@ -281,6 +307,8 @@ video {
   border: solid 5px white;
   cursor: pointer;
 }
+
+/*the placeholder of the search bar is styled here*/
 .searchPlaceholder {
   width: 70%;
   border-radius: 100px;
@@ -293,18 +321,21 @@ video {
   font-weight: 900;
   color: #fff;
 }
-.searchPlaceholder:placeholder {
-  color: red;
-}
+
+/* when the search bar is clicked on to type something*/
 .searchPlaceholder:focus {
   color: white;
   background: inherit;
 }
+
+/*the button that allows you to scroll to About.js*/
 .scrollArrow {
   width: 10%;
   height: 60%;
   margin: auto;
 }
+
+/*the arrow image is style here*/
 .scrollArrow img {
   width: 100%;
   height: 70%;
