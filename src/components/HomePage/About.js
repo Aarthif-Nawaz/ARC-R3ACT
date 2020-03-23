@@ -14,8 +14,10 @@ function About() {
         </div>
       </div>
 
-      <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-        <h3 style="text-align:center;">How to use ARC?</h3>
+      {/* style={{color: '#777',background-color:white;text-align:center;padding:50px 80px;text-align: justify}} */}
+      <div style={{color:'#777',backgroundColor:'#fff',textAlign:'center',padding:50,textAlign:'justify'}}>
+      {/* style="text-align:center;" */}
+        <h3 style={{textAlign:'center'}}>How to use ARC?</h3>
         <p>
           Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
           posuere mollis ullamcorper libero ante lectus, blandit pellentesque a,
@@ -37,17 +39,20 @@ function About() {
           src={process.env.PUBLIC_URL + "/images/img_parallax2.jpg"}
         />
         <div class="caption">
+        {/* style="background-color:transparent;font-size:25px;color: #f7f7f7;" */}
           <span
             class="border"
-            style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+            style={{backgroundColor:'transparent',fontSize:'2vw',color:'#f7f7f7'}}
           >
             App review analysis in minutes, not days…
           </span>
         </div>
       </div>
 
-      <div style="position:relative;">
-        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      {/* style="position:relative;" */}
+      <div style={{position:'relative'}}>
+      {/* style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;" */}
+        <div style={{color:'#ddd',backgroundColor:'#282E34',textAlign:'center',padding:50,textAlign:'justify'}}>
           <p>
             See what app store reviews are about without lifting a finger. Make
             better, faster decisions about your product roadmap, based on the
@@ -62,17 +67,20 @@ function About() {
           src={process.env.PUBLIC_URL + "/images/img_parallax3.jpg"}
         />
         <div class="caption">
+        {/* style="background-color:transparent;font-size:25px;color: #f7f7f7;" */}
           <span
             class="border"
-            style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+            style={{backgroundColor:'transparent',fontSize:'2vw',color:'#f7f7f7'}}
           >
             …without losing sight of the big picture!
           </span>
         </div>
       </div>
 
-      <div style="position:relative;">
-        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+      {/* style="position:relative;" */}
+      <div style={{position:'relative'}}>
+      {/* style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;" */}
+        <div style={{color:'#ddd',backgroundColor:'#282E34',textAlign:'center',textAlign:'justify'}} >
           <p>
             ARC provides fully automated, easy-to-understand sentiment analysis
             for mobile app reviews. Measure trends in user sentiment, review
