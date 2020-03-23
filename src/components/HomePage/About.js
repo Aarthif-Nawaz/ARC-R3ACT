@@ -1,25 +1,97 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 
-function About(){
-    return(
-        <Container>
-            <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+function About() {
+  return (
+    <Container>
+      <div class="bgimg-1">
+        <img
+          alt="Background One"
+          src={process.env.PUBLIC_URL + "/images/img_parallax.jpg"}
+        />
+        <div class="caption">
+          <span class="border">Application Review Classifier</span>
+        </div>
+      </div>
 
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">How to use ARC?</h3>
+        <p>
+          Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
+          posuere mollis ullamcorper libero ante lectus, blandit pellentesque a,
+          magna turpis est sapien duis blandit dignissim. Viverra interdum mi
+          magna mi, morbi sociis. Condimentum dui ipsum consequat morbi,
+          curabitur aliquam pede, nullam vitae eu placerat eget et vehicula.
+          Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at,
+          sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque
+          risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend,
+          aenean maecenas vulputate, non id vehicula lorem mattis, ratione
+          interdum sociis ornare. Suscipit proin magna cras vel, non sit platea
+          sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.
+        </p>
+      </div>
 
+      <div class="bgimg-2">
+        <img
+          alt="Background Two"
+          src={process.env.PUBLIC_URL + "/images/img_parallax2.jpg"}
+        />
+        <div class="caption">
+          <span
+            class="border"
+            style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+          >
+            App review analysis in minutes, not days…
+          </span>
+        </div>
+      </div>
 
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+      <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+          <p>
+            See what app store reviews are about without lifting a finger. Make
+            better, faster decisions about your product roadmap, based on the
+            feedback and sentiment of real users.
+          </p>
+        </div>
+      </div>
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+      <div class="bgimg-3">
+        <img
+          alt="Background Three"
+          src={process.env.PUBLIC_URL + "/images/img_parallax3.jpg"}
+        />
+        <div class="caption">
+          <span
+            class="border"
+            style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+          >
+            …without losing sight of the big picture!
+          </span>
+        </div>
+      </div>
 
-Where can I get some?
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-            </p>
-        </Container>
-    )
+      <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+          <p>
+            ARC provides fully automated, easy-to-understand sentiment analysis
+            for mobile app reviews. Measure trends in user sentiment, review
+            volume and star rating over time so you can see what users think of
+            changes you make to your apps.
+          </p>
+        </div>
+      </div>
+
+      <div class="bgimg-1">
+        <img
+          alt="Background One"
+          src={process.env.PUBLIC_URL + "/images/img_parallax.jpg"}
+        />
+        <div class="caption">
+          <span class="border">Unlock your data with ARC!</span>
+        </div>
+      </div>
+    </Container>
+  );
 }
 export default About;

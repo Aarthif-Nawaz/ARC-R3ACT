@@ -11,18 +11,73 @@
   src: local("Wallington"), url(./fonts/wallington.ttf) format("truetype");
 }
 
-
 .bugLogo {
-  height: 9vw;
+  height: 7vw;
   width: auto;
 }
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Proxima;
   color: black;
+  height: 100%;
 }
 
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-1 {
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
 .star {
   display: inline-block;
   padding: 3px;
@@ -41,10 +96,10 @@ body {
   height: 100%;
   padding: 0px;
 }
-.navbar-brand{
+.navbar-brand {
   /* padding:0px; */
   margin-right: 0px;
-  
+
   height: auto;
   width: auto;
 }
@@ -58,58 +113,63 @@ body {
   right: 36px;
   top: 36px;
 }
- 
+
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: white;
 }
- 
+
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: black;
 }
- 
+
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   height: 24px;
   width: 24px;
 }
- 
+
 /* Color/shape of close button cross */
 .bm-cross {
   background: white;
 }
- 
+
 /*
 Sidebar wrapper styles
 Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
 .bm-menu-wrap {
-  background-color: #043b73; 
-  background-image: linear-gradient(to bottom right, #000B18, 	#00172D, #00264D, #02386E, #00498D, #0052A2);
+  background-color: #043b73;
+  background-image: linear-gradient(
+    to bottom right,
+    #000b18,
+    #00172d,
+    #00264d,
+    #02386e,
+    #00498d,
+    #0052a2
+  );
   position: fixed;
   height: 100%;
 }
- 
+
 /* General sidebar styles */
 .bm-menu {
-  
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
- 
+
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
- fill: url(#menugradient);
- 
+  fill: url(#menugradient);
 }
- 
+
 /* Wrapper for item list */
 .bm-item-list {
- 
   padding: 0.8em;
 }
- 
+
 /* Individual item */
 .bm-item {
   display: inline-block;
@@ -120,16 +180,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-decoration: none;
   color: white;
 }
- 
+
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.11);
 }
 
-
-
-
-.button{
+.button {
   border: none;
   color: white;
   font-size: 20px;
@@ -137,7 +194,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-bottom: 18px;
   background: inherit;
 }
-.button:hover{
+.button:hover {
   border: none;
   background: inherit;
   font-weight: 900;
@@ -145,11 +202,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: #fff;
 }
 /*=====HOME PAGE=========*/
-.introBox{
-  padding-right: 0px; 
+.introBox {
+  padding-right: 0px;
   padding-left: 0px;
- position: relative;
-  
+  position: relative;
 }
 .video-container {
   position: relative;
@@ -158,73 +214,52 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 100%;
   height: 100%;
   padding-right: 0px;
-    padding-left: 0px;
+  padding-left: 0px;
   overflow: hidden;
   z-index: 0;
 }
-video{
-  width:100%;
-  
-}
-/* .video-container video {
-  /* Make video to at least 100% wide and tall 
-  min-width: 100%;
-  min-height: 100%;
-
-  /* Setting width & height to auto prevents the browser from stretching or squishing the video 
-  width: auto;
-  height: auto;
-
-  /* Center the video 
-  
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-} */
-.content {
- position: absolute;
+video {
   width: 100%;
-  top: 35%;
- margin: auto;
-  
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  margin: auto;
   z-index: 1;
   font-family: Wallington;
   font-weight: 900;
-  font-size: 5vw;
+  font-size: 4.8vw;
   letter-spacing: 2px;
   color: #fff;
   text-shadow: 4px 4px black;
 }
-#header p{
-  
+#header p {
   padding: 10px;
   margin: auto;
-  
 }
-.searchBar{
-  width:60%;
+.searchBar {
+  width: 70%;
   padding: 10px;
   margin: auto;
+  margin-top: 50px;
   position: relative;
   display: flex;
   font-family: Proxima;
-  font-size: 50px;
- 
- 
+  font-size: 40px;
   color: #fff;
   border: none;
 }
-.mb-3{
+.mb-3 {
   width: 100%;
   height: 70px;
   text-align: center;
   border-radius: 100px;
   border: solid 5px white;
   cursor: pointer;
-  
 }
-.searchPlaceholder{
+.searchPlaceholder {
   width: 70%;
   border-radius: 100px;
   background: inherit;
@@ -232,23 +267,23 @@ video{
   padding-bottom: 18px;
   height: 120%;
   outline: none;
-  font-size: 2vw;
+  font-size: 1.2vw;
   font-weight: 900;
   color: #fff;
 }
 .searchPlaceholder:placeholder {
   color: red;
 }
-.searchPlaceholder:focus{
+.searchPlaceholder:focus {
   color: white;
   background: inherit;
 }
-.scrollArrow{
+.scrollArrow {
   width: 10%;
   height: 60%;
   margin: auto;
 }
-.scrollArrow img{
+.scrollArrow img {
   width: 100%;
   height: 70%;
 }

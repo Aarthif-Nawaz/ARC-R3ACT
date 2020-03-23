@@ -30,7 +30,7 @@ return(
                 <div className="content" >
                     <SearchApps/>
                     <Row>
-                    <button className="scrollArrow" onClick={handleOnClick}><img alt="Arrow Down Icon" src={process.env.PUBLIC_URL + "/images/arrowDown.jpg"}/></button>   
+                    <button className="scrollArrow" onClick={handleOnClick}><img alt="Arrow Down Icon" src={process.env.PUBLIC_URL + "/images/arrowDown.png"}/></button>   
                     </Row>
                     
                 </div>
