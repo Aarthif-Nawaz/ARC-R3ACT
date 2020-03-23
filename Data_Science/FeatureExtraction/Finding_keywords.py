@@ -5,7 +5,7 @@
 # output - gives the keywords of each categorized reviews
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from Clustering.Cluster_reviews import clustered_feature_reqs,clustered_bug_fixes
+from Categorise import clustered_feature_reqs,clustered_bug_fixes
 
 from pandas.core.frame import DataFrame
 import pandas as pd
@@ -40,7 +40,7 @@ def find_keywords(clusterd_corpus):
     # gets reviews in an aray
     corpus = clusterd_corpus
 
-    vectorizer = TfidfVectorizer(max_df=0.85, max_features=10000)
+    vectorizer = TfidfVectorizer(max_df=0.85, max_features=100)
     tf_idf_vector = vectorizer.fit_transform(corpus)
     features = vectorizer.get_feature_names()
 
@@ -58,7 +58,7 @@ def find_keywords(clusterd_corpus):
         sorted_features = sort_matrix(tf_idf_vector.tocoo())
 
         # take out the only the topn features; here n=10
-        keywords = extract_topn_features_from_vector(features, sorted_features, 20)
+        keywords = extract_topn_features_from_vector(features, sorted_features, 10)
 
         # print("\n===Keywords===")
         words = []
