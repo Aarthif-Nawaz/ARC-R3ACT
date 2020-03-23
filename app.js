@@ -4,7 +4,7 @@ Author: Shiromi Thevarajan
 IIT ID: 2018117
 
 Dependencies: express, cookie-parser
-Run 'npm install' before 'npm start'
+Run 'npm install' before 'npm start' or 'nodemon start'
 */
 
 var createError = require('http-errors');
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/database', databaseRouter);
+app.use('/api', databaseRouter);
 app.use('/reviews', reviewsRouter);
 
 // catch 404 and forward to error handler
