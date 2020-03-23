@@ -21,9 +21,31 @@ html {
   padding: 0;
   font-family: Proxima;
   color: black;
-  height: 100%;
 }
-
+.aboutPage {
+  height: 100%;
+  margin: 0;
+}
+.descrip-1 {
+  color: #777;
+  background-color: #fff;
+  text-align: center;
+  padding: 50;
+  text-align: justify;
+}
+.descrip-2 {
+  color: #ddd;
+  background-color: #282e34;
+  text-align: center;
+  padding: 50;
+  text-align: justify;
+}
+.descrip-3 {
+  color: #ddd;
+  background-color: #282e34;
+  text-align: center;
+  text-align: justify;
+}
 .bgimg-1,
 .bgimg-2,
 .bgimg-3 {
