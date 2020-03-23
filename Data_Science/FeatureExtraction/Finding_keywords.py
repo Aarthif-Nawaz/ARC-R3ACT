@@ -1,11 +1,11 @@
 #Author - N.W.R.Amasha
-#Last modified Date - 3/23/2019 10:49 A.M
+#Last modified Date - 3/1/2019 10:49 A.M
 
 # Finding keywords with feature extraction
 # output - gives the keywords of each categorized reviews
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from Categorise import clustered_bug_fixes,clustered_feature_reqs
+from Clustering.Cluster_reviews import clustered_feature_reqs,clustered_bug_fixes
 
 from pandas.core.frame import DataFrame
 import pandas as pd
@@ -40,7 +40,7 @@ def find_keywords(clusterd_corpus):
     # gets reviews in an aray
     corpus = clusterd_corpus
 
-    vectorizer = TfidfVectorizer(max_df=0.85, max_features=100)
+    vectorizer = TfidfVectorizer(max_df=0.85, max_features=10000)
     tf_idf_vector = vectorizer.fit_transform(corpus)
     features = vectorizer.get_feature_names()
 
@@ -58,7 +58,7 @@ def find_keywords(clusterd_corpus):
         sorted_features = sort_matrix(tf_idf_vector.tocoo())
 
         # take out the only the topn features; here n=10
-        keywords = extract_topn_features_from_vector(features, sorted_features, 10)
+        keywords = extract_topn_features_from_vector(features, sorted_features, 20)
 
         # print("\n===Keywords===")
         words = []
@@ -80,7 +80,7 @@ def find_BugFixes():
     key_list=find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("bug_fix_results.csv")
+    df.to_csv("CSVFiles/bug_fix_results.csv")
     # print("check bug_fix_results.csv for bug fixes")
 
 def find_FeatureRequests():
@@ -89,8 +89,5 @@ def find_FeatureRequests():
     key_list = find_keywords(result[0])
     df['KeyWords'] = key_list
     df['text'] = result[1]
-    df.to_csv("feature_request_result.csv")
+    df.to_csv("CSVFiles/feature_request_result.csv")
     # print("check feature_request_result.csv for feature requests")
-
-find_BugFixes()
-find_FeatureRequests()
