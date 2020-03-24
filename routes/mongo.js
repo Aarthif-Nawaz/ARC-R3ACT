@@ -8,7 +8,7 @@ Dependencies: MongoClient
 const MongoClient = require("mongodb").MongoClient;
 
 const uri =
-  "mongodb+srv://User:1234@r3act-rludw.mongodb.net/Safiyyah_ARC?retryWrites=true&w=majority";
+  "mongodb+srv://User:1234@r3act-rludw.mongodb.net/arc?retryWrites=true&w=majority";
 
 var client = new MongoClient(uri, {
   useNewUrlParser: true,
