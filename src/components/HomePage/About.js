@@ -5,18 +5,14 @@ function About() {
   return (
     <Container>
       <div class="bgimg-1">
-        <img
-          alt="Background One"
-          src={process.env.PUBLIC_URL + "/images/img_parallax.jpg"}
-          style={{width:'100%',height:'100%'}}
-        />
+     
         <div class="caption">
           <span class="border">Application Review Classifier</span>
         </div>
       </div>
 
       
-      <div style={{color:'#777',backgroundColor:'#fff',textAlign:'center',padding:50,textAlign:'justify'}}>
+      <div className="descrip-1">
      
         <h3 style={{textAlign:'center'}}>How to use ARC?</h3>
         <p>
@@ -35,11 +31,7 @@ function About() {
       </div>
 
       <div class="bgimg-2">
-        <img
-          alt="Background Two"
-          src={process.env.PUBLIC_URL + "/images/img_parallax2.jpg"}
-          style={{width:'100%',height:'100%'}}
-        />
+     
         <div class="caption">
           <span
             class="border"
@@ -53,7 +45,7 @@ function About() {
      
       <div style={{position:'relative'}}>
      
-        <div style={{color:'#ddd',backgroundColor:'#282E34',textAlign:'center',padding:50,textAlign:'justify'}}>
+        <div className="descrip-2">
           <p>
             See what app store reviews are about without lifting a finger. Make
             better, faster decisions about your product roadmap, based on the
@@ -63,11 +55,7 @@ function About() {
       </div>
 
       <div class="bgimg-3">
-        <img
-          alt="Background Three"
-          src={process.env.PUBLIC_URL + "/images/img_parallax3.jpg"}
-          style={{width:'100%',height:'100%'}}
-        />
+      
         <div class="caption">
         
           <span
@@ -82,7 +70,7 @@ function About() {
     
       <div style={{position:'relative'}}>
       
-        <div style={{color:'#ddd',backgroundColor:'#282E34',textAlign:'center',textAlign:'justify'}} >
+        <div className="descrip-3" >
           <p>
             ARC provides fully automated, easy-to-understand sentiment analysis
             for mobile app reviews. Measure trends in user sentiment, review
@@ -93,11 +81,7 @@ function About() {
       </div>
 
       <div class="bgimg-1">
-        <img
-          alt="Background One"
-          src={process.env.PUBLIC_URL + "/images/img_parallax.jpg"}
-          style={{width:'100%',height:'100%'}}
-        />
+   
         <div class="caption">
           <span class="border">Unlock your data with ARC!</span>
         </div>

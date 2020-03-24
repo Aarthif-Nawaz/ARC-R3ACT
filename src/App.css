@@ -65,15 +65,18 @@ html {
   background-size: cover;
 }
 .bgimg-1 {
-  /* min-height: 100%; */
+  min-height: 100%;
+  background-image: url("/images/img_parallax.jpg");
 }
 
 .bgimg-2 {
   min-height: 400px;
+  background-image: url("/images/img_parallax2.jpg");
 }
 
 .bgimg-3 {
   min-height: 400px;
+  background-image: url("/images/img_parallax3.jpg");
 }
 /*styleing for the heading text - emphasis on the features of ARC*/
 .caption {
