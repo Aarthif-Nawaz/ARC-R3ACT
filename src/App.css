@@ -65,7 +65,7 @@ html {
   background-size: cover;
 }
 .bgimg-1 {
-  min-height: 100%;
+  /* min-height: 100%; */
 }
 
 .bgimg-2 {
@@ -106,7 +106,13 @@ h3 {
   .bgimg-1,
   .bgimg-2,
   .bgimg-3 {
-    background-attachment: scroll;
+    /* background-attachment: scroll; */
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
