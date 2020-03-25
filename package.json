@@ -10,14 +10,11 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "google-play-scraper": "^7.1.2",
     "http-errors": "~1.6.3",
-    "mongodb": "^3.5.4",
-    "mongoose": "^5.9.3",
+    "mongodb": "^3.5.5",
     "morgan": "~1.9.1",
-    "pug": "^2.0.4",
     "request": "^2.88.2"
   },
-  "devDependencies": {
-    "google-play-scraper": "^7.1.2"
-  }
+  "devDependencies": {}
 }
