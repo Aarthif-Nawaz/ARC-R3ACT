@@ -16,5 +16,8 @@
     "morgan": "~1.9.1",
     "pug": "^2.0.4",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "google-play-scraper": "^7.1.2"
   }
 }

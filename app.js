@@ -3,7 +3,7 @@ This file handles all the routes.
 Author: Shiromi Thevarajan
 IIT ID: 2018117
 
-Dependencies: express, cookie-parser
+Dependencies: express, cookie-parser, cors
 Run 'npm install' before 'npm start' or 'nodemon start'
 */
 
@@ -17,6 +17,7 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var databaseRouter = require('./routes/database');
 var reviewsRouter = require('./routes/reviews');
+var searchRouter = require('./routes/search');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api', databaseRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

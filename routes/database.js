@@ -11,13 +11,6 @@ const router = express.Router();
 const client = require("./mongo").client;
 const ObjectID = require('mongodb').ObjectID;
 
-// {
-// 	"userName": "User",
-// 	"date": "PyMongo 101-A6",
-// 	"text": "User",
-// 	"version": "1001.21.32"
-// }
-
 var db;
 
 client.connect(err => {
