@@ -10,12 +10,10 @@ const express = require("express");
 const router = express.Router();
 var gplay = require("google-play-scraper");
 
-// let arrayOfObjects = [{ x: 1, y: 2 }, { x: 3, y: 4 }];
-// arrayOfObjects[1].y === 4;
+// display apps similar to the app name entered by the user
 router.get("/:name", (request, response) => {
   var numOfApps = 5;
   var appArray = [];
-  appIdArray = [];
   gplay
     .search({
       term: request.params.name,
@@ -27,7 +25,7 @@ router.get("/:name", (request, response) => {
       if (result === undefined || result.length == 0) {
         response.send("No results for " + request.params.name);
       } else {
-        for (var i = 0; i < numOfApps; i++) {
+        for (var i in result) {
           var title = result[i].title;
           var appId = result[i].appId;
           var developer = result[i].developer;
@@ -36,7 +34,7 @@ router.get("/:name", (request, response) => {
           var installs = result[i].installs;
           var rating = result[i].scoreText;
           var price = result[i].priceText;
-          appArray.push([
+          appArray.push({
             title,
             appId,
             developer,
@@ -45,11 +43,30 @@ router.get("/:name", (request, response) => {
             installs,
             rating,
             price
-          ]);
+          });
         }
         response.send(appArray);
       }
     });
+});
+
+// suggest app names similar to the app name entered by the user
+router.get("/suggest/:name", (request, response) => {
+  var appArray = [];
+  gplay
+    .suggest({
+      term: request.params.name
+    })
+    // .then(console.log);
+    .then(result => {
+      if (result === undefined || result.length == 0) {
+        response.send("No results for " + request.params.name);
+      } else {
+          appArray.push(result);
+        }
+        response.send(appArray);
+      }
+    );
 });
 
 module.exports = router;
