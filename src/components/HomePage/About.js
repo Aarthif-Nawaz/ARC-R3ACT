@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 
 function About() {
   return (
-    <Container>
+    <Container fluid>
       <div class="bgimg-1">
      
         <div class="caption">

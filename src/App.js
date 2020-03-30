@@ -8,9 +8,9 @@ import FeatureRequest from './components/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment';
 import ViewAllReviews from './components/ViewReviews';
 import NavBar from './components/Navbar';
-
 import LoadingBox from './components/LoadingBox';
-import HomePage from './components/HomePage/HomePage'
+import HomePage from './components/HomePage/HomePage';
+import ErrorCrash from './components/ErrorPage/Crashed';
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
             <Route path="/featureRequest" component={FeatureRequest}/>
             <Route path="/overallSentiment" component={OverallSentiment}/>
             <Route path="/allReviews" component={ViewAllReviews}/>
+            <Route path="/error" exact component={ErrorCrash}/>
         </Switch>
       </div>
       
