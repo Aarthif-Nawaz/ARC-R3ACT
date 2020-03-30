@@ -18,7 +18,7 @@ client.connect(err => {
     console.log("Error has occured while connecting to database: ", err);
   }
   db = client.db("arc");
-  console.log("Connected to database.");
+  console.log("Connected to database - database.js.");
   // client.close();
 });
 

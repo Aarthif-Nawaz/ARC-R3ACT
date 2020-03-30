@@ -17,20 +17,20 @@ client.connect(err => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("arc");
-  console.log("Connected to database.");
+  db = client.db("Safiyyah_ARC");
+  console.log("Connected to database - Reviews.");
   // client.close();
 });
 
 // retrieve reviews of the app entered by the user
 router.get("/:appId", (request, response) => {
-  db.collection("MobileAppReviews").removeMany({}, (error, result) => {
+  db.collection("Reviews").removeMany({}, (error, result) => {
     if (error) {
       return response.status(500).send(error);
     }
   });
 
-  var numOfReviews = 100;
+  var numOfReviews = 10000;
   var reviewArray = [];
   gplay
     .reviews({
@@ -41,18 +41,21 @@ router.get("/:appId", (request, response) => {
     })
     //   .then(console.log, console.log);
     .then(result => {
+      var index=0;
       for (var i in result) {
+        index++;
+        var _id=index.toString();
         var userName = result[i].userName;
         var date = result[i].date;
         var text = result[i].text;
         var version = result[i].version;
         var rating = result[i].scoreText;
         var thumbsUp = result[i].thumbsUp;
-        reviewArray.push({ userName, date, text, version, rating, thumbsUp });
+        reviewArray.push({ _id,userName, date, text, version, rating, thumbsUp });
       }
       response.send(reviewArray);
       
-      db.collection("MobileAppReviews").insertMany(
+      db.collection("Reviews").insertMany(
         reviewArray,
         (error, result) => {
           if (error) {

@@ -19,6 +19,7 @@ var databaseRouter = require('./routes/database');
 var reviewsRouter = require('./routes/reviews');
 var searchRouter = require('./routes/search');
 var appDetailsRouter = require('./routes/appDetails');
+var keyWordsRouter  = require('./routes/catergorizeReviews');
 var app = express();
 
 // view engine setup
@@ -37,6 +38,7 @@ app.use('/api', databaseRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/search', searchRouter);
 app.use('/app', appDetailsRouter);
+app.use('/keywords', keyWordsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
