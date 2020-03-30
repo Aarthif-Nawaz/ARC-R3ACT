@@ -1,45 +1,66 @@
 /* 
-This file retrieves reviews using external API call and saves them to the database.
+This file retrieves reviews using google-play-scraper and saves them to the database.
 Author: Shiromi Thevarajan
 IIT ID: 2018117
 
-Dependencies: express, request
+Dependencies: express, google-play-scraper
 */
 
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var request = require('request');
+var gplay = require("google-play-scraper");
+const client = require("./mongo").client;
 
-router.get("/:appName", async (req, res) => {
-    request({
-        uri: 'http://localhost:3000/api/apps/' + req.params.appName + '/reviews?num=1000',
-    }).pipe(res);
+var db;
+
+client.connect(err => {
+  if (err) {
+    console.log("Error has occured while connecting to database: ", err);
+  }
+  db = client.db("arc");
+  console.log("Connected to database.");
+  // client.close();
 });
 
-// router.post("/:appName", async (req, res) => {
-//     request({
-//         uri: 'http://localhost:3000/api/apps/' + req.params.appName + '/reviews?num=10',
-//     }).pipe(res);
+// retrieve reviews of the app entered by the user
+router.get("/:appId", (request, response) => {
+  db.collection("MobileAppReviews").removeMany({}, (error, result) => {
+    if (error) {
+      return response.status(500).send(error);
+    }
+  });
 
-
-//     // validation
-//     if (!req.body.userName || !req.body.date || !req.body.text || !req.body.version) {
-//         return res.status(400).send("Required values are not set.");
-//     }
-
-//     try {
-//         let review = new Review ({
-//             userName: req.body.userName,
-//             date: req.body.date,
-//             text: req.body.text,
-//             version: req.body.version,
-//         });
-
-//         review = await review.save();
-//         return res.write(review);
-//     } catch(e) {
-//         return res.status(500).send(e.message);
-//     }
-// });
+  var numOfReviews = 100;
+  var reviewArray = [];
+  gplay
+    .reviews({
+      appId: request.params.appId,
+      sort: gplay.sort.NEWEST,
+      num: numOfReviews,
+      lang: "en"
+    })
+    //   .then(console.log, console.log);
+    .then(result => {
+      for (var i in result) {
+        var userName = result[i].userName;
+        var date = result[i].date;
+        var text = result[i].text;
+        var version = result[i].version;
+        var rating = result[i].scoreText;
+        var thumbsUp = result[i].thumbsUp;
+        reviewArray.push({ userName, date, text, version, rating, thumbsUp });
+      }
+      response.send(reviewArray);
+      
+      db.collection("MobileAppReviews").insertMany(
+        reviewArray,
+        (error, result) => {
+          if (error) {
+            return response.status(500).send(error);
+          }
+        }
+      );
+    });
+});
 
 module.exports = router;
