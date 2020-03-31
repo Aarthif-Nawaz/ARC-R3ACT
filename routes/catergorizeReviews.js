@@ -39,6 +39,20 @@ router.get("/featrequests", (request, response) => {
     });
 
 });
+
+router.get("/common", (request, response) => {
+    console.log("Entered0");
+    db.collection("Reviews").find({ cluster: "Common" }).toArray((err, result) => {
+        if (err) {
+            return response.status(500).send("error");
+        } else {
+            response.send(result)
+        }
+    });
+
+});
+
+
 // }
 
 module.exports = router;

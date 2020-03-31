@@ -17,14 +17,14 @@ client.connect(err => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("Safiyyah_ARC");
+  db = client.db("arc");
   console.log("Connected to database - Reviews.");
   // client.close();
 });
 
 // retrieve reviews of the app entered by the user
 router.get("/:appId", (request, response) => {
-  db.collection("Reviews").removeMany({}, (error, result) => {
+  db.collection("MobileAppReviews").removeMany({}, (error, result) => {
     if (error) {
       return response.status(500).send(error);
     }
@@ -55,7 +55,7 @@ router.get("/:appId", (request, response) => {
       }
       response.send(reviewArray);
       
-      db.collection("Reviews").insertMany(
+      db.collection("MobileAppReviews").insertMany(
         reviewArray,
         (error, result) => {
           if (error) {
