@@ -28,6 +28,17 @@ router.get("/bugfixes", (request, response) => {
     });
 
 });
+router.get("/featrequests", (request, response) => {
+    console.log("Entered0");
+    db.collection("Reviews").find({ cluster: "Feature Request" }).toArray((err, result) => {
+        if (err) {
+            return response.status(500).send("error");
+        } else {
+            response.send(result)
+        }
+    });
+
+});
 // }
 
 module.exports = router;
