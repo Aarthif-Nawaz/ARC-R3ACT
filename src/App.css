@@ -284,9 +284,10 @@ video {
   top: 25%;
   margin: auto;
   z-index: 1;
-  font-weight: 500;
-  font-size: 3.2vw;
+  font-weight: 900;
+  font-size: 3.3vw;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 5px;
   color: #fff;
   text-shadow: 3px 3px black;
@@ -376,7 +377,7 @@ video {
 }
 .go_back_button_group button{
  
-  margin:auto;
-  margin-top:8%;
+margin:auto;
+margin-top:8%;
 display: block;
 }
