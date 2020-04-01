@@ -80,7 +80,7 @@ def preprocessing_fe(notProcessedText):
             # remove stop words
             if (
                     token.pos_ == "INTJ" or token.is_stop or token.pos_ == 'NUM' or edit.lower() == "very" or edit.lower() == "ok") and (
-                    edit.lower() != "not" and edit.lower() == "no"):
+                    edit.lower() != "not" and edit.lower() != "no"):
                 flag = False
                 # append tokens edited and not removed to list
             if edit != "" and flag:
