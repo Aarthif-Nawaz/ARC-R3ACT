@@ -12,7 +12,7 @@ function Review(props){
             <p>Author Name : {props.author}</p>
             <p>Date : {props.date}</p>
             
-            <div className="star">{[...Array(props.score)].map(( i =>(
+            <div className="star">{[...Array(Number(props.score))].map(( i =>(
                 <label key={i+1}>★</label>
             )))} 
             </div>

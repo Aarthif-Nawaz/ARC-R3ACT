@@ -133,7 +133,8 @@ h3 {
   transition: color 0.2s ease-out;
 }
 .sentiment_box {
-  color: white;
+  color: rgba(31, 28, 28, 0.89)
+  
 }
 
 /*the main navigation bar*/
