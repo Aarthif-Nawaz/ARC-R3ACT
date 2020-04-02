@@ -1,16 +1,16 @@
 import React from 'react';
-import MenuBox from './components/MenuBox';
+import MenuBox from './components/Menu/MenuBox';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import BugFix from './components/BugFix';
-import FeatureRequest from './components/FeatureRequest';
-import OverallSentiment from './components/OverallSentiment';
-import ViewAllReviews from './components/ViewReviews';
-import NavBar from './components/Navbar';
-import LoadingBox from './components/LoadingBox';
-import HomePage from './components/HomePage/HomePage';
-import ErrorCrash from './components/ErrorPage/Crashed';
+import BugFix from './components/BugFix_FeatureReq/BugFix';
+import FeatureRequest from './components/BugFix_FeatureReq/FeatureRequest';
+import OverallSentiment from './components/OverallSentiment/OverallSentiment';
+import ViewAllReviews from './components/Review/ViewReviews';
+import NavBar from './components/NavigationBar/Navbar';
+import LoadingBox from './components/Error/LoadingBox';
+import HomePage from './components/Home/HomePage';
+import ErrorCrash from './components/Error/Crashed';
 
 function App() {
   return (

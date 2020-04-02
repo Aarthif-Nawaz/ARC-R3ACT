@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { elastic as Menu } from "react-burger-menu";
-import "../App.css";
+import "../../App.css";
 
 function NavBar() {
   return (
