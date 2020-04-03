@@ -2,6 +2,7 @@
 var express = require("express");
 var router = express.Router();
 const client = require("./mongo").client;
+var tcom = require('thesaurus-com');
 var db;
 
 client.connect(err => {
@@ -23,7 +24,17 @@ router.get("/bugfixes", (request, response) => {
         if (err) {
             return response.status(500).send("error");
         } else {
-            response.send(result)
+            bugFix1=result[0];
+            // console.log(bugFix1);
+            bugFix1Keywords=bugFix1.keywords;
+            console.log(bugFix1Keywords);
+            for (let index = 0; index < bugFix1Keywords.length; index++) {
+                const element = bugFix1Keywords[index];
+                console.log(element);
+            }
+            console.log(tcom.search("always"));  
+            response.send(result);
+
         }
     });
 

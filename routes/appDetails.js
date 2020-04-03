@@ -19,14 +19,14 @@ client.connect(err => {
   if (err) { // If there is an error in the Connection Log out the error
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("arc"); // Get the name of the Database and store it onto the db variable
-  console.log("Connected to database."); // If Successfully Connected to the database
+  db = client.db("Safiyyah_ARC"); // Get the name of the Database and store it onto the db variable
+  console.log("Connected to database - app Details."); // If Successfully Connected to the database
   // client.close();
 });
 var query = "" // Query to delete the needed appDetails from the Database 
 // retrieve reviews of the app entered by the user
 router.get("/:appId", (request, response) => { // Using the router module to get the request of the call from the frontend
-  db.collection("MobileAppDetails").deleteMany({query}, (error, result) => { // Remove all the past mobileAppDetails and only store the current
+  db.collection("MobileApplicationDetails").deleteMany({query}, (error, result) => { // Remove all the past mobileAppDetails and only store the current
     if (error) {
       return response.status(500).send(error);
     }
@@ -41,7 +41,8 @@ router.get("/:appId", (request, response) => { // Using the router module to get
     })
     //   .then(console.log, console.log);
     .then(result => { // Get the result and using a variable called "result" , get all the other details
-      var title = result.title;
+    var _id="1"; 
+    var title = result.title;
       var summary = result.summary;
       var installs = result.installs;
       var scoreText = result.scoreText;
@@ -51,6 +52,7 @@ router.get("/:appId", (request, response) => { // Using the router module to get
       var genre = result.genre;
       var icon = result.icon;
       detailsArray.push({ // Push them into the array
+        _id,
         title,
         summary,
         installs,
@@ -66,7 +68,7 @@ router.get("/:appId", (request, response) => { // Using the router module to get
         response.send(detailsArray); // Send the detailsArray back as a response to the Server
         
         // Access the DB collection and insert the records
-        db.collection("MobileAppDetails").insertMany(
+        db.collection("MobileApplicationDetails").insertMany(
           detailsArray,
           (error, result) => {
             if (error) { // If it is unsuccessful , report the server timeout error into the web browser

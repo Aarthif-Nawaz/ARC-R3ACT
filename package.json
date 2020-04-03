@@ -14,7 +14,8 @@
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.5",
     "morgan": "~1.9.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "thesaurus-com": "^1.2.3"
   },
   "devDependencies": {}
 }
