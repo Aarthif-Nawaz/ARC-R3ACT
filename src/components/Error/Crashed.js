@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import '../../App.css';
 
-function CrashPage(){
+function CrashPage(props){
     return(
         <Container fluid className="error_div">
             <Container fluid className="error_crash_bg">
@@ -21,7 +21,7 @@ function CrashPage(){
                 </Col>
                   <Col className="error_content_headings">                   
                     <h1 style={{color:'#fff',fontSize:'10vw'}}>Oops!</h1>
-                    <h3 style={{color:'#fff',fontSize:'2vw'}}>404 PAGE NOT FOUND!</h3>                  
+                    <h3 style={{color:'#fff',fontSize:'2vw'}}>Error : {props.errorDet}</h3>                  
                  </Col>
               </Row>
               
@@ -34,7 +34,7 @@ function CrashPage(){
                         variant="outline-primary"
                         style={{fontSize:'1.5vh'}}
                         >
-                            Go Back
+                            Try Loading Again!
                     </Button>{' '}
                 </Col>
             </Row>

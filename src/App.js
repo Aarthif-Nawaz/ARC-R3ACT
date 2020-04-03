@@ -8,14 +8,14 @@ import FeatureRequest from './components/BugFix_FeatureReq/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment/OverallSentiment';
 import ViewAllReviews from './components/Review/ViewReviews';
 import NavBar from './components/NavigationBar/Navbar';
-import LoadingBox from './components/Error/LoadingBox';
 import HomePage from './components/Home/HomePage';
 import ErrorCrash from './components/Error/Crashed';
+import LoadingBox from './components/Error/LoadingBox';
 
 function App() {
   return (
     <Router>
-      <div>
+      {/* <div> */}
        
          <NavBar/>
           <Switch>
@@ -27,8 +27,9 @@ function App() {
             <Route path="/overallSentiment" component={OverallSentiment}/>
             <Route path="/allReviews" component={ViewAllReviews}/>
             <Route path="/error" exact component={ErrorCrash}/>
+            <Route path="/loading" exact component={LoadingBox}/>
         </Switch>
-      </div>
+      {/* </div> */}
       
     </Router>
   );

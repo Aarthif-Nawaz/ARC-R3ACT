@@ -1,6 +1,8 @@
 import React, { useEffect, useState  } from 'react';
 import Review from './Review';
 //import Container from 'react-bootstrap/Container';
+import LoadingBox from '../Error/LoadingBox';
+import ErrorPage from '../Error/Crashed';
 
 {/** 
         *{app Name} should change
@@ -31,9 +33,9 @@ function ViewAllReviews(){
     },[]);
 
     if(error){
-        return <div>Error:{error.message}</div>; {/*Error Page should render*/}
+        return <ErrorPage errorDet={error.message}/>;{/*Error Page should render*/}
     }else if(!isLoaded){
-        return <div>Loading...</div>;{/*Loading Page should render */}
+        return <LoadingBox/>;{/*Loading Page should render */}
     }else{
         return(
              <ul>
