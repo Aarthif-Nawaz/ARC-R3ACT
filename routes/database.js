@@ -9,11 +9,11 @@ Dependencies: express, mongodb
 const express = require("express");
 const router = express.Router();
 const client = require("./mongo").client;
-const ObjectID = require("mongodb").ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
 var db;
 
-client.connect((err) => {
+client.connect(err => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
@@ -60,24 +60,19 @@ router.post("/", (request, response) => {
 
 // POST with many objects
 router.post("/many", (request, response) => {
-  db.collection("MobileAppReviews").insertMany(
-    request.body,
-    (error, result) => {
-      if (error) {
-        return response.status(500).send(error);
-      }
-      response.send(result);
+  db.collection("MobileAppReviews").insertMany(request.body, (error, result) => {
+    if (error) {
+      return response.status(500).send(error);
     }
-  );
+    response.send(result);
+  });
 });
 
 // PUT
 router.put("/:id", (request, response) => {
   db.collection("MobileAppReviews").updateOne(
     { _id: new ObjectID(request.params.id) },
-    {
-      $set: { appName: request.body.appName, userName: request.body.userName },
-    },
+    { $set: { appName: request.body.appName, userName: request.body.userName } },
     { upsert: true },
     (error, result) => {
       if (error) {
