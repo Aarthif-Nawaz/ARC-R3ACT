@@ -18,13 +18,14 @@
   width: auto;
 }
 
-body,#root,
+body,
+#root,
 html {
   margin: 0;
   padding: 0;
   font-family: Proxima;
   color: black;
-  font:"Lato", sans-serif;
+  font: "Lato", sans-serif;
   height: 100%;
 }
 
@@ -40,22 +41,20 @@ html {
   background-color: #fff;
   text-align: center;
   padding: 50px;
-  
- 
 }
+
 .descrip-2 {
   color: #ddd;
   background-color: #282e34;
   text-align: center;
-  padding: 50px;
-  text-align: justify;
-
+  font-size: 23px;
+  padding: 5%;
 }
 .descrip-3 {
-  color: #ddd;
-  background-color: #282e34;
+  color: #000;
+  background-color: #fff;
   text-align: center;
-  text-align: justify;
+  font-size: 23px;
   padding: 50px;
 }
 
@@ -71,20 +70,57 @@ html {
   background-size: cover;
 }
 .bgimg-1 {
-  min-height: 500px;
+  min-height: 600px;
   background-image: url("/images/img_parallax.jpg");
 }
 
 .bgimg-2 {
-  min-height: 500px;
+  min-height: 600px;
   background-image: url("/images/img_parallax2.jpg");
 }
 
 .bgimg-3 {
-  min-height: 500px;
+  min-height: 600px;
   background-image: url("/images/img_parallax3.jpg");
 }
-/*styleing for the heading text - emphasis on the features of ARC*/
+
+/* Float four columns side by side */
+.columnCard {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.rowCard {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.rowCard:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/*styling for the heading text - emphasis on the features of ARC*/
 .caption {
   position: absolute;
   left: 0;
@@ -137,8 +173,7 @@ h3 {
   transition: color 0.2s ease-out;
 }
 .sentiment_box {
-  color: rgba(31, 28, 28, 0.89)
-  
+  color: rgba(31, 28, 28, 0.89);
 }
 
 /*the main navigation bar*/
@@ -147,7 +182,7 @@ h3 {
   z-index: 1;
   height: 100%;
   padding: 0px;
-  height:0px;
+  height: 0px;
 }
 .navbar-brand {
   margin-right: 0px;
@@ -358,30 +393,26 @@ video {
   height: 70%;
 }
 /*=======ERROR PAGE=======*/
-.error_div{
+.error_div {
   padding-right: 0;
   padding-left: 0;
   height: 100%;
 }
-.error_crash_bg{
+.error_crash_bg {
   background-color: #004688;
-  width:100%;
-  height:75%;
+  width: 100%;
+  height: 75%;
 }
 
-.error_content_headings{
- margin-top: 8%;;
-  
-  
+.error_content_headings {
+  margin-top: 8%;
 }
-.go_back_button_group{
- margin:0 auto;
- width:50%;
- 
+.go_back_button_group {
+  margin: 0 auto;
+  width: 50%;
 }
-.go_back_button_group button{
- 
-margin:auto;
-margin-top:8%;
-display: block;
+.go_back_button_group button {
+  margin: auto;
+  margin-top: 8%;
+  display: block;
 }
