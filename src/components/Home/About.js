@@ -5,23 +5,32 @@ function About() {
   return (
     <Container fluid>
       <div className="descrip-1">
-        <h3 style={{ textAlign: "center" }}>App review & ratings analysis for mobile teams</h3>
-        <p>
-          
+        <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
+          Application  Review  Classifier
+        </h3>
+        <p
+          style={{ paddingLeft: 250, paddingRight: 250, paddingBlockStart: 30 }}
+        >
+          ARC analyses user reviews from the Google Play Store and suggests bug
+          fixes, feature requests and the overall sentiment of a mobile
+          application. Join ARC today to address problems regarding your apps
+          and improve your customer experience. analyses user reviews from the
+          Google Play Store and suggests bug fixes, feature requests and the
+          overall sentiment of a mobile application.
         </p>
       </div>
 
       <div class="bgimg-1">
         <div class="caption">
-          <span class="border">Application Review Classifier</span>
+          <span class="border">
+            We provide app review & ratings analysis for mobile teams.
+          </span>
         </div>
       </div>
 
       <div className="descrip-1">
         <h3 style={{ textAlign: "center" }}>How to use ARC?</h3>
-        <p>
-       
-        </p>
+        <p></p>
       </div>
 
       <div class="bgimg-2">
@@ -31,7 +40,7 @@ function About() {
             style={{
               backgroundColor: "transparent",
               fontSize: "2vw",
-              color: "#f7f7f7"
+              color: "#f7f7f7",
             }}
           >
             App review analysis in minutes, not days…
@@ -56,7 +65,7 @@ function About() {
             style={{
               backgroundColor: "transparent",
               fontSize: "2vw",
-              color: "#f7f7f7"
+              color: "#f7f7f7",
             }}
           >
             …without losing sight of the big picture!
