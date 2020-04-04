@@ -22,10 +22,9 @@ client.connect(err => {
   console.log("Connected to database - app"); // If Successfully Connected to the database
   // client.close();
 });
-var query = "" // Query to delete the needed appDetails from the Database 
 // retrieve reviews of the app entered by the user
 router.get("/:appId", (request, response) => { // Using the router module to get the request of the call from the frontend
-  db.collection("MobileApplicationDetails").deleteMany({query}, (error, result) => { // Remove all the past mobileAppDetails and only store the current
+  db.collection("MobileApplicationDetails").deleteMany({}, (error, result) => { // Remove all the past mobileAppDetails and only store the current
     if (error) {
       return response.status(500).send(error);
     }
