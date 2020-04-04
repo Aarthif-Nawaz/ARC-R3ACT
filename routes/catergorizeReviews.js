@@ -10,7 +10,7 @@ client.connect(err => {
         console.log("Error has occured while connecting to database: ", err);
     }
     db = client.db("Safiyyah_ARC");
-    console.log("Connected to database - keywords");
+    console.log("Connected to Safiyyah_ARC.");
     // client.close();
 });
 // GET

@@ -1,9 +1,10 @@
-/*
+/* 
+This file retrieves app details using google-play-scraper and saves them to the database.
 Author: Aarthif Nawaz
 Purpose : This is the backend Skeleton to extract reviews from appDetails and store it onto mongodb
 IIT ID: 2017313
 
-Dependencies: express, mongodb, google-play-scraper
+Dependencies: express, google-play-scraper
 */
  
 // Required modules for the extraction of appDetails
@@ -19,7 +20,7 @@ client.connect(err => {
     console.log("Error has occured while connecting to database: ", err);
   }
   db = client.db("Safiyyah_ARC"); // Get the name of the Database and store it onto the db variable
-  console.log("Connected to database - app"); // If Successfully Connected to the database
+  console.log("Connected to database - app Details."); // If Successfully Connected to the database
   // client.close();
 });
 var query = "" // Query to delete the needed appDetails from the Database 
@@ -40,8 +41,8 @@ router.get("/:appId", (request, response) => { // Using the router module to get
     })
     //   .then(console.log, console.log);
     .then(result => { // Get the result and using a variable called "result" , get all the other details
-      var _id="1"; 
-      var title = result.title;
+    var _id="1"; 
+    var title = result.title;
       var summary = result.summary;
       var installs = result.installs;
       var scoreText = result.scoreText;
