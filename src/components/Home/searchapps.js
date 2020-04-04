@@ -19,7 +19,7 @@ function SearchApps() {
             </Row>
             <Row>
               <Container className="searchBar">
-                <InputGroup className="mb-3">
+                <InputGroup className="mb-3 searchInputGroup">
                   <FormControl
                     defaultValue="Search for a mobile app"
                     aria-label="search for a mobile app"

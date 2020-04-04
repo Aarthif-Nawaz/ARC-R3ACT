@@ -351,7 +351,7 @@ video {
 }
 
 /*the input of the search bar is styled here*/
-.mb-3 {
+.searchInputGroup{
   width: 100%;
   height: 70px;
   text-align: center;

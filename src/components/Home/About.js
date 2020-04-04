@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
+import Footer from "../NavigationBar/Footer";
 
 function About() {
   return (
@@ -22,7 +23,7 @@ function About() {
 
       <div class="bgimg-1">
         <div class="caption">
-          <span class="border">
+          <span className="border">
             We provide app review & ratings analysis for mobile teams.
           </span>
         </div>
@@ -68,8 +69,8 @@ function About() {
 
       <div style={{ position: "relative" }}>
         <div className="descrip-2">
-          <div class="rowCard">
-            <div class="columnCard">
+          <div class="row">
+            <div class="col d-flex align-items-stretch">
               <div class="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
                   Bug Fixes
@@ -91,7 +92,7 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="columnCard">
+            <div class="col d-flex align-items-stretch">
               <div class="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
                   Feature Requests
@@ -113,7 +114,7 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="columnCard">
+            <div class="col d-flex align-items-stretch">
               <div class="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
                   Overall Sentiment
@@ -183,44 +184,7 @@ function About() {
         </div>
       </div>
 
-      <footer class="page-footer font-small blue pt-4">
-        <div class="container-fluid text-center text-md-left">
-          <div class="row">
-            <div class="col-md-6 mt-md-0 mt-3">
-              <h5 class="text-uppercase">Application Review Classifier</h5>
-              <p>
-                Your one stop for real time application review analysis.
-              </p>
-            </div>
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-              <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Home</a>
-                  </li>
-                  <li>
-                    <a href="#!">About</a>
-                  </li>
-                  <li>
-                    <a href="#!">Contact</a>
-                  </li>
-                  <li>
-                    <a href="#!">Support</a>
-                  </li>
-                </ul>
-              </div>
-            </hr>
-          </div>
-
-          <div class="footer-copyright text-center py-3">
-            © 2020 Copyright:
-            <a href="!#"> applicationreviewclassifier.com</a>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </Container>
   );
 }
