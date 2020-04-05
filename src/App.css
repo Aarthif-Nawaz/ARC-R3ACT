@@ -43,13 +43,34 @@ html {
   padding: 50px;
 }
 
+.descrip-4 {
+  color: #000;
+  background-image: url("/images/reviews.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 23px;
+  padding: 50px;
+  font-weight: 700;
+}
+
+.descrip-5 {
+  color: #282e34;
+  background-color: #ddd;
+  font-size: 23px;
+  padding: 50px;
+  font-weight: 700;
+}
+
 /*the three background images used for the parallax effect*/
 .bgimg-1,
 .bgimg-2,
 .bgimg-3,
-.bgimg-4 {
+.bgimg-4,
+.bgimg-5 {
   position: relative;
-  opacity: 0.65;
+
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,21 +78,30 @@ html {
 }
 .bgimg-1 {
   min-height: 700px;
+  opacity: 0.65;
   background-image: url("/images/img_parallax4.jpg");
 }
 
 .bgimg-2 {
   min-height: 700px;
+  opacity: 0.65;
   background-image: url("/images/img_parallax.jpg");
 }
 
 .bgimg-3 {
   min-height: 700px;
+  opacity: 0.65;
   background-image: url("/images/img_parallax2.jpg");
 }
 .bgimg-4 {
   min-height: 700px;
+  opacity: 0.65;
   background-image: url("/images/img_parallax3.jpg");
+}
+.bgimg-5 {
+  min-height: 800px;
+
+  background-image: url("/images/reviews.jpg");
 }
 
 /* Float four columns side by side */
@@ -142,7 +172,8 @@ h3 {
   .bgimg-1,
   .bgimg-2,
   .bgimg-3,
-  .bgimg-4 {
+  .bgimg-4,
+  .bgimg-5 {
     /* background-attachment: scroll; */
     position: relative;
     opacity: 0.65;
@@ -343,7 +374,7 @@ video {
 }
 
 /*the input of the search bar is styled here*/
-.searchInputGroup{
+.searchInputGroup {
   width: 100%;
   height: 70px;
   text-align: center;
@@ -407,4 +438,24 @@ video {
   margin: auto;
   margin-top: 8%;
   display: block;
+}
+.MenuBoxPage {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+  z-index: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/images/img_parallax3.jpg");
+}
+.MenuBoxContainer {
+  margin: auto;
+  margin-top: 10%;
+  z-index: 1000;
 }

@@ -8,8 +8,10 @@ import Col from 'react-bootstrap/Col';
 
 function MenuBox(){
 return(
+    <Container fluid  className="MenuBoxPage">
     
-        <Container >
+        <Container className="MenuBoxContainer">
+            
             <Row>
                 <Col><Link to="/bugfix"><Card className='p-4 text-center'>Bug Fix</Card></Link></Col>
                 <Col><Link to="/featureRequest"><Card className='p-4 text-center'>Feature Request</Card></Link></Col>
@@ -17,7 +19,7 @@ return(
             </Row>
             
             
-    
+            </Container>
         </Container>
    
 );
