@@ -44,7 +44,7 @@ html {
 }
 
 .descrip-4 {
-  color: #000;
+  color: #fff;
   background-image: url("/images/reviews.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -68,9 +68,9 @@ html {
 .bgimg-2,
 .bgimg-3,
 .bgimg-4,
-.bgimg-5 {
+.bgimg-5,
+.bgimg-6 {
   position: relative;
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,10 +100,12 @@ html {
 }
 .bgimg-5 {
   min-height: 800px;
-
   background-image: url("/images/reviews.jpg");
 }
-
+.bgimg-6 {
+  min-height: 800px;
+  background-image: url("/images/laptop1.jpg");
+}
 /* Float four columns side by side */
 .columnCard {
   float: left;
@@ -176,7 +178,6 @@ h3 {
   .bgimg-5 {
     /* background-attachment: scroll; */
     position: relative;
-    opacity: 0.65;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -439,23 +440,34 @@ video {
   margin-top: 8%;
   display: block;
 }
-.MenuBoxPage {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  overflow: hidden;
-  z-index: 0;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/images/img_parallax3.jpg");
+.MenuBoxPage{
+  width: 60%;
+  margin-top: 5%;
+  float: left;
 }
 .MenuBoxContainer {
   margin: auto;
-  margin-top: 10%;
-  z-index: 1000;
+  float: left;
+  padding: 50px;
+}
+.menuIntro{
+  margin: auto;
+  float: left;
+  padding: 50px;
+  color: rgb(88, 87, 87);
+  font-size: 23px;
+}
+.p-4{
+  color:rgb(88, 87, 87);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.p-4:hover{
+  text-decoration: none;
+  background-color:rgb(88, 87, 87) ;
+  color: #fff;
 }

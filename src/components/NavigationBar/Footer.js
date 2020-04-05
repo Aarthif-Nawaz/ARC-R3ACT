@@ -45,7 +45,7 @@ function Footer() {
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 text-xl-left">
               <h6 class="text-uppercase" style={{fontSize:"1.5vw"}}>
-                Application Review Classifier
+                About ARC
               </h6>
               <hr
                 class="accent-2 mb-4 mt-0 d-inline-block mx-auto"
