@@ -8,11 +8,11 @@ import { faHome , faEnvelope , faPhone  } from '@fortawesome/free-solid-svg-icon
 function Footer() {
   return (
     <footer class="page-footer font-small unique-color-dark">
-      <div style={{ backgroundColor: "#6351ce" ,color:'#fff'}}>
+      <div style={{ backgroundColor: "#00498d" ,color:'#fff'}}>
         <div class="container">
           <div class="row py-4 d-flex align-items-center">
             <div class="col-md-6 col-lg-6 text-center text-md-left mb-4 mb-md-0">
-              <h6 class="mb-0">Get connected with us on social networks!</h6>
+              <h5 class="mb-0">Get connected with us on social networks!</h5>
             </div>
 
             <div class="col-md-6 col-lg-6 text-center text-md-right">
@@ -44,14 +44,14 @@ function Footer() {
           <div class="row pt-5">
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 text-xl-left">
-              <h6 class="text-uppercase font-weight-bold">
+              <h6 class="text-uppercase" style={{fontSize:"1.5vw"}}>
                 Application Review Classifier
               </h6>
               <hr
                 class="accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style={{ width: 60, backgroundColor:'#fff' }}
+                style={{ width: "60px", backgroundColor:'#fff' }}
               />
-              <p>
+              <p style={{textAlign:"justify"}}>
                 ARC analyses user reviews from the Google Play Store and
                 suggests bug fixes, feature requests and the overall sentiment
                 of a mobile app. Join ARC today to improve your customer
@@ -62,21 +62,21 @@ function Footer() {
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
               </div>
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-              <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+              <h6 class="text-uppercase" style={{fontSize:"1.5vw"}}>Explore</h6>
               <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px',backgroundColor:'#fff'}}/>
               <p>
-                <a href="#!">Home</a>
+                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Home</a>
               </p>
               <p>
-                <a href="#!">About</a>
+                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>About</a>
               </p>
               <p>
-                <a href="#!">Support</a>
+                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Support</a>
               </p>
             </div>
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 class="text-uppercase font-weight-bold">Contact</h6>
+              <h6 class="text-uppercase" style={{fontSize:"1.5vw"}}>Contact</h6>
               <hr
                 class=" accent-2 mb-4 mt-0 d-inline-block mx-auto"
                 style={{ width: 60, backgroundColor: "#fff" }}
@@ -97,7 +97,7 @@ function Footer() {
       <div style={{ backgroundColor: "#151b27", color: "white" }}>
         <div class="footer-copyright text-center py-3">
           © 2020 Copyright:
-          <a href="!#"> applicationreviewclassifier.com</a>
+          <a href="!#"style={{color:"#fff"}}> applicationreviewclassifier.com</a>
         </div>
       </div>
     </footer>

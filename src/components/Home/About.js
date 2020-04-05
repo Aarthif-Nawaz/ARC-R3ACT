@@ -178,7 +178,7 @@ function About() {
         </div>
       </div>
 
-      <div class="bgimg-1">
+      <div class="bgimg-4">
         <div class="caption">
           <span class="border">Unlock your data right now with ARC!</span>
         </div>
