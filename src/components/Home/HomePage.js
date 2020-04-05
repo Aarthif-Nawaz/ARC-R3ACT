@@ -30,11 +30,15 @@ function HomePage() {
 
             <div className="content">
               <SearchApps />
+              <p
+              style={{fontSize:"1.25vw", color:"#fff",paddingTop:110,fontWeight:700}}>Explore</p>
               <Row>
-                <button className="scrollArrow" onClick={handleOnClick}>
+                
+                <button className="scrollArrow" onClick={handleOnClick} style={{backgroundColor:"transparent", border:"none"}}>
                   <img
                     alt="Arrow Down Icon"
                     src={process.env.PUBLIC_URL + "/images/arrowDown.png"}
+                    style={{width:80, height:35}}
                   />
                 </button>
                

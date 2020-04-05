@@ -1,17 +1,3 @@
-/*All the font styles used in this website*/
-@font-face {
-  font-family: "Proxima";
-  src: local("Proxima"), url(./fonts/proxima.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Denver";
-  src: local("Denver"), url(./fonts/denver.ttf) format("truetype");
-}
-@font-face {
-  font-family: "Wallington";
-  src: local("Wallington"), url(./fonts/wallington.ttf) format("truetype");
-}
-
 /* the ARC logo at the top left of every page*/
 .bugLogo {
   height: 7vw;
@@ -23,7 +9,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: Proxima;
   color: black;
   font: "Lato", sans-serif;
   height: 100%;
@@ -71,22 +56,22 @@ html {
   background-size: cover;
 }
 .bgimg-1 {
-  min-height: 600px;
-  background-image: url("/images/img_parallax.jpg");
+  min-height: 700px;
+  background-image: url("/images/img_parallax4.jpg");
 }
 
 .bgimg-2 {
-  min-height: 600px;
-  background-image: url("/images/img_parallax2.jpg");
+  min-height: 700px;
+  background-image: url("/images/img_parallax.jpg");
 }
 
 .bgimg-3 {
-  min-height: 600px;
-  background-image: url("/images/img_parallax3.jpg");
+  min-height: 700px;
+  background-image: url("/images/img_parallax2.jpg");
 }
 .bgimg-4 {
-  min-height: 600px;
-  background-image: url("/images/img_parallax4.jpg");
+  min-height: 700px;
+  background-image: url("/images/img_parallax3.jpg");
 }
 
 /* Float four columns side by side */
@@ -330,10 +315,11 @@ video {
   margin: auto;
   z-index: 1;
   font-weight: 900;
-  font-size: 3.3vw;
+  font-size: 3.1vw;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 5px;
+  font-family: "Lato";
   color: #fff;
   text-shadow: 3px 3px black;
 }
