@@ -1,52 +1,55 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook , faTwitter , faLinkedin, faGooglePlus  , faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faHome , faEnvelope , faPhone  } from '@fortawesome/free-solid-svg-icons'
+
+
+
 function Footer() {
   return (
     <footer class="page-footer font-small unique-color-dark">
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
-      <div style={{ backgroundColor: "#6351ce" }}>
+      <div style={{ backgroundColor: "#6351ce" ,color:'#fff'}}>
         <div class="container">
           <div class="row py-4 d-flex align-items-center">
-            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <div class="col-md-6 col-lg-6 text-center text-md-left mb-4 mb-md-0">
               <h6 class="mb-0">Get connected with us on social networks!</h6>
             </div>
 
-            <div class="col-md-6 col-lg-7 text-center text-md-right">
-              <a class="fb-ic">
-                <i class="fab fa-facebook-f white-text mr-4"> </i>
+            <div class="col-md-6 col-lg-6 text-center text-md-right">
+              <a class="fb-ic mr-4">
+              <FontAwesomeIcon icon={faFacebook}/>
               </a>
 
-              <a class="tw-ic">
-                <i class="fab fa-twitter white-text mr-4"> </i>
+              <a class="tw-ic mr-4">
+              <FontAwesomeIcon icon={faTwitter}/>
               </a>
 
-              <a class="gplus-ic">
-                <i class="fab fa-google-plus-g white-text mr-4"> </i>
+              <a class="gplus-ic mr-4">
+              <FontAwesomeIcon icon={faGooglePlus}/>
               </a>
 
-              <a class="li-ic">
-                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+              <a class="li-ic mr-4">
+              <FontAwesomeIcon icon={faLinkedin}/>
               </a>
 
-              <a class="ins-ic">
-                <i class="fab fa-instagram white-text"> </i>
+              <a class="ins-ic mr-4">
+              <FontAwesomeIcon icon={faInstagram}/>
               </a>
             </div>
           </div>
         </div>
       </div>
       <div style={{ backgroundColor: "#1c2431", color: "white" }}>
-        <div class="container text-center text-md-left mt-5">
-          <div class="row mt-3">
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="container text-center text-md-left">
+          <div class="row pt-5">
+
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 text-xl-left">
               <h6 class="text-uppercase font-weight-bold">
                 Application Review Classifier
               </h6>
               <hr
-                class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style={{ width: 60 }}
+                class="accent-2 mb-4 mt-0 d-inline-block mx-auto"
+                style={{ width: 60, backgroundColor:'#fff' }}
               />
               <p>
                 ARC analyses user reviews from the Google Play Store and
@@ -56,12 +59,11 @@ function Footer() {
               </p>
             </div>
 
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+              </div>
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
               <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-              <hr
-                class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style={{ width: 60 }}
-              />
+              <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px',backgroundColor:'#fff'}}/>
               <p>
                 <a href="#!">Home</a>
               </p>
@@ -73,20 +75,20 @@ function Footer() {
               </p>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 class="text-uppercase font-weight-bold">Contact</h6>
               <hr
-                class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style={{ width: 60, color: "red" }}
+                class=" accent-2 mb-4 mt-0 d-inline-block mx-auto"
+                style={{ width: 60, backgroundColor: "#fff" }}
               />
               <p>
-                <i class="fas fa-home mr-3"></i> 244/3, Maharagama, Sri Lanka
+                <FontAwesomeIcon icon={faHome}/> 244/3, Maharagama, Sri Lanka
               </p>
               <p>
-                <i class="fas fa-envelope mr-3"></i> arc.r3act@gmail.com
+              <FontAwesomeIcon icon={faEnvelope}/> arc.r3act@gmail.com
               </p>
               <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+              <FontAwesomeIcon icon={faPhone}/> + 01 234 567 88
               </p>
             </div>
           </div>
