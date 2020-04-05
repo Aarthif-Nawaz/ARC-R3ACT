@@ -18,12 +18,12 @@ client.connect((err) => {
     console.log("Error has occured while connecting to database: ", err);
   }
   db = client.db("Safiyyah_ARC");
-  console.log("Connected to database - classify");
+  console.log("Connected to database - classified");
   // client.close();
 });
 
 // retrieve overall sentiment and other relevant details of the app entered by the user
-router.get("/sentiment", (request, response) => {
+router.get("/sentiment", async (request, response) => {
   var detailsArray = [];
 
   var title;
@@ -37,7 +37,7 @@ router.get("/sentiment", (request, response) => {
   var icon;
   var sentiment;
 
-  db.collection("MobileApplicationDetails").findOne(
+  await db.collection("MobileApplicationDetails").findOne(
     { _id: "1" },
     (error, result) => {
       if (error) {
@@ -71,11 +71,10 @@ router.get("/sentiment", (request, response) => {
   var fourStars = 0;
   var fiveStars = 0;
 
-  db.collection("Reviews")
+  await db.collection("Reviews")
     .find({})
     .toArray((error, result) => {
       if (error) {
-        console.log(error);
         return response.status(500).send(error);
       }
       for (var i in result) {

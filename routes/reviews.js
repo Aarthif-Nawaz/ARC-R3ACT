@@ -13,7 +13,7 @@ const client = require("./mongo").client;
 
 var db;
 
-client.connect(err => {
+client.connect((err) => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
@@ -23,38 +23,46 @@ client.connect(err => {
 });
 
 // retrieve reviews of the app entered by the user
-router.get("/:appId", (request, response) => {
-  db.collection("MobileAppReviews").removeMany({}, (error, result) => {
+router.get("/:appId", async (request, response) => {
+  await db.collection("MobileAppReviews").removeMany({}, (error, result) => {
     if (error) {
       return response.status(500).send(error);
     }
   });
 
-  var numOfReviews = 10000;
+  var noOfReviews = 10000;
   var reviewArray = [];
   gplay
     .reviews({
       appId: request.params.appId,
       sort: gplay.sort.NEWEST,
-      num: numOfReviews,
-      lang: "en"
+      num: noOfReviews,
+      lang: "en",
     })
     //   .then(console.log, console.log);
-    .then(result => {
-      var index=0;
+    .then((result) => {
+      var index = 0;
       for (var i in result) {
         index++;
-        var _id=index.toString();
+        var _id = index.toString();
         var userName = result[i].userName;
         var date = result[i].date;
         var text = result[i].text;
         var version = result[i].version;
         var rating = result[i].scoreText;
         var thumbsUp = result[i].thumbsUp;
-        reviewArray.push({ _id,userName, date, text, version, rating, thumbsUp });
+        reviewArray.push({
+          _id,
+          userName,
+          date,
+          text,
+          version,
+          rating,
+          thumbsUp,
+        });
       }
       response.send(reviewArray);
-      
+
       db.collection("MobileAppReviews").insertMany(
         reviewArray,
         (error, result) => {
