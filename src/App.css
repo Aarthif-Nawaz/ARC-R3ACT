@@ -44,7 +44,7 @@ html {
 }
 
 .descrip-4 {
-  color: #000;
+  color: #fff;
   background-image: url("/images/reviews.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -59,7 +59,6 @@ html {
   color: #282e34;
   background-color: #ddd;
   font-size: 23px;
-  padding: 50px;
   font-weight: 700;
 }
 
