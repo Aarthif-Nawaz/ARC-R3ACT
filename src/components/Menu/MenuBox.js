@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Footer from "../NavigationBar/Footer";
 
 function MenuBox() {
   return (
@@ -50,7 +51,9 @@ function MenuBox() {
           </Container>
         </Container>
       </div>
+      <Footer />
     </Container>
+    
   );
 }
 export default MenuBox;
