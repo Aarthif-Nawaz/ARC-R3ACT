@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { css } from "@emotion/core";
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import DotLoader from "react-spinners/DotLoader";
 
 /**
@@ -9,30 +9,29 @@ import DotLoader from "react-spinners/DotLoader";
  * commented out the div in App.js
  * Spinner refering 'https://www.npmjs.com/package/react-spinners'
  */
-function LoadingBox(){
-    const override = css`
-  display: block;
-  margin: 2;
- 
-`;
-return(
-    <Container style={{height:'100%'}}>
-       
-        <Col style={{width:'30%',top:'30%',margin:'0 auto'}}>
-            <div className="sweet-loading">
-            <DotLoader
-            css={override}
-            size={200}
-            color={"#000"}
-            />
+function LoadingBox() {
+  
+  return (
+    <Container fluid className="loadingContainer">
+      <div class="loader">
+        <span>Analysing...</span>
+      </div>
+      <div style={{position:"absolute", top:"70%"}}>
+      <p
+          style={{
+            textTransform: "uppercase",
+            letterSpacing: 3,
+            fontSize: "1.1vw",
+            textAlign: "center",
+            color: "#000",
+            fontWeight: 600,
+          }}
+        >
+          {" "}
+         <span className="loadingText"></span> 
+        </p>
         </div>
-        </Col>
-       
     </Container>
-   
-    
-   
-);
-
+  );
 }
 export default LoadingBox;

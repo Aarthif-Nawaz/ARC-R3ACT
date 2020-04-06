@@ -67,9 +67,9 @@ html {
 .bgimg-2,
 .bgimg-3,
 .bgimg-4,
-.bgimg-5 {
+.bgimg-5,
+.bgimg-6 {
   position: relative;
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,10 +99,12 @@ html {
 }
 .bgimg-5 {
   min-height: 800px;
-
   background-image: url("/images/reviews.jpg");
 }
-
+.bgimg-6 {
+  min-height: 800px;
+  background-image: url("/images/laptop1.jpg");
+}
 /* Float four columns side by side */
 .columnCard {
   float: left;
@@ -175,7 +177,6 @@ h3 {
   .bgimg-5 {
     /* background-attachment: scroll; */
     position: relative;
-    opacity: 0.65;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -438,23 +439,89 @@ video {
   margin-top: 8%;
   display: block;
 }
-.MenuBoxPage {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  overflow: hidden;
-  z-index: 0;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/images/img_parallax3.jpg");
+.MenuBoxPage{
+  width: 60%;
+  margin-top: 5%;
+  float: left;
 }
 .MenuBoxContainer {
   margin: auto;
-  margin-top: 10%;
-  z-index: 1000;
+  float: left;
+  padding: 50px;
+}
+.menuIntro{
+  margin: auto;
+  float: left;
+  padding: 50px;
+  color: rgb(88, 87, 87);
+  font-size: 23px;
+}
+.p-4{
+  color:rgb(88, 87, 87);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.p-4:hover{
+  text-decoration: none;
+  background-color:rgb(88, 87, 87) ;
+  color: #fff;
+}
+
+.loadingContainer{
+  margin:0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+}
+
+.loader{
+  position: relative;
+  font-size: 4.5vw;
+  background: #fff;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .5em;
+  padding: 10px;
+}
+
+.loader span{
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.loader:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background: #000;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+  0%{left: 0;}
+  50%{left: calc(100% - 150px) ;}
+  100%{left: 0;}
+}
+
+.loadingText:before{
+  content: '';
+  animation: animate1 45s infinite;
+}
+@keyframes animate1{
+  0%{content: 'We are going through all the reviews.' ;}
+  20%{content: 'This will take a moment.';}
+  40%{content: 'Please be patient as we analyse the reviews.';}
+  60%{content: 'This may take a while.';}
+  100%{content: 'We are going through all the reviews.';}
 }
