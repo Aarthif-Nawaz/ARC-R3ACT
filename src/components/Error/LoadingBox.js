@@ -10,34 +10,27 @@ import DotLoader from "react-spinners/DotLoader";
  * Spinner refering 'https://www.npmjs.com/package/react-spinners'
  */
 function LoadingBox() {
-  const override = css`
-    display: block;
-    margin: 2;
-  `;
+  
   return (
-    <Container
-      fluid
-      style={{ height: "100%", backgroundColor: "rgb(88, 87, 87)" }}
-    >
-      <Col style={{ width: "30%", top: "30%", margin: "0 auto" }}>
-        <div className="sweet-loading">
-          <DotLoader css={override} size={200} color={"#fff"} />
-        </div>
-        <p
+    <Container fluid className="loadingContainer">
+      <div class="loader">
+        <span>Analysing...</span>
+      </div>
+      <div style={{position:"absolute", top:"70%"}}>
+      <p
           style={{
             textTransform: "uppercase",
             letterSpacing: 3,
             fontSize: "1.1vw",
             textAlign: "center",
-            color: "#fff",
+            color: "#000",
             fontWeight: 600,
-            marginTop: "20%",
           }}
         >
           {" "}
-          We are analysing the reviews. This will take a moment.
+         <span className="loadingText"></span> 
         </p>
-      </Col>
+        </div>
     </Container>
   );
 }

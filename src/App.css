@@ -471,3 +471,58 @@ video {
   background-color:rgb(88, 87, 87) ;
   color: #fff;
 }
+
+.loadingContainer{
+  margin:0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+}
+
+.loader{
+  position: relative;
+  font-size: 4.5vw;
+  background: #fff;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .5em;
+  padding: 10px;
+}
+
+.loader span{
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.loader:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background: #000;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate{
+  0%{left: 0;}
+  50%{left: calc(100% - 150px) ;}
+  100%{left: 0;}
+}
+
+.loadingText:before{
+  content: '';
+  animation: animate1 45s infinite;
+}
+@keyframes animate1{
+  0%{content: 'We are going through all the reviews.' ;}
+  20%{content: 'This will take a moment.';}
+  40%{content: 'Please be patient as we analyse the reviews.';}
+  60%{content: 'This may take a while.';}
+  100%{content: 'We are going through all the reviews.';}
+}
