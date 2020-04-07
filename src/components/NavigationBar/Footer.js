@@ -73,6 +73,9 @@ function Footer() {
               <p>
                 <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Support</a>
               </p>
+              <p>
+                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Contact</a>
+              </p>
             </div>
 
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

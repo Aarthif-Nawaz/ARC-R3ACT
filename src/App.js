@@ -9,6 +9,7 @@ import OverallSentiment from './components/OverallSentiment/OverallSentiment';
 import ViewAllReviews from './components/Review/ViewReviews';
 import NavBar from './components/NavigationBar/Navbar';
 import HomePage from './components/Home/HomePage';
+import AboutUs from './components/AboutUs/AboutUs';
 import ErrorCrash from './components/Error/Crashed';
 import LoadingBox from './components/Error/LoadingBox';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/allReviews" component={ViewAllReviews}/>
             <Route path="/error" exact component={ErrorCrash}/>
             <Route path="/loading" exact component={LoadingBox}/>
+            <Route path="/aboutus" exact component={AboutUs}/>
         </Switch>
       {/* </div> */}
       

@@ -69,7 +69,8 @@ html {
 .bgimg-3,
 .bgimg-4,
 .bgimg-5,
-.bgimg-6 {
+.bgimg-6,
+.bgimg-7 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -105,6 +106,10 @@ html {
 .bgimg-6 {
   min-height: 800px;
   background-image: url("/images/laptop1.jpg");
+}
+.bgimg-7 {
+  min-height: 800px;
+  background-image: url("/images/team.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
@@ -239,6 +244,15 @@ h3 {
   width: 24px;
 }
 
+.menu-item{
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font: "Lato", sans-serif;
+  font-weight: 900;
+  color: #111;
+  padding: 30px;
+}
+
 /* Color/shape of close button cross */
 .bm-cross {
   background: white;
@@ -246,19 +260,9 @@ h3 {
 
 /*
 Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
 .bm-menu-wrap {
-  background-color: #043b73;
-  background-image: linear-gradient(
-    to bottom right,
-    #000b18,
-    #00172d,
-    #00264d,
-    #02386e,
-    #00498d,
-    #0052a2
-  );
+  background-color: #1c2431;
   position: fixed;
   height: 100%;
 }
@@ -266,7 +270,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  font-size: 1.5em;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -480,24 +484,28 @@ video {
   align-items: center;
   height: 100vh;
   font-family: "Lato", sans-serif;
+  z-index: 1;
 }
 
 .loader{
-  position: relative;
+  position: absolute;
+  top: 40%;
+  margin: auto;
   font-size: 4.5vw;
-  background: #fff;
-  color: #000;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: .5em;
   padding: 10px;
+  z-index: 1;
 }
 
+/*colour of normal text*/
 .loader span{
   color: #fff;
   mix-blend-mode: difference;
 }
 
+/*colour of box*/
 .loader:before{
   content: '';
   position: absolute;
