@@ -148,4 +148,17 @@ router.get("/sentiment", async (request, response) => {
     });
 });
 
+// retrieve complete reviews from the database
+router.get("/:id", (request, response) => {
+  db.collection("Reviews").findOne(
+    { _id: new ObjectID(request.params.id) },
+    (error, result) => {
+      if (error) {
+        return response.status(500).send("The given Id does not exist.");
+      }
+      response.send(result);
+    }
+  );
+});
+
 module.exports = router;
