@@ -63,6 +63,14 @@ html {
   font-weight: 700;
 }
 
+.descrip-6 {
+  color: rgb(88, 87, 87);
+  font-size: 23px;
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 70px;
+}
+
 /*the three background images used for the parallax effect*/
 .bgimg-1,
 .bgimg-2,
@@ -70,7 +78,9 @@ html {
 .bgimg-4,
 .bgimg-5,
 .bgimg-6,
-.bgimg-7 {
+.bgimg-7,
+.bgimg-8,
+.bgimg-9 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -111,6 +121,14 @@ html {
   min-height: 800px;
   background-image: url("/images/team.jpg");
 }
+.bgimg-8 {
+  min-height: 700px;
+  background-image: url("/images/team1.jpg");
+}
+.bgimg-9 {
+  min-height: 700px;
+  background-image: url("/images/coffee3.jpg");
+}
 /* Float four columns side by side */
 .columnCard {
   float: left;
@@ -145,6 +163,8 @@ html {
   padding: 30px;
   text-align: center;
   background-color: #f1f1f1;
+  align-items: center;
+  width: 85%;
 }
 
 /*styling for the heading text - emphasis on the features of ARC*/
@@ -180,7 +200,8 @@ h3 {
   .bgimg-2,
   .bgimg-3,
   .bgimg-4,
-  .bgimg-5 {
+  .bgimg-5,
+  .bgimg-8 {
     /* background-attachment: scroll; */
     position: relative;
     background-attachment: fixed;
@@ -244,7 +265,7 @@ h3 {
   width: 24px;
 }
 
-.menu-item{
+.menu-item {
   letter-spacing: 2px;
   text-transform: uppercase;
   font: "Lato", sans-serif;
@@ -444,7 +465,7 @@ video {
   margin-top: 8%;
   display: block;
 }
-.MenuBoxPage{
+.MenuBoxPage {
   width: 60%;
   margin-top: 5%;
   float: left;
@@ -454,15 +475,15 @@ video {
   float: left;
   padding: 50px;
 }
-.menuIntro{
+.menuIntro {
   margin: auto;
   float: left;
   padding: 50px;
   color: rgb(88, 87, 87);
   font-size: 23px;
 }
-.p-4{
-  color:rgb(88, 87, 87);
+.p-4 {
+  color: rgb(88, 87, 87);
   font-size: 15px;
   font-weight: 800;
   text-transform: uppercase;
@@ -470,14 +491,14 @@ video {
   text-decoration: none;
 }
 
-.p-4:hover{
+.p-4:hover {
   text-decoration: none;
-  background-color:rgb(88, 87, 87) ;
+  background-color: rgb(88, 87, 87);
   color: #fff;
 }
 
-.loadingContainer{
-  margin:0;
+.loadingContainer {
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -487,27 +508,27 @@ video {
   z-index: 1;
 }
 
-.loader{
+.loader {
   position: absolute;
   top: 40%;
   margin: auto;
   font-size: 4.5vw;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: .5em;
+  letter-spacing: 0.5em;
   padding: 10px;
   z-index: 1;
 }
 
 /*colour of normal text*/
-.loader span{
+.loader span {
   color: #fff;
   mix-blend-mode: difference;
 }
 
 /*colour of box*/
-.loader:before{
-  content: '';
+.loader:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -517,20 +538,72 @@ video {
   animation: animate 5s linear infinite;
 }
 
-@keyframes animate{
-  0%{left: 0;}
-  50%{left: calc(100% - 150px) ;}
-  100%{left: 0;}
+@keyframes animate {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 150px);
+  }
+  100% {
+    left: 0;
+  }
 }
 
-.loadingText:before{
-  content: '';
+.loadingText:before {
+  content: "";
   animation: animate1 45s infinite;
 }
-@keyframes animate1{
-  0%{content: 'We are going through all the reviews.' ;}
-  20%{content: 'This will take a moment.';}
-  40%{content: 'Please be patient as we analyse the reviews.';}
-  60%{content: 'This may take a while.';}
-  100%{content: 'We are going through all the reviews.';}
+@keyframes animate1 {
+  0% {
+    content: "We are going through all the reviews.";
+  }
+  20% {
+    content: "This will take a moment.";
+  }
+  40% {
+    content: "Please be patient as we analyse the reviews.";
+  }
+  60% {
+    content: "This may take a while.";
+  }
+  100% {
+    content: "We are going through all the reviews.";
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.columnTeam {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .columnTeam {
+    width: 100%;
+    display: block;
+  }
+}
+
+.cardTeam {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerTeam {
+  padding: 0 16px;
+  font-family: "Lato", sans-serif;
+}
+
+.containerTeam::after,
+.rowTeam::after {
+  content: "";
+  clear: both;
+  display: table;
 }

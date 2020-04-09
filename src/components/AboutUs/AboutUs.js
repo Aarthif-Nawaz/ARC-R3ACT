@@ -4,7 +4,7 @@ import Footer from "../NavigationBar/Footer";
 
 function AboutUs() {
   return (
-    <Container fluid>
+    <Container fluid style={{ boxSizing: "border-box" }}>
       <div class="bgimg-7">
         <div class="caption">
           <span className="border">
@@ -22,30 +22,34 @@ function AboutUs() {
             paddingRight: 350,
             paddingTop: 100,
             paddingBottom: 50,
+            letterSpacing: 3,
             fontFamily: "Lato",
+            fontSize: "2.3vw",
           }}
         >
           “We believe that we are on the face of the earth to make great
           products and that’s not changing.”
         </h2>
 
-        <div className="descrip-1">
+        <div className="descrip-6">
           <p
             style={{
               paddingLeft: 250,
               paddingRight: 250,
-              paddingBlockStart: 30,
             }}
           >
             As the great Tim Cook once said, we believe the best brands tell
             stories, which is why we partner with our clients to create
             impactful work that not only represents their business, but also
-            connects them with people emotionally.
+            connects them with people emotionally. ARC provides mobile
+            application developers with the opportunity to connect with their
+            customers directly. This direct communication helps developers to
+            address the problems faced by their customers.
           </p>
         </div>
       </div>
 
-      <div class="bgimg-2">
+      <div class="bgimg-8">
         <div class="caption">
           <span
             class="border"
@@ -55,125 +59,136 @@ function AboutUs() {
               color: "#f7f7f7",
             }}
           >
-            App review analysis in minutes, not days…
+            Through strategy, design, content, and technology...
           </span>
         </div>
       </div>
 
       <div style={{ position: "relative" }}>
         <div className="descrip-2">
-          <div class="row">
-            <div class="col d-flex align-items-stretch">
-              <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
-                  Bug Fixes
-                </h3>
-                <p
-                  style={{
-                    color: "black",
-                    textAlign: "justify",
-                    fontSize: "1vw",
-                  }}
-                >
-                  Mobile app users will leave reviews regarding all the bugs
-                  they encounter during their application experience. When ARC
-                  anaylses the reviews, the reviews addressing big fixes will be
-                  captured and displayed in a seperate page. You can analyse
-                  them and easily identify what bug fixes are mentioned the most
-                  and address the situation by implementing a solution to the
-                  bug.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-stretch">
-              <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
-                  Feature Requests
-                </h3>
-                <p
-                  style={{
-                    color: "black",
-                    textAlign: "justify",
-                    fontSize: "1vw",
-                  }}
-                >
-                  Mobile app users will leave reviews regarding all the features
-                  they wish to have during their application experience. When
-                  ARC anaylses the reviews, the reviews addressing feature
-                  requests will be captured and displayed in a seperate page.
-                  You can analyse them and easily identify what features are
-                  requested the most and address the situation by implementing
-                  those features.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex align-items-stretch">
-              <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
-                  Overall Sentiment
-                </h3>
-                <p
-                  style={{
-                    color: "black",
-                    textAlign: "justify",
-                    fontSize: "1vw",
-                  }}
-                >
-                  Mobile app users leave reviews about their mobile application
-                  experience in the Google Play Store. These reviews can either
-                  be positive or negative depending on their experience. ARC
-                  analyses all the reviews available for the application and
-                  uses cutting edge technology and sentiment analysis to
-                  calculate the overall sentiment of the mobile application. It
-                  will show whether the app has a positive or negative outlook
-                  for your users.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bgimg-3">
-        <div class="caption">
-          <span
-            class="border"
+          <h3
             style={{
-              backgroundColor: "#282e34",
+              color: "#fff",
+              textAlign: "center",
               fontSize: "2vw",
-              color: "#f7f7f7",
+              fontWeight: 900,
             }}
           >
-            …without losing sight of the big picture!
-          </span>
-        </div>
-      </div>
-
-      <div style={{ position: "relative" }}>
-        <div className="descrip-3">
-          <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
-            Make better and faster decisions
+            our values and goals
           </h3>
           <p
             style={{
               paddingLeft: 250,
               paddingRight: 250,
               paddingBlockStart: 30,
+              textAlign: "justify",
             }}
           >
-            ARC provides fully automated, easy-to-understand sentiment analysis
-            for mobile app reviews. Measure trends in user sentiment, review
-            volume and star rating over time so you can see what users think of
-            changes you make to your apps. See what app store reviews are about
-            without lifting a finger. Make better, faster decisions about your
-            product roadmap, based on the feedback and sentiment of real users.
+            As young software engineers stepping out into the world with fresh
+            wild eyes, we are motivated to provide the best environment for
+            mobile application developers to connect with their customers. In an
+            exponenetially advancing world, it is rather bizarre how the
+            opinions of more than 70% of app users go unaddressed. To bridg this
+            lack of communication, we present to you - ARC. An innovative
+            project utilising data science to keep track of the latest data and
+            help mobile application developers move one step closer to their end
+            goal - satfisfying their customers and creating a business
+            potential.
           </p>
         </div>
       </div>
 
-      <div class="bgimg-4">
+      <div class="bgimg-9">
         <div class="caption">
-          <span class="border">Unlock your data right now with ARC!</span>
+          <span class="border">we help developers improve their products.</span>
+        </div>
+      </div>
+
+      <div className="descrip-1">
+        <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
+          MEET THE MEMBERS OF TEAM R3ACT
+        </h3>
+        <div class="row" style={{ paddingTop: 50 }}>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Safiyyah"
+                src={process.env.PUBLIC_URL + "/images/safiyyah.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Safiyyah Rahman</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Christina"
+                src={process.env.PUBLIC_URL + "/images/christina.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Chrstina Thambirajah</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Shiromi"
+                src={process.env.PUBLIC_URL + "/images/shiromi.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Shiromi Thevarajan</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style={{ paddingTop: 50 }}>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Ridmi"
+                src={process.env.PUBLIC_URL + "/images/safiyyah.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Ridmi Amasha</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Aarthif"
+                src={process.env.PUBLIC_URL + "/images/aarthif.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Aarthif Nawaz</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <img
+                alt="Sajani"
+                src={process.env.PUBLIC_URL + "/images/sajani.jpg"}
+                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
+              />
+              <div class="containerTeam">
+                <h3>Sajani Sihara</h3>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
