@@ -59,7 +59,7 @@ function AboutUs() {
               color: "#f7f7f7",
             }}
           >
-            Through strategy, design, content, and technology...
+            We are a team of driven and innovative individuals.
           </span>
         </div>
       </div>
@@ -100,15 +100,12 @@ function AboutUs() {
 
       <div class="bgimg-9">
         <div class="caption">
-          <span class="border">we help developers improve their products.</span>
+          <span class="border">MEET THE MEMBERS OF TEAM R3ACT</span>
         </div>
       </div>
 
-      <div className="descrip-1">
-        <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
-          MEET THE MEMBERS OF TEAM R3ACT
-        </h3>
-        <div class="row" style={{ paddingTop: 50 }}>
+      <div className="descrip-7">
+        <div class="row">
           <div class="columnTeam">
             <div class="cardTeam">
               <img
@@ -118,7 +115,9 @@ function AboutUs() {
               />
               <div class="containerTeam">
                 <h3>Safiyyah Rahman</h3>
-                <p>example@example.com</p>
+                <a href="https://github.com/SafiyyahR" className="githubLinks">
+                  <p>github : SafiyyahR</p>
+                </a>
               </div>
             </div>
           </div>
@@ -130,8 +129,13 @@ function AboutUs() {
                 style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
               />
               <div class="containerTeam">
-                <h3>Chrstina Thambirajah</h3>
-                <p>example@example.com</p>
+                <h3>Christina Thambirajah</h3>
+                <a
+                  href="https://github.com/chrisitina-thambirajah"
+                  className="githubLinks"
+                >
+                  <p>github : chrisitina-thambirajah</p>
+                </a>
               </div>
             </div>
           </div>
@@ -144,12 +148,17 @@ function AboutUs() {
               />
               <div class="containerTeam">
                 <h3>Shiromi Thevarajan</h3>
-                <p>example@example.com</p>
+                <a
+                  href="https://github.com/shiromi-basil"
+                  className="githubLinks"
+                >
+                  <p>github : shiromi-basil</p>
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="row" style={{ paddingTop: 50 }}>
+        <div class="row" style={{ paddingTop: 40 }}>
           <div class="columnTeam">
             <div class="cardTeam">
               <img
@@ -159,7 +168,7 @@ function AboutUs() {
               />
               <div class="containerTeam">
                 <h3>Ridmi Amasha</h3>
-                <p>example@example.com</p>
+                <a href="https://github.com/ridmi98" className="githubLinks"><p>github : ridmi98</p></a>
               </div>
             </div>
           </div>
@@ -172,7 +181,7 @@ function AboutUs() {
               />
               <div class="containerTeam">
                 <h3>Aarthif Nawaz</h3>
-                <p>example@example.com</p>
+                <a href="https://github.com/Aarthif-Nawaz" className="githubLinks"><p>github : Aarthif-Nawaz</p></a>
               </div>
             </div>
           </div>
@@ -185,7 +194,7 @@ function AboutUs() {
               />
               <div class="containerTeam">
                 <h3>Sajani Sihara</h3>
-                <p>example@example.com</p>
+                <a href="https://github.com/sajani-sihara" className="githubLinks"><p>github : sajani-sihara</p></a>
               </div>
             </div>
           </div>
