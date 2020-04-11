@@ -1,58 +1,56 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Footer from "../NavigationBar/Footer";
 
 function MenuBox() {
   return (
-    <Container fluid>
+    <div className='container-fluid'>
       <div class="bgimg-6">
-        <Container className="MenuBoxPage">
+        <div className=' col-md-9 MenuBoxPage'>
           <h3
             style={{
               textAlign: "center",
-              fontSize: "2vw",
               fontWeight: 900,
               float: "left",
               padding: 50,
+              fontSize:'2vw',
               marginTop: "12%",
             }}
           >
             What reviews would you like to see?
           </h3>
 
-          <p className="menuIntro">
+          <div className="row menuIntro">
+            <div className='col mr-5'>
             The reviews of the mobile application are divided into three
             segments. Choose one of the following to see all the reviews
             relevant to that particular category.
-          </p>
+            </div>
+          </div>
 
-          <Container className="MenuBoxContainer">
-            <Row>
-              <Col>
+          <div className="container MenuBoxContainer">
+            <div class="row">
+            <div class="col-lg-4 mb-2">
                 <Link to="/bugfix">
-                  <Card className="p-4">Bug Fixes</Card>
+                  <div className="card p-4">Bug Fixes</div>
                 </Link>
-              </Col>
-              <Col>
+              </div>
+              <div class="col-lg-4 mb-2">
                 <Link to="/featureRequest">
-                  <Card className="p-4">Feature Requests</Card>
+                <div className="card p-4">Feature Requests</div>
                 </Link>
-              </Col>
-              <Col>
+                </div>
+              <div class="col-lg-4 mb-2">
                 <Link to="/overallSentiment">
-                  <Card className="p-4">Overall Sentiment</Card>
+                <div className="card p-4">Overall Sentiment</div>
                 </Link>
-              </Col>
-            </Row>
-          </Container>
-        </Container>
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
-    </Container>
+    </div>
     
   );
 }

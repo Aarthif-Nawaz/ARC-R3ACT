@@ -1,8 +1,8 @@
 import React from "react";
-import { css } from "@emotion/core";
+//import { css } from "@emotion/core";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import DotLoader from "react-spinners/DotLoader";
+//import Col from "react-bootstrap/Col";
+//import DotLoader from "react-spinners/DotLoader";
 
 /**
  * added #root to the home css in App.css

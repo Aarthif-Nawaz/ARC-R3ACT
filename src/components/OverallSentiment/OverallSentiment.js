@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import  Footer  from '../NavigationBar/Footer';
 
 function OverallSentiment(){
     return(
@@ -22,7 +23,8 @@ function OverallSentiment(){
                 </Col>
                 <Col><h1>5.8</h1></Col>
             </Row>
-            
+            <Footer/>
+
             
         </Container>
     );

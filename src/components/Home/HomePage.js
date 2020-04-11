@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import SearchApps from "./searchapps";
 import About from "./About";
+import Footer from "../NavigationBar/Footer";
 
 function HomePage() {
   /*Scroll down to the next div */
@@ -49,6 +50,7 @@ function HomePage() {
       <Row ref={divToFocus}>
         <About />
       </Row>
+      <Footer/>
     </Container>
   );
 }

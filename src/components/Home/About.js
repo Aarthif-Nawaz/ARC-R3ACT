@@ -1,10 +1,8 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Footer from "../NavigationBar/Footer";
 
 function About() {
   return (
-    <Container fluid>
+    <div>
       <div className="descrip-1">
         <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
           Application Review Classifier
@@ -184,8 +182,8 @@ function About() {
         </div>
       </div>
 
-      <Footer/>
-    </Container>
+     
+    </div>
   );
 }
 export default About;
