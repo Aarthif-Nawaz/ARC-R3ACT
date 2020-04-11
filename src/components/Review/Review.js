@@ -1,41 +1,24 @@
 import React from "react";
-
-
+import Container from "react-bootstrap/Container";
+import Footer from "../NavigationBar/Footer";
 import "../../App.css";
 
 function Review(props) {
   return (
-    <div className='Container-fluid'>
-      
-     
-
-      <div style={{ position: "relative" }}>
-        <div className="descrip-5 my-5 p-2">
-     
-            <p>Author Name:  {props.author}</p>
-            <p>Date: {props.date}</p>
+    <div className='container-fluid' style={{padding:0}}>
+      {/* <p>Author Name : {props.author}</p>
+            <p>Date : {props.date}</p>
+            
             <div className="star">{[...Array(Number(props.score))].map(( i =>(
                 <label key={i+1}>★</label>
             )))} 
             </div>
-            <p>Text:{props.text}</p>
-          
-        </div>
-      </div>
-
-      {/* <div style={{ position: "relative" }}>
-        <div className="descrip-4">
-          <div
-            style={{
-              paddingLeft: 150,
-              paddingRight: 150,
-              paddingBlockStart: 10,
-            }}
-          >
-            <p>Author Name:</p>
-            <p>Date:</p>
-            <p>Text:</p>
-          </div>
+            <p>{props.text}</p> */}
+      <div class="bgimg-5">
+        <div class="caption">
+          <span className="border">
+            Reviews addressing "High Energy Consumption" ...
+          </span>
         </div>
       </div>
 
@@ -46,6 +29,7 @@ function Review(props) {
               paddingLeft: 150,
               paddingRight: 150,
               paddingBlockStart: 10,
+              paddingBlockEnd:10
             }}
           >
             <p>Author Name:</p>
@@ -62,6 +46,7 @@ function Review(props) {
               paddingLeft: 150,
               paddingRight: 150,
               paddingBlockStart: 10,
+              paddingBlockEnd:10
             }}
           >
             <p>Author Name:</p>
@@ -78,6 +63,7 @@ function Review(props) {
               paddingLeft: 150,
               paddingRight: 150,
               paddingBlockStart: 10,
+              paddingBlockEnd:10
             }}
           >
             <p>Author Name:</p>
@@ -85,9 +71,43 @@ function Review(props) {
             <p>Text:</p>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      
+      <div style={{ position: "relative" }}>
+        <div className="descrip-4">
+          <div
+            style={{
+              paddingLeft: 150,
+              paddingRight: 150,
+              paddingBlockStart: 10,
+              paddingBlockEnd:10
+            }}
+          >
+            <p>Author Name:</p>
+            <p>Date:</p>
+            <p>Text:</p>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ position: "relative" }}>
+        <div className="descrip-5">
+          <div
+            style={{
+              paddingLeft: 150,
+              paddingRight: 150,
+              paddingBlockStart: 10,
+              paddingBlockEnd:10
+            }}
+          >
+            <p>Author Name:</p>
+            <p>Date:</p>
+            <p>Text:</p>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

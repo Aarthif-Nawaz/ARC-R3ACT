@@ -27,7 +27,6 @@ function App() {
             <Route path="/overallSentiment" component={OverallSentiment}/>
             <Route path="/allReviews" component={ViewAllReviews}/>
             <Route path="/error" exact component={ErrorCrash}/>
-            <Route path="/loading" exact component={LoadingBox}/>
         </Switch>
       {/* </div> */}
       
