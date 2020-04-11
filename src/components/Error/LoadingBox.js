@@ -12,6 +12,13 @@ import DotLoader from "react-spinners/DotLoader";
 function LoadingBox() {
   
   return (
+   <Container fluid className="video-container">
+    <video className="videoBg" autoPlay loop muted>
+      <source
+        src={process.env.PUBLIC_URL + "/images/loadingVideo.mp4"}
+        type="video/mp4"
+      />
+    </video>
     <Container fluid className="loadingContainer">
       <div class="loader">
         <span>Analysing...</span>
@@ -23,7 +30,7 @@ function LoadingBox() {
             letterSpacing: 3,
             fontSize: "1.1vw",
             textAlign: "center",
-            color: "#000",
+            color: "#fff",
             fontWeight: 600,
           }}
         >
@@ -31,6 +38,7 @@ function LoadingBox() {
          <span className="loadingText"></span> 
         </p>
         </div>
+        </Container>
     </Container>
   );
 }
