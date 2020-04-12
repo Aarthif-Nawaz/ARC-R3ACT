@@ -617,12 +617,16 @@ video {
   background-color: #fff;
   align-content: center;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .containerTeam {
-  padding: 0 16px;
+  padding: 0 20px;
 }
-
+.nameTeam{
+  padding-top: 40px;
+  font-weight: 600;
+}
 .containerTeam::after,
 .rowTeam::after {
   content: "";
@@ -639,3 +643,84 @@ video {
   font-weight: 900;
   color: #004688;
 }
+.imageContainer{
+  padding-top: 40px;
+  padding-left: 18%;
+}
+.imageTeam{
+  width: 267px;
+  height: 200px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/safiyyah.jpg");
+}
+
+.imageTeam:hover{
+  background-image: url("/images/safiyyah1.png");
+}
+.imageTeam1{
+  width: 267px;
+  height: 200px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/christina.jpg");
+}
+
+.imageTeam1:hover{
+  background-image: url("/images/christina1.png");
+}
+
+.imageTeam2{
+  width: 266px;
+  height: 200px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/sajani.jpg");
+}
+
+.imageTeam2:hover{
+  background-image: url("/images/sajani1.png");
+}
+
+.imageTeam3{
+  width: 265px;
+  height: 199px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/ridmi.png");
+}
+
+.imageTeam3:hover{
+  background-image: url("/images/ridmi1.png");
+}
+
+.imageTeam4{
+  width: 266px;
+  height: 200px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/aarthif.jpg");
+}
+
+.imageTeam4:hover{
+  background-image: url("/images/aarthif1.png");
+}
+
+.imageTeam5{
+  width: 266px;
+  height: 200px;
+  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/shiromi.jpg");
+}
+
+.imageTeam5:hover{
+  background-image: url("/images/shiromi1.png");
+}
+
