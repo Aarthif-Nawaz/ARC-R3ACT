@@ -8,7 +8,7 @@ function Support() {
       <div class="bgimg-10">
         <div class="caption">
           <span className="border">
-            Here are some frequently asked questions about ARC.
+            Know more about Application Review Classifier.
           </span>
         </div>
       </div>
@@ -27,8 +27,8 @@ function Support() {
             fontSize: "2.3vw",
           }}
         >
-          “We believe that we are on the face of the earth to make great
-          products and that’s not changing.”
+          Through strategy, design, content and technology, we aim to help
+          mobile application developers improve their products.
         </h2>
 
         <div className="descrip-6">
@@ -38,18 +38,16 @@ function Support() {
               paddingRight: 250,
             }}
           >
-            As the great Tim Cook once said, we believe the best brands tell
-            stories, which is why we partner with our clients to create
-            impactful work that not only represents their business, but also
-            connects them with people emotionally. ARC provides mobile
-            application developers with the opportunity to connect with their
-            customers directly. This direct communication helps developers to
-            address the problems faced by their customers.
+            We believe that truly impactful applications inspire their audiences
+            to action, to dream, to change; they leave an impression on their
+            audiences and wield genuine influence. Helping developers to create
+            apps like this is our passion, it’s what brought us together, and
+            it’s what keeps us moving forward.
           </p>
         </div>
       </div>
 
-      <div class="bgimg-8">
+      <div class="bgimg-11">
         <div class="caption">
           <span
             class="border"
@@ -59,12 +57,61 @@ function Support() {
               color: "#f7f7f7",
             }}
           >
-            We are a team of driven and innovative individuals.
+            Here are some frequently asked questions about ARC.
           </span>
         </div>
       </div>
-
-      
+      <div className="descrip-8">
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+            1. What are the key functions of ARC?
+          </h3>
+          <p>
+            ARC is web application, which extracts all the reviews of an app and
+            analyses them to give you a report with the reviews classified to
+            Bug Fixes and Feature Requests. It also analyses the reviews to find
+            the Overall sentiment of the app.
+          </p>
+        </div>
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>2. What is a bug fix?</h3>
+          <p>
+            A bug fix is a category of review where the user of the app mentions
+            an issue with the app that requires repair.
+          </p>
+        </div>
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>3. What is a feature request?</h3>
+          <p>
+            A feature request is a category of review where the user of the app
+            mentions areas of the app that need improvement.
+          </p>
+        </div>
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>4. What is a sentiment score?</h3>
+          <p>
+            The sentiment score is a score ranging from 0 to 100% that analyses
+            the reviews alone to find the sentiment the user has regarding the
+            app.
+          </p>
+        </div>
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+            5. Which app stores does ARC get reviews from?
+          </h3>
+          <p>ARC works with reviews extracted from the Google Play Store.</p>
+        </div>
+        <div className="FAQsection">
+          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+            6. Why is an app I am searching for not available?
+          </h3>
+          <p>
+            An app may not be eligible for analysis if it has less than 100
+            reviews. So if an app is on Google Play Store but not available,
+            this may be the reason.
+          </p>
+        </div>
+      </div>
 
       <Footer />
     </Container>
