@@ -21,6 +21,7 @@ var searchRouter = require('./routes/search');
 var appDetailsRouter = require('./routes/appDetails');
 var keyWordsRouter  = require('./routes/catergorizeReviews');
 var classifiedRouter  = require('./routes/classifiedReviews');
+var sentimentRouter  = require('./routes/overallSentiment');
 var dataScienceRouter  = require('./routes/dataScience');
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/search', searchRouter);
 app.use('/app', appDetailsRouter);
 app.use('/keywords', keyWordsRouter);
 app.use('/classified', classifiedRouter);
+app.use('/sentiment', sentimentRouter);
 app.use('/datascience', dataScienceRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
