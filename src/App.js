@@ -10,6 +10,7 @@ import ViewAllReviews from './components/Review/ViewReviews';
 import NavBar from './components/NavigationBar/Navbar';
 import HomePage from './components/Home/HomePage';
 import AboutUs from './components/AboutUs/AboutUs';
+import Support from './components/Support/Support';
 import ErrorCrash from './components/Error/Crashed';
 import LoadingBox from './components/Error/LoadingBox';
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/error" exact component={ErrorCrash}/>
             <Route path="/loading" exact component={LoadingBox}/>
             <Route path="/aboutus" exact component={AboutUs}/>
+            <Route path="/support" exact component={Support}/>
         </Switch>
       {/* </div> */}
       
