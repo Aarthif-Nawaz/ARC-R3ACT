@@ -6,11 +6,13 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from Data_Science.TextPreprocessing.PreProcessing import *
 
 
+# Author - Ridmi
+# Purpose - Retrieving the reviews from the api that is run separately
 def getReviews(packageName, size):
     import requests
     import sys
     #
-    # # calls to the api from nodenpm package
+    # calls to the api from nodenpm package
     resp = requests.get("http://localhost:3000/api/apps/" + packageName + "/reviews/?num=" + size)
     #
     # # checks if the api works; returns 200
@@ -43,9 +45,11 @@ def label_reviews(file_name, packageName, size):
     for i in range(len(review_list)):
         print(i)
         # preprocess the review
-        preProcessedText = reg_preprocessing(review_list[i])
+        preProcessedText = reg_preprocessing(review_list[i], True)
         # get the polarity scores from the vader Sentiment Analyzer. This returns neu, neg and pos scores
         results = vaderSentimentAnalyzer.polarity_scores(preProcessedText)
+        # the score of the results["neg"] is positive hence to make
+        # it negative to get the overall sentiment it is multiplied to -1
         negScore = -1 * results["neg"]
         posScore = results["pos"]
         # add the pos and neg score to get an overall score for the sentiment
@@ -59,5 +63,5 @@ def label_reviews(file_name, packageName, size):
             writer.writerow(train_data[i])
         file.close()
 
-#how to invoke the function
+# how to invoke the function
 # label_reviews("LabelledData.csv", "com.instagram.android", "10000")

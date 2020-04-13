@@ -1,5 +1,5 @@
 # Author - Safiyyah Thur Rahman
-# Purpose - Predict the Overall Sentiment of the App using SVM.SVR and the Vader Lexicon
+# Purpose - Predict the Overall Sentiment of the App using SVM.SVR
 # install - pickle, sklearn
 import pickle
 from math import floor

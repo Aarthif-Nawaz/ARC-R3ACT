@@ -1,5 +1,5 @@
 # Author - N.W.R.Amasha
-# Last modified Date - 3/1/2019 10:49 A.M
+#Date - 2/4/2020
 
 # Finding keywords with feature extraction
 # output - gives the keywords of each categorized reviews
@@ -43,16 +43,20 @@ def find_keywords(corpus):
         words=retrieveWords(vectorizer,doc,features)
         # sort the keywords in order of the given line in the corpus
         new_list = sorted(words, key=corpus[index].find)
-        keyword_list=convertArray(new_list)
+        keyword_list=convertToArray(new_list)
         key_list.append(keyword_list)
     return key_list
 
 
 
 def find_keywords_sentence(corpus, sentence):
+    #the vectorizer will extract a maximum of 200 features and it will only extract keywords which have been repeated twice
     vectorizer = TfidfVectorizer(max_features=200, min_df=2)
+    # used to convert words from Test data into a matrix of integers
     tf_idf_vector = vectorizer.fit_transform(corpus)
+    # retrieve the features identified in all the reviews in the corpus this is alphabetical order
     features = vectorizer.get_feature_names()
+    #this function is used to return the features from the feature which has the highest document frequency
     return retrieveWords(vectorizer,sentence,features)
 
 def retrieveWords(vectorizer,doc,features):
@@ -62,11 +66,12 @@ def retrieveWords(vectorizer,doc,features):
     sorted_features = sort_matrix(tf_idf_vector.tocoo())
     #parsing 0 to retrieve all the features
     keywords = extract_topn_features_from_vector(features, sorted_features, 0)
-    words=convertArray(keywords)
+    #extract only the features and append it to an array
+    words=convertToArray(keywords)
 
     return words
-
-def convertArray(new_list):
+#append the labels of the given array to an array and return it
+def convertToArray(new_list):
     keyword_list = []
     for index in new_list:
         keyword_list.append(index)

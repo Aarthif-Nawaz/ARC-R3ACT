@@ -1,5 +1,6 @@
 # Author - Mohamed Aarthif Nawaz
 # Purpose - Text preprocessing
+# install - emoji, spacy
 import string
 
 import emoji
@@ -45,6 +46,7 @@ def expand_contractions(phrase):
 # pre_processing required for the lexicon sentiment analysis
 def reg_preprocessing(notProcessedText, tode_emojize):
     if notProcessedText is not None:
+        #for clustering deemojizing is not performed, this can be identified using the tode_emojize variable
         if tode_emojize:
             notProcessedText = de_emojize(notProcessedText)
         notProcessedText = expand_contractions(notProcessedText)
@@ -56,7 +58,7 @@ def reg_preprocessing(notProcessedText, tode_emojize):
         for token in doc:
             flag = True
             edit = token.text
-            # remove stop words
+            # remove stop words and does not remove the words not no and very
             if token.is_stop and token.pos_ != 'NUM' and edit.lower() != "not" and edit.lower() != "no" and edit.lower() != "very":
                 flag = False
                 # append tokens edited and not removed to list
@@ -66,7 +68,7 @@ def reg_preprocessing(notProcessedText, tode_emojize):
     else:
         return ""
 
-
+# preprocessing that is performed before feature extraction is performed
 def preprocessing_fe(notProcessedText):
     if notProcessedText is not None:
         doc = nlp(notProcessedText)
@@ -74,7 +76,7 @@ def preprocessing_fe(notProcessedText):
         for token in doc:
             flag = True
             edit = token.text
-            # remove stop words
+            # remove stop words and words like very, ok and words of type INTJ like psst, ouch, bravo, hello and NUM like 1, 2017, one, seventy-seven, IV, MMXIV
             if (
                     token.pos_ == "INTJ" or token.is_stop or token.pos_ == 'NUM' or edit.lower() == "very" or edit.lower() == "ok") and (
                     edit.lower() != "not" and edit.lower() != "no"):
@@ -123,7 +125,7 @@ def pre_processing_labelled_data(text):
     else:
         return ""
 
-
+#preprocessing required by the MLP model used to cluster the reviews
 def cluster_pre_processing(text):
     text = reg_preprocessing(text, False)
     return pre_processing_labelled_data(text)
