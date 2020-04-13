@@ -1,17 +1,16 @@
 # Author - Safiyyah Thur Rahman
-# Purpose - Labelling the data using the vader lexicon
+# Purpose - Labelling the data using the vader lexicon by getting the reviews from a CSV
 # pip install csv, pickle, vaderSentiment, nltk
 import csv
 
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from Data_Science.TextPreprocessing.PreProcessing import *
-from Data_Science.GetReviews.RetrieveReviews import getReviews
 
 
-def label_reviews(file_name):
+def label_reviews(file_name1,file_name2):
     #get the list of reviews using the file
-    data = pd.read_csv('../CSVFiles/uberEats.csv')
+    data = pd.read_csv(file_name2)
     review_list = pd.DataFrame(data, columns=['text'], dtype=str)
     #train_data is a 2d array of a length equal to the number od reviews
     train_data = [[0] * 2] * len(review_list)
@@ -30,9 +29,9 @@ def label_reviews(file_name):
         train_data[i][0] = preProcessedText
         train_data[i][1] = sentiment
         #save each element of the traindata to a file
-        with open(file_name, 'a', newline='') as file:
+        with open(file_name1, 'a', newline='') as file:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(train_data[i])
         file.close()
 
-label_reviews("../CSVFiles/TestData.csv")
+label_reviews("../TrainingDataSet/", "../TrainingDataSet/")

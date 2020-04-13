@@ -27,13 +27,9 @@ def de_emojize(text):
 
 # convert a list to string
 def listToString(s):
-    # initialize an empty string
-    str1 = ""
-    # traverse in the string
-    for ele in s:
-        str1 += ele + " "
-        # return string
-    return str1
+    # using a built-in function to convert a array/list to String
+    newSentence = " ".join(s)
+    return newSentence
 
 
 def expand_contractions(phrase):
@@ -47,9 +43,10 @@ def expand_contractions(phrase):
 
 
 # pre_processing required for the lexicon sentiment analysis
-def reg_preprocessing(notProcessedText):
+def reg_preprocessing(notProcessedText, tode_emojize):
     if notProcessedText is not None:
-        notProcessedText = de_emojize(notProcessedText)
+        if tode_emojize:
+            notProcessedText = de_emojize(notProcessedText)
         notProcessedText = expand_contractions(notProcessedText)
         notProcessedText = re.sub('[^a-zA-Z\-|&#;@!?()/:\\\{}]', " ", notProcessedText)
         notProcessedText = remove_whitespace(notProcessedText)
@@ -90,7 +87,7 @@ def preprocessing_fe(notProcessedText):
         return ""
 
 
-# pre-processing required by the Naive Bayes Classifier
+# pre-processing required by the SVR/MLP
 def pre_processing_labelled_data(text):
     if text is not None:
         # converts the text to lower case
@@ -127,6 +124,6 @@ def pre_processing_labelled_data(text):
         return ""
 
 
-def text_pre_processing(text):
-    text = reg_preprocessing(text)
+def cluster_pre_processing(text):
+    text = reg_preprocessing(text, False)
     return pre_processing_labelled_data(text)
