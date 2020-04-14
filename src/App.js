@@ -13,6 +13,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Support from './components/Support/Support';
 import ErrorCrash from './components/Error/Crashed';
 import LoadingBox from './components/Error/LoadingBox';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/loading" exact component={LoadingBox}/>
             <Route path="/aboutus" exact component={AboutUs}/>
             <Route path="/support" exact component={Support}/>
+            <Route path="/contact" exact component={Contact}/>
         </Switch>
       {/* </div> */}
       

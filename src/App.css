@@ -14,8 +14,7 @@ html {
   height: 100%;
 }
 
-
-.container-fluid{
+.container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
@@ -85,7 +84,7 @@ html {
   padding: 50px;
   text-align: center;
 }
-.descrip-8{
+.descrip-8 {
   background-image: url("/images/laptop.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -95,10 +94,20 @@ html {
   padding: 50px;
   text-align: justify;
 }
-.FAQsection{
+.FAQsection {
   width: 50%;
   padding: 40px;
   border-bottom: solid 1px #ccc;
+}
+.descrip-9 {
+  background-image: url("/images/support1.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 21px;
+  padding: 5%;
+  text-align: justify;
 }
 /*the three background images used for the parallax effect*/
 .bgimg-1,
@@ -111,7 +120,9 @@ html {
 .bgimg-8,
 .bgimg-9,
 .bgimg-10,
-.bgimg-11{
+.bgimg-11,
+.bgimg-12,
+.bgimg-13 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -167,6 +178,14 @@ html {
 .bgimg-11 {
   min-height: 400px;
   background-image: url("/images/laptop.jpg");
+}
+.bgimg-12 {
+  min-height: 800px;
+  background-image: url("/images/contact1.jpg");
+}
+.bgimg-13 {
+  min-height: 250px;
+  background-image: url("/images/support1.png");
 }
 /* Float four columns side by side */
 .columnCard {
@@ -513,13 +532,12 @@ video {
   margin-top: 5%;
   float: left;
 }
-.MenuBoxContainer{
+.MenuBoxContainer {
   margin: auto;
   float: left;
   padding: 50px;
-  
 }
-.MenuBoxContainer a{
+.MenuBoxContainer a {
   color: transparent !important;
 }
 .menuIntro {
@@ -652,7 +670,7 @@ video {
 .containerTeam {
   padding: 0 20px;
 }
-.nameTeam{
+.nameTeam {
   padding-top: 40px;
   font-weight: 600;
 }
@@ -662,94 +680,116 @@ video {
   clear: both;
   display: table;
 }
-.githubLinks{
+.githubLinks {
   text-decoration: none;
   color: #000;
   font-weight: 600;
 }
 
-.githubLinks:hover{
+.githubLinks:hover {
   font-weight: 900;
   color: #004688;
 }
-.imageContainer{
+.imageContainer {
   padding-top: 40px;
   padding-left: 18%;
 }
-.imageTeam{
+.imageTeam {
   width: 267px;
   height: 200px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/safiyyah.jpg");
 }
 
-.imageTeam:hover{
+.imageTeam:hover {
   background-image: url("/images/safiyyah1.png");
 }
-.imageTeam1{
+.imageTeam1 {
   width: 267px;
   height: 200px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/christina.jpg");
 }
 
-.imageTeam1:hover{
+.imageTeam1:hover {
   background-image: url("/images/christina1.png");
 }
 
-.imageTeam2{
+.imageTeam2 {
   width: 266px;
   height: 200px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/sajani.jpg");
 }
 
-.imageTeam2:hover{
+.imageTeam2:hover {
   background-image: url("/images/sajani1.png");
 }
 
-.imageTeam3{
+.imageTeam3 {
   width: 265px;
   height: 199px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/ridmi.png");
 }
 
-.imageTeam3:hover{
+.imageTeam3:hover {
   background-image: url("/images/ridmi1.png");
 }
 
-.imageTeam4{
+.imageTeam4 {
   width: 266px;
   height: 200px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/aarthif.jpg");
 }
 
-.imageTeam4:hover{
+.imageTeam4:hover {
   background-image: url("/images/aarthif1.png");
 }
 
-.imageTeam5{
+.imageTeam5 {
   width: 266px;
   height: 200px;
-  box-shadow:  0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/shiromi.jpg");
 }
 
-.imageTeam5:hover{
+.imageTeam5:hover {
   background-image: url("/images/shiromi1.png");
 }
-
+.commentInput {
+  border: none;
+  border-bottom: solid 2px #ccc;
+  padding-bottom: 10px;
+  border-radius: 0px;
+  font-size: 20px;
+  color: #282e34;
+  font-weight: 600;
+}
+.commentInput:active{
+  border: none;
+}
+.commentSubmit {
+  width: 20%;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #282e34;
+  border:none; 
+}
+.commentSubmit:hover{
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+}

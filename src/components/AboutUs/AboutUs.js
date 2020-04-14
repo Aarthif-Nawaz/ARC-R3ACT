@@ -87,12 +87,12 @@ function AboutUs() {
             As young software engineers stepping out into the world with fresh
             wild eyes, we are motivated to provide the best environment for
             mobile application developers to connect with their customers. In an
-            exponenetially advancing world, it is rather bizarre how the
-            opinions of more than 70% of app users go unaddressed. To bridg this
+            exponentially advancing world, it is rather bizarre how the
+            opinions of more than 70% of app users go unaddressed. To bridge this
             lack of communication, we present to you - ARC. An innovative
             project utilising data science to keep track of the latest data and
             help mobile application developers move one step closer to their end
-            goal - satfisfying their customers and creating a business
+            goal - satisfying their customers and creating a business
             potential.
           </p>
         </div>
