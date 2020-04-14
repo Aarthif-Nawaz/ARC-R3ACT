@@ -20,20 +20,34 @@ router.get("/bugfix", (req, res) => {
 
 router.get("/bugfixes", (request, response) => {
     console.log("Entered0");
-    db.collection("Reviews").find({ cluster: "Bug_fix" }).toArray((err, result) => {
+    db.collection("BugFixes").find().sort({ sentiment_score: 1 }).toArray((err, result) => {
         if (err) {
             return response.status(500).send("error");
         } else {
-            bugFix1=result[0];
-            // console.log(bugFix1);
-            bugFix1Keywords=bugFix1.keywords;
-            console.log(bugFix1Keywords);
-            for (let index = 0; index < bugFix1Keywords.length; index++) {
-                const element = bugFix1Keywords[index];
-                console.log(element);
+            bugFixes = [];
+            for (let index = 0; index < result.length; index++) {
+                if (result[index].keyword != "") {
+                    bugFixes.push(result[index]);
+                }
             }
-            console.log(tcom.search("always"));  
-            response.send(result);
+            response.send(bugFixes);
+        }
+    });
+
+});
+router.get("/bugfixes/:keyword", async (request, response) => {
+    console.log("Entered0");
+    db.collection("BugFixes").findOne({ keyword: request.params.keyword }, async (err, result) => {
+        if (err) {
+            return response.status(500).send("error");
+        } else {
+            bugFixes = [];
+            reviewIDs = result.reviewIDs;
+            for (let index = 0; index < reviewIDs.length; index++) {
+                var review = await db.collection("Reviews").findOne({ _id: reviewIDs[index] });
+                bugFixes.push(review);
+            }
+            response.send(bugFixes);
 
         }
     });
