@@ -4,7 +4,7 @@
 import csv
 import pickle
 
-from Data_Science.TextPreprocessing.PreProcessing import pre_processing_labelled_data
+from Data_Science.TextPreprocessing.PreProcessing import *
 
 # file which contains the pre-processed reviews to train the model
 file = open('Data_Science/TrainingDataSet/LabelledData.csv', 'r')
@@ -16,7 +16,7 @@ print(len(data))
 # # append the pre-processed the review and the sentiment, to trainData and trainLabel
 for j in range(490359, 660359):
     print(j)
-    trainData.append(pre_processing_labelled_data(data[j][0]))
+    trainData.append(pre_process_review(data[j][0],"svr"))
     trainLabel.append(data[j][1])
 # upload the vectorizer from the file
 filename = 'Data_Science/MLModels/vectorizer.pk'

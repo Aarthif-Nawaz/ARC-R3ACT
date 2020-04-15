@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 
 from Data_Science.FeatureExtraction.Finding_keywords import find_keywords
-from Data_Science.TextPreprocessing.PreProcessing import preprocessing_fe
+from Data_Science.TextPreprocessing.PreProcessing import *
 
 
 # the function is used to predict the cluster of the reviews passed
@@ -48,7 +48,7 @@ def clusterReviews(preprocessed_reviews):
     fe_preprocessedReviews = []
     for i in range(len(preprocessed_reviews)):
         #preprocess the review further and append it to the array
-        fe_preprocessedReviews.append(preprocessing_fe(preprocessed_reviews[i]))
+        fe_preprocessedReviews.append(pre_process_review(preprocessed_reviews[i],"fe"))
         #The cluster name of the reviews is identified by using the predicted label which is a number that corresponds to the position of the cluster name in the true_test_labels array
         result.append((true_test_labels[np.int(predicted_labels_knn[i])]))
     #the list of keywords that are identified are stored in an array

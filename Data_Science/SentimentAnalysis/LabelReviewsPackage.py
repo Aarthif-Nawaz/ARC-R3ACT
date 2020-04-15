@@ -45,7 +45,7 @@ def label_reviews(file_name, packageName, size):
     for i in range(len(review_list)):
         print(i)
         # preprocess the review
-        preProcessedText = reg_preprocessing(review_list[i], True)
+        preProcessedText = pre_process_review(review_list[i],"lexicon")
         # get the polarity scores from the vader Sentiment Analyzer. This returns neu, neg and pos scores
         results = vaderSentimentAnalyzer.polarity_scores(preProcessedText)
         # the score of the results["neg"] is positive hence to make

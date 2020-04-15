@@ -7,8 +7,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from Data_Science.Classification.TestMLP import clusterReviews
 from Data_Science.FeatureExtraction.Finding_keywords import find_keywords_sentence
 from Data_Science.SentimentAnalysis.PredictOverallSentiment import predict_sentiment
-from Data_Science.TextPreprocessing.PreProcessing import reg_preprocessing, pre_processing_labelled_data, \
-    cluster_pre_processing
+from Data_Science.TextPreprocessing.PreProcessing import *
 from pandas.io.json import json_normalize
 from Data_Science.TextPreprocessing.PreProcessing import listToString, nlp
 
@@ -41,8 +40,8 @@ def classifyReviews(appName):
     vaderSentimentAnalyzer = SentimentIntensityAnalyzer()
     for review in reviews:
         # the text is preprocessed at 2 different level, the first is de_emojized and the next removes the emojis and then preprocesses.
-        lexicon_preprocessed.append(reg_preprocessing(review["text"], True))
-        cluster_preprocessed.append(cluster_pre_processing(review["text"]))
+        lexicon_preprocessed.append(pre_process_review(review["text"], "lexicon"))
+        cluster_preprocessed.append(pre_process_review(review["text"],"cluster"))
         # get the polarity scores from the vader Sentiment Analyzer. This returns neu, neg and pos scores
         result = vaderSentimentAnalyzer.polarity_scores(lexicon_preprocessed[i])
         # the score of the results["neg"] is positive hence to make
@@ -54,7 +53,7 @@ def classifyReviews(appName):
         # append the sentiment calculated by the lexicon sentiment analyzer
         lexicon_sentiment.append(sentiment)
         # the preprocessed text is further preprocessed to find the sentiment using the svr model
-        svr_preprocessed.append(pre_processing_labelled_data(lexicon_preprocessed[i]))
+        svr_preprocessed.append(pre_process_review(lexicon_preprocessed[i],"svr"))
         i += 1
 
     # predict the sentiment of the preprocessed text
