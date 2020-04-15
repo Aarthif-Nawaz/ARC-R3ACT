@@ -87,12 +87,12 @@ function AboutUs() {
             As young software engineers stepping out into the world with fresh
             wild eyes, we are motivated to provide the best environment for
             mobile application developers to connect with their customers. In an
-            exponenetially advancing world, it is rather bizarre how the
-            opinions of more than 70% of app users go unaddressed. To bridg this
+            exponentially advancing world, it is rather bizarre how the
+            opinions of more than 70% of app users go unaddressed. To bridge this
             lack of communication, we present to you - ARC. An innovative
             project utilising data science to keep track of the latest data and
             help mobile application developers move one step closer to their end
-            goal - satfisfying their customers and creating a business
+            goal - satisfying their customers and creating a business
             potential.
           </p>
         </div>
@@ -108,28 +108,25 @@ function AboutUs() {
         <div class="row">
           <div class="columnTeam">
             <div class="cardTeam">
-              <img
-                alt="Safiyyah"
-                src={process.env.PUBLIC_URL + "/images/safiyyah.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
+              <div className="imageContainer">
+                <div className="imageTeam"></div>
+              </div>
               <div class="containerTeam">
-                <h3>Safiyyah Rahman</h3>
+                <h3 className="nameTeam">Safiyyah Rahman</h3>
                 <a href="https://github.com/SafiyyahR" className="githubLinks">
                   <p>github : SafiyyahR</p>
                 </a>
               </div>
             </div>
           </div>
+
           <div class="columnTeam">
             <div class="cardTeam">
-              <img
-                alt="Christina"
-                src={process.env.PUBLIC_URL + "/images/christina.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
+              <div className="imageContainer">
+                <div className="imageTeam1"></div>
+              </div>
               <div class="containerTeam">
-                <h3>Christina Thambirajah</h3>
+                <h3 className="nameTeam">Christina Thambirajah</h3>
                 <a
                   href="https://github.com/chrisitina-thambirajah"
                   className="githubLinks"
@@ -139,15 +136,65 @@ function AboutUs() {
               </div>
             </div>
           </div>
+
           <div class="columnTeam">
             <div class="cardTeam">
-              <img
-                alt="Shiromi"
-                src={process.env.PUBLIC_URL + "/images/shiromi.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
+              <div className="imageContainer">
+                <div className="imageTeam2"></div>
+              </div>
               <div class="containerTeam">
-                <h3>Shiromi Thevarajan</h3>
+                <h3 className="nameTeam">Sajani Sihara</h3>
+                <a
+                  href="https://github.com/sajani-sihara"
+                  className="githubLinks"
+                >
+                  <p>github : sajani-sihara</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style={{ paddingTop: 40 }}>
+
+          <div class="columnTeam">
+          <div class="cardTeam">
+            <div className="imageContainer">
+              <div className="imageTeam3"></div>
+            </div>
+            <div class="containerTeam">
+              <h3 className="nameTeam">Ridmi Amasha</h3>
+              <a href="https://github.com/ridmi98" className="githubLinks">
+                <p>github : ridmi98</p>
+              </a>
+            </div>
+            </div>
+          </div>
+
+          <div class="columnTeam">
+          <div class="cardTeam">
+            <div className="imageContainer">
+              <div className="imageTeam4"></div>
+            </div>
+            <div class="containerTeam">
+              <h3 className="nameTeam">Aarthif Nawaz</h3>
+              <a
+                href="https://github.com/Aarthif-Nawaz"
+                className="githubLinks"
+              >
+                <p>github : Aarthif-Nawaz</p>
+              </a>
+            </div>
+          </div>
+          </div>
+
+          <div class="columnTeam">
+            <div class="cardTeam">
+              <div className="imageContainer">
+                <div className="imageTeam5"></div>
+              </div>
+              <div class="containerTeam">
+                <h3 className="nameTeam">Shiromi Thevarajan</h3>
                 <a
                   href="https://github.com/shiromi-basil"
                   className="githubLinks"
@@ -157,47 +204,7 @@ function AboutUs() {
               </div>
             </div>
           </div>
-        </div>
-        <div class="row" style={{ paddingTop: 40 }}>
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <img
-                alt="Ridmi"
-                src={process.env.PUBLIC_URL + "/images/safiyyah.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
-              <div class="containerTeam">
-                <h3>Ridmi Amasha</h3>
-                <a href="https://github.com/ridmi98" className="githubLinks"><p>github : ridmi98</p></a>
-              </div>
-            </div>
-          </div>
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <img
-                alt="Aarthif"
-                src={process.env.PUBLIC_URL + "/images/aarthif.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
-              <div class="containerTeam">
-                <h3>Aarthif Nawaz</h3>
-                <a href="https://github.com/Aarthif-Nawaz" className="githubLinks"><p>github : Aarthif-Nawaz</p></a>
-              </div>
-            </div>
-          </div>
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <img
-                alt="Sajani"
-                src={process.env.PUBLIC_URL + "/images/sajani.jpg"}
-                style={{ width: "50%", paddingTop: 20, paddingBottom: 20 }}
-              />
-              <div class="containerTeam">
-                <h3>Sajani Sihara</h3>
-                <a href="https://github.com/sajani-sihara" className="githubLinks"><p>github : sajani-sihara</p></a>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 

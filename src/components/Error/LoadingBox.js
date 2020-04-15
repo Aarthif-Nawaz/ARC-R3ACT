@@ -28,9 +28,9 @@ function LoadingBox() {
           style={{
             textTransform: "uppercase",
             letterSpacing: 3,
-            fontSize: "1.1vw",
+            fontSize: "1.4vw",
             textAlign: "center",
-            color: "#fff",
+            color: "#000",
             fontWeight: 600,
           }}
         >
