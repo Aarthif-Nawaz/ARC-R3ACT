@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useHistory } from "react-router-dom";
 
-function DescripBoxTrans(props){
+function BFSolid(props){
     const keywords = props.keywords;
     let history = useHistory();
     function handleClick(){
@@ -13,16 +13,16 @@ function DescripBoxTrans(props){
     }
     return(
         
-        <Container fluid className='descrip-10'>
+        <Container fluid className='descrip-13'>
             <Row className='m-1'>
-                <Col sm={4}><p>Description</p></Col>
-                <Col sm={8}>{props.description}</Col>
+                <Col lg={4}><p>Description</p></Col>
+                <Col lg={6}>{props.description}</Col>
             </Row>
             <Row className='m-1'>
                 <Col sm={4}><p>Keywords</p></Col>
                 <Col sm={8}>
                     {keywords.map((key)=>
-                        <Button variant='secondary' className='mx-3'>{key}</Button>
+                        <Button variant='secondary' className='mx-5'>{key}</Button>
                 )}   
                 </Col>
             </Row>  
@@ -31,10 +31,10 @@ function DescripBoxTrans(props){
                 <Col sm={8}>{props.points}</Col>
             </Row>           
             <Container className='text-right'>
-                <Button variant='secondary' className='mx-3' onClick={handleClick}>View Reviews</Button>
+                <Button variant='secondary' className='mx-5' onClick={handleClick}>View Reviews</Button>
             </Container>
                 
         </Container>
     );
 }
-export default DescripBoxTrans;
+export default BFSolid;

@@ -152,6 +152,51 @@ html {
   font-weight: 700;
    
 }
+
+.descrip-12 {
+  color: #fff;
+  background-image: url("/images/laptop6.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 23px;
+  padding: 50px;
+  font-weight: 700;
+}
+.mx-4{
+  color: #fff;
+  background-color: #434950;
+  font-weight: 700;
+  border: #fff 2px solid;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.mx-4:hover{
+  border: #434950 2px solid;
+  background-color: #fff;
+  color: #434950;
+}
+.mx-5{
+  color: #434950;
+  background-color: #fff;
+  font-weight: 700;
+  border: #fff 2px solid;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.mx-5:hover{
+  border: #fff 2px solid;
+  background-color: #434950;
+}
+.descrip-13 {
+  color: #fff;
+  background-color: #434950;
+  font-size: 23px;
+  padding: 50px;
+  font-weight: 700;
+   
+}
 /*the three background images used for the parallax effect*/
 .bgimg-1,
 .bgimg-2,
@@ -166,7 +211,8 @@ html {
 .bgimg-11,
 .bgimg-12,
 .bgimg-13,
-.bgimg-14 {
+.bgimg-14,
+.bgimg-15  {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -234,6 +280,10 @@ html {
 .bgimg-14 {
   min-height: 800px;
   background-image: url("/images/laptop3.jpg");
+}
+.bgimg-15 {
+  min-height: 800px;
+  background-image: url("/images/laptop6.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
