@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useHistory } from "react-router-dom";
 
-function DescriptionBox(props){
+function DescripBoxSolid(props){
     const keywords = props.keywords;
     let history = useHistory();
     function handleClick(){
@@ -13,7 +13,7 @@ function DescriptionBox(props){
     }
     return(
         
-        <Container className='p-4 mb-5 bg-light rounded'>
+        <Container fluid className='descrip-11'>
             <Row className='m-1'>
                 <Col sm={4}><p>Description</p></Col>
                 <Col sm={8}>{props.description}</Col>
@@ -31,10 +31,10 @@ function DescriptionBox(props){
                 <Col sm={8}>{props.points}</Col>
             </Row>           
             <Container className='text-right'>
-                <Button variant='secondary' onClick={handleClick}>View Reviews</Button>
+                <Button variant='secondary' className='mx-2' onClick={handleClick}>View Reviews</Button>
             </Container>
                 
         </Container>
     );
 }
-export default DescriptionBox;
+export default DescripBoxSolid;

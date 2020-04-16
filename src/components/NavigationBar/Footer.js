@@ -68,16 +68,16 @@ function Footer() {
                 style={{ width: "60px", backgroundColor:'#fff' }}
               />
               <p>
-                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Home</a>
+                <a href="/" style={{color:"#fff", fontSize:"1.1vw"}}>Home</a>
               </p>
               <p>
-                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>About</a>
+                <a href="/aboutus" style={{color:"#fff", fontSize:"1.1vw"}}>About</a>
               </p>
               <p>
-                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Support</a>
+                <a href="/support" style={{color:"#fff", fontSize:"1.1vw"}}>Support</a>
               </p>
               <p>
-                <a href="#!" style={{color:"#fff", fontSize:"1.1vw"}}>Contact</a>
+                <a href="/contact" style={{color:"#fff", fontSize:"1.1vw"}}>Contact</a>
               </p>
             </div>
 

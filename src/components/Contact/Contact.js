@@ -71,43 +71,6 @@ function Contact() {
           />
         </form>
       </div>
- 
-      <script>
-			//this function is used to validate the input received by the form
-			function validateForm(){
-				var userInput = true;
-				
-				//declaring the variables for each input
-				var userName = document.getElementById("name").value;
-				var userEmail = document.getElementById("email").value;
-				
-				
-				//validation for the email
-				var atSymbol = userEmail.indexOf("@");
-				var dotSymbol = userEmail.lastIndexOf(".");
-				
-				//validation for name, email and comment
-				if (userName.length <= 0){
-				alert("Please enter your name.");
-				userInput = false;
-				}
-				else if (atSymbol == 0 || dotSymbol < +atSymbol + 2 || dotSymbol + 2 >= userEmail.length){
-				alert("Please enter the email address.")
-				userInput = false;
-				}
-				
-				//once the validation is over, the following message will be printed
-				if(userInput){
-				var text = "Dear ";
-				text += userName;
-				text += ", your message has been received. We will get back to you shortly. ";
-				alert(text);
-				}
-			}	
-			</script>
-
-
-
 
       <div class="bgimg-13">
         <div class="caption">
