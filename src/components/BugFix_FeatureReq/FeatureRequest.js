@@ -1,8 +1,7 @@
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import FRTrans from "./FRTrans";
-import FRSolid from "./FRSolid";
+import FRDescripBox from "./FRDescripBox";
 import Footer from "../NavigationBar/Footer";
 
 function FeatureRequest() {
@@ -17,21 +16,21 @@ function FeatureRequest() {
       </div>
       <div>
         <div className=' descrip-13'>
-        <FRSolid
+        <FRDescripBox
           description="Edit user details"
           keywords={["edit", "username"]}
           points="5.0"
         />
         </div>
         <div className=' descrip-12'>
-        <FRSolid
+        <FRDescripBox
           description="Re-design UI"
           keywords={["design", "ui"]}
           points="4.7"
         />
         </div>
         <div className=' descrip-13'>
-        <FRSolid
+        <FRDescripBox
           description="Login with facebook, Google+ and Twitter"
           keywords={["login", "facebook", "google", "twitter"]}
           points="3.8"

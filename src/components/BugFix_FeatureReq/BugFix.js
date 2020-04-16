@@ -1,8 +1,7 @@
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import BFTrans from "./BFTrans";
-import BFSolid from "./BFSolid";
+import BFDescripBox from "./BFDescripBox";
 import '../../App.css';
 import Footer from "../NavigationBar/Footer";
 
@@ -18,7 +17,7 @@ function BugFix() {
       </div>
       <div>
         <div className='descrip-11'>
-        <BFSolid
+        <BFDescripBox
          
          description="Location cannot be found"
          keywords={["location", "lost"]}
@@ -27,7 +26,7 @@ function BugFix() {
         </div>
         
         <div className='descrip-10'>
-        <BFSolid
+        <BFDescripBox
          
          description="Doesn't work in huewei P40 Lite E"
          keywords={["doesnt", "work", "huewei P40 Lite E"]}
@@ -36,7 +35,7 @@ function BugFix() {
         </div>
 
         <div className='descrip-11'>
-        <BFSolid
+        <BFDescripBox
          
           description="Points doesn't add to up"
           keywords={["points", "add"]}
@@ -44,7 +43,7 @@ function BugFix() {
         />
         </div>
         <div className='descrip-10'>
-        <BFSolid
+        <BFDescripBox
          
          description="App crashes suddenly"
          keywords={["App", "crash"]}
