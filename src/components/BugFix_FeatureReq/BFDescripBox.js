@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useHistory } from "react-router-dom";
 
-function BFSolid(props){
+function BFDescripBox(props){
     const keywords = props.keywords;
     let history = useHistory();
     function handleClick(){
@@ -42,4 +42,4 @@ function BFSolid(props){
         </div>
     );
 }
-export default BFSolid;
+export default BFDescripBox;

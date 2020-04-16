@@ -12,7 +12,7 @@ function MenuBox() {
               textAlign: "center",
               fontWeight: 900,
               float: "left",
-              padding: 50,
+              padding: 20,
               fontSize:'2vw',
               marginTop: "12%",
             }}
@@ -32,7 +32,7 @@ function MenuBox() {
             <div class="row">
             <div class="col-lg-4 mb-2">
                 <Link to="/bugfix">
-                  <div className="card p-4">Bug Fixes</div>
+                  <div className="card p-4">Bug <br></br>Fixes</div>
                 </Link>
               </div>
               <div class="col-lg-4 mb-2">
