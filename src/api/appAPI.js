@@ -1,5 +1,3 @@
-
-
 export const appNames = [
     {
         appid : 'com.zhiliaoapp.musically',
@@ -333,120 +331,456 @@ export const appNames = [
     appid : 'com.Funimation.FunimationNow',
     name : 'Funimation',
    },
-    
-    'com.robinhood.android',
-    'com.facebook.mlite',
-    'sg.bigo.live',
-    'com.popshow.yolo',
-    'com.sec.android.easyMover',
-    'com.alibaba.aliexpresshd',
-    'com.calm.android',
-    'com.weather.Weather',
-    'com.pinger.textfree',
-    'com.stash.stashinvest',
-    'com.samsung.android.app.notes',
-    'live.free.tv_us',
-    'com.hp.printercontrol',
-    'com.zellepay.zelle',
-    'com.alibaba.intl.android.apps.poseidon',
-    'scratch.lucky.money.free.real.big.win',
-    'com.google.earth',
-    'com.naver.linewebtoon',
-    'jp.gocro.smartnews.android',
-    'com.linkedin.android',
-    'jp.ne.ibis.ibispaintx.app',
-    'com.nike.omega',
-    'com.walmart.grocery',
-    'com.apple.movetoios',
-    'com.google.android.apps.walletnfcrel',
-    'com.clearchannel.iheartradio.controller',
-    'com.google.android.apps.youtube.unplugged',
-    'messenger.chat.social.messenger.lite',
-    'com.chewy.android',
-    'com.disney.datg.videoplatforms.android.abc',
-    'video.like',
-    'com.experian.android',
-    'com.google.android.apps.docs.editors.docs',
-    'paint.by.number.pixel.art.coloring.drawing.puzzle',
-    'com.fitbit.FitbitMobile',
-    'com.dollargeneral.android',
-    'tv.twitch.android.app',
-    'com.groupon',
-    'com.airbnb.android',
-    'com.ubercab.driver',
-    'musclebooster.workout.home.gym.abs.loseweight',
-    'com.zzkko',
-    'com.yahoo.mobile.client.android.mail',
-    'us.zoom.videomeetings',
-    'com.pof.android',
-    'com.yelp.android',
-    'com.groupme.android',
-    'com.infonow.bofa',
-    'com.google.android.apps.tachyon',
-    'com.chase.sig.android',
-    'com.sirma.mobile.bible.android',
-    'com.move.realtor',
-    'videoeditor.videorecorder.screenrecorder',
-    'com.chickfila.cfaflagship',
-    'com.brilla.videos.app',
-    'com.microsoft.office.word',
-    'com.ibotta.android',
-    'com.tencent.tl.wallpaper',
-    'com.hily.app',
-    'kjv.bible.kingjamesbible',
-    'com.nextdoor',
-    'com.google.android.apps.messaging',
-    'com.espn.score_center',
-    'com.agminstruments.drumpadmachine',
-    'com.bitstrips.imoji',
-    'com.groupme.android',
-    'com.kroger.mobile',
-    'com.bydeluxe.d3.android.program.starz',
-    'com.azure.authenticator',
-    'com.starbucks.mobilecard',
-    'com.apple.android.music',
-    'com.getsomeheadspace.android',
-    'com.download.music.app.mp3.downloader.song.freeapp',
-    'de.mobileconcepts.cyberghost',
-    'com.google.android.apps.adm',
-    'com.propel.ebenefits',
-    'com.dave',
-    'com.target.ui',
-    'com.hrblock.blockmobile',
-    'com.my.new.wallpaper.lww',
-    'slime.simulator.time.asmr',
-    'goodluck.lucky.money.scratch.win.real.cash.day',
-    'com.audiomack',
-    'com.ringapp',
-    'com.language.speech.picture.translate',
-    'com.giphy.messenger',
-    'com.wf.wellsfargomobile',
-    'com.expedia.bookings',
-    'com.microsoft.xboxone.smartglass',
-    'com.bumble.app',
-    'com.shazam.android',
-    'com.smule.singandroid',
-    'com.nexstreaming.app.kinemasterfree',
-    'com.nordvpn.android',
-    'com.zhiliao.musically.livewallpaper',
-    'com.gen.bettermen',
-    'com.brighthouse.mybhn',
-    'com.dominospizza',
-    'com.google.android.apps.authenticator2',
-    'com.myklarnamobile',
-    'org.telegram.messenger',
-    'com.appblockgames.freecraftexploration',
-    'com.sec.android.app.shealth',
-    'com.booking',
-    'com.google.android.apps.docs.editors.sheets',
-    'com.tinybyteapps.robyte',
-    'com.camerasideas.instashot',
-    'com.scannerradio',
-    'com.google.android.contacts',
-    'com.adpmobile.android',
-    'com.Caseys.finder',
-    'com.google.android.apps.photos',
-    'mozilla firefox',
+   {
+    appid : 'com.robinhood.android',
+    name : 'Robinhood',
+   },
+   {
+    appid : 'com.facebook.mlite',
+    name : 'Messenger Lite',
+   },
+   {
+    appid : 'sg.bigo.live',
+    name : 'BIGO LIVE',
+   },
+   {
+    appid : 'com.popshow.yolo',
+    name : 'YOLO',
+   },
+   {
+    appid : 'com.sec.android.easyMover',
+    name : 'Samsung Smart Switch Mobile',
+   },
+   {
+    appid : 'com.alibaba.aliexpresshd',
+    name : 'AliExpress',
+   },
+   {
+    appid : 'com.calm.android',
+    name : 'Calm'
+   },
+   {
+    appid : 'com.weather.Weather',
+    name : 'Weather News & Radar Maps'
+   },
+   {
+    appid : 'com.pinger.textfree',
+    name : 'Text Free'
+   },
+   {
+    appid : 'com.stash.stashinvest',
+    name : 'Stash'
+   },
+   {
+    appid : 'com.samsung.android.app.notes',
+    name : 'Samsung Notes'
+   },
+   {
+    appid : 'live.free.tv_us',
+    name : 'FREECABLE TV App'
+   },
+   {
+    appid : 'com.hp.printercontrol',
+    name : 'HP Smart'
+   },
+   {
+    appid : 'com.zellepay.zelle',
+    name : 'Zelle'
+   },
+   {
+    appid : 'com.alibaba.intl.android.apps.poseidon',
+    name : 'Alibaba.com'
+   },
+   {
+    appid : 'scratch.lucky.money.free.real.big.win',
+    name : 'Lucky Money'
+   },
+   {
+    appid : 'com.google.earth',
+    name : 'Google Earth'
+   },
+   {
+    appid : 'com.naver.linewebtoon',
+    name : 'WEBTOON'
+   },
+   {
+    appid : 'jp.gocro.smartnews.android',
+    name : 'SmartNews'
+   },
+   {
+    appid : 'jp.gocro.smartnews.android',
+    name : 'SmartNews'
+   },
+   {
+    appid : 'com.linkedin.android',
+    name : 'Linkedln'
+   },
+   {
+    appid : 'jp.ne.ibis.ibispaintx.app',
+    name : 'ibis Paint X'
+   },
+   {
+    appid : 'com.nike.omega',
+    name : 'Nike'
+   },
+   {
+    appid : 'com.walmart.grocery',
+    name : 'Walmart Grocery'
+   },
+   {
+    appid : 'com.apple.movetoios',
+    name : 'Move to iOS'
+   },
+   {
+    appid : 'com.google.android.apps.walletnfcrel',
+    name : 'Google Pay'
+   },
+   {
+    appid : 'com.clearchannel.iheartradio.controller',
+    name : 'iHeartRadio'
+   },
+   {
+    appid : 'com.google.android.apps.youtube.unplugged',
+    name : 'YouTube TV'
+   },
+   {
+    appid : 'messenger.chat.social.messenger.lite',
+    name : 'Messenger Pro Lite'
+   },
+   {
+    appid : 'com.chewy.android',
+    name : 'Chewy'
+   },
+   {
+    appid : 'com.disney.datg.videoplatforms.android.abc',
+    name : 'ABC'
+   },
+   {
+    appid : 'video.like',
+    name : 'Likee'
+   },
+   {
+    appid : 'com.experian.android',
+    name : 'Experian'
+   },
+   {
+    appid : 'com.google.android.apps.docs.editors.docs',
+    name : 'Google Docs'
+   },
+   {
+    appid : 'paint.by.number.pixel.art.coloring.drawing.puzzle',
+    name : 'Paint By Number'
+   },
+   {
+    appid : 'com.fitbit.FitbitMobile',
+    name : 'Fitbit'
+   },
+   {
+    appid : 'com.dollargeneral.android',
+    name : 'Dollar General'
+   },
+   {
+    appid : 'tv.twitch.android.app',
+    name : 'Twitch'
+   },
+   {
+    appid : 'com.groupon',
+    name : 'Groupon'
+   },
+   {
+    appid : 'com.airbnb.android',
+    name : 'Airbnb'
+   },
+   {
+    appid : 'com.ubercab.driver',
+    name : 'Uber Driver'
+   },
+   {
+    appid : 'musclebooster.workout.home.gym.abs.loseweight',
+    name : 'Muscle Booster'
+   },
+   {
+    appid :  'com.zzkko',
+    name : 'SHEIN'
+   },
+   {
+    appid : 'com.yahoo.mobile.client.android.mail',
+    name : 'Yahoo Mail'
+   },
+   {
+    appid : 'us.zoom.videomeetings',
+    name : 'Zoom'
+   },
+   {
+    appid : 'com.pof.android',
+    name : 'Plenty of Fish Free Dating App'
+   },
+   {
+    appid : 'com.yelp.android',
+    name : 'Yelp'
+   },
+   {
+    appid : 'com.groupme.android',
+    name : 'GroupMe'
+   },
+   {
+    appid :  'com.infonow.bofa',
+    name : 'Bank of America Mobile Banking'
+   },
+   {
+    appid : 'com.google.android.apps.tachyon',
+    name : 'Google Duo'
+   },
+   {
+    appid : 'com.chase.sig.android',
+    name : 'Chase Mobile'
+   },
+   {
+    appid : 'com.sirma.mobile.bible.android',
+    name : 'The Bible App'
+   },
+   {
+    appid : 'com.move.realtor',
+    name : 'Realtor.com Real Estate'
+   },
+   {
+    appid : 'videoeditor.videorecorder.screenrecorder',
+    name : 'V Recorder'
+   },
+   {
+    appid : 'com.chickfila.cfaflagship',
+    name : 'Chick-fil-A'
+   },
+    {
+    appid : 'com.brilla.videos.app',
+    name : 'Brilla'
+   },
+   {
+    appid : 'com.microsoft.office.word',
+    name : 'Microsoft Word'
+   },
+   {
+    appid : 'com.ibotta.android',
+    name : 'Ibotta'
+   },
+   {
+    appid : 'com.tencent.tl.wallpaper',
+    name : 'Superb Wallpapers Flashlight Compass all in one'
+   },
+   {
+    appid : 'com.hily.app',
+    name : 'Hily Dating App'
+   },
+   {
+    appid : 'com.nextdoor',
+    name : 'Nextdoor'
+   },
+   {
+    appid : 'com.google.android.apps.messaging',
+    name : 'Messages'
+   },
+   {
+    appid : 'com.espn.score_center',
+    name : 'ESPN'
+   },
+   {
+    appid : 'com.agminstruments.drumpadmachine',
+    name : 'Drum Pad Machine'
+   },
+   {
+    appid : 'com.bitstrips.imoji',
+    name : 'Bitmoji'
+   },
+   {
+    appid : 'com.groupme.android',
+    name : 'GroupMe'
+   },
+   {
+    appid : 'com.kroger.mobile',
+    name : 'Kroger'
+   },
+   {
+    appid : 'com.bydeluxe.d3.android.program.starz',
+    name : 'STARZ'
+   },
+   {
+    appid : 'com.azure.authenticator',
+    name : 'Microsoft Authenticator'
+   },
+   {
+    appid : 'com.starbucks.mobilecard',
+    name : 'Starbucks'
+   },
+   {
+    appid : 'com.apple.android.music',
+    name : 'Apple Music'
+   },
+   {
+    appid : 'com.getsomeheadspace.android',
+    name : 'Headspace'
+   },
+   {
+    appid : 'com.download.music.app.mp3.downloader.song.freeapp',
+    name : 'MP3 song downloader'
+   },
+   {
+    appid : 'de.mobileconcepts.cyberghost',
+    name : 'CyberGhost VPN'
+   },
+   {
+    appid :  'com.google.android.apps.adm',
+    name : 'Google Find My Device'
+   },
+   {
+    appid :  'com.propel.ebenefits',
+    name : 'Fresh EBT'
+   },
+   {
+    appid : 'com.dave',
+    name : 'Dave'
+   },
+   {
+    appid : 'com.target.ui',
+    name : 'Target'
+   },
+   {
+    appid : 'com.hrblock.blockmobile',
+    name : 'MyBlock'
+   },
+   {
+    appid : 'com.my.new.wallpaper.lww',
+    name : 'Splendid Live Wallpapers'
+   },
+   {
+    appid : 'slime.simulator.time.asmr',
+    name : 'Slime Simulator Time'
+   },
+   {
+    appid : 'goodluck.lucky.money.scratch.win.real.cash.day',
+    name : 'Lucky Go'
+   },
+   {
+    appid :  'com.audiomack',
+    name : 'Audiomack'
+   },
+   {
+    appid : 'com.ringapp',
+    name : 'Ring'
+   },
+   {
+    appid : 'com.language.speech.picture.translate',
+    name : 'Translate it'
+   },
+   {
+    appid :  'com.giphy.messenger',
+    name : 'GIPHY'
+   },
+   {
+    appid :  'com.wf.wellsfargomobile',
+    name : 'Wells Fargo Mobile'
+   },
+   {
+    appid : 'com.expedia.bookings',
+    name : 'Expedia'
+   },
+   {
+    appid : 'com.microsoft.xboxone.smartglass',
+    name : 'Xbox'
+   },
+   {
+    appid : 'com.bumble.app',
+    name : 'Bumble'
+   },
+   {
+    appid : 'com.shazam.android',
+    name : 'Shazam'
+   },
+   {
+    appid : 'com.smule.singandroid',
+    name : 'Smule'
+   },
+   {
+    appid :'com.nexstreaming.app.kinemasterfree',
+    name : 'KineMaster'
+   },
+   {
+    appid :'com.nordvpn.android',
+    name : 'NordVPN'
+   },
+   {
+    appid :'com.zhiliao.musically.livewallpaper',
+    name : 'TikTok Wall Picture'
+   },
+   {
+    appid : 'com.gen.bettermen',
+    name : 'BetterMen'
+   },
+   {
+    appid : 'com.brighthouse.mybhn',
+    name : 'My Spectrum'
+   },
+   {
+    appid : 'com.dominospizza',
+    name : 'Domino\'s Pizza USA'
+   },
+   {
+    appid :  'com.google.android.apps.authenticator2',
+    name : 'Google Authenticator'
+   },
+   {
+    appid :  'com.myklarnamobile',
+    name : 'Klarna'
+   },
+   {
+    appid :  'org.telegram.messenger',
+    name : 'Telegram'
+   },
+   {
+    appid : 'com.appblockgames.freecraftexploration',
+    name : 'MOD-MASTER for Minecraft PE (Pocket Edition) Free '
+   },
+   {
+    appid : 'com.sec.android.app.shealth',
+    name : 'Samsung Health'
+   },
+   {
+    appid : 'com.booking',
+    name : 'Booking.com'
+   },
+   {
+    appid : 'com.google.android.apps.docs.editors.sheets',
+    name : 'Google Sheets'
+   },
+   {
+    appid : 'com.tinybyteapps.robyte',
+    name : 'Roku Remote Control'
+   },
+   {
+    appid : 'com.camerasideas.instashot',
+    name : 'InShot'
+   },
+   {
+    appid :  'com.scannerradio',
+    name : 'Scanner Radio'
+   },
+   {
+    appid : 'com.google.android.contacts',
+    name : 'Contacts'
+   },
+   {
+    appid : 'com.adpmobile.android',
+    name : 'ADP Mobile Solutions'
+   },
+   {
+    appid : 'com.Caseys.finder',
+    name : 'Casey\'s'
+   },
+   {
+    appid :'com.google.android.apps.photos',
+    name : 'oogle Photos'
+   },
+   
+     
 ];
 
 
