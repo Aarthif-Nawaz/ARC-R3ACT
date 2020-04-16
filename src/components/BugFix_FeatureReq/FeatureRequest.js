@@ -16,21 +16,27 @@ function FeatureRequest() {
         </div>
       </div>
       <div>
+        <div className=' descrip-13'>
         <FRSolid
           description="Edit user details"
           keywords={["edit", "username"]}
           points="5.0"
         />
-        <FRTrans
+        </div>
+        <div className=' descrip-12'>
+        <FRSolid
           description="Re-design UI"
           keywords={["design", "ui"]}
           points="4.7"
         />
+        </div>
+        <div className=' descrip-13'>
         <FRSolid
           description="Login with facebook, Google+ and Twitter"
           keywords={["login", "facebook", "google", "twitter"]}
           points="3.8"
         />
+        </div>
       </div>
       <Footer />
     </div>

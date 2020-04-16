@@ -13,28 +13,31 @@ function BFSolid(props){
     }
     return(
         
-        <Container fluid className='descrip-13'>
-            <Row className='m-1'>
-                <Col lg={4}><p>Description</p></Col>
-                <Col lg={6}>{props.description}</Col>
-            </Row>
-            <Row className='m-1'>
-                <Col sm={4}><p>Keywords</p></Col>
-                <Col sm={8}>
+        <div className='container-fluid'>
+            <div className="center-content">
+            <div className='row m-1'>
+                <div className='col'><p>Description</p></div>
+                <div className='col'>{props.description}</div>
+            </div>
+            <div className='row m-1'>
+                <div className='col'><p>Keywords</p></div>
+                <div className='col'>
                     {keywords.map((key)=>
                         <Button variant='secondary' className='mx-5'>{key}</Button>
                 )}   
-                </Col>
-            </Row>  
-            <Row className='m-1'>
-                <Col sm={4}><p>Bug sentiment</p></Col>
-                <Col sm={8}>{props.points}</Col>
-            </Row>           
-            <Container className='text-right'>
+                </div>
+            </div>  
+            <div className='row m-1'>
+                <div className='col'><p>Bug sentiment</p></div>
+                <div className='col'>{props.points}</div>
+            </div>           
+            </div>
+           
+            <div className='container text-right'>
                 <Button variant='secondary' className='mx-5' onClick={handleClick}>View Reviews</Button>
-            </Container>
+            </div>
                 
-        </Container>
+        </div>
     );
 }
 export default BFSolid;

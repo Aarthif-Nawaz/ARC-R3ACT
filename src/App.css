@@ -891,3 +891,8 @@ video {
 .commentSubmit:hover{
   box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
 }
+/* =======================BUG FIX=========== */
+.center-content{
+  margin:0 auto;
+  width:50%;
+}

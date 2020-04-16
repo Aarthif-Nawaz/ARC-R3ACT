@@ -13,28 +13,33 @@ function BFSolid(props){
     }
     return(
         
-        <Container fluid className='descrip-11'>
-            <Row className='m-1'>
-                <Col lg={4}><p>Description</p></Col>
-                <Col lg={6}>{props.description}</Col>
-            </Row>
-            <Row className='m-1'>
-                <Col sm={4}><p>Keywords</p></Col>
-                <Col sm={8}>
-                    {keywords.map((key)=>
-                        <Button variant='secondary' className='mx-2'>{key}</Button>
-                )}   
-                </Col>
-            </Row>  
-            <Row className='m-1'>
-                <Col sm={4}><p>Bug sentiment</p></Col>
-                <Col sm={8}>{props.points}</Col>
-            </Row>           
-            <Container className='text-right'>
-                <Button variant='secondary' className='mx-2' onClick={handleClick}>View Reviews</Button>
-            </Container>
+        <div className='container-fluid'>
+            <div className="center-content">
+                <div className='row m-1 '>
+
+                <div className="col"><p>Description</p></div>
+                <div className="col">{props.description}</div>
                 
-        </Container>
+                    
+                </div>
+                <div className='row m-1'>
+                    <div className='col'><p>Keywords</p></div>
+                    <div className='col'>
+                        {keywords.map((key)=>
+                            <Button variant='secondary' className='mx-2'>{key}</Button>
+                    )}   
+                    </div>
+                </div>  
+                <div className='row m-1'>
+                    <div className='col'><p>Bug sentiment</p></div>
+                    <div className='col'>{props.points}</div>
+                </div> 
+                </div>            
+                <div className='container text-right'>
+                    <Button variant='secondary' className='mx-2' onClick={handleClick}>View Reviews</Button>
+                </div>
+            
+        </div>
     );
 }
 export default BFSolid;
