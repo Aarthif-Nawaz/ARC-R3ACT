@@ -120,7 +120,7 @@ html {
   padding: 50px;
   font-weight: 700;
 }
-.mx-2{
+.bugDescripBtn{
   color: #fff;
   background-color: #da808a;
   font-weight: 700;
@@ -128,7 +128,7 @@ html {
   font-size: 15px;
   text-transform: uppercase;
 }
-.mx-2:hover{
+.bugDescripBtn:hover{
   border: #fff 2px solid;
   background-color: #434950;
 }
@@ -177,7 +177,7 @@ html {
   background-color: #fff;
   color: #434950;
 }
-.mx-5{
+.descrip-button{
   color: #434950;
   background-color: #fff;
   font-weight: 700;
@@ -185,7 +185,7 @@ html {
   font-size: 15px;
   text-transform: uppercase;
 }
-.mx-5:hover{
+.descrip-button:hover{
   border: #fff 2px solid;
   background-color: #434950;
 }

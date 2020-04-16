@@ -23,7 +23,7 @@ function FRDescripBox(props){
                 <div className='col'><p>Keywords</p></div>
                 <div className='col'>
                     {keywords.map((key)=>
-                        <Button variant='secondary' className='mx-5'>{key}</Button>
+                        <Button variant='secondary' className='m-2 descrip-button'>{key}</Button>
                 )}   
                 </div>
             </div>  
@@ -34,7 +34,7 @@ function FRDescripBox(props){
             </div>
            
             <div className='container text-right'>
-                <Button variant='secondary' className='mx-5' onClick={handleClick}>View Reviews</Button>
+                <Button variant='secondary' className='mx-2 descrip-button' onClick={handleClick}>View Reviews</Button>
             </div>
                 
         </div>
