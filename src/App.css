@@ -155,7 +155,7 @@ html {
 
 .descrip-12 {
   color: #434950;
-  background-image: url("/images/laptop6.jpg");
+  background-image: url("/images/laptop1.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -212,7 +212,8 @@ html {
 .bgimg-12,
 .bgimg-13,
 .bgimg-14,
-.bgimg-15  {
+.bgimg-15,
+.bgimg-16  {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -247,7 +248,7 @@ html {
 }
 .bgimg-6 {
   min-height: 800px;
-  background-image: url("/images/laptop1.jpg");
+  background-image: url("/images/laptop6.jpg");
 }
 .bgimg-7 {
   min-height: 800px;
@@ -283,7 +284,11 @@ html {
 }
 .bgimg-15 {
   min-height: 800px;
-  background-image: url("/images/laptop6.jpg");
+  background-image: url("/images/laptop1.jpg");
+}
+.bgimg-16 {
+  min-height: 800px;
+  background-image: url("/images/laptop7.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
@@ -626,7 +631,7 @@ video {
   display: block;
 }
 .MenuBoxPage {
-  /* width: 60%; */
+  width: 50%;
   margin-top: 5%;
   float: left;
 }
@@ -641,14 +646,15 @@ video {
 .menuIntro {
   margin: auto;
   float: left;
-  padding: 50px;
   color: rgb(88, 87, 87);
-  font-size: 2.3vh;
+  font-size: 3vh;
+  text-align: center;
+  padding: 20px;
 }
 .p-4 {
   color: rgb(88, 87, 87);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 2.5vh;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-decoration: none;
@@ -894,5 +900,14 @@ video {
 /* =======================BUG FIX=========== */
 .center-content{
   margin:0 auto;
-  width:50%;
+  width:60%;
+}
+.sentimentBox{
+  padding-top: 15%;
+  padding-left: 5%;
+  font-family: "Lato" sans-serif;
+}
+.sentimentInfo{
+  font-size: 20px;
+  
 }
