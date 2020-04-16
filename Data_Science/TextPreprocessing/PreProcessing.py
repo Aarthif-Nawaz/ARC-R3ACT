@@ -7,6 +7,7 @@ import emoji
 import re
 import spacy
 
+# This is one of the NLP libraries loaded in order to non - english words
 nlp = spacy.load('en_core_web_sm')
 '''Load the spacy model to check all the words that do not come under english dictionary'''
 alpha = list(string.ascii_lowercase)
