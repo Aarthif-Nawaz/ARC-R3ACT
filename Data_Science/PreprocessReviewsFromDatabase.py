@@ -3,7 +3,7 @@
 
 # Installations - PyMongo
 
-# Imports
+# Imports needed for this file
 import pymongo
 from Preprocessing import text_preprocessingNLP
 
