@@ -92,6 +92,7 @@ const stateSchema = {
   phone:{value:'',error:''}
 }
 
+//Validations done in the input text fields
 const validationStateSchema = {
  name:{
    required :true,
@@ -118,9 +119,24 @@ const validationStateSchema = {
   }
  }
 }
+//sending data to the server 
 function OnSubmitForm(state){
+  const data={
+    name : state.name.value,
+    email : state.email.value,
+    message : state.message.value
+    ,phone : state.phone.value
+  }
+  const url = "http://localhost:5000/contactus";
 
-  alert(state);
+  fetch(url,{
+    method:'POST',
+    body:JSON.stringify(data),
+    headers:{'Content-Type':'application/json'}
+  }).then(res=>res.json())
+  .catch(error=>console.error('Error:',error))
+  .then(response => console.log('Success:',response));
+  // alert(JSON.stringify(data,null,2));
 }
 
 const{state,handleOnChange,handleOnSubmit,disable} = useForm(
