@@ -7,6 +7,7 @@ import BugFix from './components/BugFix_FeatureReq/BugFix';
 import FeatureRequest from './components/BugFix_FeatureReq/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment/OverallSentiment';
 import ViewAllReviews from './components/Review/ViewReviews';
+import Review from './components/Review/Review';
 import NavBar from './components/NavigationBar/Navbar';
 import HomePage from './components/Home/HomePage';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -29,6 +30,7 @@ function App() {
             <Route path="/featureRequest" component={FeatureRequest}/>
             <Route path="/overallSentiment" component={OverallSentiment}/>
             <Route path="/allReviews" component={ViewAllReviews}/>
+            <Route path="/review" component={Review}/>
             <Route path="/error" exact component={ErrorCrash}/>
             <Route path="/loading" exact component={LoadingBox}/>
             <Route path="/aboutus" exact component={AboutUs}/>
