@@ -40,6 +40,7 @@ router.get("/:appId", (request, response) => { // Using the router module to get
     //   .then(console.log, console.log);
     .then(result => { // Get the result and using a variable called "result" , get all the other details
       var _id="1"; 
+      var appId=request.params.appId;
       var title = result.title;
       var summary = result.summary;
       var installs = result.installs;
@@ -51,6 +52,7 @@ router.get("/:appId", (request, response) => { // Using the router module to get
       var icon = result.icon;
       detailsArray.push({ // Push them into the array
         _id,
+        appId,
         title,
         summary,
         installs,
