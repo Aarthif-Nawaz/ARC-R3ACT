@@ -1,7 +1,7 @@
 import pandas as pd
 
 #write all reviews to csv
-from Data_Science.TextPreprocessing.PreProcessing import cluster_pre_processing
+from Data_Science.TextPreprocessing.PreProcessing import pre_process_review
 
 data = pd.read_csv('pickme_allreviews_6167.csv')
 df = pd.DataFrame(data, columns=['text'],dtype=str)
@@ -13,7 +13,7 @@ for i, row in df.iterrows():
 test_clean_sentence = []
 c = 1
 for test in test_sentences:
-    test_clean_sentence.append(str(cluster_pre_processing(test)))
+    test_clean_sentence.append(str(pre_process_review(test, "cluster")))
 df['Preprocessed_text'] = test_clean_sentence
 df.to_csv("pickme_allreviews_6167.csv",index=False)
 df.to_csv("results.csv",index=False)
