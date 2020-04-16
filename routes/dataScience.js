@@ -9,43 +9,35 @@ Dependencies: express
 // importing express JS module and assign it to a variable
 var express = require("express");
 var router = express.Router();
+// assign child_process.spawn method from child_process module
+// to a variable
+var spawn = require("child_process").spawn;
 
 // import sys module in the python file
 
 router.get("/", (request, response) => {
-  // // assign child_process.spawn method from child_process module
-  // // to a varible
-  // var spawn = require("child_process").spawn;
 
-  // // parameters passed in spawn
-  // // 1. type of script
-  // // 2. path of the script and arguments for the script
-  // var process = spawn('python', ['hello.py']);
+  // parameters passed in spawn
+  // 1. type of script
+  // 2. path of the script and arguments for the script
+  const process = spawn("python", ["hello.py"]);
 
-  // // store the data received from executing the script
-  // // and save it to the response object
-  // process.stdout.on("data", (data) => {
-  //   console.log("asdd");
-  //   console.log(`Data: ${data}`);
-  // });
+  let result = "Result: \n";
 
-  // process.stderr.on('data', (data) => {
-  //   console.error(`Error: ${data}`);
-  // });
-  let { PythonShell } = require("python-shell");
-  // var package_name = "pytube";
-  // let options = {
-  //   args: [package_name],
-  // };
-  console.log("123");
-  PythonShell.run("./hello.py", options, function (err, results) {
-    console.log("456");
-    if (err) {
-      console.log(err);
-      throw err;
-    } else {
-      console.log(results);
-    }
+  // store the data received from executing the script
+  // and save it to the response object
+  process.stdout.on("data", (data) => {
+    result += data.toString();
+  });
+
+  // in close event, ensuring that the stream from 
+  // child process is closed
+  process.on("close", (code) => {
+    response.send(result);
+  });
+
+  process.stderr.on("data", (data) => {
+    console.error(`Error: ${data}`);
   });
 });
 module.exports = router;
