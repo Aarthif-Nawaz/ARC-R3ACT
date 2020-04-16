@@ -8,10 +8,12 @@ from math import floor
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error
 
-from Data_Science.TextPreprocessing.PreProcessing import pre_process_review
+from Data_Science.PreProcess import PreProcess
+
 
 class SentimentAnalysis:
-    def train_svr(self):
+    @staticmethod
+    def train_svr():
         # file which contains the pre-processed reviews to train the model
         file = open('Data_Science/TrainingDataSet/LabelledData.csv', 'r')
         # all the records in the file are converted to a 2d array
@@ -22,7 +24,7 @@ class SentimentAnalysis:
         # # append the pre-processed the review and the sentiment, to trainData and trainLabel
         for j in range(len(data)):
             print(j)
-            trainData.append(pre_process_review(data[j][0], "svr"))
+            trainData.append(PreProcess.pre_process_review(data[j][0], "svr"))
             trainLabel.append(data[j][1])
         # upload the vectorizer from the file
         filename = 'Data_Science/MLModels/vectorizer.pk'
@@ -42,7 +44,8 @@ class SentimentAnalysis:
         # store the model
         pickle.dump(loaded_model, open(filename, 'wb'))
 
-    def predict_sentiment(self, preprocessedReviews, testLabel):
+    @staticmethod
+    def predict_sentiment(preprocessedReviews, testLabel):
         # the final sentiment score given by any app will be -2, -1, 0, 1, 2
         sentiment_score = [-2, -1, 0, 1, 2]
         # using the index the rating will be identified and 1 being the most negative and 5 being the most positive

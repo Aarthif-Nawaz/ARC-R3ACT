@@ -2,26 +2,22 @@
 # Purpose - Classify reviews and saves in db
 # pip install pymongo
 import pymongo
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-from Data_Science.Classification.TestMLP import clusterReviews
-from Data_Science.FeatureExtraction.Finding_keywords import find_keywords_sentence
-from Data_Science.SentimentAnalysis.PredictOverallSentiment import predict_sentiment
-from Data_Science.TextPreprocessing.PreProcessing import *
 from pandas.io.json import json_normalize
 
 # words that are not considered as keyowrds even if identified
-notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app"]
-# make connection with the cluster in mongo cloud
-client = pymongo.MongoClient(
-    "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
-# retrieve the db from the cluster
-db = client['Safiyyah_ARC']
+from Data_Science.FeatureExtraction import FeatureExtraction
+from Data_Science.MLPModel import MLPModel
+from Data_Science.PreProcess import PreProcess
+from Data_Science.SentimentAnalysis import SentimentAnalysis
 
 
 class PlayStoreAppReviewClassifier:
     # used to classify the reviews and used invoke the function used to identified the clusters of the reviews
-    def __init__(self, appName,appId):
+    def __init__(self, appName, appId):
+        notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app"]
         # retrieve the collection from the db
         collection = db["Reviews"]
         # find all the reviews hence the query passed is empty {}
@@ -37,20 +33,20 @@ class PlayStoreAppReviewClassifier:
         for review in reviews:
             # the text is preprocessed at 2 different level,
             # the first is de_emojized and the next removes the emojis and then preprocesses.
-            lexicon_preprocessed.append(pre_process_review(review["text"], "lexicon"))
-            cluster_preprocessed.append(pre_process_review(review["text"], "cluster"))
+            lexicon_preprocessed.append(PreProcess.pre_process_review(review["text"], "lexicon"))
+            cluster_preprocessed.append(PreProcess.pre_process_review(review["text"], "cluster"))
             # calling the calc_lexicon_sentiment to calculate the lexicon sentiment of a review
             sentiment = self.__calc_lexicon_sentiment(lexicon_preprocessed[i])
             # append the sentiment calculated by the lexicon sentiment analyzer
             lexicon_sentiment.append(sentiment)
             # the preprocessed text is further preprocessed to find the sentiment using the svr model
-            svr_preprocessed.append(pre_process_review(lexicon_preprocessed[i], "svr"))
+            svr_preprocessed.append(PreProcess.pre_process_review(lexicon_preprocessed[i], "svr"))
             i += 1
         print("starting")
         # predict the sentiment of the preprocessed text
-        predicted_results = predict_sentiment(svr_preprocessed, lexicon_sentiment)
+        predicted_results = SentimentAnalysis.predict_sentiment(svr_preprocessed, lexicon_sentiment)
         # predict the cluster the reviews belong to
-        clusteredResult = clusterReviews(cluster_preprocessed)
+        clusteredResult = MLPModel.clusterReviews(cluster_preprocessed)
         # save the array of predicted sentiment
         predicted = predicted_results["predicted"]
         # save the clusters identified
@@ -62,10 +58,12 @@ class PlayStoreAppReviewClassifier:
         # insert the preprocessed and modified reviews
         self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews)
         # insert the overall sentiment of the mobile app and other details
-        self.__insert_mobile_app_details(predicted_results,appId)
+        self.__insert_mobile_app_details(predicted_results, appId)
+        # the name of the app is often identified as a keyword hence it is added to the array above
+        notKeywords.append(appName.lower())
         # identify and save the bugFixes and the featureRequests
-        self.__identifyKeywordsAndSave("BugFixes", appName)
-        self.__identifyKeywordsAndSave("FeatureRequests", appName)
+        self.__identifyKeywordsAndSave("BugFixes", notKeywords)
+        self.__identifyKeywordsAndSave("FeatureRequests", notKeywords)
 
     def __insert_reviews(self, collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews):
         pre_processedReviews = []
@@ -115,10 +113,10 @@ class PlayStoreAppReviewClassifier:
         sentiment = posScore + negScore
         return sentiment
 
-    def __insert_mobile_app_details(self, predicted_results,appId):
+    def __insert_mobile_app_details(self, predicted_results, appId):
         collection = db["MobileApplicationDetails"]
         # retrieve the app details inserted
-        apps = collection.find_one({"appId":appId})
+        apps = collection.find_one({"appId": appId})
         # create the json object used to store the app details
         mbDetails = {"_id": apps["_id"],
                      "appId": apps["appId"],
@@ -139,9 +137,7 @@ class PlayStoreAppReviewClassifier:
         # insert the json object
         collection.insert_one(mbDetails)
 
-    def __identifyKeywordsAndSave(self, clusterName, appName):
-        # the name of the app is often identified as a keyword hence it is added to the array above
-        notKeywords.append(appName.lower())
+    def __identifyKeywordsAndSave(self, clusterName, notKeywords):
         # retrieve the collection from the db
         collection = db["Reviews"]
         # the query variable is used to store a key value pair
@@ -155,11 +151,11 @@ class PlayStoreAppReviewClassifier:
         # this for loop is used to populate the array and the string variable
         for selectedReview in selectedReviews:
             reviewsFound.append(selectedReview)
-            sentence = listToString(selectedReview["keywords"])
+            sentence = PreProcess.listToString(selectedReview["keywords"])
             totalReviewSentence = totalReviewSentence + sentence + " "
         # convert the json object array to a multidimensional array
         df = json_normalize(reviewsFound)
-        keywords = self.__find_top_keywords(df, totalReviewSentence)
+        keywords = self.__find_top_keywords(df, totalReviewSentence, notKeywords)
         # stores the ids of the reviews that contain a particular keyword
         keywordsReviewIDs = []
         # stores the overall sentiment of the cluster for each keyword
@@ -178,10 +174,10 @@ class PlayStoreAppReviewClassifier:
             keywordsReviewIDs.append(reviewIDs)
         self.__insert_clustered_reviews(keywordsReviewIDs, keywords, sentimentKeywords, df, clusterName)
 
-    def __find_top_keywords(self, df, totalReviewSentence):
+    def __find_top_keywords(self, df, totalReviewSentence, notKeywords):
         # identify the top features of the selectedReviews
-        results = find_keywords_sentence(df["fe_preprocessedReview"], totalReviewSentence)
-        doc = nlp(listToString(results))
+        results = FeatureExtraction.find_keywords_sentence(df["fe_preprocessedReview"], totalReviewSentence)
+        doc = PreProcess.nlp(PreProcess.listToString(results))
         keywords = []
         # used to remove some keywords identified
         for token in doc:
@@ -228,5 +224,10 @@ class PlayStoreAppReviewClassifier:
         collection.insert_many(clusteredReviews)
 
 
-# example how to call function
-playStoreARC = PlayStoreAppReviewClassifier("Instagram","com.instagram.android")
+# make connection with the cluster in mongo cloud
+client = pymongo.MongoClient(
+    "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
+# retrieve the db from the cluster
+db = client['Safiyyah_ARC']
+# # example how to call function
+# playStoreARC = PlayStoreAppReviewClassifier("Instagram", "com.instagram.android")

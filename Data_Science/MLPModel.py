@@ -10,13 +10,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # A Neural Network Classifier based of Multi Layer Perceptron
 from sklearn.neural_network import MLPClassifier
 
-from Data_Science.FeatureExtraction.Finding_keywords import find_keywords
-from Data_Science.TextPreprocessing.PreProcessing import pre_process_review
+from Data_Science.FeatureExtraction import FeatureExtraction
+from Data_Science.PreProcess import PreProcess
 
 
 class MLPModel:
     # function used to train the MLP model used to cluster reviews to 3 clusters common, bug fixes and feature requests
-    def trainMLPModel(self):
+    @staticmethod
+    def trainMLPModel():
         # code to get preprocessed training reviews from csv
         path = pd.read_csv("Data_Science/TrainingDataSet/trainingData.csv")
         df_train = pd.DataFrame(path, columns=['Preprocessed_text'], dtype=str)
@@ -51,7 +52,8 @@ class MLPModel:
         model_file.close()
 
     # the function is used to predict the cluster of the reviews passed
-    def clusterReviews(self,preprocessed_reviews):
+    @staticmethod
+    def clusterReviews(preprocessed_reviews):
         filename = 'MLModels\\TfidfVect.pk'
         # load the vectorizer that was previously saved
         vectorizer = pickle.load(open(filename, 'rb'))
@@ -90,11 +92,11 @@ class MLPModel:
         fe_preprocessedReviews = []
         for i in range(len(preprocessed_reviews)):
             # preprocess the review further and append it to the array
-            fe_preprocessedReviews.append(pre_process_review(preprocessed_reviews[i], "fe"))
+            fe_preprocessedReviews.append(PreProcess.pre_process_review(preprocessed_reviews[i], "fe"))
             # The cluster name of the reviews is identified by using the predicted label which is a number that corresponds to the position of the cluster name in the true_test_labels array
             result.append((true_test_labels[np.int(predicted_labels_knn[i])]))
         # the list of keywords that are identified are stored in an array
-        keywords_list = find_keywords(fe_preprocessedReviews)
+        keywords_list = FeatureExtraction.find_keywords(fe_preprocessedReviews)
         # The predicted label results, the list of keywords and the array of reviews that were further preprocessed are returned.
         return {"cluster_Results": result, "keywords": keywords_list, "fe_preprocessedReviews": fe_preprocessedReviews}
 
