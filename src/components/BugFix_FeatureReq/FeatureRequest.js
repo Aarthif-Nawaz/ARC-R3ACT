@@ -1,7 +1,7 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DescriptionBox from './DescriptionBox';
+import DescriptionBox from './DescripBoxTrans';
 
 
 function FeatureRequest() {

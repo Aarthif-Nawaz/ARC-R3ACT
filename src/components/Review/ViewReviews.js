@@ -1,6 +1,5 @@
 import React, { useEffect, useState  } from 'react';
 import Review from './Review';
-//import Container from 'react-bootstrap/Container';
 import LoadingBox from '../Error/LoadingBox';
 import ErrorPage from '../Error/Crashed';
 import Footer from "../NavigationBar/Footer";
