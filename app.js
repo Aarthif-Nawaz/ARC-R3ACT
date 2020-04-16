@@ -23,6 +23,7 @@ var keyWordsRouter  = require('./routes/catergorizeReviews');
 var classifiedRouter  = require('./routes/classifiedReviews');
 var sentimentRouter  = require('./routes/overallSentiment');
 var dataScienceRouter  = require('./routes/dataScience');
+var contactUsRouter  = require('./routes/contactUs');
 var app = express();
 
 // view engine setup
@@ -45,6 +46,7 @@ app.use('/keywords', keyWordsRouter);
 app.use('/classified', classifiedRouter);
 app.use('/sentiment', sentimentRouter);
 app.use('/datascience', dataScienceRouter);
+app.use('/contactus', contactUsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

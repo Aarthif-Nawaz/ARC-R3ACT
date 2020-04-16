@@ -6,7 +6,6 @@ IIT ID: 2018117
 Dependencies: express, mongodb
 */
 
-// Required modules for the extraction of appDetails
 var express = require("express");
 var router = express.Router();
 const client = require("./mongo").client;
