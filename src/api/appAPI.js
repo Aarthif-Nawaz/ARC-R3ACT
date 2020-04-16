@@ -1,90 +1,339 @@
 
 
 export const appNames = [
-    'com.zhiliaoapp.musically',
-    'com.instagram.android',
-    'com.facebook.orca',
-    'com.disney.disneyplus',
-    'com.snapchat.android',
-    'com.whatsapp',
-    'com.netflix.mediaclient',
-    'com.hulu.plus',
-    'com.squareup.cash',
-    'gov.irs',
-    'com.intuit.turbotax.mobile',
-    'com.facebook.katana',
-    'com.particlenews.newsbreak',
-    'com.google.android.projection.gearhead',
-    'com.microsoft.appmanager',
-    'com.contextlogic.wish',
-    'com.google.android.play.games',
-    'com.pandora.android',
-    'com.spotify.music',
-    'com.amazon.mShop.android.shopping',
-    'com.amazon.avod.thirdpartyclient',
-    'com.pinterest',
-    'com.google.android.apps.youtube.music',
-    'com.dd.doordash',
-    'com.venmo',
-    'com.paypal.android.p2pmobile',
-    'com.twitter.android',
-    'com.enflick.android.TextNow',
-    'tv.pluto.android',
-    'com.ubercab',
-    'com.ebay.mobile',
-    'com.abtnprojects.ambatana',
-    'com.roku.remote',
-    'com.poshmark.app',
-    'me.lyft.android',
-    'com.mercariapp.mercari',
-    'com.google.android.apps.youtube.kids',
-    'com.intuit.turbo',
-    'com.creditkarma.mobile',
-    'com.mcdonalds.app',
-    'com.goodrx',
-    'com.shopify.arrive',
-    'com.palmsecret.horoscope',
-    'com.walmart.android',
-    'com.digitalattic.cpsalbertsons2018',
-    'com.wayfair.wayfair',
-    'com.audible.application',
-    'com.google.android.apps.chromecast.app',
-    'com.discord',
-    'com.luckynight.app',
-    'com.walmart.android',
-    'com.wayfair.wayfair',
-    'com.life360.android.safetymapd',
-    'com.konylabs.capitalone',
-    'com.ubercab.eats',
-    'net.zedge.android',
-    'com.waze',
-    'com.google.android.apps.translate',
-    'com.soundcloud.android',
-    'com.facebook.lite',
-    'com.tinder',
-    'com.google.android.webview',
-    'com.easybrain.make.music',
-    'com.symantec.securewifi',
-    'com.duolingo',
-    'com.grubhub.android',
-    'com.adobe.reader',
-    'com.onedebit.chime',
-    'com.picsart.studio',
-    'com.zillow.android.zillowmap',
-    'com.microsoft.office.outlook',
-    'com.amazon.dee.app',
-    'com.indeed.android.jobsearch',
-    'com.framy.placey',
-    'com.littlecaesars',
-    'com.ticketmaster.mobile.android.na',
-    'com.fetchrewards.fetchrewards.hop',
-    'com.heb.myheb',
-    'com.meetalbert',
-    'com.scripps.android.foodnetwork',
-    'faceapp.aging.young.ai.face',
-    'com.postmates.android',
-    'com.amazon.mp3',
-    'com.Funimation.FunimationNow',
+    {
+        appid : 'com.zhiliaoapp.musically',
+        name : 'TikTok'
+    },
+    {
+        appid : 'com.instagram.android',
+        name : 'Instagram'
+    },
+   {
+    appid :  'com.facebook.orca',
+    name : 'Messenger'
+   },
+   {
+    appid :  'com.disney.disneyplus',
+    name : 'Disney+'
+   },
+   {
+    appid :  'com.snapchat.android',
+    name : 'Snapchat'
+   },
+   {
+    appid : 'com.whatsapp',
+    name : 'whatsapp'
+   },
+   {
+    appid :  'com.netflix.mediaclient',
+    name : 'netflix'
+   },
+   {
+    appid : 'com.hulu.plus',
+    name : 'Hulu'
+   },
+   {
+    appid : 'com.squareup.cash',
+    name : 'Cash App'
+   },
+   {
+    appid :  'gov.irs',
+    name : 'IRS2Go'
+   },
+   {
+    appid : 'com.intuit.turbotax.mobile',
+    name : 'TurboTax'
+   },
+   {
+    appid :   'com.facebook.katana',
+    name : 'Facebook'
+   },
+   {
+    appid :  'com.particlenews.newsbreak',
+    name : 'News Break'
+   },
+   {
+    appid : 'com.google.android.projection.gearhead',
+    name : 'Android Auto'
+   },
+   {
+    appid : 'com.microsoft.appmanager',
+    name : 'Your Phone Companion - Link to Windows'
+   },
+   {
+    appid : 'com.contextlogic.wish',
+    name : 'Wish'
+   },
+   {
+    appid : 'com.google.android.play.games',
+    name : 'Google Play Games'
+   },
+   {
+    appid : 'com.pandora.android',
+    name : 'Pandora'
+   },
+   {
+    appid : 'com.spotify.music',
+    name : 'Spotify'
+   },
+   {
+    appid : 'com.amazon.mShop.android.shopping',
+    name : 'Amazon Shopping'
+   },   
+   {
+    appid : 'com.amazon.avod.thirdpartyclient',
+    name : 'Amazon Prime Video'
+   }, 
+   {
+    appid :  'com.pinterest',
+    name : 'Pinterest'
+   },   
+   {
+    appid : 'com.google.android.apps.youtube.music',
+    name : 'Youtube Music'
+   },
+   {
+    appid : 'com.dd.doordash',
+    name : 'DoorDash'
+   },
+   {
+    appid :   'com.venmo',
+    name : 'Venmo'
+   },
+   {
+    appid : 'com.paypal.android.p2pmobile',
+    name : 'PayPal Mobile Cash'
+   },
+   {
+    appid : 'com.twitter.android',
+    name : 'Twitter'
+   },
+   {
+    appid :   'com.enflick.android.TextNow',
+    name : 'TextNow'
+   },
+   {
+    appid : 'tv.pluto.android',
+    name : 'Pluto TV'
+   },
+   {
+    appid : 'com.ubercab',
+    name : 'Uber'
+   },
+   {
+    appid :  'com.ebay.mobile',
+    name : 'eBay'
+   },
+   {
+    appid :  'com.abtnprojects.ambatana',
+    name : 'letgo'
+   },
+   {
+    appid : 'com.roku.remote',
+    name : 'Roku'
+   },
+   {
+    appid : 'com.poshmark.app',
+    name : 'Poshmark'
+   },
+   {
+    appid :  'me.lyft.android',
+    name : 'Lyft'
+   },
+   {
+    appid : 'com.mercariapp.mercari',
+    name : 'Mercari'
+   },
+   {
+    appid :  'com.google.android.apps.youtube.kids',
+    name : 'YoutTube Kids'
+   },
+   {
+    appid : 'com.intuit.turbo',
+    name : 'Turbo'
+   },
+   {
+    appid : 'com.creditkarma.mobile',
+    name : 'Crdeit Karma'
+   },
+   {
+    appid : 'com.mcdonalds.app',
+    name : 'McDonald\'s'
+   },
+   {
+    appid : 'com.goodrx',
+    name : 'GoodRx',
+   },
+   {
+    appid : 'com.shopify.arrive',
+    name : 'Arrive',
+   },
+   {
+    appid : 'com.palmsecret.horoscope',
+    name : 'Palm Secret',
+   },
+   {
+    appid : 'com.walmart.android',
+    name : 'Walmart',
+   },
+   {
+    appid :  'com.digitalattic.cpsalbertsons2018',
+    name : 'Shop,Play,Win!® MONOPOLY',
+   },
+   {
+    appid : 'com.wayfair.wayfair',
+    name : 'Wayfair',
+   },
+   {
+    appid : 'com.audible.application',
+    name : 'Audible Audiobooks',
+   },
+   {
+    appid : 'com.google.android.apps.chromecast.app',
+    name : 'Google Home',
+   },
+   {
+    appid : 'com.discord',
+    name : 'Discord',
+   },
+   {
+    appid : 'com.luckynight.app',
+    name : 'Lucky Night',
+   },
+   {
+    appid : 'com.life360.android.safetymapd',
+    name : 'Life360',
+   },
+   {
+    appid : 'com.konylabs.capitalone',
+    name : 'Capital One® Mobile',
+   },
+   {
+    appid : 'com.ubercab.eats',
+    name : 'Uber Eats',
+   },
+   {
+    appid : 'net.zedge.android',
+    name : 'ZEDGE™ Wallpapers & Ringtones',
+   },
+   {
+    appid : 'com.waze',
+    name : 'Waze',
+   },
+   {
+    appid : 'com.google.android.apps.translate',
+    name : 'Google Translate',
+   },
+   {
+    appid : 'com.soundcloud.android',
+    name : 'SoundCloud',
+   },
+   {
+    appid : 'com.facebook.lite',
+    name : 'Facebook Lite',
+   },
+   {
+    appid : 'com.tinder',
+    name : 'Tinder',
+   },
+   {
+    appid : 'com.google.android.webview',
+    name : 'Android System WebView',
+   },
+   {
+    appid : 'com.easybrain.make.music',
+    name : 'Groovepad',
+   },
+   {
+    appid : 'com.symantec.securewifi',
+    name : 'Norton Secure VPN',
+   },
+   {
+    appid : 'com.duolingo',
+    name : 'Duolingo',
+   },
+   {
+    appid : 'com.grubhub.android',
+    name : 'Grubhub',
+   },
+   {
+    appid : 'com.adobe.reader',
+    name : 'Adobe Acrobat Reader',
+   },
+   {
+    appid : 'com.onedebit.chime',
+    name : 'Chime',
+   },
+   {
+    appid : 'com.picsart.studio',
+    name : 'PicsArt Photo Editor',
+   },
+   {
+    appid : 'com.zillow.android.zillowmap',
+    name : 'Zillow',
+   },
+   {
+    appid : 'com.microsoft.office.outlook',
+    name : 'Microsoft Outlook',
+   },
+   {
+    appid : 'com.amazon.dee.app',
+    name : 'Amazon Alexa',
+   },
+   {
+    appid : 'com.indeed.android.jobsearch',
+    name : 'Indeed Job Search',
+   },
+   {
+    appid : 'com.framy.placey',
+    name : 'Playsee',
+   },
+   {
+    appid : 'com.littlecaesars',
+    name : 'Little Caesars',
+   },
+   {
+    appid : 'com.ticketmaster.mobile.android.na',
+    name : 'Little Caesars',
+   },
+   {
+    appid : 'com.ticketmaster.mobile.android.na',
+    name : 'Ticketmaster',
+   },
+   {
+    appid : 'com.fetchrewards.fetchrewards.hop',
+    name : 'Fetch Rewards',
+   },
+   {
+    appid : 'com.heb.myheb',
+    name : 'My H-E-B',
+   },
+   {
+    appid : 'com.meetalbert',
+    name : 'Albert',
+   },
+   {
+    appid : 'com.scripps.android.foodnetwork',
+    name : 'Food Network Kitchen',
+   },
+   {
+    appid : 'faceapp.aging.young.ai.face',
+    name : 'Magic Face',
+   },
+   {
+    appid : 'com.postmates.android',
+    name : 'Postmates',
+   },
+   {
+    appid : 'com.amazon.mp3',
+    name : 'Amazon Music',
+   },
+   {
+    appid : 'com.Funimation.FunimationNow',
+    name : 'Funimation',
+   },
+    
     'com.robinhood.android',
     'com.facebook.mlite',
     'sg.bigo.live',
