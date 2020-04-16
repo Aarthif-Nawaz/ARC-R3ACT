@@ -212,11 +212,7 @@ const errorStyle ={
           />
         </form>
       </div>
-<<<<<<< HEAD
-
-=======
  
->>>>>>> 30e0247850d1db0060cfd5fbcf6bf8bbcab29962
       <div class="bgimg-13">
         <div class="caption">
           <span
