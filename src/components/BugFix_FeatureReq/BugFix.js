@@ -1,8 +1,8 @@
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import DescripBoxTrans from "./DescripBoxTrans";
-import DescripBoxSolid from "./DescripBoxSolid";
+import BFTrans from "./BFTrans";
+import BFSolid from "./BFSolid";
 import Footer from "../NavigationBar/Footer";
 
 function BugFix() {
@@ -16,22 +16,22 @@ function BugFix() {
         </div>
       </div>
       <div>
-        <DescripBoxSolid
+        <BFSolid
           description="Location cannot be found"
           keywords={["location", "lost"]}
           points="5.0"
         />
-        <DescripBoxTrans
+        <BFTrans
           description="Doesn't work in huewei P40 Lite E"
           keywords={["doesnt", "work", "huewei P40 Lite E"]}
           points="4.7"
         />
-        <DescripBoxSolid
+        <BFSolid
           description="Points doesn't add to up"
           keywords={["points", "add"]}
           points="3.8"
         />
-        <DescripBoxTrans
+        <BFTrans
           description="App crashes suddenly"
           keywords={["App", "crash"]}
           points="3.7"
