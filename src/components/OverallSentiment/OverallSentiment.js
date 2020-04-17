@@ -8,32 +8,42 @@ function OverallSentiment() {
   return (
     <div className="container-fluid">
       <div class="bgimg-16">
-        <div class="sentimentBox">
+          <div class="sentimentBox">
+        <div class="col-sm-4" >
           <Row>   
             <Col>
               <Row>
                 <Container>App Logo</Container>
               </Row>
               <Row>
-                <h3 style={{ fontSize: "2vw" }}>App Name</h3>{" "}
-              </Row>
+                <h3 style={{ fontSize: "2.5vw" }}>Uber</h3>{" "}
+                </Row>
+              <div class="sentimentInfo"><Row>Uber Technologies, Inc.</Row></div>
               <Row>
+                  <div style={{marginTop:20, borderRadius:100, backgroundColor:"#282e34", padding:20, color:"#fff"}}>
                 <h1>5.8</h1>
+                </div>
               </Row>
             </Col>
           </Row>
+          </div>
+              <div class="col-sm-5" >
           <Row>
+             
           <Col></Col>
             <div class="sentimentInfo">
               <Col>
-                <Row>3 Stars</Row>
-                <Row>3M Reviews</Row>
-                <Row>50.0MB</Row>
-                <Row>100+ Downloads</Row>
+           
+              <div style={{fontStyle:"italic"}}><Row>"Tap a button, get a ride"</Row></div>
+           
+                <Row>Genre : </Row>
+                <Row>Reviews : </Row>
+                <Row>Installs :</Row>
               </Col>
             </div>
           </Row>
         </div>
+      </div>
       </div>
       <Footer />
     </div>

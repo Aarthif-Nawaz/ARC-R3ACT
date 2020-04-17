@@ -904,10 +904,11 @@ video {
 }
 .sentimentBox{
   padding-top: 15%;
-  padding-left: 5%;
+  padding-left: 10%;
   font-family: "Lato" sans-serif;
 }
 .sentimentInfo{
-  font-size: 20px;
-  float: left;
+  font-size: 25px;
+  font-weight: 500;
+
 }
