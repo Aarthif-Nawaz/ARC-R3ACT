@@ -38,7 +38,7 @@ function ViewAllReviews(){
                 <div class="bgimg-5">
                     <div class="caption">
                         <span className="border">
-                            Reviews addressing "High Energy Consumption" ...
+                            Reviews addressing "High Energy Consumption"
                         </span>
                     </div>
                 </div>

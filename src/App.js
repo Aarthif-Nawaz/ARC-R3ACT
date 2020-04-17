@@ -7,7 +7,6 @@ import BugFix from './components/BugFix_FeatureReq/BugFix';
 import FeatureRequest from './components/BugFix_FeatureReq/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment/OverallSentiment';
 import ViewAllReviews from './components/Review/ViewReviews';
-import Review from './components/Review/Review';
 import NavBar from './components/NavigationBar/Navbar';
 import HomePage from './components/Home/HomePage';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -15,6 +14,7 @@ import Support from './components/Support/Support';
 import ErrorCrash from './components/Error/Crashed';
 import LoadingBox from './components/Error/LoadingBox';
 import Contact from './components/Contact/Contact';
+import IndividualReview from './components/Individual_Review/IndividualReview';
 
 function App() {
   return (
@@ -30,12 +30,12 @@ function App() {
             <Route path="/featureRequest" component={FeatureRequest}/>
             <Route path="/overallSentiment" component={OverallSentiment}/>
             <Route path="/allReviews" component={ViewAllReviews}/>
-            <Route path="/review" component={Review}/>
             <Route path="/error" exact component={ErrorCrash}/>
             <Route path="/loading" exact component={LoadingBox}/>
             <Route path="/aboutus" exact component={AboutUs}/>
             <Route path="/support" exact component={Support}/>
             <Route path="/contact" exact component={Contact}/>
+            <Route path="/individualreview" exact component={IndividualReview}/>
         </Switch>
       {/* </div> */}
       

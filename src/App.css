@@ -76,7 +76,7 @@ html {
 }
 
 .descrip-7 {
-  background-image: url("/images/coffee1.jpg");
+  background-image: url("/images/phone.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,7 +100,7 @@ html {
   border-bottom: solid 1px #ccc;
 }
 .descrip-9 {
-  background-image: url("/images/support1.png");
+  background-image: url("/images/phone2.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -197,6 +197,7 @@ html {
   font-weight: 700;
    
 }
+
 /*the three background images used for the parallax effect*/
 .bgimg-1,
 .bgimg-2,
@@ -213,7 +214,8 @@ html {
 .bgimg-13,
 .bgimg-14,
 .bgimg-15,
-.bgimg-16  {
+.bgimg-16,
+.bgimg-17 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -256,11 +258,11 @@ html {
 }
 .bgimg-8 {
   min-height: 700px;
-  background-image: url("/images/team3.jpg");
+  background-image: url("/images/laptop5.jpg");
 }
 .bgimg-9 {
   min-height: 300px;
-  background-image: url("/images/coffee1.jpg");
+  background-image: url("/images/phone.jpg");
 }
 .bgimg-10 {
   min-height: 800px;
@@ -272,11 +274,11 @@ html {
 }
 .bgimg-12 {
   min-height: 800px;
-  background-image: url("/images/contact1.jpg");
+  background-image: url("/images/phone1.jpg");
 }
 .bgimg-13 {
   min-height: 250px;
-  background-image: url("/images/support1.png");
+  background-image: url("/images/phone2.jpg");
 }
 .bgimg-14 {
   min-height: 800px;
@@ -289,6 +291,10 @@ html {
 .bgimg-16 {
   min-height: 800px;
   background-image: url("/images/laptop7.jpg");
+}
+.bgimg-17 {
+  min-height: 800px;
+  background-image: url("/images/onereview.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
@@ -906,10 +912,23 @@ video {
   padding-top: 15%;
   padding-left: 10%;
   font-family: "Lato" sans-serif;
-  
 }
 .sentimentInfo{
   font-size: 25px;
   font-weight: 500;
+}
+.reviewBox{
+  margin:0 auto;
+  float: left;
+  width:90%;
+  padding:20px;
+  margin-left: 5%;
+  margin-top: 3%;
+  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+}
 
+.reviewText{
+  color:#282e34;
+  font-size: 2.5vh;
+  text-align: justify;
 }

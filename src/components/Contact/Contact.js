@@ -154,7 +154,7 @@ const errorStyle ={
     <div className='container-fluid' style={{ boxSizing: "border-box" }}>
       <div class="bgimg-12">
         <div class="caption">
-          <span className="border">We are always here to help you.</span>
+          <span className="border">Connect with us and start improving your app today.</span>
         </div>
       </div>
 
@@ -239,7 +239,7 @@ const errorStyle ={
               color: "#f7f7f7",
             }}
           >
-            Connect with us and start improving your app today.
+            We are always here to help you.
           </span>
         </div>
       </div>
