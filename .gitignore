@@ -30,6 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 
+### Express App ###
 /node_modules/
 /public/
 /views/
