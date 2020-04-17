@@ -58,7 +58,19 @@ class PreProcess:
         """Expand contractions from text"""
         phrase = re.sub(r"won\'t", "will not", phrase)
         phrase = re.sub(r"can\'t", "can not", phrase)
+        phrase = re.sub(r"there\'ll", " there shall", phrase)
         # general
+        # Expand Contractions for all words that end with 'll
+        phrase = re.sub(r"\'ll", " all", phrase)
+        # Expand Contractions for all words that end with 're
+        phrase = re.sub(r"\'re", " are", phrase)
+        # Expand Contractions for all words that end with 've
+        phrase = re.sub(r"\'ve", " have", phrase)
+        # Expand Contractions for all words that end with 's
+        phrase = re.sub(r"\'s", " is", phrase)
+        # Expand Contractions for all words that end with 'd
+        phrase = re.sub(r"\'d", " did", phrase)
+        # Expand Contractions for all words that end with n't
         phrase = re.sub(r"n\'t", " not", phrase)
         phrase = re.sub(r"\'t", " not", phrase)
         return phrase
@@ -69,6 +81,7 @@ class PreProcess:
         if notProcessedText is not None:
             # for clustering deemojizing is not performed, this can be identified using the tode_emojize variable
             notProcessedText = PreProcess.expand_contractions(notProcessedText)
+            # Remove all punctuations only specified below and not anything else
             notProcessedText = re.sub('[^a-zA-Z\-|&#;@!?()/:\\\{}]', " ", notProcessedText)
             notProcessedText = PreProcess.remove_whitespace(notProcessedText)
             # tokenizing the string and removing the stop words
@@ -77,7 +90,7 @@ class PreProcess:
             for token in doc:
                 flag = True
                 edit = token.text
-                # remove stop words and does not remove the words not no and very
+                # remove stop words, but does not remove the words not no and very
                 if token.is_stop and token.pos_ != 'NUM' and edit.lower() != "not" and edit.lower() != "no" and edit.lower() != "very":
                     flag = False
                     # append tokens edited and not removed to list
@@ -127,7 +140,7 @@ class PreProcess:
                 # remove special characters
                 if token.pos_ == 'SYM':
                     flag = False
-                # remove numbers
+                # remove numbers in words and numbers that are numeric
                 if (token.pos_ == 'NUM' or token.text.isnumeric()):
                     flag = False
                 # convert tokens to base form
