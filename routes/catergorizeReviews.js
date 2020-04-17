@@ -2,14 +2,13 @@
 var express = require("express");
 var router = express.Router();
 const client = require("./mongo").client;
-var tcom = require('thesaurus-com');
 var db;
 
 client.connect(err => {
     if (err) {
         console.log("Error has occured while connecting to database: ", err);
     }
-    db = client.db("Safiyyah_ARC");
+    db = client.db("ARC");
     console.log("Connected to database - keywords");
     // client.close();
 });
@@ -41,7 +40,6 @@ router.get("/bugfixkeywords", (request, response) => {
 
 });
 router.get("/bugfixes/:keyword", async (request, response) => {
-    console.log("Entered0");
     db.collection("BugFixes").findOne({ keyword: request.params.keyword }, async (err, result) => {
         if (err) {
             return response.status(500).send("error");
@@ -86,7 +84,6 @@ router.get("/featreqkeywords", (request, response) => {
 
 });
 router.get("/featreqs/:keyword", async (request, response) => {
-    console.log("Entered0");
     db.collection("FeatureRequests").findOne({ keyword: request.params.keyword }, async (err, result) => {
         if (err) {
             return response.status(500).send("error");
@@ -104,7 +101,6 @@ router.get("/featreqs/:keyword", async (request, response) => {
 
 });
 router.get("/common", (request, response) => {
-    console.log("Entered0");
     db.collection("Reviews").find({ cluster: "Common" }).toArray((err, result) => {
         if (err) {
             return response.status(500).send("error");

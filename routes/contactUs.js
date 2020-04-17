@@ -12,7 +12,7 @@ client.connect((err) => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("arc");
+  db = client.db("ARC");
   console.log("Connected to database - keywords");
   // client.close();
 });

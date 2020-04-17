@@ -17,14 +17,14 @@ client.connect(err => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("arc");
+  db = client.db("ARC");
   console.log("Connected to database - api");
   // client.close();
 });
 
 // GET
 router.get("/", (request, response) => {
-  db.collection("MobileAppReviews")
+  db.collection("Reviews")
     .find({})
     .toArray((error, result) => {
       if (error) {
@@ -36,7 +36,7 @@ router.get("/", (request, response) => {
 
 // GET with params
 router.get("/:id", (request, response) => {
-  db.collection("MobileAppReviews").findOne(
+  db.collection("Reviews").findOne(
     { _id: new ObjectID(request.params.id) },
     (error, result) => {
       if (error) {
@@ -49,7 +49,7 @@ router.get("/:id", (request, response) => {
 
 // POST
 router.post("/", (request, response) => {
-  db.collection("MobileAppReviews").insertOne(request.body, (error, result) => {
+  db.collection("Reviews").insertOne(request.body, (error, result) => {
     if (error) {
       console.log(error);
       return response.status(500).send(error);
@@ -60,7 +60,7 @@ router.post("/", (request, response) => {
 
 // POST with many objects
 router.post("/many", (request, response) => {
-  db.collection("MobileAppReviews").insertMany(request.body, (error, result) => {
+  db.collection("Reviews").insertMany(request.body, (error, result) => {
     if (error) {
       return response.status(500).send(error);
     }
@@ -70,7 +70,7 @@ router.post("/many", (request, response) => {
 
 // PUT
 router.put("/:id", (request, response) => {
-  db.collection("MobileAppReviews").updateOne(
+  db.collection("Reviews").updateOne(
     { _id: new ObjectID(request.params.id) },
     { $set: { appName: request.body.appName, userName: request.body.userName } },
     { upsert: true },
@@ -85,7 +85,7 @@ router.put("/:id", (request, response) => {
 
 // DELETE
 router.delete("/:id", (request, response) => {
-  db.collection("MobileAppReviews").deleteOne(
+  db.collection("Reviews").deleteOne(
     { _id: new ObjectID(request.params.id) },
     (error, result) => {
       if (error) {

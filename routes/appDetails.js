@@ -18,7 +18,7 @@ client.connect(err => {
   if (err) { // If there is an error in the Connection Log out the error
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("Safiyyah_ARC"); // Get the name of the Database and store it onto the db variable
+  db = client.db("ARC"); // Get the name of the Database and store it onto the db variable
   console.log("Connected to database - app"); // If Successfully Connected to the database
   // client.close();
 });
