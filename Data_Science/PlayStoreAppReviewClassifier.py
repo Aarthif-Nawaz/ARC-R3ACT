@@ -42,7 +42,6 @@ class PlayStoreAppReviewClassifier:
             # the preprocessed text is further preprocessed to find the sentiment using the svr model
             svr_preprocessed.append(PreProcess.pre_process_review(lexicon_preprocessed[i], "svr"))
             i += 1
-        print("starting")
         # predict the sentiment of the preprocessed text
         predicted_results = SentimentAnalysis.predict_sentiment(svr_preprocessed, lexicon_sentiment)
         # predict the cluster the reviews belong to
@@ -230,4 +229,4 @@ client = pymongo.MongoClient(
 # retrieve the db from the cluster
 db = client['ARC']
 # # example how to call function
-# playStoreARC = PlayStoreAppReviewClassifier("Instagram", "com.instagram.android")
+playStoreARC = PlayStoreAppReviewClassifier("WhatsApp", "com.whatsapp")

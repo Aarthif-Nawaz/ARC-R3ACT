@@ -16,23 +16,26 @@ class PreProcess:
 
     # function used to pre_process a review depending on which type of algorithm is going to use the corpus.
     @staticmethod
-    def pre_process_review(review, type):
-        pre_processed_review = review
-        if type == "svr":
-            # pre-processing required by the SVR/MLP
-            pre_processed_review = PreProcess.pre_processing_labelled_data(review)
-        elif type == "cluster":
-            # preprocessing required by the MLP model used to cluster the reviews
-            pre_processed_review = PreProcess.reg_preprocessing(review)
-            pre_processed_review = PreProcess.pre_processing_labelled_data(pre_processed_review)
-        elif type == "lexicon":
-            # pre_processing required for the lexicon sentiment analysis
-            pre_processed_review = PreProcess.de_emojize(review)
-            pre_processed_review = PreProcess.reg_preprocessing(pre_processed_review)
-            # preprocessing that is performed before feature extraction is performed
-        elif type == "fe":
-            pre_processed_review = PreProcess.preprocessing_fe(review)
-        return pre_processed_review
+    def pre_process_review(review, level):
+        if review is not None:
+            pre_processed_review = review
+            if level == "svr":
+                # pre-processing required by the SVR/MLP
+                pre_processed_review = PreProcess.pre_processing_labelled_data(review)
+            elif level == "cluster":
+                # preprocessing required by the MLP model used to cluster the reviews
+                pre_processed_review = PreProcess.reg_preprocessing(review)
+                pre_processed_review = PreProcess.pre_processing_labelled_data(pre_processed_review)
+            elif level == "lexicon":
+                # pre_processing required for the lexicon sentiment analysis
+                pre_processed_review = PreProcess.de_emojize(review)
+                pre_processed_review = PreProcess.reg_preprocessing(pre_processed_review)
+                # preprocessing that is performed before feature extraction is performed
+            elif level == "fe":
+                pre_processed_review = PreProcess.preprocessing_fe(review)
+            return pre_processed_review
+        else:
+         return ""
 
     @staticmethod
     def remove_whitespace(text):
