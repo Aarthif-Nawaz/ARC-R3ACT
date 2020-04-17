@@ -228,6 +228,6 @@ class PlayStoreAppReviewClassifier:
 client = pymongo.MongoClient(
     "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
 # retrieve the db from the cluster
-db = client['Safiyyah_ARC']
+db = client['ARC']
 # # example how to call function
 # playStoreARC = PlayStoreAppReviewClassifier("Instagram", "com.instagram.android")
