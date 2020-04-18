@@ -45,14 +45,12 @@ router.get("/", async (request, response) => {
       title = result.title;
       summary = result.summary;
       installs = result.installs;
-      scoreText = result.scoreText;
       reviews = result.reviews;
       priceText = result.priceText;
       developer = result.developer;
       genre = result.genre;
       icon = result.icon;
       sentiment = result.rating_calculated;
-      
     }
   );
 
