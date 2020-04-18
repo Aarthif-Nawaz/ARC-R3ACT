@@ -128,6 +128,17 @@ html {
   font-size: 15px;
   text-transform: uppercase;
 }
+.bugKeywordBtn{
+  color: #fff;
+  background-color: #da808a;
+  font-weight: 700;
+  border: #fff 2px solid;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  width: fit-content;
+  padding:8px;
+}
 .bugDescripBtn:hover{
   border: #fff 2px solid;
   background-color: #434950;

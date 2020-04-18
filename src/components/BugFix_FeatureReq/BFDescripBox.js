@@ -13,18 +13,12 @@ function BFDescripBox(props){
         
         <div className='container-fluid'>
             <div className="center-content">
-                <div className='row m-1 '>
-
-                <div className="col"><p>Description</p></div>
-                <div className="col">{props.description}</div>
-                
-                    
-                </div>
+              
                 <div className='row m-1'>
                     <div className='col'><p>Keywords</p></div>
                     <div className='col'>
                         {keywords.map((key)=>
-                            <Button variant='secondary' className='m-2 bugDescripBtn'>{key}</Button>
+                            <div variant='secondary' className='m-2 bugKeywordBtn'>{key}</div>
                     )}   
                     </div>
                 </div>  

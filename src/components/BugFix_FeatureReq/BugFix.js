@@ -18,18 +18,16 @@ function BugFix() {
       <div>
         <div className='descrip-11'>
         <BFDescripBox
-         
-         description="Location cannot be found"
-         keywords={["location", "lost"]}
+
+         keywords={["location"]}
          points="5.0"
        />
         </div>
         
         <div className='descrip-10'>
         <BFDescripBox
-         
-         description="Doesn't work in huewei P40 Lite E"
-         keywords={["doesnt", "work", "huewei P40 Lite E"]}
+
+         keywords={["huewei P40 Lite E"]}
          points="4.7"
        />
         </div>
@@ -37,8 +35,7 @@ function BugFix() {
         <div className='descrip-11'>
         <BFDescripBox
          
-          description="Points doesn't add to up"
-          keywords={["points", "add"]}
+          keywords={["points"]}
           points="3.8"
         />
         </div>
