@@ -8,7 +8,7 @@ Dependencies: express, mongodb
 
 const express = require("express");
 const router = express.Router();
-const client = require("./mongo").client;
+const client = require("./../mongo").client;
 const ObjectID = require('mongodb').ObjectID;
 
 var db;
