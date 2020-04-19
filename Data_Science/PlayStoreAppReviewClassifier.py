@@ -2,7 +2,7 @@
 # Purpose - Classify reviews and saves in db
 # pip install pymongo
 import pymongo
-
+import sys
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from pandas.io.json import json_normalize
@@ -57,9 +57,9 @@ class PlayStoreAppReviewClassifier:
         # insert the preprocessed and modified reviews
         self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews)
         # insert the overall sentiment of the mobile app and other details
-        self.__insert_mobile_app_details(predicted_results, appId)
+        self.__insert_mobile_app_details(predicted_results, sys.argv[2])
         # the name of the app is often identified as a keyword hence it is added to the array above
-        notKeywords.append(appName.lower())
+        notKeywords.append(sys.argv[1].lower())
         # identify and save the bugFixes and the featureRequests
         self.__identifyKeywordsAndSave("BugFixes", notKeywords)
         self.__identifyKeywordsAndSave("FeatureRequests", notKeywords)
