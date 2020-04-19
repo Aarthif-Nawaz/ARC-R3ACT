@@ -18,11 +18,11 @@ function Support() {
           style={{
             textAlign: "center",
             fontWeight: 700,
-            paddingLeft: 350,
-            paddingRight: 350,
-            paddingTop: 100,
-            paddingBottom: 50,
-            letterSpacing: 3,
+            paddingLeft: "23.3vw",
+            paddingRight: "23.3vw",
+            paddingTop: "6.6vw",
+            paddingBottom: "3.3vw",
+            letterSpacing: "0.2vw",
             fontFamily: "Lato",
             fontSize: "2.3vw",
           }}
@@ -34,8 +34,8 @@ function Support() {
         <div className="descrip-6">
           <p
             style={{
-              paddingLeft: 250,
-              paddingRight: 250,
+              paddingLeft: "16.6vw",
+              paddingRight: "16.6vw",
             }}
           >
             We believe that truly impactful applications inspire their audiences
