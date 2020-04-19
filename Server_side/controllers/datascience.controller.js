@@ -15,8 +15,7 @@ var spawn = require("child_process").spawn;
 
 // import sys module in the python file
 
-router.get("/", (request, response) => {
-
+exports.connectDatascience = async function (request, response) {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
@@ -30,7 +29,7 @@ router.get("/", (request, response) => {
     result += data.toString();
   });
 
-  // in close event, ensuring that the stream from 
+  // in close event, ensuring that the stream from
   // child process is closed
   process.on("close", (code) => {
     response.send(result);
@@ -39,5 +38,4 @@ router.get("/", (request, response) => {
   process.stderr.on("data", (data) => {
     console.error(`Error: ${data}`);
   });
-});
-module.exports = router;
+};

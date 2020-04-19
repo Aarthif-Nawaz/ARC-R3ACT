@@ -15,15 +15,14 @@ var logger = require('morgan');
 var cors = require("cors");
 
 var indexRouter = require('./routes/index');
-var databaseRouter = require('./routes/database');
-var reviewsRouter = require('./routes/reviews');
-var searchRouter = require('./routes/search');
-var appDetailsRouter = require('./routes/appDetails');
-var keyWordsRouter  = require('./routes/catergorizeReviews');
-var classifiedRouter  = require('./routes/classifiedReviews');
-var sentimentRouter  = require('./routes/overallSentiment');
-var dataScienceRouter  = require('./routes/dataScience');
-var contactUsRouter  = require('./routes/contactUs');
+var databaseRouter = require('./db/models/database');
+var searchRouter = require('./routes/search.route');
+var appDetailsRouter = require('./routes/appdetails.route');
+var reviewsRouter = require('./routes/reviews.route');
+var dataScienceRouter  = require('./routes/datascience.route');
+// var keyWordsRouter  = require('./routes/catergorizeReviews.route');
+var sentimentRouter  = require('./routes/sentiment.route');
+var contactUsRouter  = require('./routes/contactus.route');
 var app = express();
 
 // view engine setup
@@ -39,13 +38,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', databaseRouter);
-app.use('/reviews', reviewsRouter);
 app.use('/search', searchRouter);
 app.use('/app', appDetailsRouter);
-app.use('/keywords', keyWordsRouter);
-app.use('/classified', classifiedRouter);
-app.use('/sentiment', sentimentRouter);
+app.use('/reviews', reviewsRouter);
 app.use('/datascience', dataScienceRouter);
+// app.use('/keywords', keyWordsRouter);
+app.use('/sentiment', sentimentRouter);
 app.use('/contactus', contactUsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
