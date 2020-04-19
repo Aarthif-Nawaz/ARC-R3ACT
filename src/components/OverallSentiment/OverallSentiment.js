@@ -36,9 +36,9 @@ function OverallSentiment() {
       {items.map((item) =>(
           <div key={item._id} class="sentimentBox">
             <div className='row'>
-              <div className='col-sm-3'>
+              <div className='col-3'>
                 <div className='row m-2'>
-                    <img src={item.icon} style={{borderRadius:25,width:'150px'}}/>
+                    <img src={item.icon} style={{borderRadius:25,width:'10vw'}}/>
                  </div>
                 <div className='row m-2'>
                     <h3 style={{ fontSize: "2.5vw" }}>{item.title}</h3>{" "}
@@ -48,12 +48,12 @@ function OverallSentiment() {
                 </div>
                
               </div>
-              <div className='col-sm-4 sentimentInfo'>
+              <div className='col-4 sentimentInfo'>
               <div className='row m-3' >
-                <div className='col'>Sentiment Score :</div>
+                <div className='col' >Sentiment Score :</div>
                 <div className='col'>
                   <div className='row' >
-                      <h1 style={{borderRadius:25, backgroundColor:"#282e34", padding:15, color:"#fff",justifyContent:'center'}}>{item.scoreText}</h1>
+                      <h1 style={{borderRadius:"1.67vw", width:"4vw",height:"4vw",backgroundColor:"#282e34", padding:"1vw", color:"#fff",justifyContent:'center',fontSize:"1.5vw"}}>{item.scoreText}</h1>
                   </div>
                 </div>
                 </div>
