@@ -253,27 +253,27 @@ const errorStyle ={
                   Social Media
                 </h3>
 
-                <div className="text-center text-md-right">
-              <a className="fb-ic mr-4">
-              <FontAwesomeIcon icon={faFacebook}/>
-              </a>
+                <div className="text-center text-md-right row">
+                  <a className="fb-ic col-2.4" style={{marginRight:"1vw"}}>
+                  <FontAwesomeIcon icon={faFacebook} style={{width:"1vw"}}/>
+                  </a>
 
-              <a className="tw-ic mr-4">
-              <FontAwesomeIcon icon={faTwitter}/>
-              </a>
+                  <a className="tw-ic col-2.4">
+                  <FontAwesomeIcon icon={faTwitter} style={{width:"1vw"}} style={{marginRight:"1vw"}}/>
+                  </a>
 
-              <a className="gplus-ic mr-4">
-              <FontAwesomeIcon icon={faGooglePlus}/>
-              </a>
+                  <a className="gplus-ic col-2.4">
+                  <FontAwesomeIcon icon={faGooglePlus} style={{width:"1vw"}} style={{marginRight:"1vw"}}/>
+                  </a>
 
-              <a className="li-ic mr-4">
-              <FontAwesomeIcon icon={faLinkedin}/>
-              </a>
+                  <a className="li-ic col-2.4">
+                  <FontAwesomeIcon icon={faLinkedin} style={{width:"1vw"}} style={{marginRight:"1vw"}}/>
+                  </a>
 
-              <a className="ins-ic mr-4">
-              <FontAwesomeIcon icon={faInstagram}/>
-              </a>
-            </div>
+                  <a className="ins-ic col-2.4">
+                  <FontAwesomeIcon icon={faInstagram} style={{width:"1vw"}}/>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="col d-flex align-items-stretch">
