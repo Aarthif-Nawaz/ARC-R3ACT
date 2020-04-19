@@ -12,7 +12,7 @@ function IndividualReview() {
             textAlign: "center",
             fontWeight: 700,
             float: "left",
-            padding: 20,
+            padding: "1.3vw",
             fontSize:'2vw',
             marginTop: "12%",
           }}
@@ -26,7 +26,7 @@ function IndividualReview() {
            <div className="star" style={{color:"#000",marginBottom:"3%"}}>
            <label>★★★★★</label>
            </div>
-           <p className="reviewText">The reviews of the mobile application are divided into three
+           <p className="reviewText" style={{fontSize:"1.5vw"}}>The reviews of the mobile application are divided into three
             segments. Choose one of the following to see all the reviews
             relevant to that particular category. The reviews of the mobile application are divided into three
             segments. Choose one of the following to see all the reviews
