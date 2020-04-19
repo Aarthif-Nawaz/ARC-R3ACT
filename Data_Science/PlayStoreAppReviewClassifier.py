@@ -16,7 +16,7 @@ from Data_Science.SentimentAnalysis import SentimentAnalysis
 
 class PlayStoreAppReviewClassifier:
     # used to classify the reviews and used invoke the function used to identified the clusters of the reviews
-    def __init__(self, appName, appId):
+    def __init__(self):
         notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app", "not", "nt"]
         # retrieve the collection from the db
         collection = db["Reviews"]
@@ -230,4 +230,4 @@ client = pymongo.MongoClient(
 # retrieve the db from the cluster
 db = client['ARC']
 # # example how to call function
-playStoreARC = PlayStoreAppReviewClassifier("WEBTOON", "com.naver.linewebtoon")
+playStoreARC = PlayStoreAppReviewClassifier()

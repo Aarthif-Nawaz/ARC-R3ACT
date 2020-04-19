@@ -20,7 +20,7 @@ router.get("/", (request, response) => {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
-  const process = spawn("python", ["hello.py"]);
+  const process = spawn("python", ["hello.py","WEBTOON", "com.naver.linewebtoon"]);
 
   let result = "Result: \n";
 
