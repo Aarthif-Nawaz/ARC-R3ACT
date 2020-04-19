@@ -17,7 +17,7 @@ from Data_Science.SentimentAnalysis import SentimentAnalysis
 class PlayStoreAppReviewClassifier:
     # used to classify the reviews and used invoke the function used to identified the clusters of the reviews
     def __init__(self, appName, appId):
-        notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app"]
+        notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app", "not", "nt"]
         # retrieve the collection from the db
         collection = db["Reviews"]
         # find all the reviews hence the query passed is empty {}
@@ -117,24 +117,25 @@ class PlayStoreAppReviewClassifier:
         # retrieve the app details inserted
         apps = collection.find_one({"appId": appId})
         # create the json object used to store the app details
-        mbDetails = {"_id": apps["_id"],
-                     "appId": apps["appId"],
-                     "title": apps["title"],
-                     "summary": apps["summary"],
-                     "installs": apps["installs"],
-                     "scoreText": apps["scoreText"],
-                     "reviews": apps["reviews"],
-                     "priceText": apps["priceText"],
-                     "developer": apps["developer"],
-                     "genre": apps["genre"],
-                     "icon": apps["icon"], 'overall_sentiment': predicted_results['overall_sentiment'],
-                     'rating_calculated': predicted_results['rating'],
-                     'r2_score_of_senti_prediction': predicted_results['r2_score'],
-                     'mean_square_error_of_senti_prediction': predicted_results['mean_square_error']}
-        # deletes the previous records
-        collection.delete_many({})
-        # insert the json object
-        collection.insert_one(mbDetails)
+        if apps is not None:
+            mbDetails = {"_id": apps["_id"],
+                         "appId": apps["appId"],
+                         "title": apps["title"],
+                         "summary": apps["summary"],
+                         "installs": apps["installs"],
+                         "scoreText": apps["scoreText"],
+                         "reviews": apps["reviews"],
+                         "priceText": apps["priceText"],
+                         "developer": apps["developer"],
+                         "genre": apps["genre"],
+                         "icon": apps["icon"], 'overall_sentiment': predicted_results['overall_sentiment'],
+                         'rating_calculated': predicted_results['rating'],
+                         'r2_score_of_senti_prediction': predicted_results['r2_score'],
+                         'mean_square_error_of_senti_prediction': predicted_results['mean_square_error']}
+            # deletes the previous records
+            collection.delete_many({})
+            # insert the json object
+            collection.insert_one(mbDetails)
 
     def __identifyKeywordsAndSave(self, clusterName, notKeywords):
         # retrieve the collection from the db
@@ -229,4 +230,4 @@ client = pymongo.MongoClient(
 # retrieve the db from the cluster
 db = client['ARC']
 # # example how to call function
-playStoreARC = PlayStoreAppReviewClassifier("WhatsApp", "com.whatsapp")
+playStoreARC = PlayStoreAppReviewClassifier("WEBTOON", "com.naver.linewebtoon")
