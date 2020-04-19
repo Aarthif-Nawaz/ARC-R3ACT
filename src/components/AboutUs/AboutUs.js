@@ -18,11 +18,11 @@ function AboutUs() {
           style={{
             textAlign: "center",
             fontWeight: 700,
-            paddingLeft: 350,
-            paddingRight: 350,
-            paddingTop: 100,
-            paddingBottom: 50,
-            letterSpacing: 3,
+            paddingLeft: "23.3vw",
+            paddingRight: "23.3vw",
+            paddingTop: "6.6vw",
+            paddingBottom: "3.3vw",
+            letterSpacing: "0.2vw",
             fontFamily: "Lato",
             fontSize: "2.3vw",
           }}
@@ -34,8 +34,8 @@ function AboutUs() {
         <div className="descrip-6">
           <p
             style={{
-              paddingLeft: 250,
-              paddingRight: 250,
+              paddingLeft: "16.6vw",
+              paddingRight: "16.6vw",
             }}
           >
             As the great Tim Cook once said, we believe the best brands tell
@@ -78,8 +78,8 @@ function AboutUs() {
           </h3>
           <p
             style={{
-              paddingLeft: 250,
-              paddingRight: 250,
+              paddingLeft: "16.6vw",
+              paddingRight: "16.6vw",
               paddingBlockStart: 30,
               textAlign: "justify",
             }}
@@ -114,7 +114,7 @@ function AboutUs() {
               <div class="containerTeam">
                 <h3 className="nameTeam">Safiyyah Rahman</h3>
                 <a href="https://github.com/SafiyyahR" className="githubLinks">
-                  <p>github : SafiyyahR</p>
+                  <p style={{fontSize:"1vw"}}>github : SafiyyahR</p>
                 </a>
               </div>
             </div>
@@ -131,7 +131,7 @@ function AboutUs() {
                   href="https://github.com/chrisitina-thambirajah"
                   className="githubLinks"
                 >
-                  <p>github : chrisitina-thambirajah</p>
+                  <p style={{fontSize:"1vw"}}>github : chrisitina-thambirajah</p>
                 </a>
               </div>
             </div>
@@ -148,7 +148,7 @@ function AboutUs() {
                   href="https://github.com/sajani-sihara"
                   className="githubLinks"
                 >
-                  <p>github : sajani-sihara</p>
+                  <p style={{fontSize:"1vw"}}>github : sajani-sihara</p>
                 </a>
               </div>
             </div>
@@ -165,7 +165,7 @@ function AboutUs() {
             <div class="containerTeam">
               <h3 className="nameTeam">Ridmi Amasha</h3>
               <a href="https://github.com/ridmi98" className="githubLinks">
-                <p>github : ridmi98</p>
+                <p style={{fontSize:"1vw"}}>github : ridmi98</p>
               </a>
             </div>
             </div>
@@ -182,7 +182,7 @@ function AboutUs() {
                 href="https://github.com/Aarthif-Nawaz"
                 className="githubLinks"
               >
-                <p>github : Aarthif-Nawaz</p>
+                <p style={{fontSize:"1vw"}}>github : Aarthif-Nawaz</p>
               </a>
             </div>
           </div>
@@ -199,7 +199,7 @@ function AboutUs() {
                   href="https://github.com/shiromi-basil"
                   className="githubLinks"
                 >
-                  <p>github : shiromi-basil</p>
+                  <p style={{fontSize:"1vw"}}>github : shiromi-basil</p>
                 </a>
               </div>
             </div>
