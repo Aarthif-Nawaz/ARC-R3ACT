@@ -6,13 +6,13 @@ function MenuBox() {
   return (
     <div className='container-fluid'>
       <div class="bgimg-6">
-        <div className=' col-md-9 MenuBoxPage'>
+        <div className=' col-9 MenuBoxPage'>
           <h3
             style={{
               textAlign: "center",
               fontWeight: 900,
               float: "left",
-              padding: 20,
+              padding: "1.3vw",
               fontSize:'2vw',
               marginTop: "12%",
             }}
@@ -21,7 +21,7 @@ function MenuBox() {
           </h3>
 
           <div className="row menuIntro">
-            <div className='col mr-5'>
+            <div className='col mr-5' style={{fontSize:"1.5vw"}}>
             The reviews of the mobile application are divided into three
             segments. Choose one of the following to see all the reviews
             relevant to that particular category.
@@ -30,19 +30,19 @@ function MenuBox() {
 
           <div className="container MenuBoxContainer">
             <div class="row">
-            <div class="col-lg-4 mb-2">
+            <div class="col-4">
                 <Link to="/bugfix">
-                  <div className="card p-4">Bug <br></br>Fixes</div>
+                  <div className="card p-4" style={{fontSize:"1vw"}}>Bug <br></br>Fixes</div>
                 </Link>
               </div>
-              <div class="col-lg-4 mb-2">
+              <div class="col-4">
                 <Link to="/featureRequest">
-                <div className="card p-4">Feature Requests</div>
+                <div className="card p-4" style={{fontSize:"1vw"}}>Feature Requests</div>
                 </Link>
                 </div>
-              <div class="col-lg-4 mb-2">
+              <div class="col-4">
                 <Link to="/overallSentiment">
-                <div className="card p-4">Overall Sentiment</div>
+                <div className="card p-4" style={{fontSize:"1vw"}}>Overall Sentiment</div>
                 </Link>
                 </div>
             </div>
