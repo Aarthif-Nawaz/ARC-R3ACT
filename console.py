@@ -35,10 +35,10 @@ def main():
     # init()
     choice = int(input("Enter Your Choice : "))
     while (choice != 4):
-        # if (choice == 1):
-        #     featureRequest()
-        # elif (choice == 2):
-        #     bugFix()
+         if (choice == 1):
+             featureRequest()
+         elif (choice == 2):
+             bugFix()
         if (choice == 3):
             predict_sentiment("CSVFiles\TestReviewsLabelled.csv")
         else:
