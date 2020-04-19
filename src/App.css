@@ -1,4 +1,4 @@
-/* the ARC logo at the top left of every page*/
+/* the ARC logo at the top let of every page*/
 .bugLogo {
   height: 7vw;
   width: auto;
@@ -26,25 +26,25 @@ html {
 /*descrip-1, descrip-2 and descrip-3 are the text written in the search for apps page*/
 .descrip-1 {
   color: rgb(88, 87, 87);
-  font-size: 23px;
+  font-size: 1.5vw;
   background-color: #fff;
   text-align: center;
-  padding: 50px;
+  padding: 3.3vW;
 }
 
 .descrip-2 {
   color: #ddd;
   background-color: #282e34;
   text-align: center;
-  font-size: 23px;
+  font-size: 1.5vw;
   padding: 5%;
 }
 .descrip-3 {
   color: #000;
   background-color: #fff;
   text-align: center;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
 }
 
 .descrip-4 {
@@ -54,25 +54,25 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
 }
 
 .descrip-5 {
   color: #282e34;
   background-color: #ddd;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
 }
 
 .descrip-6 {
   color: rgb(88, 87, 87);
-  font-size: 23px;
+  font-size: 1.5vw;
   background-color: #fff;
   text-align: center;
-  padding-bottom: 70px;
+  padding-bottom: 4.6vw;
 }
 
 .descrip-7 {
@@ -81,7 +81,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50px;
+  padding: 3.3vw;
   text-align: center;
 }
 .descrip-8 {
@@ -90,14 +90,14 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 21px;
-  padding: 50px;
+  font-size: 1.4vw;
+  padding: 3.3vw;
   text-align: justify;
 }
 .FAQsection {
   width: 50%;
-  padding: 40px;
-  border-bottom: solid 1px #ccc;
+  padding: 2.6vw;
+  border-bottom: solid 0.06vw #ccc;
 }
 .descrip-9 {
   background-image: url("/images/phone2.jpg");
@@ -105,7 +105,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 21px;
+  font-size: 1.4vw;
   padding: 5%;
   text-align: justify;
 }
@@ -116,50 +116,50 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
 }
 .bugDescripBtn{
   color: #fff;
   background-color: #da808a;
   font-weight: 700;
-  border: #fff 2px solid;
-  font-size: 15px;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
   text-transform: uppercase;
 }
 .bugKeywordBtn{
   color: #fff;
   background-color: #da808a;
   font-weight: 700;
-  border: #fff 2px solid;
-  font-size: 15px;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
   text-transform: uppercase;
-  border-radius: 7px;
+  border-radius: 0.4vw;
   width: fit-content;
-  padding:8px;
+  padding:0.5vw;
 }
 .bugDescripBtn:hover{
-  border: #fff 2px solid;
+  border: #fff 0.1vw solid;
   background-color: #434950;
 }
 .mx-3{
   color: #fff;
   background-color: #434950;
   font-weight: 700;
-  border: #fff 2px solid;
-  font-size: 15px;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
   text-transform: uppercase;
 }
 .mx-3:hover{
-  border: #fff 2px solid;
+  border: #fff 0.1vw solid;
   background-color: #da808a;
 }
 .descrip-11 {
   color: #fff;
   background-color: #434950;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
    
 }
@@ -171,20 +171,20 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
 }
 .mx-4{
   color: #fff;
   background-color: #434950;
   font-weight: 700;
-  border: #fff 2px solid;
-  font-size: 15px;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
   text-transform: uppercase;
 }
 .mx-4:hover{
-  border: #434950 2px solid;
+  border: #434950 0.1vw solid;
   background-color: #fff;
   color: #434950;
 }
@@ -192,19 +192,19 @@ html {
   color: #434950;
   background-color: #fff;
   font-weight: 700;
-  border: #fff 2px solid;
-  font-size: 15px;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
   text-transform: uppercase;
 }
 .descrip-button:hover{
-  border: #fff 2px solid;
+  border: #fff 0.1vw solid;
   background-color: #434950;
 }
 .descrip-13 {
   color: #fff;
   background-color: #434950;
-  font-size: 23px;
-  padding: 50px;
+  font-size: 1.5vw;
+  padding: 3.3vw;
   font-weight: 700;
    
 }
@@ -234,89 +234,89 @@ html {
   background-size: cover;
 }
 .bgimg-1 {
-  min-height: 700px;
+  min-height: 46.6vw;
   opacity: 0.9;
   background-image: url("/images/img_parallax4.jpg");
 }
 
 .bgimg-2 {
-  min-height: 700px;
+  min-height: 46.6vw;
   opacity: 09;
   background-image: url("/images/img_parallax.jpg");
 }
 
 .bgimg-3 {
-  min-height: 700px;
+  min-height: 46.6vw;
   opacity: 0.9;
   background-image: url("/images/img_parallax2.jpg");
 }
 .bgimg-4 {
-  min-height: 700px;
+  min-height: 46.6vw;
   opacity: 0.9;
   background-image: url("/images/img_parallax3.jpg");
 }
 .bgimg-5 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/reviews.jpg");
 }
 .bgimg-6 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/laptop6.jpg");
 }
 .bgimg-7 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/team.jpg");
 }
 .bgimg-8 {
-  min-height: 700px;
+  min-height: 46.6vw;
   background-image: url("/images/laptop5.jpg");
 }
 .bgimg-9 {
-  min-height: 300px;
+  min-height: 20vw;
   background-image: url("/images/phone.jpg");
 }
 .bgimg-10 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/support1.jpeg");
 }
 .bgimg-11 {
-  min-height: 400px;
+  min-height: 26.6vw;
   background-image: url("/images/laptop.jpg");
 }
 .bgimg-12 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/phone1.jpg");
 }
 .bgimg-13 {
-  min-height: 250px;
+  min-height: 23.3vw;
   background-image: url("/images/phone2.jpg");
 }
 .bgimg-14 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/laptop3.jpg");
 }
 .bgimg-15 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/laptop1.jpg");
 }
 .bgimg-16 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/laptop7.jpg");
 }
 .bgimg-17 {
-  min-height: 800px;
+  min-height: 53.3vw;
   background-image: url("/images/onereview.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
   float: left;
   width: 33%;
-  padding: 0 10px;
+  padding: 0 0.6vw;
 }
 
 /* Remove extra left and right margins, due to padding */
 .rowCard {
-  margin: 0 -5px;
+  margin: 0 -0.3vw;
 }
 
 /* Clear floats after the columns */
@@ -327,18 +327,18 @@ html {
 }
 
 /* Responsive columns */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 40vw) {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 1.3vw;
   }
 }
 
 /* Style the counter cards */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 30px;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+  padding: 2vw;
   text-align: center;
   background-color: #f1f1f1;
   align-items: center;
@@ -358,22 +358,22 @@ html {
 .caption span.border {
   background-color: #111;
   color: #fff;
-  padding: 18px;
+  padding: 1.2vw;
   font-size: 2vw;
   font-weight: 700;
-  letter-spacing: 7px;
+  letter-spacing: 0.4vw;
 }
 
 /*all the h3 heading in the about.js section are style here*/
 h3 {
-  letter-spacing: 5px;
+  letter-spacing: 0.3vw;
   text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
+  font: 1.3vw "Lato", sans-serif;
   color: #111;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
+@media only screen and (max-device-width: 1020.2vw) {
   .bgimg-1,
   .bgimg-2,
   .bgimg-3,
@@ -396,7 +396,7 @@ h3 {
 /*this is for the related review page*/
 .star {
   display: inline-block;
-  padding: 3px;
+  padding: 0.2vw;
   vertical-align: middle;
   line-height: 1;
   font-size: 1.5em;
@@ -412,11 +412,11 @@ h3 {
   background-color: inherit;
   z-index: 1;
   height: 100%;
-  padding: 0px;
-  height: 0px;
+  padding: 0vw;
+  height: 0vw;
 }
 .navbar-brand {
-  margin-right: 0px;
+  margin-right: 0vw;
   height: auto;
   width: auto;
 }
@@ -425,10 +425,10 @@ h3 {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
-  right: 36px;
-  top: 36px;
+  width: 2.4vw;
+  height: 2vw;
+  right: 2.4vw;
+  top: 2.4vw;
 }
 
 /* Color/shape of burger icon bars */
@@ -443,17 +443,17 @@ h3 {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 20.2vw;
+  width: 20.2vw;
 }
 
 .menu-item {
-  letter-spacing: 2px;
+  letter-spacing: 0.1vw;
   text-transform: uppercase;
   font: "Lato", sans-serif;
   font-weight: 900;
   color: #111;
-  padding: 30px;
+  padding: 2vw;
 }
 
 /* Color/shape of close button cross */
@@ -489,9 +489,9 @@ Sidebar wrapper styles
 /* Individual item */
 .bm-item {
   display: inline-block;
-  font-size: 20px;
+  font-size: 1.3vw;
   font-weight: 700;
-  padding-bottom: 10px;
+  padding-bottom: 0.6vw;
   text-decoration: none;
   color: white;
 }
@@ -505,9 +505,9 @@ Sidebar wrapper styles
 .button {
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 1.3vw;
   font-weight: 500;
-  padding-bottom: 18px;
+  padding-bottom: 1.2vw;
   background: inherit;
 }
 
@@ -516,15 +516,15 @@ Sidebar wrapper styles
   border: none;
   background: inherit;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 1.4vw;
   color: #fff;
 }
 /*syling for the HomePage.js - whihc is the video part of the searchapps.js*/
 
 /*the video will be inside this container */
 .introBox {
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0vw;
+  padding-left: 0vw;
   position: relative;
 }
 
@@ -535,8 +535,8 @@ Sidebar wrapper styles
   bottom: 0;
   width: 100%;
   height: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0vw;
+  padding-left: 0vw;
   overflow: hidden;
   z-index: 0;
 }
@@ -557,26 +557,26 @@ video {
   font-size: 3.1vw;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 0.3vw;
   font-family: "Lato";
   color: #fff;
-  text-shadow: 3px 3px black;
+  text-shadow: 0.2vw 0.2vw black;
 }
 
 #header p {
-  padding: 10px;
+  padding: 0.6vw;
   margin: auto;
 }
 
 /*the search bar is placed inside this container*/
 .searchBar {
   width: 55%;
-  padding: 10px;
+  padding: 0.6vw;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 3.3vw;
   position: relative;
   display: flex;
-  font-size: 40px;
+  font-size: 2.6vw;
   color: #fff;
   border: none;
 }
@@ -584,20 +584,20 @@ video {
 /*the input of the search bar is styled here*/
 .searchInputGroup {
   width: 100%;
-  height: 70px;
+  height: 4.6vw;
   text-align: center;
-  border-radius: 100px;
-  border: solid 5px white;
+  border-radius: 6.6vw;
+  border: solid 0.3vw white;
   cursor: pointer;
 }
 
 /*the placeholder of the search bar is styled here*/
 .searchPlaceholder {
   width: 70%;
-  border-radius: 100px;
+  border-radius: 6.6vw;
   background: inherit;
   border: none;
-  padding-bottom: 18px;
+  padding-bottom: 1.2vw;
   height: 120%;
   outline: none;
   font-size: 1.2vw;
@@ -655,7 +655,7 @@ video {
 .MenuBoxContainer {
   margin: auto;
   float: left;
-  padding: 50px;
+  padding: 3.3vw;
 }
 .MenuBoxContainer a {
   color: transparent !important;
@@ -666,14 +666,14 @@ video {
   color: rgb(88, 87, 87);
   font-size: 3vh;
   text-align: center;
-  padding: 20px;
+  padding: 1.3vw;
 }
 .p-4 {
   color: rgb(88, 87, 87);
   font-size: 2.5vh;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 0.2vw;
   text-decoration: none;
 }
 
@@ -702,7 +702,7 @@ video {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.5em;
-  padding: 10px;
+  padding: 0.6vw;
   z-index: 1;
 }
 
@@ -718,7 +718,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 13.3vw;
   height: 100%;
   background: #000;
   animation: animate 5s linear infinite;
@@ -729,7 +729,7 @@ video {
     left: 0;
   }
   50% {
-    left: calc(100% - 200px);
+    left: calc(100% - 13.3vw);
   }
   100% {
     left: 0;
@@ -767,11 +767,11 @@ video {
 .columnTeam {
   float: left;
   width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 60px;
+  margin-bottom: 1.06vw;
+  padding: 0 4vw;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 63.3vw) {
   .columnTeam {
     width: 100%;
     display: block;
@@ -779,20 +779,20 @@ video {
 }
 
 .cardTeam {
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   font-family: "Lato", sans-serif;
   color: rgb(88, 87, 87);
   background-color: #fff;
   align-content: center;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 2.6vw;
 }
 
 .containerTeam {
-  padding: 0 20px;
+  padding: 0 1.3vw;
 }
 .nameTeam {
-  padding-top: 40px;
+  padding-top: 2.6vw;
   font-weight: 600;
 }
 .containerTeam::after,
@@ -812,13 +812,13 @@ video {
   color: #004688;
 }
 .imageContainer {
-  padding-top: 40px;
+  padding-top: 2.6vw;
   padding-left: 18%;
 }
 .imageTeam {
-  width: 267px;
-  height: 200px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.8vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/safiyyah.jpg");
@@ -828,9 +828,9 @@ video {
   background-image: url("/images/safiyyah1.png");
 }
 .imageTeam1 {
-  width: 267px;
-  height: 200px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.8vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/christina.jpg");
@@ -841,9 +841,9 @@ video {
 }
 
 .imageTeam2 {
-  width: 266px;
-  height: 200px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.8vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/sajani.jpg");
@@ -854,9 +854,9 @@ video {
 }
 
 .imageTeam3 {
-  width: 265px;
-  height: 199px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.8vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/ridmi.png");
@@ -867,9 +867,9 @@ video {
 }
 
 .imageTeam4 {
-  width: 266px;
-  height: 200px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.7vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/aarthif.jpg");
@@ -880,9 +880,9 @@ video {
 }
 
 .imageTeam5 {
-  width: 266px;
-  height: 200px;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  width: 17.8vw;
+  height: 13.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("/images/shiromi.jpg");
@@ -893,10 +893,10 @@ video {
 }
 .commentInput {
   border: none;
-  border-bottom: solid 2px #ccc;
-  padding-bottom: 10px;
-  border-radius: 0px;
-  font-size: 20px;
+  border-bottom: solid 0.1vw #ccc;
+  padding-bottom: 0.6vw;
+  border-radius: 0vw;
+  font-size: 1.3vw;
   color: #282e34;
   font-weight: 600;
 }
@@ -905,14 +905,14 @@ video {
 }
 .commentSubmit {
   width: 20%;
-  margin-top: 10px;
+  margin-top: 0.6vw;
   color: #fff;
   font-weight: 600;
   background-color: #282e34;
   border:none; 
 }
 .commentSubmit:hover{
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 /* =======================BUG FIX=========== */
 .center-content{
@@ -925,17 +925,17 @@ video {
   font-family: "Lato" sans-serif;
 }
 .sentimentInfo{
-  font-size: 25px;
+  font-size: 1.6vw;
   font-weight: 500;
 }
 .reviewBox{
   margin:0 auto;
   float: left;
   width:90%;
-  padding:20px;
+  padding:1.3vw;
   margin-left: 5%;
   margin-top: 3%;
-  box-shadow: 0 4px 8px 0 rgba(12, 10, 10, 0.897);
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 
 .reviewText{
