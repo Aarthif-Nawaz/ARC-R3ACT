@@ -21,7 +21,7 @@ exports.connectDatascience = async function (request, response) {
   // 2. path of the script and arguments for the script
   const process = spawn("python", ["hello.py"]);
 
-  let result = "Result: \n";
+  let result = "Python Result: \n";
 
   // store the data received from executing the script
   // and save it to the response object

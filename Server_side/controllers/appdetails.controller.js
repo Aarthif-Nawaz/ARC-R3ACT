@@ -1,5 +1,6 @@
 var gplay = require("google-play-scraper");
 var appdetailsService = require("../services/appdetails.service");
+var reviewsController = require("../controllers/reviews.controller");
 
 // retrieve reviews of the app entered by the user
 exports.storeDetails = async function (request, response) {
@@ -12,6 +13,7 @@ exports.storeDetails = async function (request, response) {
 
   // Create a new detailsArray to store all the mobileAppDetails
   var detailsArray = [];
+  var appId
   // Using the play scraper module get all the appDetails
   gplay
     .app({
@@ -21,7 +23,7 @@ exports.storeDetails = async function (request, response) {
     .then((result) => {
       // Get the result and using a variable called "result", get all the other details
       var _id = "1";
-      var appId = request.params.appId;
+      appId = request.params.appId;
       var title = result.title;
       var summary = result.summary;
       var installs = result.installs;
@@ -50,7 +52,7 @@ exports.storeDetails = async function (request, response) {
 
         try {
           appdetailsService.addDetails(detailsArray);
-          return response.status(200).send(detailsArray);
+          return reviewsController.storeReviews(appId, request, response);
         } catch (error) {
           return response.status(500).send(error);
         }
@@ -58,7 +60,7 @@ exports.storeDetails = async function (request, response) {
       } else {
         response.send(
           // If it not Send this mesaage to the Server
-          "Sorry! The number of reviews of the selected app is not greater than 100."
+          "Sorry! The number of reviews is less than 100."
         );
       }
     });
