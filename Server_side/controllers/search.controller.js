@@ -6,22 +6,20 @@ IIT ID: 2018117
 Dependencies: express, google-play-scraper
 */
 
-const express = require("express");
-const router = express.Router();
 var gplay = require("google-play-scraper");
 
 // display apps similar to the app name entered by the user
-router.get("/:name", (request, response) => {
+exports.searchApp = async function (request, response) {
   var numOfApps = 5;
   var appArray = [];
   gplay
     .search({
       term: request.params.name,
       num: numOfApps,
-      fullDetail: true
+      fullDetail: true,
     })
     // .then(console.log, console.log);
-    .then(result => {
+    .then((result) => {
       if (result === undefined || result.length == 0) {
         response.send("No results for " + request.params.name);
       } else {
@@ -42,31 +40,10 @@ router.get("/:name", (request, response) => {
             summary,
             installs,
             rating,
-            price
+            price,
           });
         }
         response.send(appArray);
       }
     });
-});
-
-// suggest app names similar to the app name entered by the user
-router.get("/suggest/:name", (request, response) => {
-  var appArray = [];
-  gplay
-    .suggest({
-      term: request.params.name
-    })
-    // .then(console.log);
-    .then(result => {
-      if (result === undefined || result.length == 0) {
-        response.send("No results for " + request.params.name);
-      } else {
-          appArray.push(result);
-        }
-        response.send(appArray);
-      }
-    );
-});
-
-module.exports = router;
+};
