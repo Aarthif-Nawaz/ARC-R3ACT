@@ -58,18 +58,8 @@ class PreProcess:
         """Expand contractions from text"""
         phrase = re.sub(r"won\'t", "will not", phrase)
         phrase = re.sub(r"can\'t", "can not", phrase)
-        phrase = re.sub(r"there\'ll", " there shall", phrase)
         # general
-        # Expand Contractions for all words that end with 'll
-        phrase = re.sub(r"\'ll", " all", phrase)
-        # Expand Contractions for all words that end with 're
-        phrase = re.sub(r"\'re", " are", phrase)
-        # Expand Contractions for all words that end with 've
-        phrase = re.sub(r"\'ve", " have", phrase)
-        # Expand Contractions for all words that end with 's
-        phrase = re.sub(r"\'s", " is", phrase)
-        # Expand Contractions for all words that end with 'd
-        phrase = re.sub(r"\'d", " did", phrase)
+      
         # Expand Contractions for all words that end with n't
         phrase = re.sub(r"n\'t", " not", phrase)
         phrase = re.sub(r"\'t", " not", phrase)
