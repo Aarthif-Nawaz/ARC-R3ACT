@@ -57,16 +57,16 @@ class PlayStoreAppReviewClassifier:
             # save the preprocessed text that is sent to extract the keywords
             fe_preprocessedReviews = clusteredResult["fe_preprocessedReviews"]
             # insert the preprocessed and modified reviews
-            self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews)
+            self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews,sys.argv[2])
             # insert the overall sentiment of the mobile app and other details
             self.__insert_mobile_app_details(predicted_results, sys.argv[2])
             # the name of the app is often identified as a keyword hence it is added to the array above
             notKeywords.append(sys.argv[1].lower())
             # identify and save the bugFixes and the featureRequests
-            self.__identifyKeywordsAndSave("BugFixes", notKeywords)
-            self.__identifyKeywordsAndSave("FeatureRequests", notKeywords)
+            self.__identifyKeywordsAndSave(sys.argv[2],"BugFixes", notKeywords)
+            self.__identifyKeywordsAndSave(sys.argv[2],"FeatureRequests", notKeywords)
 
-    def __insert_reviews(self, collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews):
+    def __insert_reviews(self, collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews,appId):
         pre_processedReviews = []
         i = 0
         # find all the reviews hence the query passed is empty {}
@@ -97,8 +97,8 @@ class PlayStoreAppReviewClassifier:
             # append the json objects to an array
             pre_processedReviews.append(pre_processed_review)
             i += 1
-        # delete previous records
-        collection.delete_many({})
+        collection=db["MobileApplicationDetails"]
+        collection.update_one({"appId":appId},{"$set":{"reviewArray":pre_processedReviews}})
         # insert the array
         collection.insert_many(pre_processedReviews)
 
@@ -120,32 +120,37 @@ class PlayStoreAppReviewClassifier:
         apps = collection.find_one({"appId": appId})
         # create the json object used to store the app details
         if apps is not None:
-            mbDetails = {"_id": apps["_id"],
-                         "appId": apps["appId"],
-                         "title": apps["title"],
-                         "summary": apps["summary"],
-                         "installs": apps["installs"],
-                         "scoreText": apps["scoreText"],
-                         "reviews": apps["reviews"],
-                         "priceText": apps["priceText"],
-                         "developer": apps["developer"],
-                         "genre": apps["genre"],
-                         "icon": apps["icon"], 'overall_sentiment': predicted_results['overall_sentiment'],
+            collection.update_one({"appId":appId},{"$set":{'overall_sentiment': predicted_results['overall_sentiment'],
                          'rating_calculated': predicted_results['rating'],
                          'r2_score_of_senti_prediction': predicted_results['r2_score'],
-                         'mean_square_error_of_senti_prediction': predicted_results['mean_square_error']}
-            # deletes the previous records
-            collection.delete_many({})
-            # insert the json object
-            collection.insert_one(mbDetails)
+                         'mean_square_error_of_senti_prediction': predicted_results['mean_square_error']}})
+            # mbDetails = {"_id": apps["_id"],
+            #              "appId": apps["appId"],
+            #              "title": apps["title"],
+            #              "summary": apps["summary"],
+            #              "installs": apps["installs"],
+            #              "scoreText": apps["scoreText"],
+            #              "reviews": apps["reviews"],
+            #              "priceText": apps["priceText"],
+            #              "developer": apps["developer"],
+            #              "genre": apps["genre"],
+            #              "icon": apps["icon"], 'overall_sentiment': predicted_results['overall_sentiment'],
+            #              'rating_calculated': predicted_results['rating'],
+            #              'r2_score_of_senti_prediction': predicted_results['r2_score'],
+            #              'mean_square_error_of_senti_prediction': predicted_results['mean_square_error']}
+            # # deletes the previous records
+            # collection.delete_many({})
+            # # insert the json object
+            # collection.insert_one(mbDetails)
 
-    def __identifyKeywordsAndSave(self, clusterName, notKeywords):
+    def __identifyKeywordsAndSave(self, appId,clusterName, notKeywords):
         # retrieve the collection from the db
-        collection = db["Reviews"]
+        collection = db["MobileApplicationDetails"]
         # the query variable is used to store a key value pair
-        query = {"cluster": clusterName}
+        query = {"appId":appId}
+        query1={"reviewArray":{ $elemMatch : { "cluster": clusterName } }}
         # used to find all the reviews with a value of the cluster key equal to the clusterName
-        selectedReviews = collection.find(query)
+        selectedReviews = collection.find(query,query1)
         # used to concatenate the all the keywords in selectedReviews array
         totalReviewSentence = ""
         # makes accessing the selected reviews easier
@@ -190,7 +195,7 @@ class PlayStoreAppReviewClassifier:
                 keywords.append(token.text)
         return keywords
 
-    def __insert_clustered_reviews(self, keywordsReviewIDs, keywords, sentimentKeywords, df, clusterName):
+    def __insert_clustered_reviews(self, appId,keywordsReviewIDs, keywords, sentimentKeywords, df, clusterName):
         i = 0
         # idNum is used to calculate the id
         idNum = 1
@@ -219,11 +224,11 @@ class PlayStoreAppReviewClassifier:
                          "sentiment_score": sentimentScore}
         clusteredReviews.append(clusterReview)
         # retrieving the table that has the clusterName
-        collection = db[clusterName]
-        # delete all the records
-        collection.delete_many({})
+        collection = db["MobileApplicationDetails"]
+        # # delete all the records
+        # collection.delete_many({})
         # insert the array created
-        collection.insert_many(clusteredReviews)
+        collection.update_one({"appId":appId},{"$set":{clusterName:clusteredReviews})
 
 
 # make connection with the cluster in mongo cloud
