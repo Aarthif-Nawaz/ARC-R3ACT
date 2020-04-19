@@ -7,7 +7,7 @@ import Data_Science.PreProcess
 
 # Defining the class to perform unit test
 class TestPreprocess(unittest.TestCase):
-
+    # Performing test to check if the pre processed review along with the review type
     def test_pre_process_review(self):
         self.assertEqual(Data_Science.PreProcess.PreProcess.pre_process_review("No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled.", "svr"), "no pasting why be such basic feature miss this completely ruin my first impression of the app uninstalled")
         self.assertEqual(Data_Science.PreProcess.PreProcess.pre_process_review("No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled.", "cluster"), "no paste basic feature miss completely ruin impression app uninstalle")
