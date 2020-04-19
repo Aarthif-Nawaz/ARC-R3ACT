@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import { appNamesJson } from '../../api/appApiJson';
 import { Component } from 'react';
 import Autocomplete from 'react-autocomplete';
-import './AutoComplete.css';
 import "../../App.css";
 
 class SearchAppsClass extends Component {
@@ -24,12 +23,19 @@ class SearchAppsClass extends Component {
             </div>
             <div className='container-fluid'>
               <div className="container searchBar">
-                <FormControl
-                  text="Search for a mobile app"
-                  aria-label="search for a mobile app"
-                  className="searchPlaceholder" />
-                
-                <Autocomplete
+                <InputGroup className="mb-3 searchInputGroup">
+                  <FormControl
+                    text="Search for a mobile app"
+                    aria-label="search for a mobile app"
+                    className="searchPlaceholder"
+                  />
+                  <InputGroup.Append>
+                    <Button className="button searchbtn" variant="outline-secondary">
+                      SEARCH
+                    </Button>
+                  </InputGroup.Append>
+                </InputGroup>
+                {/* <Autocomplete
                   className="searchPlaceholder"
                   value={this.state.val}
                   items={appData()}
@@ -47,11 +53,7 @@ class SearchAppsClass extends Component {
                   }
                   onChange={(event, val) => this.setState({ val })}
                   onSelect={val => this.setState({ val })}
-                />
-
-                <Button className="button searchbtn" variant="outline-secondary">
-                  SEARCH
-                </Button>
+                /> */}
 
               </div>
             </div>

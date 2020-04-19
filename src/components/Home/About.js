@@ -8,7 +8,7 @@ function About() {
           Application Review Classifier
         </h3>
         <p
-          style={{ paddingLeft: 250, paddingRight: 250, paddingBlockStart: 30 }}
+          style={{ paddingLeft: "16.6vw", paddingRight: "16.6vw", paddingBlockStart: "2vw" }}
         >
           ARC analyses user reviews from the Google Play Store and suggests bug
           fixes, feature requests and the overall sentiment of a mobile
@@ -18,9 +18,8 @@ function About() {
           overall sentiment of a mobile application.
         </p>
       </div>
-
       <div class="bgimg-1">
-        <div class="caption">
+        <div class= "caption">
           <span className="border">
             We provide app review & ratings analysis for mobile teams.
           </span>
@@ -33,9 +32,9 @@ function About() {
         </h3>
         <p
           style={{
-            paddingLeft: 250,
-            paddingRight: 250,
-            paddingBlockStart: 30,
+            paddingLeft: "16.6vw",
+            paddingRight: "16.6vw",
+            paddingBlockStart: "2vw",
             textAlign: "justify",
           }}
         >
@@ -64,13 +63,13 @@ function About() {
           </span>
         </div>
       </div>
-
+     
       <div style={{ position: "relative" }}>
         <div className="descrip-2">
           <div class="row">
-            <div class="col d-flex align-items-stretch">
+            <div class="col-4 d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Bug Fixes
                 </h3>
                 <p
@@ -90,9 +89,9 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="col d-flex align-items-stretch">
+            <div class="col-4  d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Feature Requests
                 </h3>
                 <p
@@ -112,9 +111,9 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="col d-flex align-items-stretch">
+            <div class="col-4 d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 20 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Overall Sentiment
                 </h3>
                 <p
@@ -161,9 +160,9 @@ function About() {
           </h3>
           <p
             style={{
-              paddingLeft: 250,
-              paddingRight: 250,
-              paddingBlockStart: 30,
+              paddingLeft: "16.6vw",
+              paddingRight: "16.6vw",
+              paddingBlockStart: "2vw",
             }}
           >
             ARC provides fully automated, easy-to-understand sentiment analysis
