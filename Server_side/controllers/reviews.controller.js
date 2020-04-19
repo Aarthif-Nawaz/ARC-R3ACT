@@ -1,8 +1,9 @@
 var gplay = require("google-play-scraper");
 var reviewsService = require("../services/reviews.service");
+var datascienceController = require("../controllers/datascience.controller");
 
 // retrieve reviews of the app entered by the user
-exports.storeReviews = async function (request, response) {
+exports.storeReviews = async function (appIdParam, request, response) {
   // Using the router module to get the request of the call from the frontend
   try {
     await reviewsService.deleteReviews({});
@@ -14,7 +15,7 @@ exports.storeReviews = async function (request, response) {
   var reviewArray = [];
   gplay
     .reviews({
-      appId: request.params.appId,
+      appId: appIdParam,
       sort: gplay.sort.NEWEST,
       num: noOfReviews,
       lang: "en",
@@ -44,7 +45,8 @@ exports.storeReviews = async function (request, response) {
 
       try {
         reviewsService.addReviews(reviewArray);
-        return response.status(200).send(reviewArray);
+        return datascienceController.connectDatascience(request, response);
+        // return response.status(200).send(reviewArray);
       } catch (error) {
         return response.status(500).send(error);
       }
