@@ -11,12 +11,18 @@ import Data_Science.FeatureExtraction
 class TestFeatureExtraction(unittest.TestCase):
     # Setting up corpus and vectorizer to test post defined functions
     def setUp(self):
+        # Creating a Corpus
         self.corpus = ["Pay Play . Poor choice . depend accuracy levels tactics . + stats . difference . Pay play system poor matching system destroys game Tennis ","download game . Game play spotty . ball disappears lose points . spot ball hits court , ball ","low amounts gold given . not progress purchasing items game . makes impossible collect rewards unlocking timers boxes extend upto hours not open multiple boxes ! sucks . Edit : complete PAY WIN game ","enjoyed game , got glitchy . Developers work not giving certain attributes power . frustrating . giving game try , developers bad , not able fix glitches"]
+        # Initializing the TFIDF vectorizer along with its max_features
         self.vectorizer = TfidfVectorizer(max_features=200, min_df=2)
+        # using tfidf vectorizer to transform corpus reviews
         tf_idf_vector = self.vectorizer.fit_transform(self.corpus)
+        # Get the feature names
         self.features = self.vectorizer.get_feature_names()
+        # tranform a partcular review
         self.tf_idf_vectors = self.vectorizer.transform(
             ["download game . Game play spotty . ball disappears lose points . spot ball hits court , ball"])
+        # Creating MAtrix for the vectorized text
         self.sorted_features = Data_Science.FeatureExtraction.FeatureExtraction.sort_matrix(self.tf_idf_vectors.tocoo())
     # Testing to find keywords from a corpus
     def test_find_keywords(self):
