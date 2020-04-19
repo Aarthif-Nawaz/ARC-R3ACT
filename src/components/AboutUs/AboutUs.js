@@ -108,7 +108,7 @@ function AboutUs() {
         <div class="row">
           <div class="columnTeam">
             <div class="cardTeam">
-              <div className="imageContainer">
+              <div className="imageContainer"style={{padding:"2.85vw"}}>
                 <div className="imageTeam"></div>
               </div>
               <div class="containerTeam">
@@ -122,11 +122,11 @@ function AboutUs() {
 
           <div class="columnTeam">
             <div class="cardTeam">
-              <div className="imageContainer">
+              <div className="imageContainer" style={{padding:"2.85vw"}}>
                 <div className="imageTeam1"></div>
               </div>
               <div class="containerTeam">
-                <h3 className="nameTeam">Christina Thambirajah</h3>
+                <h3 className="nameTeam" style={{fontSize:"1vw"}}>Christina Thambirajah</h3>
                 <a
                   href="https://github.com/chrisitina-thambirajah"
                   className="githubLinks"
@@ -139,7 +139,7 @@ function AboutUs() {
 
           <div class="columnTeam">
             <div class="cardTeam">
-              <div className="imageContainer">
+              <div className="imageContainer" style={{padding:"2.85vw"}}>
                 <div className="imageTeam2"></div>
               </div>
               <div class="containerTeam">
@@ -155,11 +155,11 @@ function AboutUs() {
           </div>
         </div>
 
-        <div class="row" style={{ paddingTop: 40 }}>
+        <div class="row" style={{ paddingTop: "1.3vw" }}>
 
           <div class="columnTeam">
           <div class="cardTeam">
-            <div className="imageContainer">
+            <div className="imageContainer" style={{padding:"2.85vw"}}>
               <div className="imageTeam3"></div>
             </div>
             <div class="containerTeam">
@@ -173,7 +173,7 @@ function AboutUs() {
 
           <div class="columnTeam">
           <div class="cardTeam">
-            <div className="imageContainer">
+            <div className="imageContainer" style={{padding:"2.85vw"}}>
               <div className="imageTeam4"></div>
             </div>
             <div class="containerTeam">
@@ -190,7 +190,7 @@ function AboutUs() {
 
           <div class="columnTeam">
             <div class="cardTeam">
-              <div className="imageContainer">
+              <div className="imageContainer"style={{padding:"2.85vw"}}>
                 <div className="imageTeam5"></div>
               </div>
               <div class="containerTeam">
