@@ -55,7 +55,6 @@ router.get("/:appId", (request, response) => { // Using the router module to get
         title,
         summary,
         installs,
-        scoreText,
         reviews,
         priceText,
         developer,
