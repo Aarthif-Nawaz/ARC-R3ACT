@@ -120,9 +120,28 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
+.descrip-14 {
+  color: #fff;
+  background-image: url("/images/laptop8.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.5vw;
+  padding: 3.3vw;
+  font-weight: 700;
+}
 .bugDescripBtn{
   color: #fff;
   background-color: #da808a;
+  font-weight: 700;
+  border: #fff 0.1vw solid;
+  font-size: 1vw;
+  text-transform: uppercase;
+}
+.searchDescripBtn{
+  color: #fff;
+  background-color: #b88e6b;
   font-weight: 700;
   border: #fff 0.1vw solid;
   font-size: 1vw;
@@ -226,7 +245,8 @@ html {
 .bgimg-14,
 .bgimg-15,
 .bgimg-16,
-.bgimg-17 {
+.bgimg-17,
+.bgimg-18 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -306,6 +326,10 @@ html {
 .bgimg-17 {
   min-height: 53.3vw;
   background-image: url("/images/onereview.jpg");
+}
+.bgimg-18 {
+  min-height: 53.3vw;
+  background-image: url("/images/laptop8.jpg");
 }
 /* Float four columns side by side */
 .columnCard {
@@ -927,6 +951,11 @@ video {
 .sentimentInfo{
   font-size: 1.6vw;
   font-weight: 500;
+}
+.searchBox{
+  padding-top: 3vw;
+  padding-left: 20vw;
+  font-family: "Lato" sans-serif;
 }
 .reviewBox{
   margin:0 auto;

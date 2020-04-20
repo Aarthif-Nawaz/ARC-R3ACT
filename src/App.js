@@ -15,6 +15,7 @@ import ErrorCrash from './components/Error/Crashed';
 import LoadingBox from './components/Error/LoadingBox';
 import Contact from './components/Contact/Contact';
 import IndividualReview from './components/Individual_Review/IndividualReview';
+import Search from './components/Search/Search';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/support" exact component={Support}/>
             <Route path="/contact" exact component={Contact}/>
             <Route path="/individualreview" exact component={IndividualReview}/>
+            <Route path="/search" exact component={Search}/>
         </Switch>
       {/* </div> */}
       

@@ -38,7 +38,7 @@ function OverallSentiment() {
             <div className='row'>
               <div className='col-3'>
                 <div className='row m-2'>
-                    <img src={item.icon} style={{borderRadius:25,width:'10vw'}}/>
+                    <img src={item.icon} style={{borderRadius:"1.6vw",width:'10vw'}}/>
                  </div>
                 <div className='row m-2'>
                     <h3 style={{ fontSize: "2.5vw" }}>{item.title}</h3>{" "}
