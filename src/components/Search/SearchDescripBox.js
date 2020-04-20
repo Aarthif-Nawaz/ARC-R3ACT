@@ -38,7 +38,7 @@ function SearchDescripBox(props) {
                   </div>
                 </div>
                 <div className='col-2 container text-right' style={{marginRight:"18vw", marginTop:"10%"}}>
-                    <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"2vw"}}>Search</Button>
+                    <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"2vw"}}>Select</Button>
                 </div>
             </div>
 
