@@ -22,11 +22,11 @@ function IndividualReview() {
 
           <div className="reviewBox">
             <h3 style={{ fontWeight: 600 }}>Author name</h3>
-            <h3 style={{ fontWeight: 500, marginBottom: "3%" }}>01/01/2020</h3>
+            <h3 style={{ fontWeight: 500 }}>01/01/2020</h3>
+            <p>Version: 2.20.108</p>
             <div className="star" style={{ color: "#000", marginBottom: "3%" }}>
               <label>★★★★★</label>
             </div>
-            <p className="reviewText">Version: 2.20.108</p>
             <div variant="secondary" className="m-1 individualKeywordBtn">
               video
             </div>

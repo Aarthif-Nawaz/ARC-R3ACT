@@ -16,6 +16,11 @@ function Review(props) {
         ))}
       </div>
       <p>Review :{props.text}</p>
+      <div className="container text-right">
+        <Button variant="secondary" className="mx-2 descrip-button">
+          View Complete Review
+        </Button>
+      </div>
     </div>
   );
 }

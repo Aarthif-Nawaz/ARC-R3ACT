@@ -16,6 +16,7 @@ import LoadingBox from './components/Error/LoadingBox';
 import Contact from './components/Contact/Contact';
 import IndividualReview from './components/Individual_Review/IndividualReview';
 import Search from './components/Search/Search';
+import RemainingBF from './components/RemainingReviews/RemainingBF';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/contact" exact component={Contact}/>
             <Route path="/individualreview" exact component={IndividualReview}/>
             <Route path="/search" exact component={Search}/>
+            <Route path="/remainingBF" exact component={RemainingBF}/>
         </Switch>
       {/* </div> */}
       
