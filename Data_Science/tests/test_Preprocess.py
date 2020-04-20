@@ -15,7 +15,10 @@ class TestPreprocess(unittest.TestCase):
         self.assertEqual(Data_Science.PreProcess.PreProcess.pre_process_review("No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled.","fe"), "No pasting . basic feature missing ? completely ruined impression app , uninstalled . ", "Successfully tested pre processed review for feature extraction")
     #Perform unit testing to check if white space was removed from reviews
     def test_remove_whiteSpace(self):
-        self.assertEqual(Data_Science.PreProcess.PreProcess.remove_whitespace("No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled."), "No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled.","Successfully removed whitespace")
+        self.assertEqual(Data_Science.PreProcess.PreProcess.remove_whitespace("No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled."), "No pasting. Why is such a basic feature missing? This completely ruined my first impression of the app, uninstalled.","Successfully removed whitespace") 
+    # Perfomr unit testing to check if list elements was converted to string
+    def test_listToString(self):
+        self.assertEqual(Data_Science.PreProcess.PreProcess.listToString(["App was working wonderfully"]), "App was working wonderfully","Successfully Tested lisToString")
     #Perform unit testing to check if emoji is getting demojized
     def test_de_emojize(self):
         self.assertEqual(Data_Science.PreProcess.PreProcess.de_emojize("The best part was reading the devs replies to some of the poor feedback, sweet/hilarious, and it's not even 10am. If you want a real uplifting giggle....YouTube ''Pogo - Nicey Nicey', you're welcome 😊❌"), "The best part was reading the devs replies to some of the poor feedback, sweet/hilarious, and it's not even 10am. If you want a real uplifting giggle....YouTube ''Pogo - Nicey Nicey', you're welcome :smiling_face_with_smiling_eyes::cross_mark:","Successfully Deomijzed review")
