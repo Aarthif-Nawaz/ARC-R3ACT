@@ -30,7 +30,7 @@ function IndividualReview() {
             <div variant="secondary" className="m-1 individualKeywordBtn">
               video
             </div>
-            <p className="reviewText">
+            <p className="reviewText" style={{ fontSize: "1.1vw" }}>
               The reviews of the mobile application are divided into three
               segments. Choose one of the following to see all the reviews
               relevant to that particular category. The reviews of the mobile

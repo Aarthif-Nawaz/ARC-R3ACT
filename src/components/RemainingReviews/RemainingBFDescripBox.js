@@ -16,7 +16,7 @@ function RemainingBFDescripBox(props) {
           <div variant="secondary" className="m-1 remainingKeywordBtn">
             video
           </div>
-          <p className="RemainingReviewText">
+          <p className="RemainingReviewText" style={{ fontSize: "1.1vw" }}>
             The reviews of the mobile application are divided into three
             segments. Choose one of the following to see all the reviews
             relevant to that particular category. The reviews of the mobile
