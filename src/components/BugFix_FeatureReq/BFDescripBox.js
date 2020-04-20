@@ -18,7 +18,7 @@ function BFDescripBox(props){
                     <div className='col'><p>Keywords</p></div>
                     <div className='col'>
                         {keywords.map((key)=>
-                            <div variant='secondary' className='m-2 bugKeywordBtn'>{key}</div>
+                            <div variant='secondary' className='m-1 bugKeywordBtn'>{key}</div>
                     )}   
                     </div>
                 </div>  

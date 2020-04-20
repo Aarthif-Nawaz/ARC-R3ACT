@@ -29,7 +29,7 @@ html {
   font-size: 1.5vw;
   background-color: #fff;
   text-align: center;
-  padding: 3.3vW;
+  padding: 3.3vw;
 }
 
 .descrip-2 {
@@ -131,15 +131,18 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
-.bugDescripBtn{
+.bugDescripBtn {
   color: #fff;
   background-color: #da808a;
   font-weight: 700;
   border: #fff 0.1vw solid;
   font-size: 1vw;
   text-transform: uppercase;
+  padding: 0.6vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
-.searchDescripBtn{
+
+.searchDescripBtn {
   color: #fff;
   background-color: #b88e6b;
   font-weight: 700;
@@ -147,8 +150,10 @@ html {
   font-size: 1vw;
   text-transform: uppercase;
   width: 100%;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
+  padding: 0.6vw;
 }
-.bugKeywordBtn{
+.bugKeywordBtn {
   color: #fff;
   background-color: #da808a;
   font-weight: 700;
@@ -157,9 +162,9 @@ html {
   text-transform: uppercase;
   border-radius: 0.4vw;
   width: fit-content;
-  padding:0.5vw;
+  padding: 0.5vw;
 }
-.frKeywordBtn{
+.frKeywordBtn {
   color: #282e34;
   background-color: #fff;
   font-weight: 700;
@@ -168,13 +173,25 @@ html {
   text-transform: uppercase;
   border-radius: 0.4vw;
   width: fit-content;
-  padding:0.5vw;
+  padding: 0.5vw;
 }
-.bugDescripBtn:hover{
+.individualKeywordBtn {
+  color: #282e34;
+  background-color: inherit;
+  border: inherit 0.1vw solid;
+  font-size: 1vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 0.4vw;
+  width: fit-content;
+  padding: 0.3vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
+}
+.bugDescripBtn:hover {
   border: #fff 0.1vw solid;
   background-color: #434950;
 }
-.mx-3{
+.mx-3 {
   color: #fff;
   background-color: #434950;
   font-weight: 700;
@@ -182,7 +199,7 @@ html {
   font-size: 1vw;
   text-transform: uppercase;
 }
-.mx-3:hover{
+.mx-3:hover {
   border: #fff 0.1vw solid;
   background-color: #da808a;
 }
@@ -192,7 +209,6 @@ html {
   font-size: 1.5vw;
   padding: 3.3vw;
   font-weight: 700;
-   
 }
 
 .descrip-12 {
@@ -206,7 +222,7 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
-.mx-4{
+.mx-4 {
   color: #fff;
   background-color: #434950;
   font-weight: 700;
@@ -214,20 +230,22 @@ html {
   font-size: 1vw;
   text-transform: uppercase;
 }
-.mx-4:hover{
+.mx-4:hover {
   border: #434950 0.1vw solid;
   background-color: #fff;
   color: #434950;
 }
-.descrip-button{
+.descrip-button {
   color: #434950;
   background-color: #fff;
   font-weight: 700;
   border: #fff 0.1vw solid;
   font-size: 1vw;
   text-transform: uppercase;
+  padding: 0.6vw;
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
-.descrip-button:hover{
+.descrip-button:hover {
   border: #fff 0.1vw solid;
   background-color: #434950;
 }
@@ -237,7 +255,6 @@ html {
   font-size: 1.5vw;
   padding: 3.3vw;
   font-weight: 700;
-   
 }
 
 /*the three background images used for the parallax effect*/
@@ -936,7 +953,7 @@ video {
   color: #282e34;
   font-weight: 600;
 }
-.commentInput:active{
+.commentInput:active {
   border: none;
 }
 .commentSubmit {
@@ -945,47 +962,48 @@ video {
   color: #fff;
   font-weight: 600;
   background-color: #282e34;
-  border:none; 
+  border: none;
 }
-.commentSubmit:hover{
+.commentSubmit:hover {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 /* =======================BUG FIX=========== */
-.center-content{
-  margin:0 auto;
-  width:60%;
+.center-content {
+  margin: 0 auto;
+  width: 60%;
 }
-.sentimentBox{
+.sentimentBox {
   padding-top: 15%;
   padding-left: 10%;
   font-family: "Lato" sans-serif;
 }
-.sentimentInfo{
+.sentimentInfo {
   font-size: 1.6vw;
   font-weight: 500;
 }
-.searchBox{
+.searchBox {
   padding-top: 3vw;
   padding-left: 20vw;
   font-family: "Lato" sans-serif;
 }
-.reviewBox{
-  margin:0 auto;
+.reviewBox {
+  margin: 0 auto;
   float: left;
-  width:90%;
-  padding:1.3vw;
+  width: 90%;
+  padding: 1.3vw;
   margin-left: 5%;
   margin-top: 3%;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 
-.reviewText{
-  color:#282e34;
+.reviewText {
+  color: #282e34;
   font-size: 2.5vh;
   text-align: justify;
+  padding-top: 1vw;
 }
 
-.searchAppsImages{
+.searchAppsImages {
   border-radius: 1.6vw;
   width: 10vw;
   height: 10vw;

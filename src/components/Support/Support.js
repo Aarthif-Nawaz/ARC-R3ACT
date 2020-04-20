@@ -63,7 +63,7 @@ function Support() {
       </div>
       <div className="descrip-8">
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
             1. What are the key functions of ARC?
           </h3>
           <p>
@@ -74,21 +74,27 @@ function Support() {
           </p>
         </div>
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>2. What is a bug fix?</h3>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
+            2. What is a bug fix?
+          </h3>
           <p>
             A bug fix is a category of review where the user of the app mentions
             an issue with the app that requires repair.
           </p>
         </div>
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>3. What is a feature request?</h3>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
+            3. What is a feature request?
+          </h3>
           <p>
             A feature request is a category of review where the user of the app
             mentions areas of the app that need improvement.
           </p>
         </div>
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>4. What is a sentiment score?</h3>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
+            4. What is a sentiment score?
+          </h3>
           <p>
             The sentiment score is a score ranging from 0 to 100% that analyses
             the reviews alone to find the sentiment the user has regarding the
@@ -96,13 +102,13 @@ function Support() {
           </p>
         </div>
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
             5. Which app stores does ARC get reviews from?
           </h3>
           <p>ARC works with reviews extracted from the Google Play Store.</p>
         </div>
         <div className="FAQsection">
-          <h3 style={{ fontWeight: "700", letterSpacing:1 }}>
+          <h3 style={{ fontWeight: "700", letterSpacing: 1 }}>
             6. Why is an app I am searching for not available?
           </h3>
           <p>
