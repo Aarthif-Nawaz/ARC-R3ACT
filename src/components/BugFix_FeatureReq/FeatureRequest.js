@@ -2,6 +2,7 @@ import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import FRDescripBox from "./FRDescripBox";
+import Button from "react-bootstrap/Button";
 import Footer from "../NavigationBar/Footer";
 
 function FeatureRequest() {
@@ -17,24 +18,32 @@ function FeatureRequest() {
       <div>
         <div className=' descrip-13'>
         <FRDescripBox
-          description="Edit user details"
-          keywords={["edit", "username"]}
+          keywords={["username"]}
           points="5.0"
         />
         </div>
         <div className=' descrip-12'>
         <FRDescripBox
-          description="Re-design UI"
-          keywords={["design", "ui"]}
+          keywords={["ui"]}
           points="4.7"
         />
         </div>
         <div className=' descrip-13'>
         <FRDescripBox
-          description="Login with facebook, Google+ and Twitter"
-          keywords={["login", "facebook", "google", "twitter"]}
+          keywords={["login"]}
           points="3.8"
         />
+        </div>
+        <div className="descrip-14">
+          <div className="container text-center">
+            <Button
+              variant="secondary"
+              className="mx-4 bugDescripBtn"
+              style={{ fontSize: "1.5vw", padding: "1.1vw" }}
+            >
+              View the rest of the reviews addressing feature requests
+            </Button>
+          </div>
         </div>
       </div>
       <Footer />

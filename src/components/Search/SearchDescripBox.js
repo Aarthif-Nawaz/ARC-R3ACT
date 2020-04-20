@@ -13,13 +13,13 @@ function SearchDescripBox(props) {
             <div className='row'>
                 <div className='col-3'>
                     <div className='row-6 m-2'>
-                        <img src="../images/img_parallax4.jpg" style={{ borderRadius: "1.6vw", width: '10vw',height: '10vw' }} />
+                        <img className="searchAppsImages" src="../images/img_parallax4.jpg"/>
                     </div>
                     <div className='row-3 ml-2'>
-                        <p className='sentimentInfo' style={{ fontSize: "2.5vw" }}>title</p>{" "}
+                        <h3 className='sentimentInfo' style={{ fontSize: "2vw",color:"#fff", paddingTop:20 }}>title</h3>{" "}
                     </div>
                     <div className='row-3 ml-2'style={{marginTop:"1vw"}}>
-                        <p className='sentimentInfo'>developer</p>
+                        <p className='sentimentInfo'>Developer</p>
                     </div>
 
                 </div>
@@ -38,7 +38,7 @@ function SearchDescripBox(props) {
                   </div>
                 </div>
                 <div className='col-2 container text-right' style={{marginRight:"18vw", marginTop:"10%"}}>
-                    <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"2vw"}}>Search</Button>
+                    <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"1.5vw"}}>Select this App</Button>
                 </div>
             </div>
 

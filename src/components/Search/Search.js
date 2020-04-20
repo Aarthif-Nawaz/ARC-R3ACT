@@ -10,7 +10,7 @@ return(<div>
     <div class="bgimg-18">
       <div class="caption">
         <span className="border">
-          Are one of these the App you are looking for?
+          Is this the app you are looking for?
         </span>
       </div>
     </div>

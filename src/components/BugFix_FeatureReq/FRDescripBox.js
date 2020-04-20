@@ -15,15 +15,12 @@ function FRDescripBox(props){
         
         <div className='container-fluid'>
             <div className="center-content">
-            <div className='row m-1'>
-                <div className='col'><p>Description</p></div>
-                <div className='col'>{props.description}</div>
-            </div>
+            
             <div className='row m-1'>
                 <div className='col'><p>Keywords</p></div>
                 <div className='col'>
                     {keywords.map((key)=>
-                        <Button variant='secondary' className='m-2 descrip-button'>{key}</Button>
+                         <div variant='secondary' className='m-2 frKeywordBtn'>{key}</div>
                 )}   
                 </div>
             </div>  
