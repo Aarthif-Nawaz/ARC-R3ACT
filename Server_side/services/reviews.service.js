@@ -20,17 +20,12 @@ client.connect((err) => {
   // client.close();
 });
 
-exports.deleteReviews = async function (query) {
+exports.addReviews = async function (query, data) {
   try {
-    db.collection("Reviews").removeMany(query);
-  } catch (error) {
-    console.log(error + " Error occured while deleting reviews.");
-  }
-};
-
-exports.addReviews = async function (data) {
-  try {
-    db.collection("Reviews").insertMany(data);
+    db.collection("MobileApplications").updateOne(
+      { appId: query },
+      { $set: { reviewsArray: data } }
+    );
   } catch (error) {
     console.log(error + " Error occured while adding reviews.");
   }
