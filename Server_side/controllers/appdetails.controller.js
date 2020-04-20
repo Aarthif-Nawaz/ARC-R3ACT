@@ -22,7 +22,6 @@ exports.storeDetails = async function (request, response) {
     //   .then(console.log, console.log);
     .then((result) => {
       // Get the result and using a variable called "result", get all the other details
-      var _id = "1";
       appId = request.params.appId;
       var title = result.title;
       var summary = result.summary;
@@ -34,7 +33,6 @@ exports.storeDetails = async function (request, response) {
       var icon = result.icon;
       detailsArray.push({
         // Push them into the array
-        _id,
         appId,
         title,
         summary,

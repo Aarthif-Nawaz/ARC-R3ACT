@@ -21,48 +21,48 @@ class PlayStoreAppReviewClassifier:
         # # checking if the user has passed the appName and appId
         # # if len(sys.argv)!=3:
         notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app", "not", "nt"]
-        # # retrieve the collection from the db
-        # collection = db["Reviews"]
-        # # find all the reviews hence the query passed is empty {}
-        # reviews = collection.find({})
-        # # initializing 4 arrays 3 is used to store the preprocessed
-        # # text at different levels of preprocessing and 1 used to
-        # # store the sentiment which used to identified the r2_score
-        # lexicon_sentiment = []
-        # svr_preprocessed = []
-        # lexicon_preprocessed = []
-        # cluster_preprocessed = []
-        # i = 0
-        # for review in reviews:
-        #     # the text is preprocessed at 2 different level,
-        #     # the first is de_emojized and the next removes the emojis and then preprocesses.
-        #     lexicon_preprocessed.append(PreProcess.pre_process_review(review["text"], "lexicon"))
-        #     cluster_preprocessed.append(PreProcess.pre_process_review(review["text"], "cluster"))
-        #     # calling the calc_lexicon_sentiment to calculate the lexicon sentiment of a review
-        #     sentiment = self.__calc_lexicon_sentiment(lexicon_preprocessed[i])
-        #     # append the sentiment calculated by the lexicon sentiment analyzer
-        #     lexicon_sentiment.append(sentiment)
-        #     # the preprocessed text is further preprocessed to find the sentiment using the svr model
-        #     svr_preprocessed.append(PreProcess.pre_process_review(lexicon_preprocessed[i], "svr"))
-        #     i += 1
-        # # predict the sentiment of the preprocessed text
-        # predicted_results = SentimentAnalysis.predict_sentiment(svr_preprocessed, lexicon_sentiment)
-        # # predict the cluster the reviews belong to
-        # clusteredResult = MLPModel.clusterReviews(cluster_preprocessed)
-        # # save the array of predicted sentiment
-        # predicted = predicted_results["predicted"]
-        # # save the clusters identified
-        # clusters = clusteredResult["cluster_Results"]
-        # # save the keywords extracted
-        # keywords = clusteredResult["keywords"]
-        # # save the preprocessed text that is sent to extract the keywords
-        # fe_preprocessedReviews = clusteredResult["fe_preprocessedReviews"]
-        # # insert the preprocessed and modified reviews
-        # self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews,
-        #                       appId)
-        # # insert the overall sentiment of the mobile app and other details
-        # self.__insert_mobile_app_details(predicted_results, appId)
-        # # the name of the app is often identified as a keyword hence it is added to the array above
+        # retrieve the collection from the db
+        collection = db["Reviews"]
+        # find all the reviews hence the query passed is empty {}
+        reviews = collection.find({})
+        # initializing 4 arrays 3 is used to store the preprocessed
+        # text at different levels of preprocessing and 1 used to
+        # store the sentiment which used to identified the r2_score
+        lexicon_sentiment = []
+        svr_preprocessed = []
+        lexicon_preprocessed = []
+        cluster_preprocessed = []
+        i = 0
+        for review in reviews:
+            # the text is preprocessed at 2 different level,
+            # the first is de_emojized and the next removes the emojis and then preprocesses.
+            lexicon_preprocessed.append(PreProcess.pre_process_review(review["text"], "lexicon"))
+            cluster_preprocessed.append(PreProcess.pre_process_review(review["text"], "cluster"))
+            # calling the calc_lexicon_sentiment to calculate the lexicon sentiment of a review
+            sentiment = self.__calc_lexicon_sentiment(lexicon_preprocessed[i])
+            # append the sentiment calculated by the lexicon sentiment analyzer
+            lexicon_sentiment.append(sentiment)
+            # the preprocessed text is further preprocessed to find the sentiment using the svr model
+            svr_preprocessed.append(PreProcess.pre_process_review(lexicon_preprocessed[i], "svr"))
+            i += 1
+        # predict the sentiment of the preprocessed text
+        predicted_results = SentimentAnalysis.predict_sentiment(svr_preprocessed, lexicon_sentiment)
+        # predict the cluster the reviews belong to
+        clusteredResult = MLPModel.clusterReviews(cluster_preprocessed)
+        # save the array of predicted sentiment
+        predicted = predicted_results["predicted"]
+        # save the clusters identified
+        clusters = clusteredResult["cluster_Results"]
+        # save the keywords extracted
+        keywords = clusteredResult["keywords"]
+        # save the preprocessed text that is sent to extract the keywords
+        fe_preprocessedReviews = clusteredResult["fe_preprocessedReviews"]
+        # insert the preprocessed and modified reviews
+        self.__insert_reviews(collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews,
+                              appId)
+        # insert the overall sentiment of the mobile app and other details
+        self.__insert_mobile_app_details(predicted_results, appId)
+        # the name of the app is often identified as a keyword hence it is added to the array above
         notKeywords.append(appName.lower())
         # identify and save the bugFixes and the featureRequests
         self.__identifyKeywordsAndSave(appId, "BugFixes", notKeywords)
@@ -191,29 +191,29 @@ class PlayStoreAppReviewClassifier:
         # # this for loop is used to populate the array and the string variable
         for selectedReview in selectedReviews:
             print(selectedReview)
-            # reviewsFound.append(selectedReview)
-            # sentence = PreProcess.listToString(selectedReview["keywords"])
-            # totalReviewSentence = totalReviewSentence + sentence + " "
-        # # convert the json object array to a multidimensional array
-        # df = json_normalize(reviewsFound)
-        # keywords = self.__find_top_keywords(df, totalReviewSentence, notKeywords)
-        # # stores the ids of the reviews that contain a particular keyword
-        # keywordsReviewIDs = []
-        # # stores the overall sentiment of the cluster for each keyword
-        # sentimentKeywords = []
-        # # for loop is used to iterate through the keywords identified
-        # for keyword in keywords:
-        #     reviewIDs = []
-        #     sentimentKeyword = 0
-        #     for i in range(len(df["keywords"])):
-        #         setWords = set(df["keywords"][i])
-        #         if keyword in setWords:
-        #             # adding the overall sentiment of a keyword by using the predicted sentiment of each review
-        #             sentimentKeyword += df["svr_sentiment"][i]
-        #             reviewIDs.append(df["_id"][i])
-        #     sentimentKeywords.append(sentimentKeyword)
-        #     keywordsReviewIDs.append(reviewIDs)
-        # self.__insert_clustered_reviews(appId, keywordsReviewIDs, keywords, sentimentKeywords, df, clusterName)
+            reviewsFound.append(selectedReview)
+            sentence = PreProcess.listToString(selectedReview["keywords"])
+            totalReviewSentence = totalReviewSentence + sentence + " "
+        # convert the json object array to a multidimensional array
+        df = json_normalize(reviewsFound)
+        keywords = self.__find_top_keywords(df, totalReviewSentence, notKeywords)
+        # stores the ids of the reviews that contain a particular keyword
+        keywordsReviewIDs = []
+        # stores the overall sentiment of the cluster for each keyword
+        sentimentKeywords = []
+        # for loop is used to iterate through the keywords identified
+        for keyword in keywords:
+            reviewIDs = []
+            sentimentKeyword = 0
+            for i in range(len(df["keywords"])):
+                setWords = set(df["keywords"][i])
+                if keyword in setWords:
+                    # adding the overall sentiment of a keyword by using the predicted sentiment of each review
+                    sentimentKeyword += df["svr_sentiment"][i]
+                    reviewIDs.append(df["_id"][i])
+            sentimentKeywords.append(sentimentKeyword)
+            keywordsReviewIDs.append(reviewIDs)
+        self.__insert_clustered_reviews(appId, keywordsReviewIDs, keywords, sentimentKeywords, df, clusterName)
 
     def __find_top_keywords(self, df, totalReviewSentence, notKeywords):
         # identify the top features of the selectedReviews
