@@ -65,7 +65,9 @@ class PlayStoreAppReviewClassifier:
         # the name of the app is often identified as a keyword hence it is added to the array above
         notKeywords.append(appName.lower())
         # identify and save the bugFixes and the featureRequests
+        print("hello")
         self.__identifyKeywordsAndSave(appId, "BugFixes", notKeywords)
+        print("hello3")
         self.__identifyKeywordsAndSave(appId, "FeatureRequests", notKeywords)
 
     def __insert_reviews(self, collection, predicted, lexicon_sentiment, clusters, keywords, fe_preprocessedReviews,
@@ -100,6 +102,7 @@ class PlayStoreAppReviewClassifier:
             # append the json objects to an array
             pre_processedReviews.append(pre_processed_review)
             i += 1
+        print("starting")
         collection = db["MobileApplicationDetails"]
         mbDetails = collection.find_one({"appId": appId})
         print(mbDetails)
