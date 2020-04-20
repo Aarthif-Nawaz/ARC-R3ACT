@@ -17,25 +17,19 @@ function RemainingBF() {
       </div>
       <div>
         <div className="descrip-11">
-          <RemainingBFDescripBox keywords={["location"]} points="5.0" />
+          <RemainingBFDescripBox />
         </div>
 
         <div className="descrip-15">
-          <RemainingBFDescripBox
-            keywords={["huewei P40 Lite E"]}
-            points="4.7"
-          />
+          <RemainingBFDescripBox />
         </div>
 
         <div className="descrip-11">
-          <RemainingBFDescripBox keywords={["points"]} points="3.8" />
+          <RemainingBFDescripBox />
         </div>
+
         <div className="descrip-15">
-          <RemainingBFDescripBox
-            description="App crashes suddenly"
-            keywords={["App", "crash"]}
-            points="3.7"
-          />
+          <RemainingBFDescripBox />
         </div>
       </div>
       <Footer />

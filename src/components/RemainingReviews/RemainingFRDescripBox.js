@@ -2,15 +2,18 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 
-function RemainingBFDescripBox(props) {
+function RemainingFRDescripBox(props) {
   return (
     <div class="searchBox">
       <div className="row">
         <div className="remainingReview">
-          <h3 style={{ color: "#fff", fontWeight: 600 }}>Author name</h3>
-          <h3 style={{ color: "#fff", fontWeight: 500 }}>01/01/2020</h3>
+          <h3 style={{ color: "#282e34", fontWeight: 600 }}>Author name</h3>
+          <h3 style={{ color: "#282e34", fontWeight: 500 }}>01/01/2020</h3>
           <p style={{ fontSize: "1vw" }}>Version: 2.20.108</p>
-          <div className="star" style={{ color: "#fff", marginBottom: "3%" }}>
+          <div
+            className="star"
+            style={{ color: "#282e34", marginBottom: "3%" }}
+          >
             <label>★★★★★</label>
           </div>
           <div variant="secondary" className="m-1 remainingKeywordBtn">
@@ -29,4 +32,4 @@ function RemainingBFDescripBox(props) {
     </div>
   );
 }
-export default RemainingBFDescripBox;
+export default RemainingFRDescripBox;

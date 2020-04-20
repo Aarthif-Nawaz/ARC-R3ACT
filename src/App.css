@@ -222,10 +222,28 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
+.descrip-17 {
+  color: #282e34;
+  background-color: #898d92be;
+  font-size: 1.5vw;
+  padding: 3.3vw;
+  font-weight: 700;
+}
 
 .descrip-15 {
   color: #fff;
   background-image: url("/images/remaining.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.5vw;
+  padding: 3.3vw;
+  font-weight: 700;
+}
+.descrip-16 {
+  color: #282e34;
+  background-image: url("/images/remaining1.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -299,7 +317,8 @@ html {
 .bgimg-16,
 .bgimg-17,
 .bgimg-18,
-.bgimg-19 {
+.bgimg-19,
+.bgimg-20 {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -388,6 +407,10 @@ html {
   min-height: 53.3vw;
   background-image: url("/images/remaining.jpg");
 }
+.bgimg-20 {
+  min-height: 53.3vw;
+  background-image: url("/images/remaining1.jpg");
+}
 /* Float four columns side by side */
 .columnCard {
   float: left;
@@ -464,7 +487,17 @@ h3 {
   .bgimg-7,
   .bgimg-8,
   .bgimg-9,
-  .bgimg-10 {
+  .bgimg-10,
+  .bgimg-11,
+  .bgimg-12,
+  .bgimg-13,
+  .bgimg-14,
+  .bgimg-15,
+  .bgimg-16,
+  .bgimg-17,
+  .bgimg-18,
+  .bgimg-19,
+  .bgimg-20 {
     /* background-attachment: scroll; */
     position: relative;
     background-attachment: fixed;
