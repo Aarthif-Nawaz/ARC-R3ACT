@@ -8,14 +8,14 @@ import { faHome , faEnvelope , faPhone  } from '@fortawesome/free-solid-svg-icon
 function Footer() {
   return (
     <div className="page-footer font-small unique-color-dark">
-      <div style={{ backgroundColor: "#00498d" ,color:'#fff'}}>
+      <div style={{ backgroundColor: "#00498d" ,color:'#fff',height:"6vw"}}>
         <div className="container-fluid">
-          <div className="row py-4 px-4 d-flex align-items-center">
-            <div className="col-6 text-center text-md-left mb-4 mb-md-0">
+          <div className="row d-flex align-items-center" style={{padding:"1.5vw"}}>
+            <div className="col-6 text-center text-left" style={{marginBottom:"7vw"}}>
               <h5 style={{fontSize:"1.3vw"}}>Get connected with us on social networks!</h5>
             </div>
 
-            <div className="col-6 text-center text-md-right">
+            <div className="col-6 text-center text-right" style={{marginBottom:"7vw"}}>
               <a className="fb-ic mr-4">
               <FontAwesomeIcon icon={faFacebook} style={{width:"2vw"}}/>
               </a>
@@ -40,15 +40,15 @@ function Footer() {
         </div>
       </div>
       <div style={{ backgroundColor: "#1c2431", color: "white" }}>
-        <div className="container text-center text-md-left">
+        <div className="container text-center text-left">
           <div className="row pt-5">
 
-            <div className="col-3 mx-auto mb-4 text-xl-left">
+            <div className="col-3 mx-auto mb-4 text-left">
               <h6 className="text-uppercase" style={{fontSize:"1.5vw"}}>
                 About ARC
               </h6>
               <hr
-                className="accent-2 mb-4 mt-0 d-inline-block mx-auto"
+                className="accent-2 mt-0 d-inline-block mx-auto"
                 style={{ width: "4vw", backgroundColor:'#fff' }}
               />
               <p style={{textAlign:"justify", fontSize:"1vw"}}>
@@ -64,7 +64,7 @@ function Footer() {
             <div className="col-3 mx-auto mb-4">
               <h6 className="text-uppercase" style={{fontSize:"1.5vw"}}>Explore</h6>
               <hr
-                className="accent-2 mb-4 mt-0 d-inline-block mx-auto"
+                className="accent-2 mt-0 d-inline-block mx-auto"
                 style={{ width: "4vw", backgroundColor:'#fff' }}
               />
               <p style={{marginBottom:"1.06vw",height:"2vw"}}>
@@ -84,7 +84,7 @@ function Footer() {
             <div className="col-3 mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase" style={{fontSize:"1.5vw"}}>Contact</h6>
               <hr
-                className=" accent-2 mb-4 mt-0 d-inline-block mx-auto"
+                className=" accent-2 mt-0 d-inline-block mx-auto"
                 style={{ width: "4vw", backgroundColor: "#fff"}}
               />
               <p style={{fontSize:"1vw"}}>
