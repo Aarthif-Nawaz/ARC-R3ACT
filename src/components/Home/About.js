@@ -67,8 +67,8 @@ function About() {
       <div style={{ position: "relative" }}>
         <div className="descrip-2">
           <div class="row">
-            <div class="col-4 d-flex align-items-stretch">
-              <div class="card">
+            <div class="col-4 d-flex align-items-stretch" >
+              <div class="card" style={{marginLeft:"2vw"}}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Bug Fixes
                 </h3>
@@ -90,7 +90,7 @@ function About() {
               </div>
             </div>
             <div class="col-4  d-flex align-items-stretch">
-              <div class="card">
+              <div class="card" style={{marginLeft:"2vw"}}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Feature Requests
                 </h3>
@@ -111,8 +111,8 @@ function About() {
                 </p>
               </div>
             </div>
-            <div class="col-4 d-flex align-items-stretch">
-              <div class="card">
+            <div class="col-4 d-flex align-items-stretch" >
+              <div class="card" style={{marginLeft:"2vw"}}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Overall Sentiment
                 </h3>

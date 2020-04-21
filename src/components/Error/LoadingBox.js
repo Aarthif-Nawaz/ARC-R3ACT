@@ -20,10 +20,10 @@ function LoadingBox() {
       />
     </video>
     <Container fluid className="loadingContainer">
-      <div class="loader">
+      <div class="loader" style={{position:"absolute", top:"20vw"}}>
         <span>Analysing...</span>
       </div>
-      <div style={{position:"absolute", top:"70%"}}>
+      <div style={{position:"absolute", top:"40vw"}}>
       <p
           style={{
             textTransform: "uppercase",
