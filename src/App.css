@@ -512,8 +512,8 @@ h3 {
   display: inline-block;
   padding: 0.2vw;
   vertical-align: middle;
-  line-height: 1;
-  font-size: 1.5em;
+  line-height: 1vw;
+  font-size: 2vw;
   color: #ababab;
   transition: color 0.2s ease-out;
 }
@@ -1053,9 +1053,9 @@ video {
   width: 70%;
 }
 .reviewBox {
-  margin: 0 auto;
   float: left;
-  width: 90%;
+  width: 50vw;
+  height: 32vw;
   padding: 1.3vw;
   margin-left: 5%;
   margin-top: 3%;

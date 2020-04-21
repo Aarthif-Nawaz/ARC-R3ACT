@@ -9,7 +9,6 @@ function Review(props) {
     <div className="container-fluid" style={{ padding: 0 }}>
       <p>Author Name : {props.author}</p>
       <p>Date : {props.date}</p>
-
       <div className="star">
         {[...Array(Number(props.score))].map((i) => (
           <label key={i + 1}>★</label>

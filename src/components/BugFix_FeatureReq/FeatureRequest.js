@@ -34,7 +34,7 @@ function FeatureRequest() {
           points="3.8"
         />
         </div>
-        <div className="descrip-14">
+        <div className="descrip-12">
           <div className="container text-center">
             <Button
               variant="secondary"

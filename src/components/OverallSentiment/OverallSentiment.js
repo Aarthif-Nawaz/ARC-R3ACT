@@ -49,7 +49,7 @@ function OverallSentiment() {
                   </div>
                 </div>
                 <div className="col-4 sentimentInfo">
-                  <div className="row m-3">
+                  <div className="row" style={{margin:"2vw"}}>
                     <div className="col">Sentiment Score :</div>
                     <div className="col">
                       <div className="row">

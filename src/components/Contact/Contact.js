@@ -249,7 +249,7 @@ const errorStyle ={
           <div class="row">
             <div class="col d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 30 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
                   Social Media
                 </h3>
 
@@ -278,7 +278,7 @@ const errorStyle ={
             </div>
             <div class="col d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 30 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
                   Address
                 </h3>
                 <p
@@ -296,7 +296,7 @@ const errorStyle ={
             </div>
             <div class="col d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 30 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
                   Mobile Number
                 </h3>
                 <p
@@ -314,7 +314,7 @@ const errorStyle ={
             </div>
             <div class="col d-flex align-items-stretch">
               <div class="card">
-                <h3 style={{ fontWeight: 700, paddingBottom: 30 }}>
+                <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
                   Email Address
                 </h3>
                 <p
