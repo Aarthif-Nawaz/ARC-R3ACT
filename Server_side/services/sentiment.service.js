@@ -22,18 +22,9 @@ client.connect((err) => {
 
 exports.getSentiment = async function (query) {
   try {
-    var result = await db.collection("MobileApplicationDetails").findOne(query);
+    var result = await db.collection("MobileApplications").findOne(query);
     return result;
   } catch (error) {
     console.log(error + " Error occured while retrieving details.");
   }
 };
-
-exports.getReviews = async function (query) {
-    try {
-      var result = await db.collection("Reviews").find(query).toArray();
-      return result;
-    } catch (error) {
-      console.log(error + " Error occured while retrieving details.");
-    }
-  };
