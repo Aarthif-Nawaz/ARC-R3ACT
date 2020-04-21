@@ -12,16 +12,17 @@ var router = express.Router();
 // assign child_process.spawn method from child_process module
 // to a variable
 var spawn = require("child_process").spawn;
+var datascienceService = require("../services/datascience.service");
 
 // import sys module in the python file
 
-exports.connectDatascience = async function (request, response) {
+exports.connectDatascience = async function (appIdParam, request, response) {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
   const process = spawn("python", ["hello.py"]);
 
-  let result = "Python Result: \n";
+  let result = "Python Result: ";
 
   // store the data received from executing the script
   // and save it to the response object
@@ -32,10 +33,17 @@ exports.connectDatascience = async function (request, response) {
   // in close event, ensuring that the stream from
   // child process is closed
   process.on("close", (code) => {
-    response.send(result);
+    return response.send(result);
   });
 
   process.stderr.on("data", (data) => {
     console.error(`Error: ${data}`);
   });
+
+  try {
+    // Delete the app details from the CurrentApplication collection
+    datascienceService.deleteFromCurrentApps({appId: request.params.appId });
+  } catch (error) {
+    return response.status(500).send(error);
+  }
 };

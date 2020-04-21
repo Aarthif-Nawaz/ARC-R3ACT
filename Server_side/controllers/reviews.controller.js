@@ -5,13 +5,7 @@ var datascienceController = require("../controllers/datascience.controller");
 // retrieve reviews of the app entered by the user
 exports.storeReviews = async function (appIdParam, request, response) {
   // Using the router module to get the request of the call from the frontend
-  try {
-    await reviewsService.deleteReviews({});
-  } catch (error) {
-    return response.status(500).send(error);
-  }
-
-  var noOfReviews = 10000;
+  var noOfReviews = 10;
   var reviewArray = [];
   gplay
     .reviews({
@@ -44,9 +38,10 @@ exports.storeReviews = async function (appIdParam, request, response) {
       }
 
       try {
-        reviewsService.addReviews(reviewArray);
-        return datascienceController.connectDatascience(request, response);
-        // return response.status(200).send(reviewArray);
+        // Add reviews to the database
+        reviewsService.addReviews(appIdParam, reviewArray);
+        // Call the method to initialize data science proessing
+        return datascienceController.connectDatascience(appIdParam, request, response);
       } catch (error) {
         return response.status(500).send(error);
       }

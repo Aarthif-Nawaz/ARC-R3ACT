@@ -10,7 +10,7 @@ client.connect((err) => {
     console.log("Error has occured while connecting to database: ", err);
   }
   db = client.db("ARC");
-  console.log("Connected to database - contactus");
+  console.log("Connected to database - contact us");
   // client.close();
 });
 
