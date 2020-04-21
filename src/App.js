@@ -28,7 +28,7 @@ function App() {
          <Switch>
             <Route path="/" exact component={HomePage}/>
             <Route path='/loading' component={LoadingBox}/>
-            <Route path='/menu' component={MenuBox}/>
+           
             <Route path="/bugfix" component={BugFix}/>
             <Route path="/featureRequest" component={FeatureRequest}/>
             <Route path="/overallSentiment" component={OverallSentiment}/>
@@ -39,7 +39,18 @@ function App() {
             <Route path="/support" exact component={Support}/>
             <Route path="/contact" exact component={Contact}/>
             <Route path="/individualreview" exact component={IndividualReview}/>
-            <Route path="/search" exact component={Search}/>
+            <Route path={'/search/:app'} component={Search} exact/>
+            {/* <Route path={'/menu'} component={MenuBox}/>  */}
+            <Route
+             path="/search/:app" 
+              render ={({match:{url}})=>(
+              <>
+                
+                 <Route path={url+'/menu'} component={MenuBox}/> 
+              </>
+            )}
+            
+            />
             <Route path="/remainingBF" exact component={RemainingBF}/>
             <Route path="/remainingFR" exact component={RemainingFR}/>
         </Switch>

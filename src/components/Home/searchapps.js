@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
@@ -9,11 +9,16 @@ import { appNamesJson } from '../../api/appApiJson';
 import { Component } from 'react';
 import Autocomplete from 'react-autocomplete';
 import "../../App.css";
+import { Link } from "react-router-dom";
+import Search from '../Search/Search';
 
-class SearchAppsClass extends Component {
+// class SearchAppsClass extends Component {
 
-  state = { val: '' };
-  render() {
+  
+  function SearchAppsClass() {
+
+    const[appName,setSearch] = useState("");
+
     return (
       <div className='container-fluid'>
         <div className='container-fluid'>
@@ -22,8 +27,27 @@ class SearchAppsClass extends Component {
               <p>We analyse mobile app reviews.</p>
             </div>
             <div className='container-fluid'>
+           
               <div className="container searchBar">
-                <InputGroup className="mb-3 searchInputGroup">
+               
+                  <div class="input-group mb-3 searchInputGroup">
+                    <input 
+                       type="text"
+                        className="form-control searchPlaceholder" 
+                        placeholder="Search for a mobile app" 
+                        aria-label="Recipient's username" 
+                        aria-describedby="basic-addon2"
+                        value={appName}
+                        onChange={e=> setSearch(e.target.value)}
+                      />
+                    <div class="input-group-append">
+                     <Link to={{pathname:'/search/'+appName}}> <button class="btn searchbtn" type="submit">SEARCH</button></Link>
+                    </div>
+                  </div>
+
+               
+
+                {/* <InputGroup className="mb-3 searchInputGroup">
                   <FormControl
                     text="Search for a mobile app"
                     aria-label="search for a mobile app"
@@ -34,7 +58,7 @@ class SearchAppsClass extends Component {
                       SEARCH
                     </Button>
                   </InputGroup.Append>
-                </InputGroup>
+                </InputGroup> */}
                 {/* <Autocomplete
                   className="searchPlaceholder"
                   value={this.state.val}
@@ -62,15 +86,15 @@ class SearchAppsClass extends Component {
       </div>
     );
   }
-}
 
-function appData() {
-  return appNamesJson;
-}
 
-function renderAppName(state, val) {
-  return (
-    state.name.toLowerCase().indexOf(val.toLowerCase()) !== -1
-  );
-}
+// function appData() {
+//   return appNamesJson;
+// }
+
+// function renderAppName(state, val) {
+//   return (
+//     state.name.toLowerCase().indexOf(val.toLowerCase()) !== -1
+//   );
+// }
 export default SearchAppsClass;
