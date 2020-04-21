@@ -22,7 +22,7 @@ client.connect((err) => {
 
 exports.addReviews = async function (query, data) {
   try {
-    db.collection("MobileApplications").updateOne(
+    await db.collection("MobileApplications").updateOne(
       { appId: query },
       { $set: { reviewsArray: data } }
     );

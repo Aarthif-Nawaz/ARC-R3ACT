@@ -17,7 +17,7 @@ client.connect((err) => {
 // save information from the contact us page to the database
 exports.addMessage = async function (data) {
   try {
-    db.collection("ContactUs").insertOne(data);
+    await db.collection("ContactUs").insertOne(data);
   } catch (error) {
     console.log(error + " Error occured while adding message.");
   }

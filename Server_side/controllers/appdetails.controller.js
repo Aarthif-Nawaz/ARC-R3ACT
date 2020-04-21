@@ -13,9 +13,8 @@ exports.storeDetails = async function (request, response) {
   }
 
   if (booleanResult) {
-    return response
-      .status(200)
-      .send("Python Result: Data science process completed!");
+    await waitUntilProcessed(request, response);
+
   } else {
     // Create a new detailsArray to store all the mobileAppDetails
     var detailsArray = [];
@@ -63,7 +62,7 @@ exports.storeDetails = async function (request, response) {
 
           try {
             // Delete the previously processed app details from the database
-            appdetailsService.deleteDetails({appId: request.params.appId });
+            appdetailsService.deleteDetails({ appId: request.params.appId });
             // Add the app title and id to the CurrentApplication collection
             appdetailsService.addToCurrentApps(currentDetailsArray);
             // Add the new app details to the database
@@ -83,3 +82,23 @@ exports.storeDetails = async function (request, response) {
       });
   }
 };
+
+async function waitUntilProcessed(request, response) {
+  try {
+    var detailsResult = appdetailsService.getDetails({
+      appId: request.params.appId,
+    });
+    var processed = detailsResult.rating_calculated;
+    if (!processed == null) {
+      console.log("Processing completed!");
+      return response
+        .status(200)
+        .send("Python Result: Data science process completed!!");
+    } else {
+      console.log("Processing please wait!");
+      setTimeout(waitUntilProcessed, 60000, request, response);
+    }
+  } catch (error) {
+    return response.status(500).send(error);
+  }
+}

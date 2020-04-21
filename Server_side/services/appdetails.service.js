@@ -30,9 +30,18 @@ exports.deleteDetails = async function (query) {
 
 exports.addDetails = async function (data) {
   try {
-    db.collection("MobileApplications").insertMany(data);
+    await db.collection("MobileApplications").insertMany(data);
   } catch (error) {
     console.log(error + " Error occured while adding app details.");
+  }
+};
+
+exports.getDetails = async function (query) {
+  try {
+    var result = await db.collection("MobileApplications").find(query);
+    return result;
+  } catch (error) {
+    console.log(error + " Error occured while retrieving app details.");
   }
 };
 
@@ -47,7 +56,7 @@ exports.getFromCurrentApps = async function (query) {
 
 exports.addToCurrentApps = async function (data) {
   try {
-    db.collection("CurrentApplications").insertMany(data);
+    await db.collection("CurrentApplications").insertMany(data);
   } catch (error) {
     console.log(error + " Error occured while adding current app details.");
   }

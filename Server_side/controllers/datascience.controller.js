@@ -16,7 +16,7 @@ var datascienceService = require("../services/datascience.service");
 
 // import sys module in the python file
 
-exports.connectDatascience = async function (appIdParam, request, response) {
+exports.connectDatascience = async function (request, response) {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
