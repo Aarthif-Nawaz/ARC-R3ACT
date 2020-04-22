@@ -8,13 +8,13 @@ client.connect((err) => {
     console.log("Error has occured while connecting to database: ", err);
   }
   db = client.db("ARC"); // Get the name of the Database and store it onto the db variable
-  console.log("Connected to database - app"); // If Successfully Connected to the database
+  console.log("Connected to database - data science"); // If Successfully Connected to the database
   // client.close();
 });
 
 exports.deleteFromCurrentApps = async function (query) {
   try {
-    db.collection("CurrentApplications").deleteOne(query);
+    await db.collection("CurrentApplications").deleteOne(query);
   } catch (error) {
     console.log(error + " Error occured while deleting current app details.");
   }

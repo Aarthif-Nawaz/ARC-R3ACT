@@ -9,7 +9,7 @@ exports.storeReviews = async function (appIdParam, titleParam, request, response
   var reviewArray = [];
   gplay
     .reviews({
-      appId: appIdParam,
+      appId: request.params.appId,
       sort: gplay.sort.NEWEST,
       num: noOfReviews,
       lang: "en",
@@ -39,7 +39,7 @@ exports.storeReviews = async function (appIdParam, titleParam, request, response
 
       try {
         // Add reviews to the database
-        reviewsService.addReviews(appIdParam, reviewArray);
+        reviewsService.addReviews(request.params.appId, reviewArray);
         // Call the method to initialize data science proessing
         return datascienceController.connectDatascience(appIdParam, titleParam, request, response);
       } catch (error) {
