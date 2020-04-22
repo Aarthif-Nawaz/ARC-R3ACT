@@ -5,7 +5,7 @@ client.connect((err) => {
   if (err) {
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("Safiyyah_ARC");
+  db = client.db("ARC");
   console.log("Connected to database - bug fixes");
   // client.close();
 });
