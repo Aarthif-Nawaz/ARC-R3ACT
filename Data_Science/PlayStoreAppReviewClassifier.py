@@ -18,9 +18,11 @@ class PlayStoreAppReviewClassifier:
     def classify_reviews(self):
         # checking if the user has passed the appName and appId
         if len(sys.argv) == 3:
+            #the list of keywords that should not be used to group the reviews
             notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app", "not", "nt"]
             # retrieve the collection from the db
             collection = db["MobileApplications"]
+            #uses the second argument passed
             appId = sys.argv[1]
             # find all the mobile application which has the appId as the passed name
             mbDetails = collection.find_one({"appId": appId})
@@ -33,9 +35,12 @@ class PlayStoreAppReviewClassifier:
             cluster_preprocessed = []
             reviews = []
             i = 0
+            #ensuring the mbDetails are present and not None
             if mbDetails is not None:
+                #the reviews are put in an array
                 reviewsFound = mbDetails["reviewsArray"]
                 for review in reviewsFound:
+                    #the retrieved reviews are then added to another array
                     reviews.append(review)
                     # the text is preprocessed at 2 different level,
                     # the first is de_emojized and the next removes the emojis and then preprocesses.
@@ -230,16 +235,16 @@ class PlayStoreAppReviewClassifier:
 
 # make connection with the cluster in mongo cloud
 message = "fine"
-# try:
-client = pymongo.MongoClient(
-    "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
-# retrieve the db from the cluster
-db = client['ARC']
-# #make an object of the class and call the classify_reviews function
-playStoreARC = PlayStoreAppReviewClassifier()
-message = playStoreARC.classify_reviews("com.whatsapp", "WhatsApp Messenger")
-# except:
-#     message = "DB Error"
-# finally:
-print(str(message))
-sys.stdout.flush()
+try:
+    client = pymongo.MongoClient(
+        "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
+    # retrieve the db from the cluster
+    db = client['ARC']
+    # #make an object of the class and call the classify_reviews function
+    playStoreARC = PlayStoreAppReviewClassifier()
+    message = playStoreARC.classify_reviews()
+except:
+    message = "DB Error"
+finally:
+    print(str(message))
+    sys.stdout.flush()

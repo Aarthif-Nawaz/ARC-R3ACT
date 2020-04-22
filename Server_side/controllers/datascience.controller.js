@@ -27,15 +27,14 @@ exports.connectDatascience = async function (titleParam,request, response) {
   // store the data received from executing the script
   // and save it to the response object
   process.stdout.on("data", (data) => {
-    result += data.toString();
-    console.log(data);
+    result += data.toString();    
   });
-  // in close event, ensuring that the stream from
-  // child process is closed
-  process.on("close", (code) => {
-    console.log(result);
-    return response.send(result);
-  });
+  // // in close event, ensuring that the stream from
+  // // child process is closed
+  // process.on("close", (code) => {
+  //   console.log(result);
+  //   return response.send(result);
+  // });
 
   process.stderr.on("data", (data) => {
     console.error(`Error: ${data}`);
@@ -44,6 +43,7 @@ exports.connectDatascience = async function (titleParam,request, response) {
   try {
     // Delete the app details from the CurrentApplication collection
     datascienceService.deleteFromCurrentApps({appId: request.params.appId });
+    return response.send(result);
   } catch (error) {
     return response.status(500).send(error);
   }
