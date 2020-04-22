@@ -240,5 +240,5 @@ try:
 except:
     message = "DB Error"
 finally:
-print(str(message))
-sys.stdout.flush()
+    print(str(message))
+    sys.stdout.flush()
