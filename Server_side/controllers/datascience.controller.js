@@ -43,7 +43,7 @@ exports.connectDatascience = async function (titleParam,request, response) {
 
   try {
     // Delete the app details from the CurrentApplication collection
-    // datascienceService.deleteFromCurrentApps({appId: request.params.appId });
+    datascienceService.deleteFromCurrentApps({appId: request.params.appId });
   } catch (error) {
     return response.status(500).send(error);
   }
