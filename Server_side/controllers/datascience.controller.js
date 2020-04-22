@@ -13,26 +13,27 @@ var router = express.Router();
 // to a variable
 var spawn = require("child_process").spawn;
 var datascienceService = require("../services/datascience.service");
-
 // import sys module in the python file
 
-exports.connectDatascience = async function (appIdParam, request, response) {
+exports.connectDatascience = async function (appIdParam, titleParam,request, response) {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
-  const process = spawn("python", ["hello.py"]);
-
+  //"com.android.chrome"
+  console.log("Hello");
+  const process = spawn("python", ["../Data_Science/PlayStoreAppReviewClassifier.py", appIdParam, titleParam.toLowerCase()]);
   let result = "Python Result: ";
 
   // store the data received from executing the script
   // and save it to the response object
   process.stdout.on("data", (data) => {
     result += data.toString();
+    console.log(data);
   });
-
   // in close event, ensuring that the stream from
   // child process is closed
   process.on("close", (code) => {
+    console.log(result);
     return response.send(result);
   });
 

@@ -21,6 +21,7 @@ exports.storeDetails = async function (request, response) {
     var detailsArray = [];
     var currentDetailsArray = [];
     var appId;
+    var title;
     // Using the play scraper module get all the appDetails
     gplay
       .app({
@@ -30,7 +31,7 @@ exports.storeDetails = async function (request, response) {
       .then((result) => {
         // Get the result and using a variable called "result", get all the other details
         appId = request.params.appId;
-        var title = result.title;
+        title = result.title;
         var summary = result.summary;
         var installs = result.installs;
         var reviews = result.reviews;
@@ -69,7 +70,7 @@ exports.storeDetails = async function (request, response) {
             // Add the new app details to the database
             appdetailsService.addDetails(detailsArray);
             // Call the method to add reviews to the database
-            return reviewsController.storeReviews(appId, request, response);
+            return reviewsController.storeReviews(appId, title,request, response);
           } catch (error) {
             return response.status(500).send(error);
           }
