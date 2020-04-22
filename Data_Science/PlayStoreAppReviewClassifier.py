@@ -193,7 +193,7 @@ class PlayStoreAppReviewClassifier:
             if ((
                     # keywords accepted are only keywords that are nouns and
                     # the keywords that are not in the array or if the keyword is the word location
-                    token.pos_ == "NOUN" and token.text not in notKeywords) or token.text == 'location'):
+                    token.pos_ == "NOUN" and token.text not in notKeywords) or token.text == 'location' or token.text=='status'):
                 keywords.append(token.text)
         return keywords
 
