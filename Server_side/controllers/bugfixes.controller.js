@@ -72,7 +72,12 @@ exports.relatedReviews = async function (request, response) {
       }
     }
   }
-  return response.send(partReviewArray);
+
+  if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
+    return response.send("Invalid keyword!");
+  } else {
+    return response.send(partReviewArray);
+  }
 };
 
 exports.completeReview = async function (request, response) {
@@ -108,6 +113,7 @@ exports.completeReview = async function (request, response) {
       return response.send(completeReview);
     }
   }
+  return response.send("Invalid review id!");
 };
 
 exports.commonReviews = async function (request, response) {

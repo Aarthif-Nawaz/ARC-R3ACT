@@ -57,8 +57,10 @@ exports.relatedReviews = async function (request, response) {
 
   for (var index in reviewIdArray[0]) {
     var id = reviewIdArray[0][index];
+
     for (var i in reviewsArray) {
       var keyReviewId = reviewsArray[i]._id;
+
       if (keyReviewId == id) {
         var _id = reviewsArray[i]._id;
         var username = reviewsArray[i].userName;
@@ -72,7 +74,12 @@ exports.relatedReviews = async function (request, response) {
       }
     }
   }
-  return response.send(partReviewArray);
+
+  if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
+    return response.send("Invalid keyword!");
+  } else {
+    return response.send(partReviewArray);
+  }
 };
 
 exports.completeReview = async function (request, response) {
@@ -108,6 +115,7 @@ exports.completeReview = async function (request, response) {
       return response.send(completeReview);
     }
   }
+  return response.send("Invalid review id!");
 };
 
 exports.commonReviews = async function (request, response) {
