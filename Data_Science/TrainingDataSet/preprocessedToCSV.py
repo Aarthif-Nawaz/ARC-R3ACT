@@ -1,4 +1,4 @@
-#Authour - Aarthif Nawaz
+#Author - Aarthif Nawaz and Christina
 #Purpose - This File is used to read reviews from CSV file and make a new column for all the pre processed reviews
 import pandas as pd
 

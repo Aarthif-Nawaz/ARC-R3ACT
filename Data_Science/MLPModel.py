@@ -4,14 +4,14 @@
 import pickle
 import numpy as np
 import pandas as pd
-
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # A Neural Network Classifier based of Multi Layer Perceptron
 from sklearn.neural_network import MLPClassifier
 
-from Data_Science.FeatureExtraction import FeatureExtraction
-from Data_Science.PreProcess import PreProcess
+from FeatureExtraction import FeatureExtraction
+from PreProcess import PreProcess
 
 
 class MLPModel:
@@ -54,7 +54,8 @@ class MLPModel:
     # the function is used to predict the cluster of the reviews passed
     @staticmethod
     def clusterReviews(preprocessed_reviews):
-        filename = 'MLModels\\TfidfVect.pk'
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'MLModels/TfidfVect.pk')
         # load the vectorizer that was previously saved
         vectorizer = pickle.load(open(filename, 'rb'))
         # used to convert words from Test data into a matrix of integers
@@ -64,7 +65,7 @@ class MLPModel:
             pickle.dump(vectorizer, vec_file)
         vec_file.close()
         # load the MLP model previously saved
-        filename = 'MLModels\\MLP_Model.sav'
+        filename = os.path.join(dirname, 'MLModels/MLP_Model.sav')
         model = pickle.load(open(filename, 'rb'))
         # the name of the clusters, reviews are separated to
         true_test_labels = ['Common', 'BugFixes', 'FeatureRequests']

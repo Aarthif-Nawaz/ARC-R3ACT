@@ -59,8 +59,8 @@ class PreProcess:
     @staticmethod
     def expand_contractions(phrase):
         """Expand contractions from text"""
-        phrase = re.sub(r"won\'t", "will not", phrase)
-        phrase = re.sub(r"can\'t", "can not", phrase)
+        # phrase = re.sub(r"won\'t", "will not", phrase)
+        # phrase = re.sub(r"can\'t", "can not", phrase)
         # general
         phrase = re.sub(r"n\'t", " not", phrase)
         phrase = re.sub(r"\'t", " not", phrase)

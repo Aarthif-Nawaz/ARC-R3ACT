@@ -4,11 +4,11 @@
 import csv
 import pickle
 from math import floor
-
+import os
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error
 
-from Data_Science.PreProcess import PreProcess
+from PreProcess import PreProcess
 
 
 class SentimentAnalysis:
@@ -52,7 +52,8 @@ class SentimentAnalysis:
         star_rating = [1, 2, 3, 4, 5]
         # overall sentiment score predicted by the model
         ovrll_sentiment = 0
-        filename = 'MLModels\\vectorizer.pk'
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, 'MLModels/vectorizer.pk')
         # loads the vectorizer
         count_vect = pickle.load(open(filename, 'rb'))
         # maps the words to document-term matrix.
@@ -62,7 +63,7 @@ class SentimentAnalysis:
             pickle.dump(count_vect, vec_file)
         vec_file.close()
         # load the model from the file
-        filename = 'MLModels\\trained_model.sav'
+        filename = os.path.join(dirname, 'MLModels/trained_model.sav')
         loaded_model = pickle.load(open(filename, 'rb'))
         # predict the scores using the model and the vectorized data
         predicted = loaded_model.predict(X_test_counts)
