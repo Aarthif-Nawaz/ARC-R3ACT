@@ -55,7 +55,9 @@ class SentimentAnalysis:
         dirname = os.path.dirname(__file__)
         filename = os.path.join(dirname, 'MLModels/vectorizer.pk')
         # loads the vectorizer
-        count_vect = pickle.load(open(filename, 'rb'))
+        file = open(filename, 'rb')
+        count_vect = pickle.load(file)
+        file.close()
         # maps the words to document-term matrix.
         X_test_counts = count_vect.transform(preprocessedReviews)
         # save the vectorizer to the file
@@ -64,11 +66,15 @@ class SentimentAnalysis:
         vec_file.close()
         # load the model from the file
         filename = os.path.join(dirname, 'MLModels/trained_model.sav')
-        loaded_model = pickle.load(open(filename, 'rb'))
+        file = open(filename, 'rb')
+        loaded_model = pickle.load(file)
+        file.close()
         # predict the scores using the model and the vectorized data
         predicted = loaded_model.predict(X_test_counts)
         # save the model
-        pickle.dump(loaded_model, open(filename, 'wb'))
+        file = open(filename, 'wb')
+        pickle.dump(loaded_model, file)
+        file.close()
         # add the predicted scores to ovrll_sentiment variable
         for k in range(len(predicted)):
             ovrll_sentiment += float(predicted[k])

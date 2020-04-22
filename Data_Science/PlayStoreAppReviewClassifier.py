@@ -62,24 +62,24 @@ class PlayStoreAppReviewClassifier:
                 fe_preprocessedReviews = clusteredResult["fe_preprocessedReviews"]
                 # insert the preprocessed and modified reviews
                 try:
-                    mbDetails = self.__insert_reviews(mbDetails, reviews, predicted, lexicon_sentiment, clusters, keywords,
-                                                    fe_preprocessedReviews,
-                                                    appId)
+                    mbDetails = self.__insert_reviews(mbDetails, reviews, predicted, lexicon_sentiment, clusters,
+                                                      keywords,
+                                                      fe_preprocessedReviews,
+                                                      appId)
                     # insert the overall sentiment of the mobile app and other details
                     mbDetails = self.__insert_mobile_app_details(mbDetails, predicted_results)
                     # the name of the app is often identified as a keyword hence it is added to the array above
                     appName = sys.argv[2]
-                    notKeywords + list(appName.split(" "))
+                    notKeywords = notKeywords + list(appName.split(" "))
                     # identify and save the bugFixes and the featureRequests
                     self.__identifyKeywordsAndSave(appId, mbDetails, ["BugFixes", "FeatureRequests"], notKeywords)
                     return "Done"
                 except:
                     return "The object is null"
-            else: 
+            else:
                 return "mbDetails not there"
         else:
             return "Argument Error"
-            
 
     def __insert_reviews(self, mbDetails, reviews, predicted, lexicon_sentiment, clusters, keywords,
                          fe_preprocessedReviews,
@@ -141,10 +141,10 @@ class PlayStoreAppReviewClassifier:
             return mbDetails
 
     def __identifyKeywordsAndSave(self, appId, mbDetails, clusterNames, notKeywords):
-        #retrieve the collection from the db
+        # retrieve the collection from the db
         collection = db["MobileApplications"]
+        reviews = mbDetails["reviewsArray"]
         for clusterName in clusterNames:
-            reviews = mbDetails["reviewsArray"]
             df = json_normalize(reviews)
             clusteredReviews = df[df["cluster"] == clusterName]
             # # used to concatenate the all the keywords in selectedReviews array
@@ -156,7 +156,7 @@ class PlayStoreAppReviewClassifier:
                 reviewsFound.append(clusteredReviews.iloc[i])
                 sentence = PreProcess.listToString(clusteredReviews["keywords"].iloc[i])
                 totalReviewSentence = totalReviewSentence + sentence + " "
-            #find the keywords
+            # find the keywords
             keywords = self.__find_top_keywords(clusteredReviews, totalReviewSentence, notKeywords)
             # stores the ids of the reviews that contain a particular keyword
             keywordsReviewIDs = []
@@ -174,7 +174,8 @@ class PlayStoreAppReviewClassifier:
                         reviewIDs.append(clusteredReviews["_id"].iloc[i])
                 sentimentKeywords.append(sentimentKeyword)
                 keywordsReviewIDs.append(reviewIDs)
-            clusteredIds = self.__insert_clustered_reviews(keywordsReviewIDs, keywords, sentimentKeywords, df)
+            clusteredIds = self.__insert_clustered_reviews(keywordsReviewIDs, keywords, sentimentKeywords,
+                                                           clusteredReviews)
             # create the json object used to store the app details
             if mbDetails is not None:
                 mbDetails.update({clusterName: clusteredIds})
@@ -219,7 +220,7 @@ class PlayStoreAppReviewClassifier:
         for i in range(len(df["_id"])):
             if df["_id"].iloc[i] not in setIDs:
                 remainingID.append(df["_id"].iloc[i])
-                sentimentScore += df["svr_sentiment"][i]
+                sentimentScore += df["svr_sentiment"].iloc[i]
         keyword = ""
         clusterReview = {"_id": str(idNum), "keyword": keyword, "reviewIDs": remainingID,
                          "sentiment_score": sentimentScore}
@@ -229,16 +230,16 @@ class PlayStoreAppReviewClassifier:
 
 # make connection with the cluster in mongo cloud
 message = "fine"
-try:
-    client = pymongo.MongoClient(
-        "mongodb://User:1234@r3act-shard-00-00-rludw.mongodb.net:27017,r3act-shard-00-01-rludw.mongodb.net:27017,r3act-shard-00-02-rludw.mongodb.net:27017/test?ssl=true&replicaSet=R3ACT-shard-0&authSource=admin&retryWrites=true&w=majority")
-    # retrieve the db from the cluster
-    db = client['ARC']
-    # #make an object of the class and call the classify_reviews function
-    playStoreARC = PlayStoreAppReviewClassifier()
-    message = playStoreARC.classify_reviews()
-except:
-    message = "DB Error"
-finally:
-    print(str(message))
-    sys.stdout.flush()
+# try:
+client = pymongo.MongoClient(
+    "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
+# retrieve the db from the cluster
+db = client['ARC']
+# #make an object of the class and call the classify_reviews function
+playStoreARC = PlayStoreAppReviewClassifier()
+message = playStoreARC.classify_reviews("com.whatsapp", "WhatsApp Messenger")
+# except:
+#     message = "DB Error"
+# finally:
+print(str(message))
+sys.stdout.flush()

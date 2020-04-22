@@ -57,7 +57,9 @@ class MLPModel:
         dirname = os.path.dirname(__file__)
         filename = os.path.join(dirname, 'MLModels/TfidfVect.pk')
         # load the vectorizer that was previously saved
-        vectorizer = pickle.load(open(filename, 'rb'))
+        file=open(filename, 'rb')
+        vectorizer = pickle.load(file)
+        file.close()
         # used to convert words from Test data into a matrix of integers
         Test = vectorizer.transform(preprocessed_reviews)
         # save the vectorizer
@@ -66,7 +68,9 @@ class MLPModel:
         vec_file.close()
         # load the MLP model previously saved
         filename = os.path.join(dirname, 'MLModels/MLP_Model.sav')
-        model = pickle.load(open(filename, 'rb'))
+        file=open(filename, 'rb')
+        model = pickle.load(file)
+        file.close()
         # the name of the clusters, reviews are separated to
         true_test_labels = ['Common', 'BugFixes', 'FeatureRequests']
         # predict the clusters and store the labels returned. The array returned contains values from 0-2
