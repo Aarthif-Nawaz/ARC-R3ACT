@@ -38,7 +38,7 @@ exports.addDetails = async function (data) {
 
 exports.getDetails = async function (query) {
   try {
-    var result = await db.collection("MobileApplications").find(query);
+    var result = await db.collection("MobileApplications").findOne(query);
     return result;
   } catch (error) {
     console.log(error + " Error occured while retrieving app details.");

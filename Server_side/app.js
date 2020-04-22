@@ -18,7 +18,7 @@ var indexRouter = require('./routes/index');
 var databaseRouter = require('./db/models/database');
 var searchRouter = require('./routes/search.route');
 var appDetailsRouter = require('./routes/appdetails.route');
-var dataScienceRouter  = require('./routes/datascience.route');
+// var bugFixesRouter  = require('./routes/bugfixes.route');
 var sentimentRouter  = require('./routes/sentiment.route');
 var contactUsRouter  = require('./routes/contactus.route');
 var app = express();
@@ -38,7 +38,7 @@ app.use('/', indexRouter);
 app.use('/api', databaseRouter);
 app.use('/search', searchRouter);
 app.use('/app', appDetailsRouter);
-app.use('/datascience', dataScienceRouter);
+// app.use('/bugfixes', bugFixesRouter);
 app.use('/sentiment', sentimentRouter);
 app.use('/contactus', contactUsRouter);
 // catch 404 and forward to error handler

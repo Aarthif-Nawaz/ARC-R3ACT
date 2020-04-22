@@ -15,13 +15,13 @@ var spawn = require("child_process").spawn;
 var datascienceService = require("../services/datascience.service");
 // import sys module in the python file
 
-exports.connectDatascience = async function (appIdParam, titleParam,request, response) {
+exports.connectDatascience = async function (titleParam,request, response) {
   // parameters passed in spawn
   // 1. type of script
   // 2. path of the script and arguments for the script
   //"com.android.chrome"
   console.log("Hello");
-  const process = spawn("python", ["../Data_Science/PlayStoreAppReviewClassifier.py", appIdParam, titleParam.toLowerCase()]);
+  const process = spawn("python", ["../Data_Science/PlayStoreAppReviewClassifier.py", request.params.appId, titleParam.toLowerCase()]);
   let result = "Python Result: ";
 
   // store the data received from executing the script
