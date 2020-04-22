@@ -30,7 +30,6 @@ exports.getSentiment = async function (request, response) {
     var resultDetails = await sentimentService.getSentiment({
       appId: request.params.appId,
     });
-    // console.log(resultDetails);
     title = resultDetails.title;
     summary = resultDetails.summary;
     installs = resultDetails.installs;

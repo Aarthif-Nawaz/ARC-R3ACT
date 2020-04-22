@@ -69,7 +69,7 @@ exports.storeDetails = async function (request, response) {
             // Add the new app details to the database
             appdetailsService.addDetails(detailsArray);
             // Call the method to add reviews to the database
-            return reviewsController.storeReviews(appId, title,request, response);
+            return reviewsController.storeReviews(title, request, response);
           } catch (error) {
             return response.status(500).send(error);
           }
