@@ -63,9 +63,12 @@ exports.relatedReviews = async function (request, response) {
         var _id = reviewsArray[i]._id;
         var username = reviewsArray[i].userName;
         var date = reviewsArray[i].date;
+
         var text = reviewsArray[i].text;
+        var partReview = partReviewWithKeyword(text, request.params.keyword);
+
         var rating = reviewsArray[i].rating;
-        partReviewArray.push({ _id, username, date, text, rating });
+        partReviewArray.push({ _id, username, date, partReview, rating });
       }
     }
   }
@@ -156,4 +159,25 @@ function sortSentimentScore(a, b) {
   } else {
     return a[1] < b[1] ? -1 : 1;
   }
+}
+
+function partReviewWithKeyword(completeReview, keyword) {
+  var partReview;
+  var splitSentence = "";
+  var text = completeReview.split(/[?!.]/);
+  for (var index in text) {
+    var sentence = text[index];
+    var booleanValue = sentence.includes(keyword);
+
+    if (booleanValue) {
+      splitSentence += sentence + ".";
+    }
+  }
+  if (splitSentence == "") {
+    partReview = text;
+  } else {
+    partReview = splitSentence;
+  }
+
+  return partReview;
 }
