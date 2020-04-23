@@ -8,6 +8,7 @@ import Footer from "../NavigationBar/Footer";
 import { Link } from "react-router-dom";
 import MenuBox from "../Menu/MenuBox";
 import {BrowserRouter as Route} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 
 function Search(props) {
@@ -57,13 +58,12 @@ function Search(props) {
       {items.map((item) => (
               <li key={item.title} style={{ listStyleType: "none" }}>
                 <div className={"descrip-" + (items.indexOf(item) % 2 ? "14" : "11")}>
-                  {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
 
+                  {/* This is fixed on chrome, needs to be changed */}
                   <Link to={{
                   pathname: app+'/'+item.appId,
                    state:{appId:'com.android.chrome'}
                   }}>
-                  
                   <SearchDescripBox
                     title={item.title}
                     developer={item.developer}
@@ -77,22 +77,6 @@ function Search(props) {
                 </div>
               </li>
             ))}
-
-        {/* <div className="descrip-11">
-          <SearchDescripBox />
-        </div>
-
-        <div className="descrip-14">
-          <SearchDescripBox />
-        </div>
-
-        <div className="descrip-11">
-          <SearchDescripBox />
-        </div>
-
-        <div className="descrip-14">
-          <SearchDescripBox />
-        </div> */}
       </div>
       <Footer />
     </div>

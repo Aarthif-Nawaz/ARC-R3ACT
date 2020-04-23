@@ -131,15 +131,18 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
-.bugDescripBtn {
+#DescripBtn {
   color: #fff;
-  background-color: #da808a;
   font-weight: 700;
   border: #fff 0.1vw solid;
   font-size: 1vw;
   text-transform: uppercase;
   padding: 0.6vw;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
+}
+#DescripBtn:hover {
+  border: #fff 0.1vw solid;
+  background-color: #434950;
 }
 
 .searchDescripBtn {
@@ -199,10 +202,7 @@ html {
   padding: 0.3vw;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
-.bugDescripBtn:hover {
-  border: #fff 0.1vw solid;
-  background-color: #434950;
-}
+
 .mx-3 {
   color: #fff;
   background-color: #434950;
@@ -290,6 +290,9 @@ html {
   border: #fff 0.1vw solid;
   background-color: #434950;
 }
+
+
+
 .descrip-13 {
   color: #fff;
   background-color: #434950;
@@ -615,6 +618,7 @@ Sidebar wrapper styles
   background: rgba(0, 0, 0, 0.11);
 }
 
+
 /* the search button styling when not clicked*/
 .button {
   border: none;
@@ -704,7 +708,16 @@ video {
   border: solid 0.3vw white;
   cursor: pointer;
 }
+.searchPlaceholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:white;
+  opacity: 1; 
+}
 
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 /*the placeholder of the search bar is styled here*/
 .searchPlaceholder {
   width: 70%;
@@ -713,11 +726,11 @@ video {
   border: none;
   padding-bottom: 1.2vw;
   height: 120%;
-  outline: none;
   font-size: 1.2vw;
   font-weight: 900;
-  color: #fff;
+  color: white;
 }
+
 
 /* when the search bar is clicked on to type something*/
 .searchPlaceholder:focus {

@@ -41,12 +41,12 @@ function ViewAllReviews(props) {
         <div class="bgimg-5">
           <div class="caption">
             <span className="border">
-    Reviews addressing "{keyword}"
+               Reviews addressing "{keyword}"
             </span>
           </div>
         </div>
         <div>
-          <ul>
+          <ul style={{margin:0,padding:0}}>
             {items.map((item) => (
               <li key={items._id} style={{ listStyleType: "none" }}>
                 <div className={"descrip-" + (items.indexOf(item) % 2 ? "4" : "5")}>

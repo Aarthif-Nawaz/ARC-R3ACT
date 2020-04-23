@@ -11,7 +11,7 @@ function SearchDescripBox(props) {
     return (
         <div class="searchBox">
             <div className='row'>
-                <div className='col-3'>
+                <div className='col-6'>
                     <div className='row-6 m-2'>
                         <img className="searchAppsImages" src={props.icon}/>
                     </div>
@@ -23,7 +23,7 @@ function SearchDescripBox(props) {
                     </div>
 
                 </div>
-                <div className='col-4 sentimentInfo'>
+                <div className='col-6 sentimentInfo'>
                     <div className='row m-3'>
                         <div style={{ fontStyle: "italic" }}>"summary"</div>
                     </div>
@@ -37,12 +37,12 @@ function SearchDescripBox(props) {
                         Price : {props.price}
                   </div>
                 </div>
-                <div className='col-2 container text-right' style={{marginRight:"18vw", marginTop:"10%"}}>
-                {/* <Link to={{pathname:match.params.app+'/menu'}}> <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"1.5vw"}}>Select</Button></Link> */}
-                </div>
+                {/* <div className='col-2 container text-right' style={{marginRight:"18vw", marginTop:"10%"}}>
+                {/* <Link to={{pathname:match.params.app+'/menu'}}> <Button variant='secondary' className='mx-2 searchDescripBtn' onClick="" style={{fontSize:"1.5vw"}}>Select</Button></Link>} */}
+               {/* </div>  */}
             </div>
-
         </div>
+        
     );
 }
 export default SearchDescripBox;

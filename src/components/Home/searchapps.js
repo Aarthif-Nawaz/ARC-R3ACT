@@ -36,50 +36,15 @@ import Search from '../Search/Search';
                        type="text"
                         className="form-control searchPlaceholder" 
                         placeholder="Search for a mobile app" 
-                        aria-label="Recipient's username" 
-                        aria-describedby="basic-addon2"
+                        aria-label="search for a mobile app" 
+                        aria-describedby ="basic-addon2"
                         value={appName}
                         onChange={e=> setSearch(e.target.value)}
                       />
                     <div class="input-group-append">
-                     <Link to={{pathname:'/search/'+appName}}> <button class="btn searchbtn" type="submit">SEARCH</button></Link>
+                     <Link to={{pathname:'/search/'+appName}}> <button class="button searchbtn" type="submit" variant="outline-secondary">SEARCH</button></Link>
                     </div>
                   </div>
-
-               
-
-                {/* <InputGroup className="mb-3 searchInputGroup">
-                  <FormControl
-                    text="Search for a mobile app"
-                    aria-label="search for a mobile app"
-                    className="searchPlaceholder"
-                  />
-                  <InputGroup.Append>
-                    <Button className="button searchbtn" variant="outline-secondary">
-                      SEARCH
-                    </Button>
-                  </InputGroup.Append>
-                </InputGroup> */}
-                {/* <Autocomplete
-                  className="searchPlaceholder"
-                  value={this.state.val}
-                  items={appData()}
-                  getItemValue={item => item.name}
-                  shouldItemRender={renderAppName}
-                  renderMenu={item => (
-                    <div className="dropdown">
-                      {item}
-                    </div>
-                  )}
-                  renderItem={(item, isHighlighted) =>
-                    <div className={`item ${isHighlighted ? 'selected-item' : ''}`}>
-                      {item.name}
-                    </div>
-                  }
-                  onChange={(event, val) => this.setState({ val })}
-                  onSelect={val => this.setState({ val })}
-                /> */}
-
               </div>
             </div>
           </div>
@@ -87,7 +52,6 @@ import Search from '../Search/Search';
       </div>
     );
   }
-
 
 // function appData() {
 //   return appNamesJson;

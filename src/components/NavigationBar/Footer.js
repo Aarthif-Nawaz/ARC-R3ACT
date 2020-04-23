@@ -11,11 +11,11 @@ function Footer() {
       <div style={{ backgroundColor: "#00498d" ,color:'#fff',height:"6vw"}}>
         <div className="container-fluid">
           <div className="row d-flex align-items-center" style={{padding:"1.5vw"}}>
-            <div className="col-6 text-center text-left" style={{marginBottom:"7vw"}}>
+          <div className="col-6 text-left " style={{paddingLeft:"2vw",paddingTop:"0.5vw"}}>
               <h5 style={{fontSize:"1.3vw"}}>Get connected with us on social networks!</h5>
             </div>
 
-            <div className="col-6 text-center text-right" style={{marginBottom:"7vw"}}>
+            <div className="col-6 text-right">
               <a className="fb-ic mr-4">
               <FontAwesomeIcon icon={faFacebook} style={{width:"2vw"}}/>
               </a>
@@ -61,7 +61,7 @@ function Footer() {
 
             <div className="col-3 mx-auto mb-4">
               </div>
-            <div className="col-3 mx-auto mb-4">
+            <div className="col-3 mx-auto mb-4 text-left">
               <h6 className="text-uppercase" style={{fontSize:"1.5vw"}}>Explore</h6>
               <hr
                 className="accent-2 mt-0 d-inline-block mx-auto"
@@ -81,7 +81,7 @@ function Footer() {
               </p>
             </div>
 
-            <div className="col-3 mx-auto mb-md-0 mb-4">
+            <div className="col-3 mx-auto mb-0 mb-4 text-left">
               <h6 className="text-uppercase" style={{fontSize:"1.5vw"}}>Contact</h6>
               <hr
                 className=" accent-2 mt-0 d-inline-block mx-auto"

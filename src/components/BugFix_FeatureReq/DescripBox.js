@@ -32,7 +32,7 @@ function DescripBox(props){
                         <div className='col'>{props.points}</div>
                     </div> 
                     </div>            
-                    <div className='container text-right'>
+                    <div className='container text-right '>
                     <Link to={{
                            pathname:currentURL+'/reviews',
                            state:{
@@ -41,7 +41,7 @@ function DescripBox(props){
                            },
                            search:'?keyword='+keywords
                        }}>
-                        <Button variant='secondary' className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn"} >View Reviews</Button>
+                        <Button variant='secondary' id="DescripBtn" className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn" } >View Reviews</Button>
                         </Link>
                     </div>
                 
@@ -76,7 +76,7 @@ function DescripBox(props){
                                keyword:keywords
                            },
                            search:'?keyword='+keywords
-                       }}> <Button variant='secondary' className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn"} >View Reviews</Button>
+                       }}> <Button variant='secondary' id="DescripBtn" className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn"} >View Reviews</Button>
                        </Link>
                     </div>
                 
