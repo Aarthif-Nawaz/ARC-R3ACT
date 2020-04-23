@@ -1,5 +1,13 @@
-var express = require("express");
-var router = express.Router();
+/**
+ * @file Consists of all the routes that uses express to connect 
+ * urls to featurereqs.controller file.
+ *
+ * @author Safiyyah Thur Rahman - 2018025
+ * @requires express
+ */
+
+const express = require("express");
+const router = express.Router();
 var featurereqController = require('../controllers/featurereqs.controller')
 
 router.get('/keywords/:appId', featurereqController.retrieveKeywords);

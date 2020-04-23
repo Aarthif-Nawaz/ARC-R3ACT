@@ -1,5 +1,16 @@
+/**
+ * @file Handles all the functions related to the
+ * processing the bug fixes of the app.
+ *
+ * @author Safiyyah Thur Rahman - 2018025
+ */
+
 var bugfixesService = require("../services/bugfixes.service");
 
+/**
+ * Retrieves and displays keywords related to 
+ * bug fixes from the database.
+ */
 exports.retrieveKeywords = async function (request, response) {
   var detailsArray = [];
   var detailsResult = [];
@@ -29,6 +40,10 @@ exports.retrieveKeywords = async function (request, response) {
   return response.send(detailsArray);
 };
 
+/**
+ * Retrieves and displays reviews that discusses the 
+ * keyword from the database.
+ */
 exports.relatedReviews = async function (request, response) {
   var reviewIdArray = [];
   var partReviewArray = [];
@@ -80,6 +95,10 @@ exports.relatedReviews = async function (request, response) {
   }
 };
 
+/**
+ * Retrieves and displays the complete review related
+ * to bug fixes from the database.
+ */
 exports.completeReview = async function (request, response) {
   var completeReview = [];
   var detailsResult = [];
@@ -116,6 +135,10 @@ exports.completeReview = async function (request, response) {
   return response.send("Invalid review id!");
 };
 
+/**
+ * Retrieves and displays all the reviews related to bug fixes that
+ * cannot be grouped into a common keyword from the database.
+ */
 exports.commonReviews = async function (request, response) {
   var reviewIdArray = [];
   var otherReviewArray = [];
@@ -159,6 +182,13 @@ exports.commonReviews = async function (request, response) {
   return response.send(otherReviewArray);
 };
 
+/**
+ * Sorts the 2D array in ascending order of the second element.
+ *
+ * @param {float} a An element of the sub array
+ * @param {float} b Next element of the sub array.
+ * @returns {array} The array sorted in ascending order.
+ */
 function sortSentimentScore(a, b) {
   if (a[1] === b[1]) {
     return 0;
@@ -167,6 +197,13 @@ function sortSentimentScore(a, b) {
   }
 }
 
+/**
+ * Splits the complete review into substrings using full stop as the delimeter.
+ * 
+ * @param {string} completeReview The complete review from the database.
+ * @param {string} keyword The keyword to be checked in the substring.
+ * @returns {string} The part of the review that contains the keyword.
+ */
 function partReviewWithKeyword(completeReview, keyword) {
   var partReview;
   var splitSentence = "";

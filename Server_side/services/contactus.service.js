@@ -1,6 +1,9 @@
-/* 
-This file saves information from the contact us page of the website to the database.
-*/
+/**
+ * @file Consists of all the CRUD operations needed for the contactus.controller file.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires mongodb
+ */
 
 const client = require("../db/mongo").client;
 
@@ -14,7 +17,12 @@ client.connect((err) => {
   // client.close();
 });
 
-// save information from the contact us page to the database
+/**
+ * Saves the information from the contacr us webpage to the database.
+ *
+ * @param {string} data The information entered by the user in the contact us page.
+ * @returns {void}
+ */
 exports.addMessage = async function (data) {
   try {
     await db.collection("ContactUs").insertOne(data);

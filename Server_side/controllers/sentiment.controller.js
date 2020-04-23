@@ -1,7 +1,16 @@
-var gplay = require("google-play-scraper");
+/**
+ * @file Handles all the functions related procsssing 
+ * the overall sentiment of the app.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ */
+
 var sentimentService = require("../services/sentiment.service");
 
-// retrieve reviews of the app entered by the user
+/**
+ * Retrieves and displays the overall sentiment of the 
+ * app from the database,
+ */
 exports.getSentiment = async function (request, response) {
   var detailsArray = [];
 

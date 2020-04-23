@@ -1,8 +1,19 @@
+/**
+ * @file Backend skeleton to extract app details using the
+ * scraper and store it onto the database.
+ *
+ * @author Aarthis Nawaz - 2017313
+ * @requires google-play-scraper
+ */
+
 var gplay = require("google-play-scraper");
 var appdetailsService = require("../services/appdetails.service");
 var reviewsController = require("../controllers/reviews.controller");
 
-// retrieve reviews of the app entered by the user
+/**
+ * Retrieves the reviews of the app using the scraper and 
+ * store the reviews into the database.
+ */
 exports.storeDetails = async function (request, response) {
   try {
     var booleanResult = await appdetailsService.getFromCurrentApps({
@@ -13,8 +24,12 @@ exports.storeDetails = async function (request, response) {
   }
 
   if (booleanResult) {
+    try {
+      await waitUntilProcessed(request, response);
+    } catch (error) {
+      return response.status(500).send(error);
+    }
     await waitUntilProcessed(request, response);
-
   } else {
     // Create a new detailsArray to store all the mobileAppDetails
     var detailsArray = [];
@@ -84,6 +99,9 @@ exports.storeDetails = async function (request, response) {
   }
 };
 
+/**
+ * Delay the callback function until the reviews are processed.
+ */
 async function waitUntilProcessed(request, response) {
   try {
     var detailsResult = appdetailsService.getDetails({

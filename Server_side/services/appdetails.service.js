@@ -1,10 +1,9 @@
-/*
-Author: Aarthif Nawaz
-Purpose : This is the backend Skeleton to extract reviews from appDetails and store it onto mongodb
-IIT ID: 2017313
-
-Dependencies: express, mongodb, google-play-scraper
-*/
+/**
+ * @file Consists of all the CRUD operations needed for the appdetails.controller file.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires mongodb
+ */
 
 const client = require("../db/mongo").client;
 
@@ -20,6 +19,12 @@ client.connect((err) => {
   // client.close();
 });
 
+/**
+ * Deletes all the details of the app from the database.
+ *
+ * @param {string} query The app id of the app selected by the user.
+ * @returns {void}
+ */
 exports.deleteDetails = async function (query) {
   try {
     db.collection("MobileApplications").deleteMany(query);
@@ -28,6 +33,12 @@ exports.deleteDetails = async function (query) {
   }
 };
 
+/**
+ * Saves all the details of the app to the database.
+ *
+ * @param {string} data The details of the app selected by the user.
+ * @returns {void}
+ */
 exports.addDetails = async function (data) {
   try {
     await db.collection("MobileApplications").insertMany(data);
@@ -36,6 +47,12 @@ exports.addDetails = async function (data) {
   }
 };
 
+/**
+ * Retrieves all the app details from the database.
+ *
+ * @param {string} query Specifies selection filter using query operators.
+ * @returns {array} The arrat holding the results of the find query.
+ */
 exports.getDetails = async function (query) {
   try {
     var result = await db.collection("MobileApplications").findOne(query);
@@ -45,6 +62,12 @@ exports.getDetails = async function (query) {
   }
 };
 
+/**
+ * Retrieves app id and title of all the apps in the CurrentApplications collection from the database.
+ *
+ * @param {string} query Specifies selection filter using query operators.
+ * @returns {array} The arrat holding the results of the find query.
+ */
 exports.getFromCurrentApps = async function (query) {
   try {
     var result = await db.collection("CurrentApplications").find(query).limit(1).count() > 0;
@@ -54,6 +77,11 @@ exports.getFromCurrentApps = async function (query) {
   }
 };
 
+/**
+ * Saves the app id and the title of the app selected by the user to the CurrentApplications collection.
+ * @param {string} data The app id and the app title of the app selected by the user.
+ * @returns {void}
+ */
 exports.addToCurrentApps = async function (data) {
   try {
     await db.collection("CurrentApplications").insertMany(data);

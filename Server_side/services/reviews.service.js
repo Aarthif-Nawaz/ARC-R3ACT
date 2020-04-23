@@ -1,10 +1,9 @@
-/* 
-This file retrieves reviews using google-play-scraper and saves them to the database.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
-
-Dependencies: express, google-play-scraper
-*/
+/**
+ * @file Consists of all the CRUD operations needed for the review.controller file.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires mongodb
+ */
 
 const client = require("../db/mongo").client;
 
@@ -20,12 +19,18 @@ client.connect((err) => {
   // client.close();
 });
 
+/**
+ * Saves all the reviews of the app to the database.
+ *
+ * @param {string} query The app id of the app entered by the user.
+ * @param {string} data The reviews of the app entered by the user.
+ * @returns {void}
+ */
 exports.addReviews = async function (query, data) {
   try {
-    await db.collection("MobileApplications").updateOne(
-      { appId: query },
-      { $set: { reviewsArray: data } }
-    );
+    await db
+      .collection("MobileApplications")
+      .updateOne({ appId: query }, { $set: { reviewsArray: data } });
   } catch (error) {
     console.log(error + " Error occured while adding reviews.");
   }

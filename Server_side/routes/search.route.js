@@ -1,10 +1,10 @@
-/* 
-This file handles all the search related methods.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
-
-Dependencies: express
-*/
+/**
+ * @file Consists of all the routes that uses express to connect 
+ * urls to search.controller file.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires express
+ */
 
 const express = require("express");
 const router = express.Router();

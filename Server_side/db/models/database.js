@@ -1,10 +1,10 @@
-/* 
-This file handles all the Restful API using mongoDB.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
-
-Dependencies: express, mongodb
-*/
+/**
+ * @file Handles all the RESTful API using mongoDB.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires express
+ * @requires mongodb
+ */
 
 const express = require("express");
 const router = express.Router();
@@ -22,7 +22,13 @@ client.connect(err => {
   // client.close();
 });
 
-// GET
+/**
+ * HTTP requests to GET data from the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.get("/", (request, response) => {
   db.collection("Reviews")
     .find({})
@@ -30,11 +36,17 @@ router.get("/", (request, response) => {
       if (error) {
         return response.status(500).send(error);
       }
-      response.send(result);
+      return response.send(result);
     });
 });
 
-// GET with params
+/**
+ * HTTP requests to GET data with parameters from the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.get("/:id", (request, response) => {
   db.collection("Reviews").findOne(
     { _id: new ObjectID(request.params.id) },
@@ -47,7 +59,13 @@ router.get("/:id", (request, response) => {
   );
 });
 
-// POST
+/**
+ * HTTP requests to POST data to the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.post("/", (request, response) => {
   db.collection("Reviews").insertOne(request.body, (error, result) => {
     if (error) {
@@ -58,7 +76,13 @@ router.post("/", (request, response) => {
   });
 });
 
-// POST with many objects
+/**
+ * HTTP requests to POST several objects to the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.post("/many", (request, response) => {
   db.collection("Reviews").insertMany(request.body, (error, result) => {
     if (error) {
@@ -68,7 +92,13 @@ router.post("/many", (request, response) => {
   });
 });
 
-// PUT
+/**
+ * HTTP requests to PUT data in the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.put("/:id", (request, response) => {
   db.collection("Reviews").updateOne(
     { _id: new ObjectID(request.params.id) },
@@ -83,7 +113,13 @@ router.put("/:id", (request, response) => {
   );
 });
 
-// DELETE
+/**
+ * HTTP requests to DELETE data from the database.
+ *
+ * @param {IncomingMessage} request The message that is sent by a client to a server.
+ * @param {ServerResponse} response The response that the server sends when it gets an HTTP request.
+ * @returns {ServerResponse} The result received by executing the mongodb query.
+ */
 router.delete("/:id", (request, response) => {
   db.collection("Reviews").deleteOne(
     { _id: new ObjectID(request.params.id) },

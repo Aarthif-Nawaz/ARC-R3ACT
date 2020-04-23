@@ -1,20 +1,19 @@
-/* 
-This file retrieves invokes the python file to start the data science section of this project.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
+/**
+ * @file Handles all the functions related to connecting the 
+ * datascience section of the back-end with node.js server.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ */
 
-Dependencies: express
-*/
-
-// importing express JS module and assign it to a variable
-var express = require("express");
-var router = express.Router();
 // assign child_process.spawn method from child_process module
 // to a variable
 var spawn = require("child_process").spawn;
 var datascienceService = require("../services/datascience.service");
 // import sys module in the python file
 
+/**
+ * Invokes the datascience section of the back-end to start processing the reviews.
+ */
 exports.connectDatascience = async function (titleParam,request, response) {
   // parameters passed in spawn
   // 1. type of script

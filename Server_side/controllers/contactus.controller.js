@@ -1,8 +1,14 @@
-var express = require("express");
-var router = express.Router();
+/**
+ * @file Handles all the functions related to the contact us webpage.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ */
+
 var contactusService = require("../services/contactus.service");
 
-// retrieve reviews of the app entered by the user
+/**
+ * Accepts the message from the contact us webpage and store into the database.
+ */
 exports.storeMessage = async function (request, response) {
   // Validate request parameters, queries using express-validator
   var message = request.body;

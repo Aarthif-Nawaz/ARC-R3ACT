@@ -5,8 +5,15 @@ IIT ID: 2018117
 
 Dependencies: express
 */
-var express = require("express");
-var router = express.Router();
+/**
+ * @file This file is the main entry point of this application.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires express
+ */
+
+const express = require("express");
+const router = express.Router();
 
 /* GET home page. */
 router.get("/", function(req, res, next) {

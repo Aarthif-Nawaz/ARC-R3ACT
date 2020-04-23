@@ -1,8 +1,18 @@
+/**
+ * @file Handles all the functions related storing reviews of the app into the database.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires google-play-scraper
+ */
+
 var gplay = require("google-play-scraper");
 var reviewsService = require("../services/reviews.service");
 var datascienceController = require("../controllers/datascience.controller");
 
-// retrieve reviews of the app entered by the user
+/**
+ * Retrieves the details of the app using the scraper and 
+ * store the details into the database.
+ */
 exports.storeReviews = async function (titleParam, request, response) {
   // Using the router module to get the request of the call from the frontend
   var noOfReviews = 10000;

@@ -1,14 +1,16 @@
-/* 
-This file handles all the search related methods.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
-
-Dependencies: express, google-play-scraper
-*/
+/**
+ * @file Manages all the search related functions.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires google-play-scraper
+ */
 
 var gplay = require("google-play-scraper");
 
-// display apps similar to the app name entered by the user
+/**
+ * Retrieves and display the apps with names similar 
+ * to the name entered by the user.
+ */
 exports.searchApp = async function (request, response) {
   var numOfApps = 5;
   var appArray = [];

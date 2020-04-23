@@ -1,10 +1,9 @@
-/* 
-This file retrieves overall sentiment of the app from the database.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
-
-Dependencies: express, mongodb
-*/
+/**
+ * @file Consists of all the CRUD operations needed for the sentiment.controller file.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires mongodb
+ */
 
 const client = require("../db/mongo").client;
 
@@ -20,11 +19,17 @@ client.connect((err) => {
   // client.close();
 });
 
+/**
+ * Retrieves the sentiment and other related details of the app from the database.
+ *
+ * @param {string} query Specifies selection filter using query operators.
+ * @returns {array} The arrat holding the results of the find query.
+ */
 exports.getSentiment = async function (query) {
   try {
     var result = await db.collection("MobileApplications").findOne(query);
     return result;
   } catch (error) {
-    console.log(error + " Error occured while retrieving details.");
+    console.log(error + " Error occured while retrieving sentiment details.");
   }
 };

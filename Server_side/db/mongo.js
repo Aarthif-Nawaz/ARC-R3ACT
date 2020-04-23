@@ -1,17 +1,18 @@
-/* 
-This file handles mongoDB Atlas connection.
-Author: Shiromi Thevarajan
-IIT ID: 2018117
+/**
+ * @file Handles mongodb Atlas connection with node.js server.
+ *
+ * @author Shiromi Thevarajan - 2018117
+ * @requires MongoClient
+ * @requires mongodb
+ */
 
-Dependencies: MongoClient
-*/
 const MongoClient = require("mongodb").MongoClient;
 
 const uri =
   "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority";
 var client = new MongoClient(uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 module.exports = { client };
