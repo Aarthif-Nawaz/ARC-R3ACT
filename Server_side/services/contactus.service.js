@@ -7,18 +7,23 @@
 
 const client = require("../db/mongo").client;
 
+/**
+ * Connects to the mongodb Atlas database.
+ */
 var db;
 client.connect((err) => {
   if (err) {
+    // Displaying error message if an error occurs while connecting to the database
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("ARC");
+  db = client.db("ARC"); // Store the name of the database in a variable
+  // Displaying success message if the database connection is successful
   console.log("Connected to database - contact us");
   // client.close();
 });
 
 /**
- * Saves the information from the contacr us webpage to the database.
+ * Saves the information from the contact us webpage to the database.
  *
  * @param {string} data The information entered by the user in the contact us page.
  * @returns {void}

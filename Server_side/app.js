@@ -7,9 +7,8 @@
  * @requires express
  * @requires http-errors
  * @requires morgan
- * @requires path
- * 
- * Run 'npm install' before 'npm start' or 'nodemon start'
+ *
+ * Execute 'npm install' before 'npm start'.
  */
 
 var createError = require("http-errors");

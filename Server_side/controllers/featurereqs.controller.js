@@ -1,5 +1,5 @@
 /**
- * @file Handles all the functions related to the 
+ * @file Handles all the functions related to the
  * processing the feature requests of the app.
  *
  * @author Safiyyah Thur Rahman - 2018025
@@ -8,7 +8,7 @@
 var bugfixesService = require("../services/bugfixes.service");
 
 /**
- * Retrieves and displays keywords related to feature 
+ * Retrieves and displays keywords related to feature
  * requests from the database.
  */
 exports.retrieveKeywords = async function (request, response) {
@@ -29,19 +29,19 @@ exports.retrieveKeywords = async function (request, response) {
     var sentiment = featurereqArray[i].sentiment_score;
     var sentiment_score = parseFloat(sentiment).toFixed(1);
 
+    // Store all the details except the empty keyword into an array
     if (keyword != "") {
       detailsArray.push([keyword, sentiment_score]);
     }
   }
 
-  // sorting the array in ascending order of the sentiment score
+  // Sorting the array in ascending order of the sentiment score
   detailsArray.sort(sortSentimentScore);
-
   return response.send(detailsArray);
 };
 
 /**
- * Retrieves and displays reviews that discusses the 
+ * Retrieves and displays reviews that discusses the
  * keyword from the database.
  */
 exports.relatedReviews = async function (request, response) {
@@ -57,12 +57,16 @@ exports.relatedReviews = async function (request, response) {
     return response.status(500).send(error);
   }
 
+  // Store all the keywords and review ids related to feature requests
   var featurereqArray = detailsResult.FeatureRequests;
+  // Store all the reviews of the app into an array
   var reviewsArray = detailsResult.reviewsArray;
 
   for (var i in featurereqArray) {
     var keyword = featurereqArray[i].keyword;
 
+    // Checking the keyword entered is
+    // equal to the keyword in the array
     if (keyword == request.params.keyword) {
       var reviewIDs = featurereqArray[i].reviewIDs;
       reviewIdArray.push(reviewIDs);
@@ -75,12 +79,12 @@ exports.relatedReviews = async function (request, response) {
 
     for (var i in reviewsArray) {
       var keyReviewId = reviewsArray[i]._id;
-
       if (keyReviewId == id) {
         var _id = reviewsArray[i]._id;
         var username = reviewsArray[i].userName;
         var date = reviewsArray[i].date;
 
+        // Storing the part of the review containing the keyword
         var text = reviewsArray[i].text;
         var partReview = partReviewWithKeyword(text, request.params.keyword);
 
@@ -90,7 +94,9 @@ exports.relatedReviews = async function (request, response) {
     }
   }
 
+  // Checking if the array is empty
   if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
+    // Displaying error message if the keyword does not exist
     return response.send("Invalid keyword!");
   } else {
     return response.send(partReviewArray);
@@ -113,6 +119,7 @@ exports.completeReview = async function (request, response) {
     return response.status(500).send(error);
   }
 
+  // Store all the reviews of the app into an array
   var reviewsArray = detailsResult.reviewsArray;
   for (var i in reviewsArray) {
     var reviewId = reviewsArray[i]._id;
@@ -134,6 +141,8 @@ exports.completeReview = async function (request, response) {
       return response.send(completeReview);
     }
   }
+
+  // Displaying an error message if the review id does not exist
   return response.send("Invalid review id!");
 };
 
@@ -154,12 +163,15 @@ exports.commonReviews = async function (request, response) {
     return response.status(500).send(error);
   }
 
+  // Store all the keywords and review ids related to feature requests
   var featurereqArray = detailsResult.FeatureRequests;
+  // Store all the reviews of the app into an array
   var reviewsArray = detailsResult.reviewsArray;
 
   for (var i in featurereqArray) {
     var keyword = featurereqArray[i].keyword;
 
+    // Storing the details and review of the empty keyword to an array
     if (keyword == "") {
       var reviewIDs = featurereqArray[i].reviewIDs;
       reviewIdArray.push(reviewIDs);
@@ -200,29 +212,37 @@ function sortSentimentScore(a, b) {
 }
 
 /**
- * Splits the complete review into substrings using full stop as the delimeter.
- * 
+ * Splits the complete review into substrings using full stop, question mark
+ * or exclamation mark.
+ *
  * @param {string} completeReview The complete review from the database.
  * @param {string} keyword The keyword to be checked in the substring.
  * @returns {string} The part of the review that contains the keyword.
  */
 function partReviewWithKeyword(completeReview, keyword) {
-  var partReview;
-  var splitSentence = "";
+  var partReview; // Store the part of the review containing the keyword
+  var splitSentence = ""; // Store the part of the review split by full stop
+
+  // Split the review by question mark, exclamation mark or full stop
   var text = completeReview.split(/[?!.]/);
+
   for (var index in text) {
     var sentence = text[index];
-    var booleanValue = sentence.includes(keyword);
 
+    // Checking if the string includes the keyword
+    var booleanValue = sentence.includes(keyword);
     if (booleanValue) {
+      // Concatenating the sentence to the variable
+      // if the keyword exists in the sentence
       splitSentence += sentence + ".";
     }
   }
+
   if (splitSentence == "") {
     partReview = text;
   } else {
+    // If the review does not contain the keyword, return the complete review
     partReview = splitSentence;
   }
-
   return partReview;
 }

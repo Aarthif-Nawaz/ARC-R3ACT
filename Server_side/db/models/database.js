@@ -1,5 +1,5 @@
 /**
- * @file Handles all the RESTful API using mongoDB.
+ * @file Handles the RESTful API models using mongoDB.
  *
  * @author Shiromi Thevarajan - 2018117
  * @requires express
@@ -9,15 +9,19 @@
 const express = require("express");
 const router = express.Router();
 const client = require("./../mongo").client;
-const ObjectID = require('mongodb').ObjectID;
+const ObjectID = require("mongodb").ObjectID;
 
+/**
+ * Connects to the mongodb Atlas database.
+ */
 var db;
-
-client.connect(err => {
+client.connect((err) => {
   if (err) {
+    // Displaying error message if an error occurs while connecting to the database
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("ARC");
+  db = client.db("ARC"); // Store the name of the database in a variable
+  // Displaying success message if the database connection is successful
   console.log("Connected to database - api");
   // client.close();
 });
@@ -54,7 +58,7 @@ router.get("/:id", (request, response) => {
       if (error) {
         return response.status(500).send("The given Id does not exist.");
       }
-      response.send(result);
+      return response.send(result);
     }
   );
 });
@@ -72,7 +76,7 @@ router.post("/", (request, response) => {
       console.log(error);
       return response.status(500).send(error);
     }
-    response.send(result);
+    return response.send(result);
   });
 });
 
@@ -88,7 +92,7 @@ router.post("/many", (request, response) => {
     if (error) {
       return response.status(500).send(error);
     }
-    response.send(result);
+    return response.send(result);
   });
 });
 
@@ -102,13 +106,15 @@ router.post("/many", (request, response) => {
 router.put("/:id", (request, response) => {
   db.collection("Reviews").updateOne(
     { _id: new ObjectID(request.params.id) },
-    { $set: { appName: request.body.appName, userName: request.body.userName } },
+    {
+      $set: { appName: request.body.appName, userName: request.body.userName },
+    },
     { upsert: true },
     (error, result) => {
       if (error) {
         return response.status(500).send("The given Id does not exist.");
       }
-      response.send(result);
+      return response.send(result);
     }
   );
 });
@@ -127,7 +133,7 @@ router.delete("/:id", (request, response) => {
       if (error) {
         return response.status(500).send("The given Id does not exist.");
       }
-      response.send(result);
+      return response.send(result);
     }
   );
 });

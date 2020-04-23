@@ -11,7 +11,7 @@ var appdetailsService = require("../services/appdetails.service");
 var reviewsController = require("../controllers/reviews.controller");
 
 /**
- * Retrieves the reviews of the app using the scraper and 
+ * Retrieves the reviews of the app using the scraper and
  * store the reviews into the database.
  */
 exports.storeDetails = async function (request, response) {
@@ -24,22 +24,24 @@ exports.storeDetails = async function (request, response) {
   }
 
   if (booleanResult) {
+    // If the app id is available in the CurrentApplications collection
     try {
+      // Wait until the reviews are processed
       await waitUntilProcessed(request, response);
     } catch (error) {
       return response.status(500).send(error);
     }
     await waitUntilProcessed(request, response);
   } else {
-    // Create a new detailsArray to store all the mobileAppDetails
+    // Initializing detailsArray to store all the app details
     var detailsArray = [];
     var currentDetailsArray = [];
     var appId;
     var title;
-    // Using the play scraper module get all the appDetails
+    // Using the play scraper module get all the app details
     gplay
       .app({
-        appId: request.params.appId, // App ID
+        appId: request.params.appId, // App id of the app selected by the user
       })
       //   .then(console.log, console.log);
       .then((result) => {
@@ -73,7 +75,7 @@ exports.storeDetails = async function (request, response) {
         });
 
         if (reviews > 100) {
-          // Check if the review Count is greater > 100
+          // If the review count is greater > 100,
           // Send the detailsArray back as a response to the Server
 
           try {
@@ -83,15 +85,15 @@ exports.storeDetails = async function (request, response) {
             appdetailsService.addToCurrentApps(currentDetailsArray);
             // Add the new app details to the database
             appdetailsService.addDetails(detailsArray);
-            // Call the method to add reviews to the database
+            // Call storeReviews method to add reviews to the database
             return reviewsController.storeReviews(title, request, response);
           } catch (error) {
             return response.status(500).send(error);
           }
-          // Access the DB collection and insert the records
         } else {
           response.send(
-            // If it not Send this mesaage to the Server
+            // If the review count is less than 100,
+            // send this error message to the client
             "Sorry! The number of reviews is less than 100."
           );
         }
@@ -107,13 +109,19 @@ async function waitUntilProcessed(request, response) {
     var detailsResult = appdetailsService.getDetails({
       appId: request.params.appId,
     });
+
+    // Store the rating_calulated (sentiment) of the app into a variable
     var processed = detailsResult.rating_calculated;
+
     if (!processed == null) {
+      // If the variable is not null, processing of the reviews is completed
       console.log("Processing completed!");
       return response
         .status(200)
         .send("Python Result: Data science process completed!!");
     } else {
+      // If the variable is null, delay the application by 60 seconds
+      // and run this function again
       console.log("Processing please wait!");
       setTimeout(waitUntilProcessed, 60000, request, response);
     }

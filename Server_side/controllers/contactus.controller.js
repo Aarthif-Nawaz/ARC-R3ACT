@@ -10,7 +10,7 @@ var contactusService = require("../services/contactus.service");
  * Accepts the message from the contact us webpage and store into the database.
  */
 exports.storeMessage = async function (request, response) {
-  // Validate request parameters, queries using express-validator
+  // Storing the information in the request body to a variable
   var message = request.body;
 
   try {

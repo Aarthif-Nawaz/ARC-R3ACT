@@ -7,15 +7,18 @@
 
 const client = require("../db/mongo").client;
 
+/**
+ * Connects to the mongodb Atlas database.
+ */
 var db;
-// Check the MongoDB Database Connection
 client.connect((err) => {
   if (err) {
-    // If there is an error in the Connection Log out the error
+    // Displaying error message if an error occurs while connecting to the database
     console.log("Error has occured while connecting to database: ", err);
   }
-  db = client.db("ARC"); // Get the name of the Database and store it onto the db variable
-  console.log("Connected to database - reviews"); // If Successfully Connected to the database
+  db = client.db("ARC"); // Store the name of the database in a variable
+  // Displaying success message if the database connection is successful
+  console.log("Connected to database - reviews");
   // client.close();
 });
 
@@ -28,6 +31,7 @@ client.connect((err) => {
  */
 exports.addReviews = async function (query, data) {
   try {
+    // Adding data into an existing document in the database.
     await db
       .collection("MobileApplications")
       .updateOne({ appId: query }, { $set: { reviewsArray: data } });

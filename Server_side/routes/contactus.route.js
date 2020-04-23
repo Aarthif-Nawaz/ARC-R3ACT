@@ -1,6 +1,6 @@
 /**
- * @file Consists of all the routes that uses express to connect 
- * urls to contactus.controller file.
+ * @file Consists of all the routes that uses express to connect
+ * URLs to contactus.controller file.
  *
  * @author Shiromi Thevarajan - 2018117
  * @requires express
@@ -8,8 +8,12 @@
 
 const express = require("express");
 const router = express.Router();
-var contactusController = require('../controllers/contactus.controller')
+var contactusController = require("../controllers/contactus.controller");
 
-router.post('/', contactusController.storeMessage);
+/**
+ * Route serving contact us page.
+ */
+
+router.post("/", contactusController.storeMessage);
 
 module.exports = router;

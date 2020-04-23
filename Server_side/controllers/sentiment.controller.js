@@ -1,5 +1,5 @@
 /**
- * @file Handles all the functions related procsssing 
+ * @file Handles all the functions related procsssing
  * the overall sentiment of the app.
  *
  * @author Shiromi Thevarajan - 2018117
@@ -8,10 +8,12 @@
 var sentimentService = require("../services/sentiment.service");
 
 /**
- * Retrieves and displays the overall sentiment of the 
+ * Retrieves and displays the overall sentiment of the
  * app from the database,
  */
 exports.getSentiment = async function (request, response) {
+  // An array to hold all the details related the overall
+  // sentiment of the app
   var detailsArray = [];
 
   var title;
@@ -34,7 +36,6 @@ exports.getSentiment = async function (request, response) {
   var fourStars = 0;
   var fiveStars = 0;
 
-  // Using the router module to get the request of the call from the frontend
   try {
     var resultDetails = await sentimentService.getSentiment({
       appId: request.params.appId,
@@ -56,7 +57,11 @@ exports.getSentiment = async function (request, response) {
   }
 
   var noOfReviews = 10000;
+
+  // Checking if the number of reviews of the apps
+  // is less than 10000
   if (reviews < 10000) {
+    // Store the number of reviews of the app to a variable
     noOfReviews = reviews;
   }
 
@@ -64,6 +69,7 @@ exports.getSentiment = async function (request, response) {
     var rating = reviewsArray[i].rating;
     var polarity = reviewsArray[i].polarity;
 
+    // Store the rating of the review into the relevant variable
     switch (rating) {
       case "5":
         fiveStars++;
@@ -82,6 +88,7 @@ exports.getSentiment = async function (request, response) {
         break;
     }
 
+    // Store the polarity of the review into the relevant variable
     switch (polarity) {
       case "positive":
         postive++;
@@ -95,7 +102,7 @@ exports.getSentiment = async function (request, response) {
     }
   }
 
-  // finding the percentages
+  // Calculating the percentages of all the relevant details
   postive = ((postive / noOfReviews) * 100).toFixed(1);
   neutral = ((neutral / noOfReviews) * 100).toFixed(1);
   negative = ((negative / noOfReviews) * 100).toFixed(1);

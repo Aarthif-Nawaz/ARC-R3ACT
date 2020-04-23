@@ -8,6 +8,7 @@
 
 const MongoClient = require("mongodb").MongoClient;
 
+// Connecting the application to the cluster using mongoDB's native drivers
 const uri =
   "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority";
 var client = new MongoClient(uri, {

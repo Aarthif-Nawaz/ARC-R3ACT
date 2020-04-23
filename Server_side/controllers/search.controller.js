@@ -8,21 +8,22 @@
 var gplay = require("google-play-scraper");
 
 /**
- * Retrieves and display the apps with names similar 
+ * Retrieves and display the apps with names similar
  * to the name entered by the user.
  */
 exports.searchApp = async function (request, response) {
-  var numOfApps = 5;
-  var appArray = [];
+  var numOfApps = 5; // The number of similar apps to be displayed
+  var appArray = []; // An array to hold all the details of the similar apps
   gplay
     .search({
-      term: request.params.name,
+      term: request.params.name, // App id entered by the user
       num: numOfApps,
       fullDetail: true,
     })
-    // .then(console.log, console.log);
     .then((result) => {
+      // Checking if the result from the scraper is empty
       if (result === undefined || result.length == 0) {
+        // Displaying en error message if the app id is invalid
         response.send("No results for " + request.params.name);
       } else {
         for (var i in result) {
@@ -45,7 +46,7 @@ exports.searchApp = async function (request, response) {
             price,
           });
         }
-        response.send(appArray);
+        return response.send(appArray);
       }
     });
 };
