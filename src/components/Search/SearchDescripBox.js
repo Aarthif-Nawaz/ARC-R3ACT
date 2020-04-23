@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { useHistory,Link } from "react-router-dom";
+import { useHistory,Link ,useLocation} from "react-router-dom";
 
 
 function SearchDescripBox(props) {
-    
-   
+//     const location = useLocation();
+//   console.log(location);
+
 
     return (
         <div class="searchBox">

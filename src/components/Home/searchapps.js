@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import { appNamesJson } from '../../api/appApiJson';
 import { Component } from 'react';
 import Autocomplete from 'react-autocomplete';
+    
 import "../../App.css";
 import { Link } from "react-router-dom";
 import Search from '../Search/Search';

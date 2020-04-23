@@ -1,8 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React ,{useState,useEffect}from "react";
+import { Link,useLocation } from "react-router-dom";
+import LoadingBox from "../Error/LoadingBox";
+import ErrorPage from "../Error/Crashed";
 import Footer from "../NavigationBar/Footer";
+import Review from '../Review/Review.js'
 
-function IndividualReview() {
+function IndividualReview(props) {
+
+  const {id} = props.location.state;
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null);
+  const [items, setItems] = useState([]);
+ 
+
+  useEffect(() => {
+    fetch('http://localhost:5000/featurereqs/fullreview/com.android.chrome/'+id)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+     
+  }, []);
+
+  if (error) {
+    return <ErrorPage errorDet={error.message} />;
+  } else if (!isLoaded) {
+    return <LoadingBox />;
+  } else {
   return (
     <div className="container-fluid">
       <div class="bgimg-17">
@@ -19,30 +50,41 @@ function IndividualReview() {
           >
             Take a look at the complete review here
           </h3>
-
-          <div className="reviewBox">
-            <h3 style={{ fontWeight: 600 }}>Author name</h3>
-            <h3 style={{ fontWeight: 500 }}>01/01/2020</h3>
-            <p style={{fontSize:"1vw",marginBottom: "1vw"}}>Version: 2.20.108</p>
+          {items.map((item) => (
+              <div key={items.reviewId}>
+                
+                
+                  {/* <Review
+                    id={item.reviewId}
+                    author={item.username}
+                    date={item.date}
+                    score={item.rating}
+                    text={item.text}
+                  /> */}
+                   <div className="reviewBox">
+            <h3 style={{ fontWeight: 600 }}>{item.username}</h3>
+            <h3 style={{ fontWeight: 500 }}>{item.date}</h3>
+            <p style={{fontSize:"1vw",marginBottom: "1vw"}}>Version: {item.version}</p>
             <div className="star" style={{ color: "#000", marginBottom: "3%" }}>
               <label>★★★★★</label>
             </div>
-            <div variant="secondary" className=" individualKeywordBtn">
+            {/* <div variant="secondary" className=" individualKeywordBtn">
               video
-            </div>
+            </div> */}
             <p className="reviewText" style={{ fontSize: "1.1vw" }}>
-              The reviews of the mobile application are divided into three
-              segments. Choose one of the following to see all the reviews
-              relevant to that particular category. The reviews of the mobile
-              application are divided into three segments. Choose one of the
-              following to see all the reviews relevant to that particular
-              category.
+             {item.text}
             </p>
           </div>
+                </div>
+             
+            ))}
+
+         
         </div>
       </div>
       <Footer />
     </div>
   );
+}
 }
 export default IndividualReview;

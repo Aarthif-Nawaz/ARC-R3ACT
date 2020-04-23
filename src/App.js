@@ -3,7 +3,7 @@ import MenuBox from './components/Menu/MenuBox';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import BugFix from './components/BugFix_FeatureReq/BugFix';
+import Bugfix from './components/BugFix_FeatureReq/BugFix';
 import FeatureRequest from './components/BugFix_FeatureReq/FeatureRequest';
 import OverallSentiment from './components/OverallSentiment/OverallSentiment';
 import ViewAllReviews from './components/Review/ViewReviews';
@@ -19,26 +19,28 @@ import Search from './components/Search/Search';
 import RemainingBF from './components/RemainingReviews/RemainingBF';
 import RemainingFR from './components/RemainingReviews/RemainingFR';
 
+
 function App() {
+ 
+
   return (
     <Router>
       {/* <div> */}
        
          <NavBar/>
+          <Route path="/aboutus" exact component={AboutUs}/>
+            <Route path="/support" exact component={Support}/>
+            <Route path="/contact" exact component={Contact}/>
+
          <Switch>
             <Route path="/" exact component={HomePage}/>
             <Route path='/loading' component={LoadingBox}/>
            
-            <Route path="/bugfix" component={BugFix}/>
-            <Route path="/featureRequest" component={FeatureRequest}/>
-            <Route path="/overallSentiment" component={OverallSentiment}/>
-            <Route path="/allReviews" component={ViewAllReviews}/>
+            
+          
             <Route path="/error" exact component={ErrorCrash}/>
-            <Route path="/loading" exact component={LoadingBox}/>
-            <Route path="/aboutus" exact component={AboutUs}/>
-            <Route path="/support" exact component={Support}/>
-            <Route path="/contact" exact component={Contact}/>
-            <Route path="/individualreview" exact component={IndividualReview}/>
+            <Route path="/loading" exact component={LoadingBox}/>            
+           
             <Route path={'/search/:app'} component={Search} exact/>
             {/* <Route path={'/menu'} component={MenuBox}/>  */}
             <Route
@@ -46,13 +48,86 @@ function App() {
               render ={({match:{url}})=>(
               <>
                 
-                 <Route path={url+'/menu'} component={MenuBox}/> 
+                 <Route path={url+'/:appId'} 
+                 render ={({match:{url}})=>(
+                 <>
+                
+                 <Route path={url+'/'} exact component={MenuBox} /> 
+                 <Route path={url+'/bugfix'}
+                  render ={({match:{url}})=>(
+                    <>
+                   
+                   
+                    <Route path={url+'/'} exact component={Bugfix}/>
+                    <Route path={url+"/reviews"} render={({match:{url}})=>(
+                     <>
+                     <Route path={url+'/'} exact  component={ViewAllReviews}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>
+                     )} />
+                   <Route path={url+"/remainingBF"} render={({match:{url}})=>(
+                     <>
+                     <Route path={url+'/'} exact  component={RemainingBF}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>)}
+                  />
+                   <Route path={url+"/remainingFR"} render={({match:{url}})=>( 
+                   <>
+                     <Route path={url+'/'} exact  component={RemainingFR}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>)}/>
+                
+                   
+                 </>
+               )}
+                 />
+                 <Route path={url+"/featureRequest"}  render ={({match:{url}})=>(
+                    <>
+                    <Route path={url+'/'} exact component={FeatureRequest}/>
+                    <Route path={url+"/reviews"} render={({match:{url}})=>(
+                     <>
+                     <Route path={url+'/'} exact  component={ViewAllReviews}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>
+                     )} />
+                    <Route path={url+"/remainingBF"} render={({match:{url}})=>(
+                     <>
+                     <Route path={url+'/'} exact  component={RemainingBF}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>)}
+                  />
+                   <Route path={url+"/remainingFR"} render={({match:{url}})=>( 
+                   <>
+                     <Route path={url+'/'} exact  component={RemainingFR}/>
+                     <Route path={url+"/:reviewId"}  component={IndividualReview}/>
+                     
+                    
+                  </>)}/>
+                 </>
+               )}/>
+                 <Route path={url+"/overallSentiment"} component={OverallSentiment}/>
+                
+              </>
+            )}
+                /> 
+                
               </>
             )}
             
             />
-            <Route path="/remainingBF" exact component={RemainingBF}/>
-            <Route path="/remainingFR" exact component={RemainingFR}/>
+           
+           
+            
         </Switch>
       {/* </div> */}
       

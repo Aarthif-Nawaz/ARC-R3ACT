@@ -8,8 +8,10 @@ function OverallSentiment() {
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);
 
+  const app = localStorage.getItem("appName")
+
   useEffect(() => {
-    fetch("http://localhost:5000/app/com.facebook.orca")
+    fetch("http://localhost:5000/sentiment/"+app)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -50,22 +52,20 @@ function OverallSentiment() {
                 </div>
                 <div className="col-4 sentimentInfo">
                   <div className="row" style={{margin:"2vw"}}>
-                    <div className="col">Sentiment Score :</div>
+          <div className="col">Sentiment Score :</div>
                     <div className="col">
                       <div className="row">
                         <h1
+                        className= "p-4"
                           style={{
                             borderRadius: "1.67vw",
-                            width: "4vw",
-                            height: "4vw",
                             backgroundColor: "#282e34",
-                            padding: "1vw",
                             color: "#fff",
                             justifyContent: "center",
                             fontSize: "1.5vw",
                           }}
                         >
-                          {item.scoreText}
+                          {item.sentiment}
                         </h1>
                       </div>
                     </div>

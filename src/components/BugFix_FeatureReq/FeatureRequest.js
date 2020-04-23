@@ -1,11 +1,41 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link,useLocation} from "react-router-dom";
+import LoadingBox from "../Error/LoadingBox";
+import ErrorPage from "../Error/Crashed";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FRDescripBox from "./FRDescripBox";
+import DescripBox from "./DescripBox";
 import Button from "react-bootstrap/Button";
 import Footer from "../NavigationBar/Footer";
 
 function FeatureRequest() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null);
+  const [items, setItems] = useState([]);
+
+  let location = useLocation();
+  const currentURL = location.pathname;
+  const app =  localStorage.getItem('appName');
+
+  useEffect(() => {
+    fetch("http://localhost:5000/featurereqs/keywords/"+app)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+
+  if (error) {
+    return <ErrorPage errorDet={error.message} />;
+  } else if (!isLoaded) {
+    return <LoadingBox />;
+  } else {
   return (
     <div>
       <div class="bgimg-15">
@@ -16,26 +46,20 @@ function FeatureRequest() {
         </div>
       </div>
       <div>
-        <div className=' descrip-13'>
-        <FRDescripBox
-          keywords={["username"]}
-          points="5.0"
-        />
-        </div>
-        <div className=' descrip-12'>
-        <FRDescripBox
-          keywords={["ui"]}
-          points="4.7"
-        />
-        </div>
-        <div className=' descrip-13'>
-        <FRDescripBox
-          keywords={["login"]}
-          points="3.8"
-        />
-        </div>
+      {items.map((item) => (
+              <div key={item} style={{ listStyleType: "none" }}>
+                <div className={"descrip-" + (items.indexOf(item) % 2 ? "12" : "13")}>
+                  {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
+                  <DescripBox type='fr' keywords={item[0]} points={item[1]} />
+                </div>
+              </div>
+            ))}
+        
         <div className="descrip-12">
           <div className="container text-center">
+          <Link to={{
+              pathname:currentURL+'/remainingFR'
+            }}>
             <Button
               variant="secondary"
               className="mx-4 bugDescripBtn"
@@ -43,12 +67,14 @@ function FeatureRequest() {
             >
               View the rest of the reviews addressing feature requests
             </Button>
+            </Link>
           </div>
         </div>
       </div>
       <Footer />
     </div>
   );
+  }
 }
 
 export default FeatureRequest;

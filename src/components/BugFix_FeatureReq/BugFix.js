@@ -1,12 +1,46 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link,useLocation} from "react-router-dom";
+import LoadingBox from "../Error/LoadingBox";
+import ErrorPage from "../Error/Crashed";
 import "bootstrap/dist/css/bootstrap.min.css";
-import BFDescripBox from "./BFDescripBox";
+import DescripBox from "./DescripBox";
 import Button from "react-bootstrap/Button";
 import "../../App.css";
 import Footer from "../NavigationBar/Footer";
 
 function BugFix() {
+  let location = useLocation();
+  const currentURL = location.pathname;
+  
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null);
+  const [items, setItems] = useState([]);
+
+  //Get localstorage value of appName
+  
+  const app =  localStorage.getItem('appName');
+  console.log(app);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/bugfixes/keywords/"+app)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+
+  if (error) {
+    return <ErrorPage errorDet={error.message} />;
+  } else if (!isLoaded) {
+    return <LoadingBox />;
+  } else {
   return (
     <div>
       <div class="bgimg-14">
@@ -17,26 +51,21 @@ function BugFix() {
         </div>
       </div>
       <div>
-        <div className="descrip-11">
-          <BFDescripBox keywords={["location"]} points="5.0" />
-        </div>
+      {items.map((item) => (
+              <div key={item} style={{ listStyleType: "none" }}>
+                <div className={"descrip-" + (items.indexOf(item) % 2 ? "10" : "11")}>
+                  {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
 
-        <div className="descrip-10">
-          <BFDescripBox keywords={["huewei P40 Lite E"]} points="4.7" />
-        </div>
-
-        <div className="descrip-11">
-          <BFDescripBox keywords={["points"]} points="3.8" />
-        </div>
-        <div className="descrip-10">
-          <BFDescripBox
-            description="App crashes suddenly"
-            keywords={["crash"]}
-            points="3.7"
-          />
-        </div>
+                  <DescripBox  type='bugfix' keywords={item[0]} points={item[1]} />
+                </div>
+              </div>
+            ))}
+        
         <div className="descrip-11">
           <div className="container text-center">
+            <Link to={{
+              pathname:currentURL+'/remainingBF'
+            }}>
             <Button
               variant="secondary"
               className="mx-4 bugDescripBtn"
@@ -44,6 +73,7 @@ function BugFix() {
             >
               View the rest of the reviews addressing bug fixes
             </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -51,5 +81,5 @@ function BugFix() {
     </div>
   );
 }
-
+}
 export default BugFix;

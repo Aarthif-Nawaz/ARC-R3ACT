@@ -17,9 +17,9 @@ function Search(props) {
 
   const app = props.match.params.app;
   //alert(props.match.params.app);
-   
-  const url = 'http://localhost:5000/search/'+app;
   
+  const url = 'http://localhost:5000/search/'+app;
+ 
   useEffect(() => {
     
     fetch(url)
@@ -56,12 +56,14 @@ function Search(props) {
 
       {items.map((item) => (
               <li key={item.title} style={{ listStyleType: "none" }}>
-                <div className={"descrip-" + (item._id % 2 ? "4" : "5")}>
+                <div className={"descrip-" + (items.indexOf(item) % 2 ? "14" : "11")}>
                   {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
 
-        
-
-                  <Link to={item.appId+'/menu'}>
+                  <Link to={{
+                  pathname: app+'/'+item.appId,
+                   state:{appId:'com.android.chrome'}
+                  }}>
+                  
                   <SearchDescripBox
                     title={item.title}
                     developer={item.developer}
