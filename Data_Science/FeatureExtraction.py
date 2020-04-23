@@ -1,13 +1,12 @@
 # Author - N.W.R.Amasha
 # Date - 2/4/2020
-
 # Finding keywords with feature extraction
 # output - gives the keywords of each categorized reviews
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-
 class FeatureExtraction:
+
     @staticmethod
     def find_keywords(corpus):
         vectorizer = TfidfVectorizer(max_df=0.85, max_features=100)
@@ -76,7 +75,10 @@ class FeatureExtraction:
     # append the labels of the given array to an array and return it
     @staticmethod
     def convertToArray(new_list):
+        #initializing the array
         keyword_list = []
+        #using the for loop to append the elements 
         for index in new_list:
             keyword_list.append(index)
+        #returning the keyword list
         return keyword_list

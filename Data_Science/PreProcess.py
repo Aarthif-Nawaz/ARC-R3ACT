@@ -2,11 +2,9 @@
 # Purpose - Text preprocessing
 # install - emoji, spacy,re
 import string
-
 import emoji
 import re
 import spacy
-
 
 class PreProcess:
     nlp = spacy.load('en_core_web_sm')
@@ -17,6 +15,7 @@ class PreProcess:
     # function used to pre_process a review depending on which type of algorithm is going to use the corpus.
     @staticmethod
     def pre_process_review(review, level):
+        #if the reviews is None then "" is returned else the preprocessing takes place
         if review is not None:
             pre_processed_review = review
             if level == "svr":
@@ -45,9 +44,8 @@ class PreProcess:
 
     @staticmethod
     def de_emojize(text):
-        return emoji.demojize(text)
-
-    '''Demojize the emojis in a text for better sentiment scores'''
+        '''Demojize the emojis in a text for better sentiment scores'''
+        return emoji.demojize(text)    
 
     # convert a list to string
     @staticmethod

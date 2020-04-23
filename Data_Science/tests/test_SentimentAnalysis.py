@@ -4,7 +4,7 @@ import unittest
 from Data_Science.PreProcess import PreProcess
 from Data_Science.SentimentAnalysis import SentimentAnalysis
 
-
+#when running the file line 11 in SentimentAnalysis.py needs to uncommented and line 12 needs to be commented
 class TestSentimentAnalysis(unittest.TestCase):
 
     #retrieving the testData and testLabels from the csv file

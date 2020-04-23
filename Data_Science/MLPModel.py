@@ -10,11 +10,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # A Neural Network Classifier based of Multi Layer Perceptron
 from sklearn.neural_network import MLPClassifier
 
+# from Data_Science.FeatureExtraction import FeatureExtraction
+# from Data_Science.PreProcess import PreProcess
+
 from FeatureExtraction import FeatureExtraction
 from PreProcess import PreProcess
-
-
 class MLPModel:
+    
     # function used to train the MLP model used to cluster reviews to 3 clusters common, bug fixes and feature requests
     @staticmethod
     def trainMLPModel():
@@ -26,7 +28,6 @@ class MLPModel:
         # saving each review in the train_sentences array
         for i, row in df_train.iterrows():
             train_sentences.append(df_train['Preprocessed_text'].loc[i])
-
         # used to convert words from training data into a matrix of integers
         filename = 'Data_Science/MLModels/TfidfVect.pk'
         vectorizer = TfidfVectorizer(stop_words='english')
