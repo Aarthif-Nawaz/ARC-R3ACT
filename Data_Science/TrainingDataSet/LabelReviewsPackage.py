@@ -1,9 +1,9 @@
 # Author - Safiyyah Thur Rahman
 # Purpose - Labelling the data using the vader lexicon
-# pip install csv, pickle, vaderSentiment, nltk
+# pip install csv, pickle, vaderSentiment
 import csv
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from Data_Science.TextPreprocessing.PreProcessing import *
+from Data_Science.PreProcessing import *
 
 
 # Author - Ridmi

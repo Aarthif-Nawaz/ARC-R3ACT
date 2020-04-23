@@ -1,3 +1,6 @@
+# Author - Safiyyah Thur Rahman
+# Purpose - Perform Unit tests for the predict_sentiment function in SentimentAnalysis.py
+# pip install unittest
 import csv
 import unittest
 

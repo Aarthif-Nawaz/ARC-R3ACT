@@ -2,7 +2,7 @@
  * @file Backend skeleton to extract app details using the
  * scraper and store it onto the database.
  *
- * @author Aarthis Nawaz - 2017313
+ * @author Aarthif Nawaz - 2017313
  * @requires google-play-scraper
  */
 
