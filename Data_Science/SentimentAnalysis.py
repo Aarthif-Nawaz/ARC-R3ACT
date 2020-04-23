@@ -8,19 +8,24 @@ import os
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error
 
+# from Data_Science.PreProcess import PreProcess
 from PreProcess import PreProcess
 
-
 class SentimentAnalysis:
+    
+    # used to train the machine learning model 
+    # used for sentiment analysis using preprocessed 
+    # reviews and the sentiment identified by the lexicon
     @staticmethod
     def train_svr():
         # file which contains the pre-processed reviews to train the model
         file = open('Data_Science/TrainingDataSet/LabelledData.csv', 'r')
         # all the records in the file are converted to a 2d array
         data = list(csv.reader(file, delimiter=','))
+        #initializing 2 arrays one to store the preprocessed reviews
+        #and the other to store the sentiments identified by the lexicon resource
         trainData = []
         trainLabel = []
-        print(len(data))
         # # append the pre-processed the review and the sentiment, to trainData and trainLabel
         for j in range(len(data)):
             print(j)
@@ -29,6 +34,7 @@ class SentimentAnalysis:
         # upload the vectorizer from the file
         filename = 'Data_Science/MLModels/vectorizer.pk'
         count_vect = pickle.load(open(filename, 'rb'))
+        # used to convert preprocessed reviews into a matrix of integers
         X_train_counts = count_vect.fit_transform(trainData)
         # store the vectorizer
         with open(filename, 'wb') as vec_file:
@@ -84,6 +90,12 @@ class SentimentAnalysis:
         index = sentiment_score.index(senti_score)
         # convert the predicted list to an array
         predicted = np.array(predicted)
-        return {'overall_sentiment': ovrll_sentiment, 'predicted': predicted, 'rating': star_rating[index],
-                'r2_score': r2_score(testLabel, predicted),
-                'mean_square_error': mean_squared_error(testLabel, predicted)}
+        #used to identify the confindence of the model
+        r2_score=r2_score(testLabel, predicted)
+        #used to identify the confindence of the model
+        mean_squared_error=mean_squared_error(testLabel, predicted)
+        #the rating is identified using the array star_rating and index
+        rating=star_rating[index]
+        return {'overall_sentiment': ovrll_sentiment, 'predicted': predicted, 'rating': rating,
+                'r2_score': r2_score,
+                'mean_square_error':mean_squared_error }
