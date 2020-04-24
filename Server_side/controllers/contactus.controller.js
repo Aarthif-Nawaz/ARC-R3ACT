@@ -15,7 +15,7 @@ exports.storeMessage = async function (request, response) {
 
   try {
     contactusService.addMessage(message);
-    return response.status(200).send("Succesfully Added!");
+    return response.status(200).send({ message: "Succesfully Added!" });
   } catch (error) {
     return response.status(500).send(error);
   }

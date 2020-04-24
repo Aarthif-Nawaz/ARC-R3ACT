@@ -16,17 +16,19 @@ function ViewAllReviews(props) {
   const [error, setError] = useState(null);
   //props and state for retrieve data from api
   const [items, setItems] = useState([]);
- 
+
   //api call for calling keywords either in bugfix or feature request
-  const {urlLink} = props.location.state;
+  const { urlLink } = props.location.state;
   //keyword pased as state from '/reviews' link
-  const {keyword} = props.location.state;
+  const { keyword } = props.location.state;
 
   //console.log(urlLink)
 
   //calls the api 'urlLink'
   useEffect(() => {
-    fetch(urlLink)
+    fetch(urlLink, {
+      method: "POST"
+    })
       .then((res) => res.json())
       .then(
         (result) => {
@@ -38,7 +40,7 @@ function ViewAllReviews(props) {
           setError(error);
         }
       );
-     
+
   }, [urlLink]);
 
   if (error) {
@@ -48,28 +50,28 @@ function ViewAllReviews(props) {
     //Loading while ui retrieve json data from api
     return <LoadingBox />;
   } else {
-    
-    
+
+
     return (
       <div>
         <div className="bgimg-5">
           <div className="caption">
             <span className="border">
-               Reviews addressing "{keyword}"
+              Reviews addressing "{keyword}"
             </span>
           </div>
         </div>
         <div>
-          <ul style={{margin:0,padding:0}}>
+          <ul style={{ margin: 0, padding: 0 }}>
             {items.map((item) => (
               <li key={items._id} style={{ listStyleType: "none" }}>
                 <div className={"descrip-" + (items.indexOf(item) % 2 ? "4" : "5")}>
-                 
-                {/*Review component for each review retrieve that iterates from the api */}
+
+                  {/*Review component for each review retrieve that iterates from the api */}
                   <Review
                     id={item._id}
                     author={item.username}
-                    date={item.date.toLocaleDateString() }
+                    date={item.date.toLocaleString()}
                     score={item.rating}
                     text={item.partReview}
                   />
@@ -81,7 +83,7 @@ function ViewAllReviews(props) {
         <Footer />
       </div>
     );
-            
+
 
   }
 }

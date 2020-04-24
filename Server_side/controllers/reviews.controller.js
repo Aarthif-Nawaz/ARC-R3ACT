@@ -23,7 +23,7 @@ exports.storeReviews = async function (titleParam, request, response) {
       num: noOfReviews,
       lang: "en",
     })
-    .then((result) => {
+    .then(async (result) => {
       var index = 0;
       for (var i in result) {
         index++; // Iterating the value to be stored as the review id
@@ -47,13 +47,14 @@ exports.storeReviews = async function (titleParam, request, response) {
 
       try {
         // Add reviews to the database
-        reviewsService.addReviews(request.params.appId, reviewArray);
+        await reviewsService.addReviews(request.params.appId, reviewArray);
         // Call connectDatascience method to initialize data science proessing
-        return datascienceController.connectDatascience(
+        var result = await datascienceController.connectDatascience(
           titleParam,
           request,
           response
         );
+        return result;
       } catch (error) {
         return response.status(500).send(error);
       }

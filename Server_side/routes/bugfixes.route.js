@@ -14,9 +14,9 @@ var bugfixesController = require("../controllers/bugfixes.controller");
  * Routes serving bug fixes page.
  */
 
-router.get("/keywords/:appId", bugfixesController.retrieveKeywords);
-router.get("/reviews/:appId/:keyword", bugfixesController.relatedReviews);
-router.get("/fullreview/:appId/:reviewId", bugfixesController.completeReview);
-router.get("/common/:appId/", bugfixesController.commonReviews);
+router.post("/keywords/:appId", bugfixesController.retrieveKeywords);
+router.post("/reviews/:appId/:keyword", bugfixesController.relatedReviews);
+router.post("/fullreview/:appId/:reviewId", bugfixesController.completeReview);
+router.post("/common/:appId/", bugfixesController.commonReviews);
 
 module.exports = router;

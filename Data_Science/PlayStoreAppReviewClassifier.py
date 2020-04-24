@@ -1,9 +1,12 @@
 # Author - Safiyyah Thur Rahman
 # Purpose - Classify reviews and saves in db
 # pip install pymongo, pandas
+
+
 import pymongo
 import sys
 
+from datetime import datetime
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from pandas.io.json import json_normalize
 from FeatureExtraction import FeatureExtraction
@@ -19,7 +22,8 @@ class PlayStoreAppReviewClassifier:
         # checking if the user has passed the appName and appId
         if len(sys.argv) == 3:
             # the list of keywords that should not be used to group the reviews
-            notKeywords = ["driver", "rider", "fix", "issue", "problem", "application", "app", "not", "nt"]
+            notKeywords = ["driver", "rider", "fix", "issue",
+                           "problem", "application", "app", "not", "nt"]
             # retrieve the collection from the db
             collection = db["MobileApplications"]
             # uses the second argument passed
@@ -44,17 +48,22 @@ class PlayStoreAppReviewClassifier:
                     reviews.append(review)
                     # the text is preprocessed at 2 different level,
                     # the first is de_emojized and the next removes the emojis and then preprocesses.
-                    lexicon_preprocessed.append(PreProcess.pre_process_review(review["text"], "lexicon"))
-                    cluster_preprocessed.append(PreProcess.pre_process_review(review["text"], "cluster"))
+                    lexicon_preprocessed.append(
+                        PreProcess.pre_process_review(review["text"], "lexicon"))
+                    cluster_preprocessed.append(
+                        PreProcess.pre_process_review(review["text"], "cluster"))
                     # calling the calc_lexicon_sentiment to calculate the lexicon sentiment of a review
-                    sentiment = self.__calc_lexicon_sentiment(lexicon_preprocessed[i])
+                    sentiment = self.__calc_lexicon_sentiment(
+                        lexicon_preprocessed[i])
                     # append the sentiment calculated by the lexicon sentiment analyzer
                     lexicon_sentiment.append(sentiment)
                     # the preprocessed text is further preprocessed to find the sentiment using the svr model
-                    svr_preprocessed.append(PreProcess.pre_process_review(lexicon_preprocessed[i], "svr"))
+                    svr_preprocessed.append(PreProcess.pre_process_review(
+                        lexicon_preprocessed[i], "svr"))
                     i += 1
                 # predict the sentiment of the preprocessed text
-                predicted_results = SentimentAnalysis.predict_sentiment(svr_preprocessed, lexicon_sentiment)
+                predicted_results = SentimentAnalysis.predict_sentiment(
+                    svr_preprocessed, lexicon_sentiment)
                 # predict the cluster the reviews belong to
                 clusteredResult = MLPModel.clusterReviews(cluster_preprocessed)
                 # save the array of predicted sentiment
@@ -71,12 +80,14 @@ class PlayStoreAppReviewClassifier:
                                                       keywords,
                                                       fe_preprocessedReviews)
                     # insert the overall sentiment of the mobile app and other details
-                    mbDetails = self.__insert_mobile_app_details(mbDetails, predicted_results)
+                    mbDetails = self.__insert_mobile_app_details(
+                        mbDetails, predicted_results)
                     # the name of the app is often identified as a keyword hence it is added to the array above
                     appName = sys.argv[2]
                     notKeywords = notKeywords + list(appName.split(" "))
                     # identify and save the bugFixes and the featureRequests
-                    self.__identifyKeywordsAndSave(appId, mbDetails, ["BugFixes", "FeatureRequests"], notKeywords)
+                    self.__identifyKeywordsAndSave(
+                        appId, mbDetails, ["BugFixes", "FeatureRequests"], notKeywords)
                     # return done to indicate that the analysis is complete
                     return "Done"
                 except:
@@ -176,12 +187,14 @@ class PlayStoreAppReviewClassifier:
                 # appending the selected reviews to an array
                 reviewsFound.append(clusteredReviews.iloc[i])
                 # converting the keywords of the selected reviews to a string and then adding it to a variable
-                sentence = PreProcess.listToString(clusteredReviews["keywords"].iloc[i])
+                sentence = PreProcess.listToString(
+                    clusteredReviews["keywords"].iloc[i])
                 # appending the sentence made to another variable to
                 # make a sentence of the keywords of the selected reviews
                 totalReviewSentence = totalReviewSentence + sentence + " "
             # find the keywords
-            keywords = self.__find_top_keywords(clusteredReviews, totalReviewSentence, notKeywords)
+            keywords = self.__find_top_keywords(
+                clusteredReviews, totalReviewSentence, notKeywords)
             # stores the ids of the reviews that contain a particular keyword
             keywordsReviewIDs = []
             # stores the overall sentiment of the cluster for each keyword
@@ -211,14 +224,16 @@ class PlayStoreAppReviewClassifier:
             # create the json object used to store the app details
             if mbDetails is not None:
                 mbDetails.update({clusterName: clusteredIds})
-        # delete the document which has the appId as the value stored in the variable called appId
-        collection.delete_one({"appId": appId})
-        # then the mbDetails dict is appended to the collection as a document
-        collection.insert_one(mbDetails)
+                mbDetails.update({"date_uploaded": str(datetime.now())})
+                # delete the document which has the appId as the value stored in the variable called appId
+                collection.delete_one({"appId": appId})
+                # then the mbDetails dict is appended to the collection as a document
+                collection.insert_one(mbDetails)
 
     def __find_top_keywords(self, df, totalReviewSentence, notKeywords):
         # identify the top features of the selectedReviews
-        results = FeatureExtraction.find_keywords_sentence(df["fe_preprocessedReview"], totalReviewSentence)
+        results = FeatureExtraction.find_keywords_sentence(
+            df["fe_preprocessedReview"], totalReviewSentence)
         # tokenizing the data after converting the array results to a string
         doc = PreProcess.nlp(PreProcess.listToString(results))
         keywords = []

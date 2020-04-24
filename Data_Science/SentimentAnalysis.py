@@ -91,11 +91,11 @@ class SentimentAnalysis:
         # convert the predicted list to an array
         predicted = np.array(predicted)
         #used to identify the confindence of the model
-        r2_score=r2_score(testLabel, predicted)
+        r2_score_value=r2_score(testLabel, predicted)
         #used to identify the confindence of the model
-        mean_squared_error=mean_squared_error(testLabel, predicted)
+        mean_squared_error_value=mean_squared_error(testLabel, predicted)
         #the rating is identified using the array star_rating and index
         rating=star_rating[index]
         return {'overall_sentiment': ovrll_sentiment, 'predicted': predicted, 'rating': rating,
-                'r2_score': r2_score,
-                'mean_square_error':mean_squared_error }
+                'r2_score': r2_score_value,
+                'mean_square_error':mean_squared_error_value }

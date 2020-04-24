@@ -20,7 +20,9 @@ function RemainingBF() {
   console.log(app);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bugfixes/common/" + app)
+    fetch("http://localhost:5000/bugfixes/common/" + app, {
+      method: "POST"
+    })
       .then((res) => res.json())
       .then(
         (result) => {

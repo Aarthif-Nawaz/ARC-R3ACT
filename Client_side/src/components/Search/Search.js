@@ -23,7 +23,9 @@ function Search(props) {
 
   //fetches the api call from the server
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: "POST"
+    })
       .then((res) => res.json())
       .then(
         (result) => {

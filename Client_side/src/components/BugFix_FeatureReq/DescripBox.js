@@ -78,9 +78,7 @@ function DescripBox(props) {
       </div>
     );
   } else {
-    {
-      /**For Bug fixes reviews related to the given keyword */
-    }
+    /**For Bug fixes reviews related to the given keyword */
     url = "http://localhost:5000/bugfixes/reviews/" + app + "/" + keywords;
     return (
       <div className="container-fluid">

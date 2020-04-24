@@ -33,10 +33,13 @@ function BugFix() {
 
   //calls the keywords api
   useEffect(() => {
-    fetch("http://localhost:5000/bugfixes/keywords/" + app)
+    fetch("http://localhost:5000/bugfixes/keywords/" + app, {
+      method: "POST"
+    })
       .then((res) => res.json())
       .then(
         (result) => {
+
           setIsLoaded(true);
           setItems(result);
         },
@@ -45,7 +48,7 @@ function BugFix() {
           setError(error);
         }
       );
-  }, [app]);
+  }, []);
 
   if (error) {
     return <ErrorPage errorDet={error.message} />;

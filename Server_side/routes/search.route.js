@@ -14,6 +14,6 @@ var searchController = require("../controllers/search.controller");
  * Route serving search app page.
  */
 
-router.get("/:name", searchController.searchApp);
+router.post("/:name", searchController.searchApp);
 
 module.exports = router;

@@ -30,7 +30,7 @@ client.connect((err) => {
  */
 exports.deleteDetails = async function (query) {
   try {
-    db.collection("MobileApplications").deleteMany(query);
+   await db.collection("MobileApplications").deleteMany(query);
   } catch (error) {
     console.log(error + " Error occured while deleting app details.");
   }
@@ -79,6 +79,7 @@ exports.getFromCurrentApps = async function (query) {
         .find(query)
         .limit(1)
         .count()) > 0;
+    console.log("Present in CurrentApplications "+result);
     return result;
   } catch (error) {
     console.log(error + " Error occured while retrieving current app details.");

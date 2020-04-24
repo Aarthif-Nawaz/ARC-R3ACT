@@ -14,6 +14,6 @@ var appdetailsController = require("../controllers/appdetails.controller");
  * Route serving similar apps page.
  */
 
-router.get("/:appId", appdetailsController.storeDetails);
+router.post("/:appId", appdetailsController.storeDetails);
 
 module.exports = router;
