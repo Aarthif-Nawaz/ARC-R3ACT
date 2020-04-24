@@ -105,7 +105,7 @@ exports.relatedReviews = async function (request, response) {
 
 /**
  * Retrieves and displays the complete review related
- * to bug fixes from the database.
+ * to bug fixes or feature requests from the database.
  */
 exports.completeReview = async function (request, response) {
   var completeReview = [];
