@@ -56,7 +56,9 @@ router.get("/:id", (request, response) => {
     { _id: new ObjectID(request.params.id) },
     (error, result) => {
       if (error) {
-        return response.status(500).send({ message: "The given ID does not exist." });
+        return response
+          .status(500)
+          .send({ message: "The given ID does not exist." });
       }
       return response.send(result);
     }
@@ -112,7 +114,9 @@ router.put("/:id", (request, response) => {
     { upsert: true },
     (error, result) => {
       if (error) {
-        return response.status(500).send({ message: "The given ID does not exist." });
+        return response
+          .status(500)
+          .send({ message: "The given ID does not exist." });
       }
       return response.send(result);
     }
@@ -131,7 +135,9 @@ router.delete("/:id", (request, response) => {
     { _id: new ObjectID(request.params.id) },
     (error, result) => {
       if (error) {
-        return response.status(500).send({ message: "The given ID does not exist." });
+        return response
+          .status(500)
+          .send({ message: "The given ID does not exist." });
       }
       return response.send(result);
     }
