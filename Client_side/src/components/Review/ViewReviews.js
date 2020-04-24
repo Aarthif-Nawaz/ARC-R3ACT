@@ -69,7 +69,7 @@ function ViewAllReviews(props) {
                   <Review
                     id={item._id}
                     author={item.username}
-                    date={item.date.toLocaleDateString() }
+                    date={item.date }
                     score={item.rating}
                     text={item.partReview}
                   />

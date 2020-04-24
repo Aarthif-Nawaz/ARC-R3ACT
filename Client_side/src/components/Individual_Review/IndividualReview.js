@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import Footer from "../NavigationBar/Footer";
+import Moment from 'react-moment';
 
 function IndividualReview(props) {
   //review id passed through link
   const { id } = props.location.state;
+
+  //Get app id from local storage
+  const app = localStorage.getItem("appName");
 
   //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,10 +18,12 @@ function IndividualReview(props) {
   //props and state for retrieve data from api
   const [items, setItems] = useState([]);
 
+
+  
   // fetches the individual review from api
   useEffect(() => {
     fetch(
-      "http://localhost:5000/featurereqs/fullreview/com.android.chrome/" + id
+      "http://localhost:5000/featurereqs/fullreview/"+app+"/" + id
     )
       .then((res) => res.json())
       .then(
@@ -57,7 +63,7 @@ function IndividualReview(props) {
               <div key={items.reviewId}>
                 <div className="reviewBox">
                   <h3 style={{ fontWeight: 600 }}>{item.username}</h3>
-                  <h3 style={{ fontWeight: 500 }}>{item.date}</h3>
+                  <h3 style={{ fontWeight: 500 }}> <Moment format="YYYY/MM/DD">{item.date}</Moment></h3>
                   <p style={{ fontSize: "1vw", marginBottom: "1vw" }}>
                     Version: {item.version}
                   </p>
@@ -65,8 +71,8 @@ function IndividualReview(props) {
                     className="star"
                     style={{ color: "#000", marginBottom: "3%" }}
                   >
-                    {[...Array(Number(props.rating))].map((i) => (
-                      <label key={i + 1}>★</label>
+                    {[...Array(Number(item.rating))].map((i) => (
+                      <label key={i+1}>★</label>
                     ))}
                   </div>
                   <p className="reviewText" style={{ fontSize: "1.1vw" }}>

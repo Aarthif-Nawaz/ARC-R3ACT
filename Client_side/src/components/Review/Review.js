@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import Moment from 'react-moment';
 
 /**
  * Review Component
@@ -17,12 +18,13 @@ function Review(props) {
   const currentURL = location.pathname;
 
   //console.log(currentURL);
-
+  //review date format to "YYYY/MM/DD"
+  const reviewDate = props.date;
   return (
     <div className="col-8 container-fluid" style={{ padding: 0 }}>
       <div style={{ width: "45vw" }}>
         <p>Author Name : {props.author}</p>
-        <p>Date : {props.date}</p>
+        <p>Date : <Moment format="YYYY/MM/DD">{reviewDate}</Moment></p>
         <div className="star">
           {[...Array(Number(props.score))].map((i) => (
             <label key={i + 1}>★</label>

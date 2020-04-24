@@ -29,7 +29,7 @@ function BugFix() {
 
   //Get localstorage value of appName
   const app = localStorage.getItem("appName");
-  //console.log(app);
+  console.log(app);
 
   //calls the keywords api
   useEffect(() => {

@@ -15,8 +15,8 @@ function MenuBox({ match }) {
 
   const { appId } = location.state;
   console.log(appId);
-  //const [values, setValues] = useState(localStorage.setItem("appName", appId));
-  //const app = localStorage.getItem("appName");
+  const [values, setValues] = useState(localStorage.setItem("appName", appId));
+  const app = localStorage.getItem("appName");
 
   // useEffect(() => {
   //   fetch("http://localhost:5000/app/" + app)
