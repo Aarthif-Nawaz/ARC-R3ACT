@@ -10,14 +10,6 @@ var gplay = require("google-play-scraper");
 var appdetailsService = require("../services/appdetails.service");
 var reviewsController = require("../controllers/reviews.controller");
 
-function diff_minutes(dt2, dt1) {
-
-  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-  diff /= 60;
-  return Math.abs(Math.round(diff));
-
-}
-
 /**
  * Retrieves the reviews of the app using the scraper and
  * store the reviews into the database.
@@ -33,26 +25,16 @@ exports.storeDetails = async function (request, response) {
   }
 
   if (booleanResult) {
-    // If the app id is available in the CurrentApplications collection
-    // try {
-    //   // Wait until the reviews are processed
-    //    var waitedResponse= await waitUntilProcessed(request, response);
-    //    return waitedResponse;
-
-    // } catch (error) {
-    //   return response.status(500).send(error);
-    // }
-    //await waitUntilProcessed(request, response);
     return response.status(200).send({ wait: true });
   } else {
-
     var detailsResult = await appdetailsService.getDetails({
       appId: request.params.appId,
     });
     if (detailsResult != null) {
-
+      // Store the data and time data was stored into the database
       var timestamp = new Date(detailsResult.date_uploaded);
 
+      // Store the current data and time into a variable
       var currenTime = new Date();
 
       var timeDif = diff_minutes(timestamp, currenTime);
@@ -60,6 +42,8 @@ exports.storeDetails = async function (request, response) {
       if (timeDif < 20) {
         return response.status(200).send(detailsResult);
       } else {
+        // Start processging the reviews again if the
+        // time difference is greater than 20
         processAgain = true;
       }
     } else {
@@ -67,7 +51,6 @@ exports.storeDetails = async function (request, response) {
     }
 
     if (processAgain) {
-
       // Initializing detailsArray to store all the app details
       var detailsArray = [];
       var currentDetailsArray = [];
@@ -115,7 +98,9 @@ exports.storeDetails = async function (request, response) {
 
             try {
               // Delete the previously processed app details from the database
-              await appdetailsService.deleteDetails({ appId: request.params.appId });
+              await appdetailsService.deleteDetails({
+                appId: request.params.appId,
+              });
               // Add the app title and id to the CurrentApplication collection
               await appdetailsService.addToCurrentApps(currentDetailsArray);
               // Add the new app details to the database
@@ -129,11 +114,10 @@ exports.storeDetails = async function (request, response) {
             // If the review count is less than 100,
             // send this error message to the client
             response.status(200).send({
-              message: "Sorry! The number of reviews is less than 100."
+              message: "Sorry! The number of reviews is less than 100.",
             });
           }
         });
-
 
       return response.status(200).send({ wait: true });
     }
@@ -141,31 +125,14 @@ exports.storeDetails = async function (request, response) {
 };
 
 /**
- * Delay the callback function until the reviews are processed.
+ * Calculates the time difference between the two date objects
+ *
+ * @param {Date} dt2 The date object to be compared
+ * @param {Date} dt1 The date object to be compared
+ * @returns The time difference between the data objects in minutes
  */
-async function waitUntilProcessed(request, response) {
-  try {
-    var detailsResult = appdetailsService.getDetails({
-      appId: request.params.appId,
-    });
-
-    // Store the rating_calulated (sentiment) of the app into a variable
-    var processed = detailsResult.rating_calculated;
-
-    if (processed != null) {
-      // If the variable is not null, processing of the reviews is completed
-      console.log("Processing completed!");
-      return response
-        .status(200)
-        //Python Result: Data science process completed!!
-        .send({ message: "Done" });
-    } else {
-      // If the variable is null, delay the application by 60 seconds
-      // and run this function again
-      console.log("Processing please wait!");
-      setTimeout(waitUntilProcessed, 60000, request, response);
-    }
-  } catch (error) {
-    return response.status(500).send(error);
-  }
-};
+function diff_minutes(dt2, dt1) {
+  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= 60;
+  return Math.abs(Math.round(diff));
+}
