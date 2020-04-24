@@ -10,8 +10,10 @@ import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import { useLocation } from "react-router";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function MenuBox({ match }) {
+function MenuBox(props) {
   // const [isLoaded, setIsLoaded] = useState(false);
   // const [error, setError] = useState(null);
   // const [items, setItems] = useState([]);
@@ -69,21 +71,21 @@ function MenuBox({ match }) {
           <div className="container MenuBoxContainer">
             <div class="row">
               <div class="col-4">
-                <Link to={match.url + "/bugfix"}>
+                <Link to={location.pathname + "/bugfix"}>
                   <div className="card p-4" style={{ fontSize: "1vw" }}>
                     Bug <br></br>Fixes
                   </div>
                 </Link>
               </div>
               <div class="col-4">
-                <Link to={match.url + "/featureRequest"}>
+                <Link to={location.pathname + "/featureRequest"}>
                   <div className="card p-4" style={{ fontSize: "1vw" }}>
                     Feature Requests
                   </div>
                 </Link>
               </div>
               <div class="col-4">
-                <Link to={match.url + "/overallSentiment"}>
+                <Link to={location.pathname + "/overallSentiment"}>
                   <div className="card p-4" style={{ fontSize: "1vw" }}>
                     Overall Sentiment
                   </div>
@@ -93,6 +95,14 @@ function MenuBox({ match }) {
           </div>
         </div>
       </div>
+      <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
       <Footer />
     </div>
   );

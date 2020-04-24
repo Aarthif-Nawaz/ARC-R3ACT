@@ -12,8 +12,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import Review from "../Review/Review";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function RemainingFR() {
+function RemainingFR(props) {
   //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
   //props and state for error checking
@@ -70,6 +72,14 @@ function RemainingFR() {
               </div>
             </div>
           ))}
+           <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         </div>
         <Footer />
       </div>

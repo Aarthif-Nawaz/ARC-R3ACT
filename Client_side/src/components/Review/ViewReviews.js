@@ -9,6 +9,8 @@ import Review from "./Review";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * All the reviews are displayed here
@@ -79,6 +81,14 @@ function ViewAllReviews(props) {
             ))}
           </ul>
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

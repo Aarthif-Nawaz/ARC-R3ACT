@@ -12,6 +12,8 @@ import SearchDescripBox from "./SearchDescripBox";
 import "../../App.css";
 import Footer from "../NavigationBar/Footer";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Search(props) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -79,6 +81,14 @@ function Search(props) {
             </li>
           ))}
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

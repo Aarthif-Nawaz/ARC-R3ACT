@@ -5,8 +5,6 @@
 */
 
 import React, { useRef } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import SearchApps from "./searchapps";
 import About from "./About";
 import Footer from "../NavigationBar/Footer";

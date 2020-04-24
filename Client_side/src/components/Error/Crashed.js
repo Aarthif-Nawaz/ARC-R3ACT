@@ -9,6 +9,9 @@ import React from "react";
 import "../../App.css";
 
 function CrashPage(props) {
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className="container-fluid error_div">
       <div className="container-fluid error_crash_bg">
@@ -33,7 +36,7 @@ function CrashPage(props) {
       <div className="container go_back_button_group" fluid>
         <div className="row">
           <div className="col">
-            <button variant="outline-primary" style={{ fontSize: "1.5vh" }}>
+            <button variant="outline-primary" style={{ fontSize: "1.5vh" }} onClick={refreshPage}>
               Try Loading Again!
             </button>{" "}
           </div>

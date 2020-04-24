@@ -9,6 +9,8 @@ import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import Footer from "../NavigationBar/Footer";
 import Moment from "react-moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function IndividualReview(props) {
   //review id passed through link
@@ -88,6 +90,14 @@ function IndividualReview(props) {
             ))}
           </div>
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );
