@@ -1,11 +1,15 @@
+/* 
+  Page      - About.js page
+  Function  - General background info about ARC
+  Author    - Sajani Sihara
+*/
+
 import React from "react";
-/**
- * About page
- * Output - Details about how to use the ARC
- */
+
 function About() {
   return (
     <div>
+      {/*Adding a div that will hold the intro para */}
       <div className="descrip-1">
         <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
           Application Review Classifier
@@ -25,7 +29,10 @@ function About() {
           overall sentiment of a mobile application.
         </p>
       </div>
+
+      {/*Adding the background image*/}
       <div className="bgimg-1">
+        {/*Adding the first heading */}
         <div className="caption">
           <span className="border">
             We provide app review & ratings analysis for mobile teams.
@@ -33,6 +40,7 @@ function About() {
         </div>
       </div>
 
+      {/*Adding para about how to use ARC */}
       <div className="descrip-1">
         <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
           How to use ARC?
@@ -55,8 +63,9 @@ function About() {
           requests and overall sentiment.
         </p>
       </div>
-
+      {/*The second background image */}
       <div className="bgimg-2">
+        {/*Adding the second heading */}
         <div className="caption">
           <span
             className="border"
@@ -72,8 +81,10 @@ function About() {
       </div>
 
       <div style={{ position: "relative" }}>
+        {/*making a div to hold info about the classification categories */}
         <div className="descrip-2">
           <div className="row">
+            {/*First column holds info regarding Bug Fixes */}
             <div className="col-4 d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
@@ -96,6 +107,8 @@ function About() {
                 </p>
               </div>
             </div>
+
+            {/*Second column holds info regarding Feature Requests */}
             <div className="col-4  d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
@@ -118,6 +131,8 @@ function About() {
                 </p>
               </div>
             </div>
+
+            {/*Third column holds info regarding Overall Sentiment */}
             <div className="col-4 d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
                 <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
@@ -145,7 +160,9 @@ function About() {
         </div>
       </div>
 
+      {/*The third background image */}
       <div className="bgimg-3">
+        {/*Adding the third heading */}
         <div className="caption">
           <span
             className="border"
@@ -161,6 +178,7 @@ function About() {
       </div>
 
       <div style={{ position: "relative" }}>
+        {/*adding a para about ARC's functionality */}
         <div className="descrip-3">
           <h3 style={{ textAlign: "center", fontSize: "2vw", fontWeight: 900 }}>
             Make better and faster decisions
@@ -182,7 +200,9 @@ function About() {
         </div>
       </div>
 
+      {/*The fourth background image */}
       <div className="bgimg-4">
+        {/*Adding the fourth heading */}
         <div className="caption">
           <span className="border">Unlock your data right now with ARC!</span>
         </div>

@@ -12,8 +12,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DescripBox from "./DescripBox";
 import Button from "react-bootstrap/Button";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function FeatureRequest() {
+function FeatureRequest(props) {
   //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
   //props and state for error checking
@@ -75,14 +77,14 @@ function FeatureRequest() {
 
           <div className="descrip-12">
             <div className="container text-center">
-              {/**
-               * Links to the feature requests that hasn't common keyword
-               */}
+              {/*Link to the feature requests that don't have a common keyword*/}
+
               <Link
                 to={{
                   pathname: currentURL + "/remainingFeatureRequests",
                 }}
               >
+                {/*clicking on the button will lead to the remainingFR.js page */}
                 <Button
                   variant="secondary"
                   className="mx-4 bugDescripBtn"
@@ -94,6 +96,14 @@ function FeatureRequest() {
             </div>
           </div>
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

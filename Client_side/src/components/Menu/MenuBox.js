@@ -1,9 +1,17 @@
+/* 
+  Page      - MenuBox.js page
+  Function  - Displays the menu (Bug Fixes, Feature Requests and Overall Sentiment)
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useState, useEffect } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import { Link, Route } from "react-router-dom";
 import { useLocation } from "react-router";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 class MenuBox extends React.Component {
 
@@ -135,12 +143,19 @@ class MenuBox extends React.Component {
               </div>
             </div>
           </div>
+          <button
+            type="button"
+            className="btn btn-light"
+            id="backBtn"
+            onClick={() => props.history.goBack()}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+          </button>
           <Footer />
         </div>
       );
     }
+
   }
 }
-
-
 export default MenuBox;

@@ -1,3 +1,9 @@
+/* 
+  Page      - RemainingBF.js page
+  Function  - Shows the reviews pertaining to bug fixes that does not have a common keyword
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useEffect, useState } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
@@ -6,8 +12,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import Review from "../Review/Review";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function RemainingBF() {
+function RemainingBF(props) {
   //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
   //props and state for error checking
@@ -67,6 +75,14 @@ function RemainingBF() {
             </div>
           ))}
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

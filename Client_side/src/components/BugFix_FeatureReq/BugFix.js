@@ -13,8 +13,10 @@ import DescripBox from "./DescripBox";
 import Button from "react-bootstrap/Button";
 import "../../App.css";
 import Footer from "../NavigationBar/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function BugFix() {
+function BugFix(props) {
   //Uses the current url object into location variable
   let location = useLocation();
   //Stores the pathname of the current browser page
@@ -29,7 +31,7 @@ function BugFix() {
 
   //Get localstorage value of appName
   const app = localStorage.getItem("appName");
-  //console.log(app);
+  console.log(app);
 
   //calls the keywords api
   useEffect(() => {
@@ -102,6 +104,14 @@ function BugFix() {
             </div>
           </div>
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

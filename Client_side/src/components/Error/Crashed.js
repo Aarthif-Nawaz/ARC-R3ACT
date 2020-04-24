@@ -1,10 +1,17 @@
+/* 
+  Page        - Crashed.js page
+  Function    - Shows the error page when the page crashes
+  Parameters  - @param {errorDet} props
+  Author      - Ridmi Amasha
+*/
+
 import React from "react";
 import "../../App.css";
-/**
- * Page that displays when the page crashes
- * @param {errorDet} props
- */
+
 function CrashPage(props) {
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className="container-fluid error_div">
       <div className="container-fluid error_crash_bg">
@@ -29,7 +36,7 @@ function CrashPage(props) {
       <div className="container go_back_button_group" fluid>
         <div className="row">
           <div className="col">
-            <button variant="outline-primary" style={{ fontSize: "1.5vh" }}>
+            <button variant="outline-primary" style={{ fontSize: "1.5vh" }} onClick={refreshPage}>
               Try Loading Again!
             </button>{" "}
           </div>

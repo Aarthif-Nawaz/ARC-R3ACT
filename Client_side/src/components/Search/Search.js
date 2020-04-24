@@ -1,3 +1,9 @@
+/* 
+  Page      - Search.js page
+  Function  - Displays application that contains or related to the app that passed from the url
+  Parameter - @param {*} props
+  Author    - Christina Thambirajah
+*/
 import React, { useEffect, useState } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
@@ -6,11 +12,9 @@ import SearchDescripBox from "./SearchDescripBox";
 import "../../App.css";
 import Footer from "../NavigationBar/Footer";
 import { Link } from "react-router-dom";
-/**
- * Search Page
- * output - Displays application that contains or related to the app that passed from the url
- * @param {*} props
- */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 function Search(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
@@ -79,6 +83,14 @@ function Search(props) {
             </li>
           ))}
         </div>
+        <button
+          type="button"
+          className="btn btn-light"
+          id="backBtn"
+          onClick={() => props.history.goBack()}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
+        </button>
         <Footer />
       </div>
     );

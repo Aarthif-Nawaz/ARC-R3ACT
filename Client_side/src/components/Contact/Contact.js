@@ -1,3 +1,9 @@
+/* 
+  Page      - Contact.js page
+  Function  - Provides contact information regarding ARC 
+  Author    - Sajani Sihara
+*/
+
 import React from "react";
 import Footer from "../NavigationBar/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,14 +20,16 @@ import Form from "./Form.js";
 function Contact() {
   return (
     <div className="container-fluid" style={{ boxSizing: "border-box" }}>
+      {/*Adding the background image*/}
       <div className="bgimg-12">
+        {/*Adding the main heading */}
         <div className="caption">
           <span className="border">
             Connect with us and start improving your app today.
           </span>
         </div>
       </div>
-
+      {/*Adding a div that will hold the comment form */}
       <div className="descrip-1">
         <h3
           style={{
@@ -33,10 +41,11 @@ function Contact() {
         >
           Send us your questions here
         </h3>
-
+        {/*Adding the form component */}
         <Form />
       </div>
 
+      {/*The second background image */}
       <div className="bgimg-13">
         <div className="caption">
           <span
@@ -53,14 +62,17 @@ function Contact() {
       </div>
 
       <div style={{ position: "relative" }}>
+        {/*Starting a div to hold the contact information */}
         <div className="descrip-9">
           <div className="row">
+            {/*First column contains the social media links */}
             <div className="col d-flex align-items-stretch">
               <div className="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
                   Social Media
                 </h3>
 
+                {/*Facebook link */}
                 <div className="text-center text-md-right row">
                   <a className="fb-ic col-2.4" style={{ marginRight: "1vw" }}>
                     <FontAwesomeIcon
@@ -69,6 +81,7 @@ function Contact() {
                     />
                   </a>
 
+                  {/*Twitter link */}
                   <a className="tw-ic col-2.4">
                     <FontAwesomeIcon
                       icon={faTwitter}
@@ -76,6 +89,7 @@ function Contact() {
                     />
                   </a>
 
+                  {/*Google Plus link */}
                   <a className="gplus-ic col-2.4">
                     <FontAwesomeIcon
                       icon={faGooglePlus}
@@ -83,6 +97,7 @@ function Contact() {
                     />
                   </a>
 
+                  {/*Linkedin link */}
                   <a className="li-ic col-2.4">
                     <FontAwesomeIcon
                       icon={faLinkedin}
@@ -90,6 +105,7 @@ function Contact() {
                     />
                   </a>
 
+                  {/*Instagram link */}
                   <a className="ins-ic col-2.4">
                     <FontAwesomeIcon
                       icon={faInstagram}
@@ -99,6 +115,8 @@ function Contact() {
                 </div>
               </div>
             </div>
+
+            {/*Second column contains the post address of ARC */}
             <div className="col d-flex align-items-stretch">
               <div className="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
@@ -116,6 +134,8 @@ function Contact() {
                 </p>
               </div>
             </div>
+
+            {/* Third column contains the mobile number of ARC */}
             <div className="col d-flex align-items-stretch">
               <div className="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
@@ -133,6 +153,8 @@ function Contact() {
                 </p>
               </div>
             </div>
+
+            {/*Fourth colum contains the email address of ARC */}
             <div className="col d-flex align-items-stretch">
               <div className="card">
                 <h3 style={{ fontWeight: 700, paddingBottom: "2vw" }}>
@@ -154,6 +176,7 @@ function Contact() {
         </div>
       </div>
 
+      {/*Adding the footer component */}
       <Footer />
     </div>
   );

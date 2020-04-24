@@ -1,3 +1,9 @@
+/* 
+  Page      - Footer.js page
+  Function  - This is the footer component used in all the pages
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
