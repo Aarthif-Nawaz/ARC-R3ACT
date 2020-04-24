@@ -1,5 +1,11 @@
+/* 
+  Page      - FeatureRequest.js page
+  Function  - Shows the feature request keywords relevant to the chosen app
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useEffect, useState } from "react";
-import { Link,useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,16 +14,23 @@ import Button from "react-bootstrap/Button";
 import Footer from "../NavigationBar/Footer";
 
 function FeatureRequest() {
+  //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
+  //props and state for error checking
   const [error, setError] = useState(null);
+  //props and state for retrieve data from api
   const [items, setItems] = useState([]);
 
+  //Uses the current url object into location variable
   let location = useLocation();
+  //Stores the pathname of the current browser page
   const currentURL = location.pathname;
-  const app =  localStorage.getItem('appName');
+  //local storage value to the app id
+  const app = localStorage.getItem("appName");
 
+  //fetches the reviews related to the keyword
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/keywords/"+app)
+    fetch("http://localhost:5000/featurereqs/keywords/" + app)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -29,51 +42,61 @@ function FeatureRequest() {
           setError(error);
         }
       );
-  }, []);
+  }, [app]);
 
   if (error) {
     return <ErrorPage errorDet={error.message} />;
   } else if (!isLoaded) {
     return <LoadingBox />;
   } else {
-  return (
-    <div>
-      <div class="bgimg-15">
-        <div class="caption">
-          <span className="border">
-            App features requested by the users of this app
-          </span>
-        </div>
-      </div>
+    return (
       <div>
-      {items.map((item) => (
-              <div key={item} style={{ listStyleType: "none" }}>
-                <div className={"descrip-" + (items.indexOf(item) % 2 ? "12" : "13")}>
-                  {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
-                  <DescripBox type='fr' keywords={item[0]} points={item[1]} />
-                </div>
-              </div>
-            ))}
-        
-        <div className="descrip-12">
-          <div className="container text-center">
-          <Link to={{
-              pathname:currentURL+'/remainingFR'
-            }}>
-            <Button
-              variant="secondary"
-              className="mx-4 bugDescripBtn"
-              style={{ fontSize: "1.5vw", padding: "1.1vw" }}
-            >
-              View the rest of the reviews addressing feature requests
-            </Button>
-            </Link>
+        {/*Adding the background image*/}
+        <div class="bgimg-15">
+          {/*Adding the main heading */}
+          <div class="caption">
+            <span className="border">
+              App features requested by the users of this app
+            </span>
           </div>
         </div>
+        {/*The keywords will be in divs descrip-12 and descrip-13 alternatively*/}
+        <div>
+          {items.map((item) => (
+            <div key={item} style={{ listStyleType: "none" }}>
+              <div
+                className={"descrip-" + (items.indexOf(item) % 2 ? "12" : "13")}
+              >
+                {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
+                <DescripBox type="fr" keywords={item[0]} points={item[1]} />
+              </div>
+            </div>
+          ))}
+
+          <div className="descrip-12">
+            <div className="container text-center">
+              {/**
+               * Links to the feature requests that hasn't common keyword
+               */}
+              <Link
+                to={{
+                  pathname: currentURL + "/remainingFeatureRequests",
+                }}
+              >
+                <Button
+                  variant="secondary"
+                  className="mx-4 bugDescripBtn"
+                  style={{ fontSize: "1.5vw", padding: "1.1vw" }}
+                >
+                  View the rest of the reviews addressing feature requests
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
   }
 }
 

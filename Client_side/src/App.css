@@ -23,7 +23,7 @@ html {
   height: 100%;
   margin: 0;
 }
-/*descrip-1, descrip-2 and descrip-3 are the text written in the search for apps page*/
+
 .descrip-1 {
   color: rgb(88, 87, 87);
   font-size: 1.5vw;
@@ -32,6 +32,7 @@ html {
   padding: 3.3vw;
 }
 
+/* styling the text in About Us page*/
 .descrip-2 {
   color: #ddd;
   background-color: #282e34;
@@ -67,6 +68,7 @@ html {
   font-weight: 700;
 }
 
+/* styling for text in the About Us page */
 .descrip-6 {
   color: rgb(88, 87, 87);
   font-size: 1.5vw;
@@ -75,6 +77,7 @@ html {
   padding-bottom: 4.6vw;
 }
 
+/*Styling used for About Us page - team member intro*/
 .descrip-7 {
   background-image: url("/images/phone.jpg");
   background-attachment: fixed;
@@ -109,6 +112,8 @@ html {
   padding: 5%;
   text-align: justify;
 }
+
+/*Styling for keyword container in BugFix.js*/
 .descrip-10 {
   color: #fff;
   background-image: url("/images/laptop3.jpg");
@@ -120,6 +125,16 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
+
+/*Styling for keyword container in BugFix.js*/
+.descrip-11 {
+  color: #fff;
+  background-color: #434950;
+  font-size: 1.5vw;
+  padding: 3.3vw;
+  font-weight: 700;
+}
+
 .descrip-14 {
   color: #fff;
   background-image: url("/images/phone3.jpg");
@@ -215,13 +230,8 @@ html {
   border: #fff 0.1vw solid;
   background-color: #da808a;
 }
-.descrip-11 {
-  color: #fff;
-  background-color: #434950;
-  font-size: 1.5vw;
-  padding: 3.3vw;
-  font-weight: 700;
-}
+
+
 .descrip-17 {
   color: #282e34;
   background-color: #898d92be;
@@ -252,6 +262,8 @@ html {
   padding: 3.3vw;
   font-weight: 700;
 }
+
+/*Styling for keyword container in BugFix.js*/
 .descrip-12 {
   color: #434950;
   background-image: url("/images/laptop1.jpg");
@@ -290,8 +302,6 @@ html {
   border: #fff 0.1vw solid;
   background-color: #434950;
 }
-
-
 
 .descrip-13 {
   color: #fff;
@@ -358,14 +368,20 @@ html {
   min-height: 53.3vw;
   background-image: url("/images/laptop6.jpg");
 }
+
+/* This is first background image of the About Us page*/
 .bgimg-7 {
   min-height: 53.3vw;
   background-image: url("/images/team.jpg");
 }
+
+/* This is the second background image of the About Us page*/
 .bgimg-8 {
   min-height: 46.6vw;
   background-image: url("/images/laptop5.jpg");
 }
+
+/* This is the third background image of the About Us page*/
 .bgimg-9 {
   min-height: 20vw;
   background-image: url("/images/phone.jpg");
@@ -386,10 +402,14 @@ html {
   min-height: 23.3vw;
   background-image: url("/images/phone2.jpg");
 }
+
+/* This is the background image of the BugFix.js page*/
 .bgimg-14 {
   min-height: 53.3vw;
   background-image: url("/images/laptop3.jpg");
 }
+
+/* This is the background image of the FeatureRequest.js page*/
 .bgimg-15 {
   min-height: 53.3vw;
   background-image: url("/images/laptop1.jpg");
@@ -452,7 +472,7 @@ html {
   width: 85%;
 }
 
-/*styling for the heading text - emphasis on the features of ARC*/
+/* Styling for the heading text */
 .caption {
   position: absolute;
   left: 0;
@@ -462,6 +482,7 @@ html {
   color: #000;
 }
 
+/* Styling for the heading text */
 .caption span.border {
   background-color: #111;
   color: #fff;
@@ -471,7 +492,7 @@ html {
   letter-spacing: 0.4vw;
 }
 
-/*all the h3 heading in the about.js section are style here*/
+/*styling for all the h3 heading*/
 h3 {
   letter-spacing: 0.3vw;
   text-transform: uppercase;
@@ -618,7 +639,6 @@ Sidebar wrapper styles
   background: rgba(0, 0, 0, 0.11);
 }
 
-
 /* the search button styling when not clicked*/
 .button {
   border: none;
@@ -629,7 +649,7 @@ Sidebar wrapper styles
   background: inherit;
 }
 
-/* the search bar styling during hover*/
+/* the search bar styling on hover*/
 .button:hover {
   border: none;
   background: inherit;
@@ -660,10 +680,16 @@ Sidebar wrapper styles
 }
 
 /* width of video will exapnd through the browser window*/
-video {
+#homeVideo{
   width: 100%;
 }
-
+#loadingvideo{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 /* this is the main heading - we analyse mobile app reviews*/
 .content {
   position: absolute;
@@ -708,9 +734,10 @@ video {
   border: solid 0.3vw white;
   cursor: pointer;
 }
-.searchPlaceholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color:white;
-  opacity: 1; 
+.searchPlaceholder::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
 }
 
 .form-control:focus {
@@ -730,7 +757,6 @@ video {
   font-weight: 900;
   color: white;
 }
-
 
 /* when the search bar is clicked on to type something*/
 .searchPlaceholder:focus {
@@ -885,12 +911,8 @@ video {
   }
 }
 
-/* *,
-*:before,
-*:after {
-  box-sizing: inherit;
-} */
-
+/*--------------------- Begin: Team members Info----------------------*/
+/* Styling for a column containing a team member card - AboutUs.js*/
 .columnTeam {
   float: left;
   width: 33.3%;
@@ -898,6 +920,7 @@ video {
   padding: 0 4vw;
 }
 
+/*Making the team member card responsive*/
 @media screen and (max-width: 63.3vw) {
   .columnTeam {
     width: 100%;
@@ -905,6 +928,7 @@ video {
   }
 }
 
+/*Styling for a card that holds the team member info*/
 .cardTeam {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
   font-family: "Lato", sans-serif;
@@ -915,33 +939,44 @@ video {
   padding-bottom: 2.6vw;
 }
 
+/*div to hold the name and github link*/
 .containerTeam {
   padding: 0 1.3vw;
 }
+
+/*styling the team member name*/
 .nameTeam {
   padding-top: 2.6vw;
   font-weight: 600;
 }
+
 .containerTeam::after,
 .rowTeam::after {
   content: "";
   clear: both;
   display: table;
 }
+
+/*styling for github links for each team member*/
 .githubLinks {
   text-decoration: none;
   color: #000;
   font-weight: 600;
 }
 
+/*styling changes when you hover over the github links*/
 .githubLinks:hover {
   font-weight: 900;
   color: #004688;
 }
+
+/*div that holds the team member image*/
 .imageContainer {
   padding-top: 2.6vw;
   padding-left: 18%;
 }
+
+/*Safiyyah Rahman Image*/
 .imageTeam {
   width: 17.8vw;
   height: 13.3vw;
@@ -951,9 +986,12 @@ video {
   background-image: url("/images/safiyyah.jpg");
 }
 
+/*Safiyyah Rahman image changes to show member role*/
 .imageTeam:hover {
   background-image: url("/images/safiyyah1.png");
 }
+
+/*Christina Thambirajah Image*/
 .imageTeam1 {
   width: 17.8vw;
   height: 13.3vw;
@@ -963,10 +1001,12 @@ video {
   background-image: url("/images/christina.jpg");
 }
 
+/*Christina Thambirajah image changes to show member role*/
 .imageTeam1:hover {
   background-image: url("/images/christina1.png");
 }
 
+/*Sajani Sihara Image*/
 .imageTeam2 {
   width: 17.8vw;
   height: 13.3vw;
@@ -976,10 +1016,12 @@ video {
   background-image: url("/images/sajani.jpg");
 }
 
+/*Sajani Sihara image changes to show member role*/
 .imageTeam2:hover {
   background-image: url("/images/sajani1.png");
 }
 
+/*Ridmi Amasha Image*/
 .imageTeam3 {
   width: 17.8vw;
   height: 13.3vw;
@@ -989,10 +1031,12 @@ video {
   background-image: url("/images/ridmi.png");
 }
 
+/*Ridmi Amasha image changes to show member role*/
 .imageTeam3:hover {
   background-image: url("/images/ridmi1.png");
 }
 
+/*Aarthif Nawaz Image*/
 .imageTeam4 {
   width: 17.7vw;
   height: 13.3vw;
@@ -1002,10 +1046,12 @@ video {
   background-image: url("/images/aarthif.jpg");
 }
 
+/*Aarthif Nawaz image changes to show member role*/
 .imageTeam4:hover {
   background-image: url("/images/aarthif1.png");
 }
 
+/*Shiromi Thevarajan Image*/
 .imageTeam5 {
   width: 17.8vw;
   height: 13.3vw;
@@ -1015,9 +1061,12 @@ video {
   background-image: url("/images/shiromi.jpg");
 }
 
+/*Shiromi Thevarajan image changes to show member role*/
 .imageTeam5:hover {
   background-image: url("/images/shiromi1.png");
 }
+/*--------------------- End: Team members Info----------------------*/
+
 .commentInput {
   border: none;
   border-bottom: solid 0.1vw #ccc;
@@ -1026,6 +1075,7 @@ video {
   font-size: 1.3vw;
   color: #282e34;
   font-weight: 600;
+  width: 35%;
 }
 .commentInput:active {
   border: none;
@@ -1037,6 +1087,8 @@ video {
   font-weight: 600;
   background-color: #282e34;
   border: none;
+  width: 15%;
+  border-radius:1.5vw;
 }
 .commentSubmit:hover {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
@@ -1080,7 +1132,6 @@ video {
   color: #282e34;
   text-align: justify;
   padding-top: 1vw;
-
 }
 .RemainingReviewText {
   font-size: 2.5vh;

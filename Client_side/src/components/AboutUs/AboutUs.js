@@ -1,3 +1,9 @@
+/* 
+  Page      - AboutUs.js page
+  Function  - Provides information regarding ARC and the team members
+  Author    - Sajani Sihara
+*/
+
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Footer from "../NavigationBar/Footer";
@@ -5,8 +11,10 @@ import Footer from "../NavigationBar/Footer";
 function AboutUs() {
   return (
     <Container fluid style={{ boxSizing: "border-box" }}>
-      <div class="bgimg-7">
-        <div class="caption">
+      {/*Adding the background image*/}
+      <div className="bgimg-7">
+        {/*Adding the main heading */}
+        <div className="caption">
           <span className="border">
             Helping mobile application developers move forward.
           </span>
@@ -14,6 +22,7 @@ function AboutUs() {
       </div>
 
       <div>
+        {/*Adding a quote about vision of ARC*/}
         <h2
           style={{
             textAlign: "center",
@@ -30,7 +39,7 @@ function AboutUs() {
           “We believe that we are on the face of the earth to make great
           products and that’s not changing.”
         </h2>
-
+        {/*Adding a div that will hold the intro para */}
         <div className="descrip-6">
           <p
             style={{
@@ -49,10 +58,12 @@ function AboutUs() {
         </div>
       </div>
 
-      <div class="bgimg-8">
-        <div class="caption">
+      {/*The second background image */}
+      <div className="bgimg-8">
+        {/*Adding text about the team */}
+        <div className="caption">
           <span
-            class="border"
+            className="border"
             style={{
               backgroundColor: "#282e34",
               fontSize: "2vw",
@@ -64,7 +75,9 @@ function AboutUs() {
         </div>
       </div>
 
+      {/* Starting a new div that will hold the ARC goals */}
       <div style={{ position: "relative" }}>
+        {/*Styling the text with dark blue background */}
         <div className="descrip-2">
           <h3
             style={{
@@ -76,6 +89,7 @@ function AboutUs() {
           >
             our values and goals
           </h3>
+          {/*Adding the text about ARC goals */}
           <p
             style={{
               paddingLeft: "16.6vw",
@@ -87,124 +101,158 @@ function AboutUs() {
             As young software engineers stepping out into the world with fresh
             wild eyes, we are motivated to provide the best environment for
             mobile application developers to connect with their customers. In an
-            exponentially advancing world, it is rather bizarre how the
-            opinions of more than 70% of app users go unaddressed. To bridge this
-            lack of communication, we present to you - ARC. An innovative
-            project utilising data science to keep track of the latest data and
-            help mobile application developers move one step closer to their end
-            goal - satisfying their customers and creating a business
-            potential.
+            exponentially advancing world, it is rather bizarre how the opinions
+            of more than 70% of app users go unaddressed. To bridge this lack of
+            communication, we present to you - ARC. An innovative project
+            utilising data science to keep track of the latest data and help
+            mobile application developers move one step closer to their end goal
+            - satisfying their customers and creating a business potential.
           </p>
         </div>
       </div>
-
-      <div class="bgimg-9">
-        <div class="caption">
-          <span class="border">MEET THE MEMBERS OF TEAM R3ACT</span>
+      {/*The third background image */}
+      <div className="bgimg-9">
+        {/*Starting the new div meet the team */}
+        <div className="caption">
+          <span className="border">MEET THE MEMBERS OF TEAM R3ACT</span>
         </div>
       </div>
-
+      {/*Styling the new div that will hold the info regarding the team members */}
       <div className="descrip-7">
-        <div class="row">
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <div className="imageContainer"style={{padding:"2.85vw"}}>
+        {/*First row will have Safiyyah, Christina and Sajani */}
+        <div className="row">
+          {/*Safiyyah Rahman Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
                 <div className="imageTeam"></div>
               </div>
-              <div class="containerTeam">
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
                 <h3 className="nameTeam">Safiyyah Rahman</h3>
                 <a href="https://github.com/SafiyyahR" className="githubLinks">
-                  <p style={{fontSize:"1vw"}}>github : SafiyyahR</p>
+                  <p style={{ fontSize: "1vw" }}>github : SafiyyahR</p>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <div className="imageContainer" style={{padding:"2.85vw"}}>
+          {/*Christina Thambirajah Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
                 <div className="imageTeam1"></div>
               </div>
-              <div class="containerTeam">
-                <h3 className="nameTeam" style={{fontSize:"1vw"}}>Christina Thambirajah</h3>
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
+                <h3 className="nameTeam" style={{ fontSize: "1vw" }}>
+                  Christina Thambirajah
+                </h3>
                 <a
                   href="https://github.com/chrisitina-thambirajah"
                   className="githubLinks"
                 >
-                  <p style={{fontSize:"1vw"}}>github : chrisitina-thambirajah</p>
+                  <p style={{ fontSize: "1vw" }}>
+                    github : chrisitina-thambirajah
+                  </p>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <div className="imageContainer" style={{padding:"2.85vw"}}>
+          {/*Sajani Sihara Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
                 <div className="imageTeam2"></div>
               </div>
-              <div class="containerTeam">
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
                 <h3 className="nameTeam">Sajani Sihara</h3>
                 <a
                   href="https://github.com/sajani-sihara"
                   className="githubLinks"
                 >
-                  <p style={{fontSize:"1vw"}}>github : sajani-sihara</p>
+                  <p style={{ fontSize: "1vw" }}>github : sajani-sihara</p>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="row" style={{ paddingTop: "1.3vw" }}>
-
-          <div class="columnTeam">
-          <div class="cardTeam">
-            <div className="imageContainer" style={{padding:"2.85vw"}}>
-              <div className="imageTeam3"></div>
-            </div>
-            <div class="containerTeam">
-              <h3 className="nameTeam">Ridmi Amasha</h3>
-              <a href="https://github.com/ridmi98" className="githubLinks">
-                <p style={{fontSize:"1vw"}}>github : ridmi98</p>
-              </a>
-            </div>
-            </div>
-          </div>
-
-          <div class="columnTeam">
-          <div class="cardTeam">
-            <div className="imageContainer" style={{padding:"2.85vw"}}>
-              <div className="imageTeam4"></div>
-            </div>
-            <div class="containerTeam">
-              <h3 className="nameTeam">Aarthif Nawaz</h3>
-              <a
-                href="https://github.com/Aarthif-Nawaz"
-                className="githubLinks"
-              >
-                <p style={{fontSize:"1vw"}}>github : Aarthif-Nawaz</p>
-              </a>
-            </div>
-          </div>
-          </div>
-
-          <div class="columnTeam">
-            <div class="cardTeam">
-              <div className="imageContainer"style={{padding:"2.85vw"}}>
-                <div className="imageTeam5"></div>
+        {/*Second row will contain info regarding Rdimi, Aarthif and Shiromi */}
+        <div className="row" style={{ paddingTop: "1.3vw" }}>
+          {/*Ridmi Amasha Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
+                <div className="imageTeam3"></div>
               </div>
-              <div class="containerTeam">
-                <h3 className="nameTeam">Shiromi Thevarajan</h3>
-                <a
-                  href="https://github.com/shiromi-basil"
-                  className="githubLinks"
-                >
-                  <p style={{fontSize:"1vw"}}>github : shiromi-basil</p>
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
+                <h3 className="nameTeam">Ridmi Amasha</h3>
+                <a href="https://github.com/ridmi98" className="githubLinks">
+                  <p style={{ fontSize: "1vw" }}>github : ridmi98</p>
                 </a>
               </div>
             </div>
           </div>
 
+          {/*Aarthif Nawaz Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
+                <div className="imageTeam4"></div>
+              </div>
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
+                <h3 className="nameTeam">Aarthif Nawaz</h3>
+                <a
+                  href="https://github.com/Aarthif-Nawaz"
+                  className="githubLinks"
+                >
+                  <p style={{ fontSize: "1vw" }}>github : Aarthif-Nawaz</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/*Shiromi Thevarajan Card */}
+          <div className="columnTeam">
+            {/*div for one card */}
+            <div className="cardTeam">
+              {/*div to hold the image */}
+              <div className="imageContainer" style={{ padding: "2.85vw" }}>
+                {/*the image is in a div container because on hover the image will change to show the team member's role */}
+                <div className="imageTeam5"></div>
+              </div>
+              {/*div to hold the name and github link */}
+              <div className="containerTeam">
+                <h3 className="nameTeam">Shiromi Thevarajan</h3>
+                <a
+                  href="https://github.com/shiromi-basil"
+                  className="githubLinks"
+                >
+                  <p style={{ fontSize: "1vw" }}>github : shiromi-basil</p>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

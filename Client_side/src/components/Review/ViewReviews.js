@@ -4,15 +4,27 @@ import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
 import Footer from "../NavigationBar/Footer";
 
+/**
+ * All the reviews are displayed here
+ * @param {*} props
+ */
 function ViewAllReviews(props) {
+
+  //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
+  //props and state for error checking
   const [error, setError] = useState(null);
+  //props and state for retrieve data from api
   const [items, setItems] = useState([]);
  
-
+  //api call for calling keywords either in bugfix or feature request
   const {urlLink} = props.location.state;
+  //keyword pased as state from '/reviews' link
   const {keyword} = props.location.state;
-  console.log(urlLink)
+
+  //console.log(urlLink)
+
+  //calls the api 'urlLink'
   useEffect(() => {
     fetch(urlLink)
       .then((res) => res.json())
@@ -27,19 +39,21 @@ function ViewAllReviews(props) {
         }
       );
      
-  }, []);
+  }, [urlLink]);
 
   if (error) {
+    //Error shown if the api calls fails
     return <ErrorPage errorDet={error.message} />;
   } else if (!isLoaded) {
+    //Loading while ui retrieve json data from api
     return <LoadingBox />;
   } else {
     
     
     return (
       <div>
-        <div class="bgimg-5">
-          <div class="caption">
+        <div className="bgimg-5">
+          <div className="caption">
             <span className="border">
                Reviews addressing "{keyword}"
             </span>
@@ -50,12 +64,12 @@ function ViewAllReviews(props) {
             {items.map((item) => (
               <li key={items._id} style={{ listStyleType: "none" }}>
                 <div className={"descrip-" + (items.indexOf(item) % 2 ? "4" : "5")}>
-                  {/* author={item.userName} date={item.date} score={item.rating} text={item.text} */}
-
+                 
+                {/*Review component for each review retrieve that iterates from the api */}
                   <Review
                     id={item._id}
                     author={item.username}
-                    date={item.date}
+                    date={item.date.toLocaleDateString() }
                     score={item.rating}
                     text={item.partReview}
                   />

@@ -12,16 +12,16 @@ function HomePage() {
     if (divToFocus.current) {
       divToFocus.current.scrollIntoView({
         behavior: "smooth",
-        block: "nearest"
+        block: "nearest",
       });
     }
   }
   return (
-    <Container fluid style={{ padding: 0 }}>
-      <Row>
-        <Container fluid className="introBox">
-          <Container fluid className="video-container">
-            <video className="videoBg" autoPlay loop muted>
+    <div className="container-fluid" style={{ padding: 0 }}>
+      <div className="row">
+        <div className="conatiner-fluid introBox">
+          <div className="conatiner-fluid video-container">
+            <video id="homeVideo" autoPlay loop muted>
               <source
                 src={process.env.PUBLIC_URL + "/images/bgvideo.mp4"}
                 type="video/mp4"
@@ -31,27 +31,37 @@ function HomePage() {
             <div className="content">
               <SearchApps />
               <p
-              style={{fontSize:"1.25vw", color:"#fff",paddingTop:"7.3vw",fontWeight:700}}>Explore</p>
-              <Row>
-                
-                <button className="scrollArrow" onClick={handleOnClick} style={{backgroundColor:"transparent", border:"none"}}>
+                style={{
+                  fontSize: "1.25vw",
+                  color: "#fff",
+                  paddingTop: "7.3vw",
+                  fontWeight: 700,
+                }}
+              >
+                Explore
+              </p>
+              <div className="row">
+                <button
+                  className="scrollArrow"
+                  onClick={handleOnClick}
+                  style={{ backgroundColor: "transparent", border: "none" }}
+                >
                   <img
                     alt="Arrow Down Icon"
                     src={process.env.PUBLIC_URL + "/images/arrowDown.png"}
-                    style={{width:"5.3vw", height:"2.3vw"}}
+                    style={{ width: "5.3vw", height: "2.3vw" }}
                   />
                 </button>
-               
-              </Row>
+              </div>
             </div>
-          </Container>
-        </Container>
-      </Row>
-      <Row ref={divToFocus}>
+          </div>
+        </div>
+      </div>
+      <div className="row" ref={divToFocus}>
         <About />
-      </Row>
-      <Footer/>
-    </Container>
+      </div>
+      <Footer />
+    </div>
   );
 }
 export default HomePage;

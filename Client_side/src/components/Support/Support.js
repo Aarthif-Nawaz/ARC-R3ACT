@@ -5,8 +5,8 @@ import Footer from "../NavigationBar/Footer";
 function Support() {
   return (
     <Container fluid style={{ boxSizing: "border-box" }}>
-      <div class="bgimg-10">
-        <div class="caption">
+      <div className="bgimg-10">
+        <div className="caption">
           <span className="border">
             Know more about Application Review Classifier.
           </span>
@@ -47,10 +47,10 @@ function Support() {
         </div>
       </div>
 
-      <div class="bgimg-11">
-        <div class="caption">
+      <div className="bgimg-11">
+        <div className="caption">
           <span
-            class="border"
+            className="border"
             style={{
               backgroundColor: "#282e34",
               fontSize: "2vw",

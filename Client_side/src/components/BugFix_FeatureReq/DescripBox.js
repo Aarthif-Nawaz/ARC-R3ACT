@@ -1,88 +1,141 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import Button from "react-bootstrap/Button";
 import { Link, useLocation } from "react-router-dom";
+/**
+ * Description component for bug fix page, feature request
+ * @param {*} props
+ */
+function DescripBox(props) {
+  //Current browser url object is stored in location
+  let location = useLocation();
+  //Path to the current browser page
+  const currentURL = location.pathname;
 
+  //keywords are passed through the component
+  const keywords = props.keywords;
+  //Type of whether bug fix or feature request is passed as a prop through component
+  const para = props.type;
+  //Dynamic url to stores the api link
+  let url = "";
+  //localstorage value of app id
+  const app = localStorage.getItem("appName");
 
-function DescripBox(props){
-    const keywords = props.keywords;
-    let location = useLocation();
-    const currentURL = location.pathname;
- 
-    const para = props.type;
-    let url = "";
-    
-    if(para === "fr"){
-         url = 'http://localhost:5000/featurereqs/reviews/com.android.chrome/'+keywords;
-         return(
-        
-            <div className='container-fluid'>
-                <div className="center-content">
-                  
-                    <div className='row m-1'>
-                        <div className='col'><p>Keywords</p></div>
-                        <div className='col'>
-                            
-                                <div variant='secondary' className={"m-1 " + (props.type === 'bug' ? "bug" : "fr")+"KeywordBtn"}>{keywords}</div>
-                         
-                        </div>
-                    </div>  
-                    <div className='row m-1'>
-                        <div className='col'><p>Sentiment</p></div>
-                        <div className='col'>{props.points}</div>
-                    </div> 
-                    </div>            
-                    <div className='container text-right '>
-                    <Link to={{
-                           pathname:currentURL+'/reviews',
-                           state:{
-                               urlLink:url,
-                               keyword:keywords
-                           },
-                           search:'?keyword='+keywords
-                       }}>
-                        <Button variant='secondary' id="DescripBtn" className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn" } >View Reviews</Button>
-                        </Link>
-                    </div>
-                
+  //checks if passed props type is feature request
+  if (para === "fr") {
+    //api for keywords api
+    url = "http://localhost:5000/featurereqs/reviews/" + app + "/" + keywords;
+    return (
+      <div className="container-fluid">
+        <div className="center-content">
+          <div className="row m-1">
+            <div className="col">
+              <p>Keywords</p>
             </div>
-        );
-    }
-    else{
-        url = 'http://localhost:5000/bugfixes/reviews/com.android.chrome/'+keywords;
-        return(
-        
-            <div className='container-fluid'>
-                <div className="center-content">
-                  
-                    <div className='row m-1'>
-                        <div className='col'><p>Keywords</p></div>
-                        <div className='col'>
-                           
-                        <div variant='secondary' className={"m-1 " + (props.type === 'bug' ? "bug" : "fr")+"KeywordBtn"}>{keywords}</div>
-                          
-                        </div>
-                    </div>  
-                    <div className='row m-1'>
-                        <div className='col'><p>Bug sentiment</p></div>
-                        <div className='col'>{props.points}</div>
-                    </div> 
-                    </div>            
-                    <div className='container text-right'>
-                       <Link to={{
-                           pathname:currentURL+'/reviews',
-                           state:{
-                               urlLink:url,
-                               keyword:keywords
-                           },
-                           search:'?keyword='+keywords
-                       }}> <Button variant='secondary' id="DescripBtn" className={"mx-2  " + (props.type === 'bug' ? "bug" : "fr")+"DescripBtn"} >View Reviews</Button>
-                       </Link>
-                    </div>
-                
+            <div className="col">
+              <div
+                variant="secondary"
+                className={
+                  "m-1 " + (props.type === "bug" ? "bug" : "fr") + "KeywordBtn"
+                }
+              >
+                {keywords}
+              </div>
             </div>
-        );
+          </div>
+          <div className="row m-1">
+            <div className="col">
+              <p>Sentiment</p>
+            </div>
+            <div className="col">{props.points}</div>
+          </div>
+        </div>
+        <div className="container text-right ">
+          {/**Links to the page that retriews the reviews related to the keywords
+           * keyword is passed as the query to the url
+           * keywords,url are send as state
+           */}
+          <Link
+            to={{
+              pathname: currentURL + "/reviews",
+              state: {
+                urlLink: url,
+                keyword: keywords,
+              },
+              search: "?keyword=" + keywords,
+            }}
+          >
+            <Button
+              variant="secondary"
+              id="DescripBtn"
+              className={
+                "mx-2  " + (props.type === "bug" ? "bug" : "fr") + "DescripBtn"
+              }
+            >
+              View Reviews
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  } else {
+    {
+      /**For Bug fixes reviews related to the given keyword */
     }
-    
+    url = "http://localhost:5000/bugfixes/reviews/" + app + "/" + keywords;
+    return (
+      <div className="container-fluid">
+        <div className="center-content">
+          <div className="row m-1">
+            <div className="col">
+              <p>Keywords</p>
+            </div>
+            <div className="col">
+              <div
+                variant="secondary"
+                className={
+                  "m-1 " + (props.type === "bug" ? "bug" : "fr") + "KeywordBtn"
+                }
+              >
+                {keywords}
+              </div>
+            </div>
+          </div>
+          <div className="row m-1">
+            <div className="col">
+              <p>Bug sentiment</p>
+            </div>
+            <div className="col">{props.points}</div>
+          </div>
+        </div>
+        <div className="container text-right">
+          {/**Links to the page that retriews the reviews related to the keywords
+           * keyword is passed as the query to the url
+           * keywords,url are send as state
+           */}
+          <Link
+            to={{
+              pathname: currentURL + "/reviews",
+              state: {
+                urlLink: url,
+                keyword: keywords,
+              },
+              search: "?keyword=" + keywords,
+            }}
+          >
+            {" "}
+            <Button
+              variant="secondary"
+              id="DescripBtn"
+              className={
+                "mx-2  " + (props.type === "bug" ? "bug" : "fr") + "DescripBtn"
+              }
+            >
+              View Reviews
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 export default DescripBox;
