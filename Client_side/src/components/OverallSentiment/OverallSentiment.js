@@ -1,3 +1,9 @@
+/* 
+  Page      - OverallSentiment.js page
+  Function  - Shows the overall sentiment and other info about a chosen application
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useEffect, useState } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";

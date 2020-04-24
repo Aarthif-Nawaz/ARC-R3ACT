@@ -1,3 +1,9 @@
+/* 
+  Page      - HomePage.js page
+  Function  - Shows the first screen of the ARC website
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -19,6 +25,7 @@ function HomePage() {
   return (
     <div className="container-fluid" style={{ padding: 0 }}>
       <div className="row">
+        {/*the background of this page is a video */}
         <div className="conatiner-fluid introBox">
           <div className="conatiner-fluid video-container">
             <video id="homeVideo" autoPlay loop muted>
@@ -28,8 +35,11 @@ function HomePage() {
               />
             </video>
 
+            {/*adding the search bar component */}
             <div className="content">
               <SearchApps />
+
+              {/*adding the explore text */}
               <p
                 style={{
                   fontSize: "1.25vw",
@@ -40,6 +50,8 @@ function HomePage() {
               >
                 Explore
               </p>
+
+              {/*adding a down arrow. upon clicking it, it will move to About.js */}
               <div className="row">
                 <button
                   className="scrollArrow"
@@ -60,6 +72,8 @@ function HomePage() {
       <div className="row" ref={divToFocus}>
         <About />
       </div>
+
+      {/*adding the footer component */}
       <Footer />
     </div>
   );

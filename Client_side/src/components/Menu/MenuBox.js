@@ -1,3 +1,9 @@
+/* 
+  Page      - MenuBox.js page
+  Function  - Displays the menu (Bug Fixes, Feature Requests and Overall Sentiment)
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useState, useEffect } from "react";
 //import LoadingBox from "../Error/LoadingBox";
 //import ErrorPage from "../Error/Crashed";

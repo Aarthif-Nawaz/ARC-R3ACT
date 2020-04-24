@@ -75,14 +75,14 @@ function FeatureRequest() {
 
           <div className="descrip-12">
             <div className="container text-center">
-              {/**
-               * Links to the feature requests that hasn't common keyword
-               */}
+              {/*Link to the feature requests that don't have a common keyword*/}
+
               <Link
                 to={{
                   pathname: currentURL + "/remainingFeatureRequests",
                 }}
               >
+                {/*clicking on the button will lead to the remainingFR.js page */}
                 <Button
                   variant="secondary"
                   className="mx-4 bugDescripBtn"

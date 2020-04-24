@@ -1,9 +1,13 @@
+/* 
+  Page        - Crashed.js page
+  Function    - Shows the error page when the page crashes
+  Parameters  - @param {errorDet} props
+  Author      - Ridmi Amasha
+*/
+
 import React from "react";
 import "../../App.css";
-/**
- * Page that displays when the page crashes
- * @param {errorDet} props
- */
+
 function CrashPage(props) {
   return (
     <div className="container-fluid error_div">

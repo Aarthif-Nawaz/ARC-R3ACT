@@ -1,15 +1,17 @@
+/* 
+  Page      - Review.js page
+  Function  - Review Component
+  Parameter - @param {*} props from the ViewReview.js
+            - Uses the props pass, to show the data
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import Moment from 'react-moment';
-
-/**
- * Review Component
- * @param {*} props from the ViewReview.js
- * Uses the props pass, to show the data
- */
+import Moment from "react-moment";
 
 function Review(props) {
   //Current url object in the browser stored into location variable
@@ -24,7 +26,9 @@ function Review(props) {
     <div className="col-8 container-fluid" style={{ padding: 0 }}>
       <div style={{ width: "45vw" }}>
         <p>Author Name : {props.author}</p>
-        <p>Date : <Moment format="YYYY/MM/DD">{reviewDate}</Moment></p>
+        <p>
+          Date : <Moment format="YYYY/MM/DD">{reviewDate}</Moment>
+        </p>
         <div className="star">
           {[...Array(Number(props.score))].map((i) => (
             <label key={i + 1}>★</label>

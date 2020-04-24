@@ -1,9 +1,12 @@
+/* 
+  Page      - SearchDescripBox.js page
+  Function  - Displays each value of the props
+  Parameter - @param {*} props
+  Author    - Christina Thambirajah
+*/
+
 import React from "react";
-/**
- * Search Description Box
- * Displays the each values of the props
- * @param {*} props
- */
+
 function SearchDescripBox(props) {
   return (
     <div class="searchBox">

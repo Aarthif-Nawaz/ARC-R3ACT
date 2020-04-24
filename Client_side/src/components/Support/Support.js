@@ -1,3 +1,9 @@
+/* 
+  Page      - Support.js page
+  Function  - Provides information regarding ARC such as FAQs
+  Author    - Sajani Sihara
+*/
+
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Footer from "../NavigationBar/Footer";

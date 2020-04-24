@@ -1,3 +1,9 @@
+/* 
+  Page      - ViewReview.js page
+  Function  - All the reviews are displayed here
+  Parameter - @param {*} props
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
 import React, { useEffect, useState } from "react";
 import Review from "./Review";
 import LoadingBox from "../Error/LoadingBox";
@@ -9,18 +15,17 @@ import Footer from "../NavigationBar/Footer";
  * @param {*} props
  */
 function ViewAllReviews(props) {
-
   //props and state for loading
   const [isLoaded, setIsLoaded] = useState(false);
   //props and state for error checking
   const [error, setError] = useState(null);
   //props and state for retrieve data from api
   const [items, setItems] = useState([]);
- 
+
   //api call for calling keywords either in bugfix or feature request
-  const {urlLink} = props.location.state;
+  const { urlLink } = props.location.state;
   //keyword pased as state from '/reviews' link
-  const {keyword} = props.location.state;
+  const { keyword } = props.location.state;
 
   //console.log(urlLink)
 
@@ -38,7 +43,6 @@ function ViewAllReviews(props) {
           setError(error);
         }
       );
-     
   }, [urlLink]);
 
   if (error) {
@@ -48,28 +52,25 @@ function ViewAllReviews(props) {
     //Loading while ui retrieve json data from api
     return <LoadingBox />;
   } else {
-    
-    
     return (
       <div>
         <div className="bgimg-5">
           <div className="caption">
-            <span className="border">
-               Reviews addressing "{keyword}"
-            </span>
+            <span className="border">Reviews addressing "{keyword}"</span>
           </div>
         </div>
         <div>
-          <ul style={{margin:0,padding:0}}>
+          <ul style={{ margin: 0, padding: 0 }}>
             {items.map((item) => (
               <li key={items._id} style={{ listStyleType: "none" }}>
-                <div className={"descrip-" + (items.indexOf(item) % 2 ? "4" : "5")}>
-                 
-                {/*Review component for each review retrieve that iterates from the api */}
+                <div
+                  className={"descrip-" + (items.indexOf(item) % 2 ? "4" : "5")}
+                >
+                  {/*Review component for each review retrieve that iterates from the api */}
                   <Review
                     id={item._id}
                     author={item.username}
-                    date={item.date }
+                    date={item.date}
                     score={item.rating}
                     text={item.partReview}
                   />
@@ -81,8 +82,6 @@ function ViewAllReviews(props) {
         <Footer />
       </div>
     );
-            
-
   }
 }
 export default ViewAllReviews;

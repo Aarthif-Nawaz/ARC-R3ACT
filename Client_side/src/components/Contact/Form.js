@@ -1,9 +1,12 @@
+/* 
+  Page      - Form.js page
+  Function  - Form component in Contact.js page
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useRef } from "react";
 import FormValidation from "./FormValidation.js";
 
-/**
- * Form Component in Contact page
- */
 function Form() {
   const stateSchema = {
     name: { value: "", error: "" },
@@ -73,6 +76,7 @@ function Form() {
   };
   return (
     <form onSubmit={handleOnSubmit}>
+      {/*Input field to add the name */}
       <input
         className="commentInput"
         type="text"
@@ -84,8 +88,11 @@ function Form() {
         required
       ></input>
       {state.name.error && <p style={errorStyle}>{state.name.error}</p>}
+
       <br></br>
       <br></br>
+
+      {/*Input field to add the email address */}
       <input
         className="commentInput"
         type="email"
@@ -97,8 +104,11 @@ function Form() {
         required
       ></input>
       {state.email.error && <p style={errorStyle}>{state.email.error}</p>}
+
       <br></br>
       <br></br>
+
+      {/*Input field to add the phone number */}
       <input
         className="commentInput"
         type="text"
@@ -108,8 +118,11 @@ function Form() {
         placeholder="Phone Number"
       ></input>
       {state.phone.error && <p style={errorStyle}>{state.phone.error}</p>}
+
       <br />
       <br />
+
+      {/*Input field to add the comment/message */}
       <input
         className="commentInput"
         type="text"
@@ -120,8 +133,11 @@ function Form() {
         required
       ></input>
       {state.message.error && <p style={errorStyle}>{state.message.error}</p>}
+
       <br></br>
       <br></br>
+
+      {/*Clicking this button will send the comment to the database with the user info */}
       <input
         className="commentSubmit"
         type="submit"

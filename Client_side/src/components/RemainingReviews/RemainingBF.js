@@ -1,3 +1,9 @@
+/* 
+  Page      - RemainingBF.js page
+  Function  - Shows the reviews pertaining to bug fixes that does not have a common keyword
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React, { useEffect, useState } from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";

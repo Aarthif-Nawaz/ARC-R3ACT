@@ -1,3 +1,9 @@
+/* 
+  Page      - FormValidation.js page
+  Function  - Consists of the validations for the comment form
+  Author    - Ridmi Amasha
+*/
+
 import { useState, useEffect, useCallback } from "react";
 
 function FormValidation(stateSchema = {}, validationSchema = {}, formCallback) {
@@ -21,8 +27,8 @@ function FormValidation(stateSchema = {}, validationSchema = {}, formCallback) {
 
   /**
    * Disables the button if there is an error in the state
-   * or required feild has no value
-   * Used useCall back to avoid memory been leaked
+   * or required field has no value
+   * Used useCall back to avoid memory leakage
    */
   const validateErrorState = useCallback(() => {
     const hasErrorInState = Object.keys(validationSchema).some((key) => {
@@ -45,7 +51,7 @@ function FormValidation(stateSchema = {}, validationSchema = {}, formCallback) {
       let error = "";
       if (validationSchema[name].required) {
         if (!value) {
-          error = "This is required field";
+          error = "This is a required field.";
         }
       }
 

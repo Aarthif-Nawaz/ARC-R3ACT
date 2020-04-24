@@ -1,10 +1,14 @@
+/* 
+  Page        - DescripBox.js page
+  Function    - Description component for bug fix page, feature request
+  Parameter   - @param {*} props
+  Author      - Sajani Sihara, Ridmi Amasha
+*/
+
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link, useLocation } from "react-router-dom";
-/**
- * Description component for bug fix page, feature request
- * @param {*} props
- */
+
 function DescripBox(props) {
   //Current browser url object is stored in location
   let location = useLocation();
@@ -50,9 +54,9 @@ function DescripBox(props) {
           </div>
         </div>
         <div className="container text-right ">
-          {/**Links to the page that retriews the reviews related to the keywords
+          {/*Links to the page that retrieves the reviews related to the keywords
            * keyword is passed as the query to the url
-           * keywords,url are send as state
+           * keyword url is sent as state
            */}
           <Link
             to={{
@@ -108,9 +112,9 @@ function DescripBox(props) {
           </div>
         </div>
         <div className="container text-right">
-          {/**Links to the page that retriews the reviews related to the keywords
+          {/*Links to the page that retrieves the reviews related to the keywords
            * keyword is passed as the query to the url
-           * keywords,url are send as state
+           * keywords url is sent as state
            */}
           <Link
             to={{

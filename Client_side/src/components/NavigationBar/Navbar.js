@@ -1,3 +1,9 @@
+/* 
+  Page      - Navbar.js page
+  Function  - This is the navigation bar component used in all the pages
+  Author    - Sajani Sihara, Ridmi Amasha
+*/
+
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { elastic as Menu } from "react-burger-menu";
@@ -6,6 +12,7 @@ import "../../App.css";
 function NavBar() {
   return (
     <Navbar>
+      {/*this is logo on the left side of the page, it's a link to the home page */}
       <Navbar.Brand href="/">
         <img
           className="bugLogo"
@@ -15,6 +22,7 @@ function NavBar() {
         />
       </Navbar.Brand>
       <div id="outer-container">
+        {/*the right side nav bar has links to home, about, contact and support pages */}
         <Menu
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}

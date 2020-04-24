@@ -256,6 +256,7 @@ function AboutUs() {
         </div>
       </div>
 
+      {/*Adding the footer component */}
       <Footer />
     </Container>
   );
