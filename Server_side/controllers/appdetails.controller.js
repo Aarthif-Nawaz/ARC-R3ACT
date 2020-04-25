@@ -110,13 +110,13 @@ exports.storeDetails = async function (request, response) {
               // Call storeReviews method to add reviews to the database
               await reviewsController.storeReviews(title, request, response);
             } catch (error) {
-              return response.status(500).send(error);
+              return response.send(error);
             }
           } else {
             // If the review count is less than 100,
             // send this error message to the client
             console.log("Sorry! The number of reviews is less than 100.");
-            response.status(500).send({
+            response.send({
               message: "Sorry! The number of reviews is less than 100.",
             });
           }
