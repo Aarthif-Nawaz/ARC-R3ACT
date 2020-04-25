@@ -148,7 +148,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 1.5vw;
-  padding: 3.3vw;
+  padding: 0.5vw;
   font-weight: 700;
 }
 #DescripBtn {
@@ -372,17 +372,17 @@ html {
   background-image: url("/images/img_parallax3.jpg");
 }
 .bgimg-5 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/reviews.jpg");
 }
 .bgimg-6 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/laptop6.jpg");
 }
 
 /* This is first background image of the About Us page*/
 .bgimg-7 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/team.jpg");
 }
 
@@ -398,7 +398,7 @@ html {
   background-image: url("/images/phone.jpg");
 }
 .bgimg-10 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/support1.jpeg");
 }
 .bgimg-11 {
@@ -407,7 +407,7 @@ html {
 }
 /* This is the first background image of the Contact.js page*/
 .bgimg-12 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/phone1.jpg");
 }
 
@@ -419,33 +419,33 @@ html {
 
 /* This is the background image of the BugFix.js page*/
 .bgimg-14 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/laptop3.jpg");
 }
 
 /* This is the background image of the FeatureRequest.js page*/
 .bgimg-15 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/laptop1.jpg");
 }
 .bgimg-16 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/laptop7.jpg");
 }
 .bgimg-17 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/onereview.jpg");
 }
 .bgimg-18 {
-  min-height: 20vw;
+  min-height: 25vw;
   background-image: url("/images/phone3.jpg");
 }
 .bgimg-19 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/remaining.jpg");
 }
 .bgimg-20 {
-  min-height: 25vw;
+  min-height: 53.3vw;
   background-image: url("/images/remaining1.jpg");
 }
 /* Float four columns side by side */
