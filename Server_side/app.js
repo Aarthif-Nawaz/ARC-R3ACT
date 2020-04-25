@@ -10,7 +10,8 @@
  *
  * Execute 'npm install' before 'npm start'.
  */
-const path = require('path');
+
+var path = require('path');
 
 var createError = require("http-errors");
 var express = require("express");
@@ -30,8 +31,10 @@ var contactUsRouter = require("./routes/contactus.route");
 
 var app = express();
 
-// view engine setup
 app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -53,10 +56,6 @@ app.use("/fullreview", fullReviewRouter);
 app.use("/sentiment", sentimentRouter);
 app.use("/contactus", contactUsRouter);
 
-//checking is application si available on heroku
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
