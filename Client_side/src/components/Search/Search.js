@@ -68,6 +68,7 @@ function Search(props) {
                     pathname: app + "/" + item.appId,
                     state: { appId: item.appId },
                   }}
+                  
                 >
                   {/*Sends iterated items from the api to display on SearchDescripBox component */}
                   <SearchDescripBox

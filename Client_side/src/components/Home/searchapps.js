@@ -20,13 +20,14 @@ function SearchAppsClass() {
           <div className="container-fluid" id="header">
             <p>We analyse mobile app reviews.</p>
           </div>
-          <div className="container-fluid">
+          <div className="container-fluid" style={{width:"50vw"}}>
             {/*adding the search bar */}
             <div className="container searchBar">
-              <div className="input-group mb-3 searchInputGroup">
+              <div className="input-group searchInputGroup">
                 <input
                   type="text"
-                  className="form-control searchPlaceholder"
+                  id="searchPlaceholder"
+                  className="form-control"
                   placeholder="Search for a mobile app"
                   aria-label="search for a mobile app"
                   aria-describedby="basic-addon2"
@@ -39,8 +40,7 @@ function SearchAppsClass() {
                     <button
                       className="button searchbtn"
                       type="submit"
-                      variant="outline-secondary"
-                    >
+                      variant="outline-secondary">
                       SEARCH
                     </button>
                   </Link>

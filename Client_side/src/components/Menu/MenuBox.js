@@ -147,7 +147,7 @@ class MenuBox extends React.Component {
             type="button"
             className="btn btn-light"
             id="backBtn"
-            onClick={() => props.history.goBack()}
+            onClick={() => this.props.history.goBack()}
           >
             <FontAwesomeIcon icon={faArrowLeft} style={{ width: "2vw" }} />
           </button>

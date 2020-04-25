@@ -136,7 +136,7 @@ html {
   color: #fff;
   background-color: #434950;
   font-size: 1.5vw;
-  padding: 3.3vw;
+  padding: 0.5vw;
   font-weight: 700;
 }
 
@@ -372,17 +372,17 @@ html {
   background-image: url("/images/img_parallax3.jpg");
 }
 .bgimg-5 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/reviews.jpg");
 }
 .bgimg-6 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/laptop6.jpg");
 }
 
 /* This is first background image of the About Us page*/
 .bgimg-7 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/team.jpg");
 }
 
@@ -398,7 +398,7 @@ html {
   background-image: url("/images/phone.jpg");
 }
 .bgimg-10 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/support1.jpeg");
 }
 .bgimg-11 {
@@ -407,7 +407,7 @@ html {
 }
 /* This is the first background image of the Contact.js page*/
 .bgimg-12 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/phone1.jpg");
 }
 
@@ -419,33 +419,33 @@ html {
 
 /* This is the background image of the BugFix.js page*/
 .bgimg-14 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/laptop3.jpg");
 }
 
 /* This is the background image of the FeatureRequest.js page*/
 .bgimg-15 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/laptop1.jpg");
 }
 .bgimg-16 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/laptop7.jpg");
 }
 .bgimg-17 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/onereview.jpg");
 }
 .bgimg-18 {
-  min-height: 53.3vw;
+  min-height: 20vw;
   background-image: url("/images/phone3.jpg");
 }
 .bgimg-19 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/remaining.jpg");
 }
 .bgimg-20 {
-  min-height: 53.3vw;
+  min-height: 25vw;
   background-image: url("/images/remaining1.jpg");
 }
 /* Float four columns side by side */
@@ -562,15 +562,10 @@ h3 {
 /*the main navigation bar*/
 .navbar {
   background-color: inherit;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
   padding: 0vw;
   height: 0vw;
-}
-.navbar-brand {
-  margin-right: 0vw;
-  height: auto;
-  width: auto;
 }
 
 /*Burger menu bar*/
@@ -750,7 +745,8 @@ Sidebar wrapper styles
   border: solid 0.3vw white;
   cursor: pointer;
 }
-.searchPlaceholder::placeholder {
+
+#searchPlaceholder::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1;
@@ -761,8 +757,9 @@ Sidebar wrapper styles
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/*the placeholder of the search bar is styled here*/
-.searchPlaceholder {
+/* the placeholder of the search bar is styled here*/
+
+#searchPlaceholder {
   width: 70%;
   border-radius: 6.6vw;
   background: inherit;
@@ -775,10 +772,11 @@ Sidebar wrapper styles
 }
 
 /* when the search bar is clicked on to type something*/
-.searchPlaceholder:focus {
+ #searchPlaceholder:focus {
   color: white;
   background: inherit;
-}
+} 
+
 
 /*the button that allows you to scroll to About.js*/
 .scrollArrow {
@@ -1131,11 +1129,11 @@ Sidebar wrapper styles
   font-family: "Lato" sans-serif;
 }
 .sentimentInfo {
-  font-size: 1.6vw;
+  font-size: 1vw;
   font-weight: 500;
 }
 .searchBox {
-  padding-top: 2vw;
+  padding-top: 1vw;
   padding-left: 20vw;
   font-family: "Lato" sans-serif;
 }
@@ -1167,9 +1165,9 @@ Sidebar wrapper styles
 }
 
 .searchAppsImages {
-  border-radius: 1.6vw;
-  width: 10vw;
-  height: 10vw;
+  border-radius: 0.6vw;
+  width: 5vw;
+  height: 5vw;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 #backBtn{

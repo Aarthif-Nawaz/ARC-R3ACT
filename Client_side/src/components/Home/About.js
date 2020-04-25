@@ -87,7 +87,7 @@ function About() {
             {/*First column holds info regarding Bug Fixes */}
             <div className="col-4 d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
-                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
+                <h3 style={{ fontSize:"2vw" ,fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Bug Fixes
                 </h3>
                 <p
@@ -111,7 +111,7 @@ function About() {
             {/*Second column holds info regarding Feature Requests */}
             <div className="col-4  d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
-                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
+                <h3 style={{ fontSize:"2vw" ,fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Feature Requests
                 </h3>
                 <p
@@ -135,7 +135,7 @@ function About() {
             {/*Third column holds info regarding Overall Sentiment */}
             <div className="col-4 d-flex align-items-stretch">
               <div className="card" style={{ marginLeft: "2vw" }}>
-                <h3 style={{ fontWeight: 700, paddingBottom: "1.3vw" }}>
+                <h3 style={{fontSize:"2vw" , fontWeight: 700, paddingBottom: "1.3vw" }}>
                   Overall Sentiment
                 </h3>
                 <p

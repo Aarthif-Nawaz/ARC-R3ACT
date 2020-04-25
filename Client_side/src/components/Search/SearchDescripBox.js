@@ -22,12 +22,12 @@ function SearchDescripBox(props) {
           <div className="row-3 ml-2">
             <h3
               className="sentimentInfo"
-              style={{ fontSize: "2vw", color: "#fff", paddingTop: 20 }}
+              style={{ fontSize: "1vw", color: "#fff", paddingTop: "1vw" }}
             >
               {props.title}
             </h3>{" "}
           </div>
-          <div className="row-3 ml-2" style={{ marginTop: "1vw" }}>
+          <div className="row-3 ml-2" style={{ marginTop: "0.5vw" }}>
             <p className="sentimentInfo">{props.developer}</p>
           </div>
         </div>
