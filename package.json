@@ -1,9 +1,6 @@
 {
   "name": "arc-r3act",
   "version": "1.0.0",
-  "dependencies": {
-    "http-error": "6.13.7"
-  },
   "description": "Application Review Classifier",
   "scripts": {
     "start": "node ./Server_side/bin/www",
@@ -23,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/SafiyyahR/ARC-R3ACT/issues"
   },
-  "homepage": "https://github.com/SafiyyahR/ARC-R3ACT#readme"
+  "homepage": "https://github.com/SafiyyahR/ARC-R3ACT#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.10.0"
+  }
 }
