@@ -1,1 +1,1 @@
-web:nodemon ./bin/www
+web:nodemon .Server_side/bin/www
