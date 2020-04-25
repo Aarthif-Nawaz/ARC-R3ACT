@@ -50,7 +50,7 @@ function Form() {
       message: state.message.value,
       phone: state.phone.value,
     };
-    const url = "http://localhost:5000/contactus";
+    const url = "https://arc-r3act.herokuapp.com/contactus";
 
     fetch(url, {
       method: "POST",

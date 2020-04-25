@@ -34,7 +34,7 @@ class MenuBox extends React.Component {
     const { appId } = location.state;
     localStorage.setItem("appName", appId)
 
-    this.urlString = "http://localhost:5000/app/" + appId;
+    this.urlString = "https://arc-r3act.herokuapp.com/app/" + appId;
     console.log("this.urlString", this.urlString);
 
     const { items } = this.state;

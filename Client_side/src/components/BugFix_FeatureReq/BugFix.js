@@ -35,7 +35,7 @@ function BugFix(props) {
 
   //calls the keywords api
   useEffect(() => {
-    fetch("http://localhost:5000/bugfixes/keywords/" + app, {
+    fetch("https://arc-r3act.herokuapp.com/bugfixes/keywords/" + app, {
       method: "POST"
     })
       .then((res) => res.json())

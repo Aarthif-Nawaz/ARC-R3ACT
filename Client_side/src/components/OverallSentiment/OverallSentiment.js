@@ -24,7 +24,7 @@ function OverallSentiment(props) {
 
   //fetches the sentiment api for given app id
   useEffect(() => {
-    fetch("http://localhost:5000/sentiment/" + app)
+    fetch("https://arc-r3act.herokuapp.com/sentiment/" + app)
       .then((res) => res.json())
       .then(
         (result) => {

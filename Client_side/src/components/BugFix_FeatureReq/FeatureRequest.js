@@ -32,7 +32,7 @@ function FeatureRequest(props) {
 
   //fetches the reviews related to the keyword
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/keywords/" + app,{method: "POST"})
+    fetch("https://arc-r3act.herokuapp.com/featurereqs/keywords/" + app,{method: "POST"})
       .then((res) => res.json())
       .then(
         (result) => {

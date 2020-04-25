@@ -28,7 +28,7 @@ function RemainingBF(props) {
   console.log(app);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bugfixes/common/" + app, {
+    fetch("https://arc-r3act.herokuapp.com/bugfixes/common/" + app, {
       method: "POST"
     })
       .then((res) => res.json())

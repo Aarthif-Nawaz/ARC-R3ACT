@@ -27,7 +27,7 @@ function DescripBox(props) {
   //checks if passed props type is feature request
   if (para === "fr") {
     //api for keywords api
-    url = "http://localhost:5000/featurereqs/reviews/" + app + "/" + keywords;
+    url = "https://arc-r3act.herokuapp.com/featurereqs/reviews/" + app + "/" + keywords;
     return (
       <div className="container-fluid">
         <div className="center-content">
@@ -83,7 +83,7 @@ function DescripBox(props) {
     );
   } else {
     /**For Bug fixes reviews related to the given keyword */
-    url = "http://localhost:5000/bugfixes/reviews/" + app + "/" + keywords;
+    url = "https://arc-r3act.herokuapp.com/bugfixes/reviews/" + app + "/" + keywords;
     return (
       <div className="container-fluid">
         <div className="center-content">

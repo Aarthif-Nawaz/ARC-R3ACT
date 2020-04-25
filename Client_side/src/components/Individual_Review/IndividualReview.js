@@ -28,7 +28,7 @@ function IndividualReview(props) {
 
   // fetches the individual review from api
   useEffect(() => {
-    fetch("http://localhost:5000/fullreview/" + app + "/" + id)
+    fetch("https://arc-r3act.herokuapp.com/fullreview/" + app + "/" + id)
       .then((res) => res.json())
       .then(
         (result) => {

@@ -28,7 +28,7 @@ function RemainingFR(props) {
   //console.log(app);
 
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/common/" + app, {
+    fetch("https://arc-r3act.herokuapp.com/featurereqs/common/" + app, {
       method: "POST"
     })
       .then((res) => res.json())
