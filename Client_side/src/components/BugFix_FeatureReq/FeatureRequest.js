@@ -32,7 +32,7 @@ function FeatureRequest(props) {
 
   //fetches the reviews related to the keyword
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/keywords/" + app)
+    fetch("http://localhost:5000/featurereqs/keywords/" + app,{method: "POST"})
       .then((res) => res.json())
       .then(
         (result) => {
@@ -54,9 +54,9 @@ function FeatureRequest(props) {
     return (
       <div>
         {/*Adding the background image*/}
-        <div class="bgimg-15">
+        <div className="bgimg-15">
           {/*Adding the main heading */}
-          <div class="caption">
+          <div className="caption">
             <span className="border">
               App features requested by the users of this app
             </span>

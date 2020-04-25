@@ -60,9 +60,9 @@ function BugFix(props) {
     return (
       <div>
         {/*Adding the background image*/}
-        <div class="bgimg-14">
+        <div className="bgimg-14">
           {/*Adding the main heading */}
-          <div class="caption">
+          <div className="caption">
             <span className="border">
               Bug fixes requested by the users of this app
             </span>

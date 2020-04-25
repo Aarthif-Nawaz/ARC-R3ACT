@@ -9,7 +9,7 @@ import React from "react";
 
 function SearchDescripBox(props) {
   return (
-    <div class="searchBox">
+    <div className="searchBox">
       <div className="row">
         <div className="col-6">
           <div className="row-6 m-2">

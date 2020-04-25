@@ -45,9 +45,9 @@ function OverallSentiment(props) {
   } else {
     return (
       <div className="container-fluid">
-        <div class="bgimg-16">
+        <div className="bgimg-16">
           {items.map((item) => (
-            <div key={item._id} class="sentimentBox">
+            <div key={item._id} className="sentimentBox">
               <div className="row">
                 <div className="col-3">
                   <div className="row m-2">
