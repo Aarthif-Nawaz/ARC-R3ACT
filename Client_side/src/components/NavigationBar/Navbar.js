@@ -11,7 +11,7 @@ import "../../App.css";
 
 function NavBar() {
   return (
-    <Navbar>
+    <Navbar id='navigation_bar'>
       {/*this is logo on the left side of the page, it's a link to the home page */}
       <Navbar.Brand href="/">
         <img
