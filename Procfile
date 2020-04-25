@@ -1,1 +1,1 @@
-web:node .Server_side/bin/www
+web:npm start
