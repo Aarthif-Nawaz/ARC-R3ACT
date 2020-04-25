@@ -10,7 +10,7 @@ import "../../App.css";
 import { Link } from "react-router-dom";
 
 function SearchAppsClass() {
-  const [appName, setSearch] = useState("");
+  const [appName,setName] = useState("");
 
   return (
     <div className="container-fluid">
@@ -22,8 +22,8 @@ function SearchAppsClass() {
           </div>
           <div className="container-fluid" style={{width:"50vw"}}>
             {/*adding the search bar */}
-            <div className="container searchBar">
-              <div className="input-group searchInputGroup">
+            <div className="container"id="searchBar">
+              <div className="input-group" id="searchInputGroup">
                 <input
                   type="text"
                   id="searchPlaceholder"
@@ -32,7 +32,8 @@ function SearchAppsClass() {
                   aria-label="search for a mobile app"
                   aria-describedby="basic-addon2"
                   value={appName}
-                  onChange={(e) => setSearch(e.target.value)}
+                  autocomplete="off"
+                  onChange={e=> setName(e.target.value)}
                 />
                 <div className="input-group-append">
                   <Link to={{ pathname: "/search/" + appName }}>
@@ -40,7 +41,8 @@ function SearchAppsClass() {
                     <button
                       className="button searchbtn"
                       type="submit"
-                      variant="outline-secondary">
+                      variant="outline-secondary"
+                      disabled={!appName}>
                       SEARCH
                     </button>
                   </Link>
