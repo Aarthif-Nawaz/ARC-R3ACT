@@ -12,6 +12,8 @@ html {
   color: black;
   font: "Lato", sans-serif;
   height: 100%;
+  overflow-x: hidden;
+
 }
 
 .container-fluid {

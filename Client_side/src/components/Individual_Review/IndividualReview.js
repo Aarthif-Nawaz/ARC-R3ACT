@@ -49,8 +49,8 @@ function IndividualReview(props) {
   } else {
     return (
       <div className="container-fluid">
-        <div className="bgimg-17">
-          <div className=" col MenuBoxPage">
+        <div class="bgimg-17">
+          <div className=" col-6 MenuBoxPage">
             <h3
               style={{
                 textAlign: "center",
