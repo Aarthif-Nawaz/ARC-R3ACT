@@ -51,8 +51,8 @@ function RemainingBF(props) {
   } else {
     return (
       <div>
-        <div class="bgimg-19">
-          <div class="caption">
+        <div className="bgimg-19">
+          <div className="caption">
             <span className="border">
               Take a look at the rest of the reviews addressing bug fixes
             </span>

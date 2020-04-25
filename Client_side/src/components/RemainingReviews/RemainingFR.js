@@ -28,7 +28,9 @@ function RemainingFR(props) {
   //console.log(app);
 
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/common/" + app)
+    fetch("http://localhost:5000/featurereqs/common/" + app, {
+      method: "POST"
+    })
       .then((res) => res.json())
       .then(
         (result) => {
@@ -49,8 +51,8 @@ function RemainingFR(props) {
   } else {
     return (
       <div>
-        <div class="bgimg-20">
-          <div class="caption">
+        <div className="bgimg-20">
+          <div className="caption">
             <span className="border">
               Take a look at the rest of the reviews addressing feature requests
             </span>
