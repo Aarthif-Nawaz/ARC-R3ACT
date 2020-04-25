@@ -59,6 +59,7 @@ function Search(props) {
           {items.map((item) => (
             <li key={item.title} style={{ listStyleType: "none" }}>
               <div
+                id="descrip-search"
                 className={"descrip-" + (items.indexOf(item) % 2 ? "14" : "11")}
               >
                 {/* This is fixed on chrome, needs to be changed */}
