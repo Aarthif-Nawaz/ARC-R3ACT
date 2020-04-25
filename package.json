@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Application Review Classifier",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards."
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/SafiyyahR/ARC-R3ACT.git"
   },
   "engines": {
-    "node": "12.16.x"
+    "node": "10.16.3"
   },
   "author": "",
   "license": "ISC",
