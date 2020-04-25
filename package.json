@@ -2,8 +2,9 @@
   "name": "arc-r3act",
   "version": "1.0.0",
   "description": "Application Review Classifier",
-  "main": "index.js",
+  "main": "./bin/www",
   "scripts": {
+    "start": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild":"cd Client_side && npm install && npm run build" 
   },
