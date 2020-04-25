@@ -1,0 +1,20 @@
+{
+  "name": "arc-r3act",
+  "version": "1.0.0",
+  "description": "Application Review Classifier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild":"cd Client_side && npm install && npm run build" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SafiyyahR/ARC-R3ACT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SafiyyahR/ARC-R3ACT/issues"
+  },
+  "homepage": "https://github.com/SafiyyahR/ARC-R3ACT#readme"
+}

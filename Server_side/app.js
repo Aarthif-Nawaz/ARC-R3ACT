@@ -10,6 +10,7 @@
  *
  * Execute 'npm install' before 'npm start'.
  */
+const path = require('path');
 
 var createError = require("http-errors");
 var express = require("express");
@@ -50,6 +51,14 @@ app.use("/featurereqs", featureRequestsRouter);
 app.use("/fullreview", fullReviewRouter);
 app.use("/sentiment", sentimentRouter);
 app.use("/contactus", contactUsRouter);
+
+//checking is application si available on heroku
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'))
+  app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'Client_side','build','index.html'));//relative path
+  });
+}
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
