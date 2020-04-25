@@ -16,85 +16,85 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 class MenuBox extends React.Component {
 
   //Interval to be triggered
-  // fetchInterval = false;
+  fetchInterval = false;
   //Store the API call
-  // urlString = "";
+  urlString = "";
 
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     error: {},
-  //     isLoaded: false,
-  //     items: { wait: true }
-  //   };
+    this.state = {
+      error: {},
+      isLoaded: false,
+      items: { wait: true }
+    };
 
-  //   const location = this.props.location;
+    const location = this.props.location;
 
-  //   const { appId } = location.state;
-  //   localStorage.setItem("appName", appId)
+    const { appId } = location.state;
+    localStorage.setItem("appName", appId)
 
-  //   this.urlString = "http://localhost:5000/app/" + appId;
-  //   console.log("this.urlString", this.urlString);
+    this.urlString = "http://localhost:5000/app/" + appId;
+    console.log("this.urlString", this.urlString);
 
-  //   const { items } = this.state;
+    const { items } = this.state;
 
-  //   if (items && items.wait) {
-  //     console.log("wrong items");
+    if (items && items.wait) {
+      console.log("wrong items");
 
   // checks if the data is fetched between 20 mins
-  //     if (!this.fetchInterval) {
+      if (!this.fetchInterval) {
 
-  //       console.log("no fetch interval");
-  //       this.getAppDetails(this.urlString)
-  //       console.log("get app details");
+        console.log("no fetch interval");
+        this.getAppDetails(this.urlString)
+        console.log("get app details");
 
-  //       this.fetchInterval = setInterval(() => {
-  //         this.getAppDetails(this.urlString)
-  //       }, 120000);
+        this.fetchInterval = setInterval(() => {
+          this.getAppDetails(this.urlString)
+        }, 120000);
 
-  //     }
-  //   } else {
-  //     clearInterval(this.fetchInterval);
-  //   }
-  // }
+      }
+    } else {
+      clearInterval(this.fetchInterval);
+    }
+  }
 
-  // getAppDetails(urlString) {
-  //   fetch(urlString, {
-  //     method: "POST"
-  //   })
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         this.handleDetailsSuccess(result);
-  //       },
-  //       (error) => {
-  //         this.setState({ error });
-  //       }
-  //     );
-  // }
+  getAppDetails(urlString) {
+    fetch(urlString, {
+      method: "POST"
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.handleDetailsSuccess(result);
+        },
+        (error) => {
+          this.setState({ error });
+        }
+      );
+  }
 
   //Checks if the results have been fetched
-  // handleDetailsSuccess(result) {
-  //   console.log("result", result);
-  //   this.setState({ items: result });
-  //   if (!result.wait) {
-  //     clearInterval(this.fetchInterval);
-  //     this.setState({ isLoaded: true });
-  //   }
-  // }
+  handleDetailsSuccess(result) {
+    console.log("result", result);
+    this.setState({ items: result });
+    if (!result.wait) {
+      clearInterval(this.fetchInterval);
+      this.setState({ isLoaded: true });
+    }
+  }
 
   render() {
-  //  const { isLoaded, error } = this.state;
+  const { isLoaded, error } = this.state;
     const { match } = this.props;
 
-    // if (error && error.message) {
-    //   console.log("error", error);
+    if (error && error.message) {
+      console.log("error", error);
 
-    //   return <ErrorPage errorDet={error.message} />;
-    // } else if (!isLoaded) {
-    //   return <LoadingBox />;
-    // } else {
+      return <ErrorPage errorDet={error.message} />;
+    } else if (!isLoaded) {
+      return <LoadingBox />;
+    } else {
       return (
         <div className="container-fluid">
           <div className="bgimg-6">
@@ -161,5 +161,5 @@ class MenuBox extends React.Component {
     }
 
   }
-//}
+}
 export default MenuBox;
