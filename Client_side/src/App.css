@@ -735,8 +735,8 @@ Sidebar wrapper styles
 }
 
 /*the search bar is placed inside this container*/
-.searchBar {
-  width: 55%;
+#searchBar {
+  width: 100%;
   padding: 0.6vw;
   margin: auto;
   margin-top: 3.3vw;
@@ -748,7 +748,7 @@ Sidebar wrapper styles
 }
 
 /*the input of the search bar is styled here*/
-.searchInputGroup {
+#searchInputGroup {
   width: 100%;
   height: 4.6vw;
   text-align: center;
@@ -771,12 +771,11 @@ Sidebar wrapper styles
 /* the placeholder of the search bar is styled here*/
 
 #searchPlaceholder {
-  width: 70%;
+  width: 100%;
   border-radius: 6.6vw;
   background: inherit;
   border: none;
-  padding-bottom: 1.2vw;
-  height: 120%;
+  height: 100%;
   font-size: 1.2vw;
   font-weight: 900;
   color: white;
