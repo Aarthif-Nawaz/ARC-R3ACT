@@ -31,6 +31,8 @@ var contactUsRouter = require("./routes/contactus.route");
 var app = express();
 
 // view engine setup
+app.use(express.static(path.join(__dirname, 'build')));
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
@@ -52,12 +54,9 @@ app.use("/sentiment", sentimentRouter);
 app.use("/contactus", contactUsRouter);
 
 //checking is application si available on heroku
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('client/build'))
-  app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'Client_side','build','index.html'));//relative path
-  });
-}
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
