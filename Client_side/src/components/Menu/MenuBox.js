@@ -15,7 +15,9 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 class MenuBox extends React.Component {
 
+  //Interval to be triggered
   // fetchInterval = false;
+  //Store the API call
   // urlString = "";
 
   // constructor(props) {
@@ -40,6 +42,7 @@ class MenuBox extends React.Component {
   //   if (items && items.wait) {
   //     console.log("wrong items");
 
+  // checks if the data is fetched between 20 mins
   //     if (!this.fetchInterval) {
 
   //       console.log("no fetch interval");
@@ -71,6 +74,7 @@ class MenuBox extends React.Component {
   //     );
   // }
 
+  //Checks if the results have been fetched
   // handleDetailsSuccess(result) {
   //   console.log("result", result);
   //   this.setState({ items: result });
@@ -94,7 +98,7 @@ class MenuBox extends React.Component {
       return (
         <div className="container-fluid">
           <div className="bgimg-6">
-            <div className=" col-9 MenuBoxPage">
+            <div className=" col-6 MenuBoxPage">
               <h3
                 style={{
                   textAlign: "center",

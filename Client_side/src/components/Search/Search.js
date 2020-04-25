@@ -50,8 +50,8 @@ function Search(props) {
   } else {
     return (
       <div>
-        <div class="bgimg-18">
-          <div class="caption">
+        <div className="bgimg-18">
+          <div className="caption">
             <span className="border">Is this the app you are looking for?</span>
           </div>
         </div>
