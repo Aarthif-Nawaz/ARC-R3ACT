@@ -19,26 +19,26 @@ exports.retrieveKeywords = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
+
+    // Store all the keywords and review ids related to bug fixes
+    var bugfixesArray = detailsResult.BugFixes;
+    for (var i in bugfixesArray) {
+      var keyword = bugfixesArray[i].keyword;
+      var sentiment = bugfixesArray[i].sentiment_score;
+      var sentiment_score = parseFloat(sentiment).toFixed(1);
+
+      // Store all the details except the empty keyword into an array
+      if (keyword != "") {
+        detailsArray.push([keyword, sentiment_score]);
+      }
+    }
+
+    // Sorting the array in ascending order of the sentiment score
+    detailsArray.sort(sortSentimentScore);
+    return response.send(detailsArray);
   } catch (error) {
     return response.status(500).send(error);
   }
-
-  // Store all the keywords and review ids related to bug fixes
-  var bugfixesArray = detailsResult.BugFixes;
-  for (var i in bugfixesArray) {
-    var keyword = bugfixesArray[i].keyword;
-    var sentiment = bugfixesArray[i].sentiment_score;
-    var sentiment_score = parseFloat(sentiment).toFixed(1);
-
-    // Store all the details except the empty keyword into an array
-    if (keyword != "") {
-      detailsArray.push([keyword, sentiment_score]);
-    }
-  }
-
-  // Sorting the array in ascending order of the sentiment score
-  detailsArray.sort(sortSentimentScore);
-  return response.send(detailsArray);
 };
 
 /**
@@ -54,96 +54,53 @@ exports.relatedReviews = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
-  } catch (error) {
-    return response.status(500).send(error);
-  }
 
-  // Store all the keywords and review ids related to bug fixes
-  var bugfixesArray = detailsResult.BugFixes;
-  // Store all the reviews of the app into an array
-  var reviewsArray = detailsResult.reviewsArray;
+    // Store all the keywords and review ids related to bug fixes
+    var bugfixesArray = detailsResult.BugFixes;
+    // Store all the reviews of the app into an array
+    var reviewsArray = detailsResult.reviewsArray;
 
-  for (var i in bugfixesArray) {
-    var keyword = bugfixesArray[i].keyword;
+    for (var i in bugfixesArray) {
+      var keyword = bugfixesArray[i].keyword;
 
-    // Checking the keyword entered is
-    // equal to the keyword in the array
-    if (keyword == request.params.keyword) {
-      var reviewIDs = bugfixesArray[i].reviewIDs;
-      reviewIdArray.push(reviewIDs);
-      break;
-    }
-  }
-
-  for (var index in reviewIdArray[0]) {
-    var id = reviewIdArray[0][index];
-    for (var i in reviewsArray) {
-      var keyReviewId = reviewsArray[i]._id;
-      if (keyReviewId == id) {
-        var _id = reviewsArray[i]._id;
-        var username = reviewsArray[i].userName;
-        var date = reviewsArray[i].date;
-
-        // Storing the part of the review containing the keyword
-        var text = reviewsArray[i].text;
-        var partReview = partReviewWithKeyword(text, request.params.keyword);
-
-        var rating = reviewsArray[i].rating;
-        partReviewArray.push({ _id, username, date, partReview, rating });
+      // Checking the keyword entered is
+      // equal to the keyword in the array
+      if (keyword == request.params.keyword) {
+        var reviewIDs = bugfixesArray[i].reviewIDs;
+        reviewIdArray.push(reviewIDs);
+        break;
       }
     }
-  }
 
-  // Checking if the array is empty
-  if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
-    // Displaying error message if the keyword does not exist
-    return response.send("Invalid keyword!");
-  } else {
-    return response.send(partReviewArray);
-  }
-};
+    for (var index in reviewIdArray[0]) {
+      var id = reviewIdArray[0][index];
+      for (var i in reviewsArray) {
+        var keyReviewId = reviewsArray[i]._id;
+        if (keyReviewId == id) {
+          var _id = reviewsArray[i]._id;
+          var username = reviewsArray[i].userName;
+          var date = reviewsArray[i].date;
 
-/**
- * Retrieves and displays the complete review related
- * to bug fixes or feature requests from the database.
- */
-exports.completeReview = async function (request, response) {
-  var completeReview = [];
-  var detailsResult = [];
+          // Storing the part of the review containing the keyword
+          var text = reviewsArray[i].text;
+          var partReview = partReviewWithKeyword(text, request.params.keyword);
 
-  try {
-    detailsResult = await bugfixesService.getDetails({
-      appId: request.params.appId,
-    });
+          var rating = reviewsArray[i].rating;
+          partReviewArray.push({ _id, username, date, partReview, rating });
+        }
+      }
+    }
+
+    // Checking if the array is empty
+    if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
+      // Displaying error message if the keyword does not exist
+      return response.send("Invalid keyword!");
+    } else {
+      return response.send(partReviewArray);
+    }
   } catch (error) {
     return response.status(500).send(error);
   }
-
-  // Store all the reviews of the app into an array
-  var reviewsArray = detailsResult.reviewsArray;
-  for (var i in reviewsArray) {
-    var reviewId = reviewsArray[i]._id;
-
-    if (reviewId == request.params.reviewId) {
-      var username = reviewsArray[i].userName;
-      var date = reviewsArray[i].date;
-      var text = reviewsArray[i].text;
-      var version = reviewsArray[i].version;
-      var rating = reviewsArray[i].rating;
-      completeReview.push({
-        reviewId,
-        username,
-        date,
-        text,
-        version,
-        rating,
-      });
-      return response.send(completeReview);
-    }
-  }
-
-  // Displaying an error message if the review id does not exist
-  return response.send("Invalid review id!");
 };
 
 /**
@@ -159,41 +116,41 @@ exports.commonReviews = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
+
+    // Store all the keywords and review ids related to bug fixes
+    var bugfixesArray = detailsResult.BugFixes;
+    // Store all the reviews of the app into an array
+    var reviewsArray = detailsResult.reviewsArray;
+
+    for (var i in bugfixesArray) {
+      var keyword = bugfixesArray[i].keyword;
+
+      // Storing all the details and reviews of the empty keyword to an array
+      if (keyword == "") {
+        var reviewIDs = bugfixesArray[i].reviewIDs;
+        reviewIdArray.push(reviewIDs);
+        break;
+      }
+    }
+
+    for (var index in reviewIdArray[0]) {
+      var id = reviewIdArray[0][index];
+      for (var i in reviewsArray) {
+        var keyReviewId = reviewsArray[i]._id;
+        if (keyReviewId == id) {
+          var _id = reviewsArray[i]._id;
+          var username = reviewsArray[i].userName;
+          var date = reviewsArray[i].date;
+          var text = reviewsArray[i].text;
+          var rating = reviewsArray[i].rating;
+          otherReviewArray.push({ _id, username, date, text, rating });
+        }
+      }
+    }
+    return response.send(otherReviewArray);
   } catch (error) {
     return response.status(500).send(error);
   }
-
-  // Store all the keywords and review ids related to bug fixes
-  var bugfixesArray = detailsResult.BugFixes;
-  // Store all the reviews of the app into an array
-  var reviewsArray = detailsResult.reviewsArray;
-
-  for (var i in bugfixesArray) {
-    var keyword = bugfixesArray[i].keyword;
-
-    // Storing all the details and reviews of the empty keyword to an array
-    if (keyword == "") {
-      var reviewIDs = bugfixesArray[i].reviewIDs;
-      reviewIdArray.push(reviewIDs);
-      break;
-    }
-  }
-
-  for (var index in reviewIdArray[0]) {
-    var id = reviewIdArray[0][index];
-    for (var i in reviewsArray) {
-      var keyReviewId = reviewsArray[i]._id;
-      if (keyReviewId == id) {
-        var _id = reviewsArray[i]._id;
-        var username = reviewsArray[i].userName;
-        var date = reviewsArray[i].date;
-        var text = reviewsArray[i].text;
-        var rating = reviewsArray[i].rating;
-        otherReviewArray.push({ _id, username, date, text, rating });
-      }
-    }
-  }
-  return response.send(otherReviewArray);
 };
 
 /**

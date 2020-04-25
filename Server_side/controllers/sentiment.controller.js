@@ -51,88 +51,87 @@ exports.getSentiment = async function (request, response) {
     icon = resultDetails.icon;
     sentiment = resultDetails.rating_calculated;
     reviewsArray = resultDetails.reviewsArray;
+
+    var noOfReviews = 10000;
+
+    // Checking if the number of reviews of the apps
+    // is less than 10000
+    if (reviews < 10000) {
+      // Store the number of reviews of the app to a variable
+      noOfReviews = reviews;
+    }
+
+    for (var i in reviewsArray) {
+      var rating = reviewsArray[i].rating;
+      var polarity = reviewsArray[i].polarity;
+
+      // Store the rating of the review into the relevant variable
+      switch (rating) {
+        case "5":
+          fiveStars++;
+          break;
+        case "4":
+          fourStars++;
+          break;
+        case "3":
+          threeStars++;
+          break;
+        case "2":
+          twoStars++;
+          break;
+        case "1":
+          oneStar++;
+          break;
+      }
+
+      // Store the polarity of the review into the relevant variable
+      switch (polarity) {
+        case "positive":
+          postive++;
+          break;
+        case "neutral":
+          neutral++;
+          break;
+        case "negative":
+          negative++;
+          break;
+      }
+    }
+
+    // Calculating the percentages of all the relevant details
+    postive = ((postive / noOfReviews) * 100).toFixed(1);
+    neutral = ((neutral / noOfReviews) * 100).toFixed(1);
+    negative = ((negative / noOfReviews) * 100).toFixed(1);
+    fiveStars = ((fiveStars / noOfReviews) * 100).toFixed(1);
+    fourStars = ((fourStars / noOfReviews) * 100).toFixed(1);
+    threeStars = ((threeStars / noOfReviews) * 100).toFixed(1);
+    twoStars = ((twoStars / noOfReviews) * 100).toFixed(1);
+    oneStar = ((oneStar / noOfReviews) * 100).toFixed(1);
+
+    detailsArray.push({
+      // Push them into the array
+      title,
+      summary,
+      installs,
+      scoreText,
+      reviews,
+      priceText,
+      developer,
+      genre,
+      icon,
+      sentiment,
+      postive,
+      neutral,
+      negative,
+      fiveStars,
+      fourStars,
+      threeStars,
+      twoStars,
+      oneStar,
+    });
+
+    return response.status(200).send(detailsArray);
   } catch (error) {
-    console.log(error);
     return response.status(500).send(error);
   }
-
-  var noOfReviews = 10000;
-
-  // Checking if the number of reviews of the apps
-  // is less than 10000
-  if (reviews < 10000) {
-    // Store the number of reviews of the app to a variable
-    noOfReviews = reviews;
-  }
-
-  for (var i in reviewsArray) {
-    var rating = reviewsArray[i].rating;
-    var polarity = reviewsArray[i].polarity;
-
-    // Store the rating of the review into the relevant variable
-    switch (rating) {
-      case "5":
-        fiveStars++;
-        break;
-      case "4":
-        fourStars++;
-        break;
-      case "3":
-        threeStars++;
-        break;
-      case "2":
-        twoStars++;
-        break;
-      case "1":
-        oneStar++;
-        break;
-    }
-
-    // Store the polarity of the review into the relevant variable
-    switch (polarity) {
-      case "positive":
-        postive++;
-        break;
-      case "neutral":
-        neutral++;
-        break;
-      case "negative":
-        negative++;
-        break;
-    }
-  }
-
-  // Calculating the percentages of all the relevant details
-  postive = ((postive / noOfReviews) * 100).toFixed(1);
-  neutral = ((neutral / noOfReviews) * 100).toFixed(1);
-  negative = ((negative / noOfReviews) * 100).toFixed(1);
-  fiveStars = ((fiveStars / noOfReviews) * 100).toFixed(1);
-  fourStars = ((fourStars / noOfReviews) * 100).toFixed(1);
-  threeStars = ((threeStars / noOfReviews) * 100).toFixed(1);
-  twoStars = ((twoStars / noOfReviews) * 100).toFixed(1);
-  oneStar = ((oneStar / noOfReviews) * 100).toFixed(1);
-
-  detailsArray.push({
-    // Push them into the array
-    title,
-    summary,
-    installs,
-    scoreText,
-    reviews,
-    priceText,
-    developer,
-    genre,
-    icon,
-    sentiment,
-    postive,
-    neutral,
-    negative,
-    fiveStars,
-    fourStars,
-    threeStars,
-    twoStars,
-    oneStar,
-  });
-
-  return response.status(200).send(detailsArray);
 };

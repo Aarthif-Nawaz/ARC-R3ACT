@@ -24,6 +24,7 @@ var searchRouter = require("./routes/search.route");
 var appDetailsRouter = require("./routes/appdetails.route");
 var bugFixesRouter = require("./routes/bugfixes.route");
 var featureRequestsRouter = require("./routes/featurereqs.route");
+var fullReviewRouter = require("./routes/fullreview.route");
 var sentimentRouter = require("./routes/sentiment.route");
 var contactUsRouter = require("./routes/contactus.route");
 
@@ -46,6 +47,7 @@ app.use("/search", searchRouter);
 app.use("/app", appDetailsRouter);
 app.use("/bugfixes", bugFixesRouter);
 app.use("/featurereqs", featureRequestsRouter);
+app.use("/fullreview", fullReviewRouter);
 app.use("/sentiment", sentimentRouter);
 app.use("/contactus", contactUsRouter);
 

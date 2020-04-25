@@ -16,7 +16,6 @@ var bugfixesController = require("../controllers/bugfixes.controller");
 
 router.post("/keywords/:appId", bugfixesController.retrieveKeywords);
 router.post("/reviews/:appId/:keyword", bugfixesController.relatedReviews);
-router.post("/fullreview/:appId/:reviewId", bugfixesController.completeReview);
 router.post("/common/:appId/", bugfixesController.commonReviews);
 
 module.exports = router;

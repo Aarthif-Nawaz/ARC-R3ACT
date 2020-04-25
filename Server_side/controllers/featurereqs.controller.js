@@ -19,25 +19,25 @@ exports.retrieveKeywords = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
+
+    var featurereqArray = detailsResult.FeatureRequests;
+    for (var i in featurereqArray) {
+      var keyword = featurereqArray[i].keyword;
+      var sentiment = featurereqArray[i].sentiment_score;
+      var sentiment_score = parseFloat(sentiment).toFixed(1);
+
+      // Store all the details except the empty keyword into an array
+      if (keyword != "") {
+        detailsArray.push([keyword, sentiment_score]);
+      }
+    }
+
+    // Sorting the array in ascending order of the sentiment score
+    detailsArray.sort(sortSentimentScore);
+    return response.send(detailsArray);
   } catch (error) {
     return response.status(500).send(error);
   }
-
-  var featurereqArray = detailsResult.FeatureRequests;
-  for (var i in featurereqArray) {
-    var keyword = featurereqArray[i].keyword;
-    var sentiment = featurereqArray[i].sentiment_score;
-    var sentiment_score = parseFloat(sentiment).toFixed(1);
-
-    // Store all the details except the empty keyword into an array
-    if (keyword != "") {
-      detailsArray.push([keyword, sentiment_score]);
-    }
-  }
-
-  // Sorting the array in ascending order of the sentiment score
-  detailsArray.sort(sortSentimentScore);
-  return response.send(detailsArray);
 };
 
 /**
@@ -53,53 +53,53 @@ exports.relatedReviews = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
-  } catch (error) {
-    return response.status(500).send(error);
-  }
 
-  // Store all the keywords and review ids related to feature requests
-  var featurereqArray = detailsResult.FeatureRequests;
-  // Store all the reviews of the app into an array
-  var reviewsArray = detailsResult.reviewsArray;
+    // Store all the keywords and review ids related to feature requests
+    var featurereqArray = detailsResult.FeatureRequests;
+    // Store all the reviews of the app into an array
+    var reviewsArray = detailsResult.reviewsArray;
 
-  for (var i in featurereqArray) {
-    var keyword = featurereqArray[i].keyword;
+    for (var i in featurereqArray) {
+      var keyword = featurereqArray[i].keyword;
 
-    // Checking the keyword entered is
-    // equal to the keyword in the array
-    if (keyword == request.params.keyword) {
-      var reviewIDs = featurereqArray[i].reviewIDs;
-      reviewIdArray.push(reviewIDs);
-      break;
-    }
-  }
-
-  for (var index in reviewIdArray[0]) {
-    var id = reviewIdArray[0][index];
-
-    for (var i in reviewsArray) {
-      var keyReviewId = reviewsArray[i]._id;
-      if (keyReviewId == id) {
-        var _id = reviewsArray[i]._id;
-        var username = reviewsArray[i].userName;
-        var date = reviewsArray[i].date;
-
-        // Storing the part of the review containing the keyword
-        var text = reviewsArray[i].text;
-        var partReview = partReviewWithKeyword(text, request.params.keyword);
-
-        var rating = reviewsArray[i].rating;
-        partReviewArray.push({ _id, username, date, partReview, rating });
+      // Checking the keyword entered is
+      // equal to the keyword in the array
+      if (keyword == request.params.keyword) {
+        var reviewIDs = featurereqArray[i].reviewIDs;
+        reviewIdArray.push(reviewIDs);
+        break;
       }
     }
-  }
 
-  // Checking if the array is empty
-  if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
-    // Displaying error message if the keyword does not exist
-    return response.send("Invalid keyword!");
-  } else {
-    return response.send(partReviewArray);
+    for (var index in reviewIdArray[0]) {
+      var id = reviewIdArray[0][index];
+
+      for (var i in reviewsArray) {
+        var keyReviewId = reviewsArray[i]._id;
+        if (keyReviewId == id) {
+          var _id = reviewsArray[i]._id;
+          var username = reviewsArray[i].userName;
+          var date = reviewsArray[i].date;
+
+          // Storing the part of the review containing the keyword
+          var text = reviewsArray[i].text;
+          var partReview = partReviewWithKeyword(text, request.params.keyword);
+
+          var rating = reviewsArray[i].rating;
+          partReviewArray.push({ _id, username, date, partReview, rating });
+        }
+      }
+    }
+
+    // Checking if the array is empty
+    if (!Array.isArray(partReviewArray) || !partReviewArray.length) {
+      // Displaying error message if the keyword does not exist
+      return response.send("Invalid keyword!");
+    } else {
+      return response.send(partReviewArray);
+    }
+  } catch (error) {
+    return response.status(500).send(error);
   }
 };
 
@@ -116,41 +116,41 @@ exports.commonReviews = async function (request, response) {
     detailsResult = await bugfixesService.getDetails({
       appId: request.params.appId,
     });
+
+    // Store all the keywords and review ids related to feature requests
+    var featurereqArray = detailsResult.FeatureRequests;
+    // Store all the reviews of the app into an array
+    var reviewsArray = detailsResult.reviewsArray;
+
+    for (var i in featurereqArray) {
+      var keyword = featurereqArray[i].keyword;
+
+      // Storing the details and review of the empty keyword to an array
+      if (keyword == "") {
+        var reviewIDs = featurereqArray[i].reviewIDs;
+        reviewIdArray.push(reviewIDs);
+        break;
+      }
+    }
+
+    for (var index in reviewIdArray[0]) {
+      var id = reviewIdArray[0][index];
+      for (var i in reviewsArray) {
+        var keyReviewId = reviewsArray[i]._id;
+        if (keyReviewId == id) {
+          var _id = reviewsArray[i]._id;
+          var username = reviewsArray[i].userName;
+          var date = reviewsArray[i].date;
+          var text = reviewsArray[i].text;
+          var rating = reviewsArray[i].rating;
+          otherReviewArray.push({ _id, username, date, text, rating });
+        }
+      }
+    }
+    return response.send(otherReviewArray);
   } catch (error) {
     return response.status(500).send(error);
   }
-
-  // Store all the keywords and review ids related to feature requests
-  var featurereqArray = detailsResult.FeatureRequests;
-  // Store all the reviews of the app into an array
-  var reviewsArray = detailsResult.reviewsArray;
-
-  for (var i in featurereqArray) {
-    var keyword = featurereqArray[i].keyword;
-
-    // Storing the details and review of the empty keyword to an array
-    if (keyword == "") {
-      var reviewIDs = featurereqArray[i].reviewIDs;
-      reviewIdArray.push(reviewIDs);
-      break;
-    }
-  }
-
-  for (var index in reviewIdArray[0]) {
-    var id = reviewIdArray[0][index];
-    for (var i in reviewsArray) {
-      var keyReviewId = reviewsArray[i]._id;
-      if (keyReviewId == id) {
-        var _id = reviewsArray[i]._id;
-        var username = reviewsArray[i].userName;
-        var date = reviewsArray[i].date;
-        var text = reviewsArray[i].text;
-        var rating = reviewsArray[i].rating;
-        otherReviewArray.push({ _id, username, date, text, rating });
-      }
-    }
-  }
-  return response.send(otherReviewArray);
 };
 
 /**
