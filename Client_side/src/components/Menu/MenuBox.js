@@ -88,11 +88,12 @@ class MenuBox extends React.Component {
   const { isLoaded, error } = this.state;
     const { match } = this.props;
 
-    if (error && error.message) {
+    if ((error && error.message)) {
       console.log("error", error);
-
       return <ErrorPage errorDet={error.message} />;
-    } else if (!isLoaded) {
+    } else if (this.state.items.message=="Sorry! The number of reviews is less than 100."){
+      return <ErrorPage errorDet={this.state.items.message} />;
+    }else if (!isLoaded) {
       return <LoadingBox />;
     } else {
       return (
