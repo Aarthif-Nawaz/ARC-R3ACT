@@ -1,6 +1,9 @@
 {
   "name": "arc-r3act",
   "version": "1.0.0",
+  "dependencies": {
+    "http-error": "6.13.7"
+  },
   "description": "Application Review Classifier",
   "scripts": {
     "start": "node ./Server_side/bin/www",
@@ -14,9 +17,6 @@
   },
   "engines": {
     "node": "10.16.3"
-  },
-  "dependencies":{
-    "http-errors":"6.13.7"
   },
   "author": "",
   "license": "ISC",
