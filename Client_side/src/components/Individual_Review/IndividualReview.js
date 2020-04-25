@@ -28,7 +28,7 @@ function IndividualReview(props) {
 
   // fetches the individual review from api
   useEffect(() => {
-    fetch("http://localhost:5000/featurereqs/fullreview/" + app + "/" + id)
+    fetch("http://localhost:5000/fullreview/" + app + "/" + id)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -50,7 +50,7 @@ function IndividualReview(props) {
     return (
       <div className="container-fluid">
         <div class="bgimg-17">
-          <div className=" col MenuBoxPage">
+          <div className=" col-6 MenuBoxPage">
             <h3
               style={{
                 textAlign: "center",
