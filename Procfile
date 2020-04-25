@@ -1,1 +1,1 @@
-web:node ./server_side/bin/www
+web:node .Server_side/bin/www
