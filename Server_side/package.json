@@ -2,8 +2,11 @@
   "name": "arc-r3act",
   "version": "0.0.0",
   "private": true,
+  "main": "./bin/www",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild":"cd Client_side && npm install && npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,6 +17,7 @@
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.5",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.3",
     "pug": "^2.0.4",
     "python-shell": "^1.0.8"
   },
