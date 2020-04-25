@@ -136,9 +136,18 @@ html {
   color: #fff;
   background-color: #434950;
   font-size: 1.5vw;
+  padding: 3.3vw;
+  font-weight: 700;
+}
+
+#descrip-search {
+  color: #fff;
+  background-color: #434950;
+  font-size: 1.5vw;
   padding: 0.5vw;
   font-weight: 700;
 }
+
 
 .descrip-14 {
   color: #fff;
