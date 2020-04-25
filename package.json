@@ -4,7 +4,7 @@
   "description": "Application Review Classifier",
   "main": "./bin/www",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild":"cd Client_side && npm install && npm run build" 
   },
