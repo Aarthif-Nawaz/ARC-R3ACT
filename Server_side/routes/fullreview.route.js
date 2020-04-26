@@ -14,6 +14,6 @@ var fullreviewController = require("../controllers/fullreview.controller");
  * Route serving complete review page.
  */
 
-router.get("/:appId/:reviewId", fullreviewController.completeReview);
+router.post("/:appId/:reviewId", fullreviewController.completeReview);
 
 module.exports = router;
