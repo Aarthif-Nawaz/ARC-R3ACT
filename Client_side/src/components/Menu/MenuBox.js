@@ -4,11 +4,10 @@
   Author    - Sajani Sihara, Ridmi Amasha
 */
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import LoadingBox from "../Error/LoadingBox";
 import ErrorPage from "../Error/Crashed";
-import { Link, Route } from "react-router-dom";
-import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import Footer from "../NavigationBar/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";

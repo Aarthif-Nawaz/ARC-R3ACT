@@ -13,7 +13,6 @@ html {
   font: "Lato", sans-serif;
   height: 100%;
   overflow-x: hidden;
-
 }
 
 .container-fluid {
@@ -150,7 +149,6 @@ html {
   font-weight: 700;
 }
 
-
 .descrip-14 {
   color: #fff;
   background-image: url("/images/phone3.jpg");
@@ -246,7 +244,6 @@ html {
   border: #fff 0.1vw solid;
   background-color: #da808a;
 }
-
 
 .descrip-17 {
   color: #282e34;
@@ -700,12 +697,12 @@ Sidebar wrapper styles
 }
 
 /* width of video will expand through the browser window*/
-#homeVideo{
+#homeVideo {
   width: 100%;
 }
 
 /* This is the background video of the LoadingBox.js */
-#loadingvideo{
+#loadingvideo {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -782,11 +779,10 @@ Sidebar wrapper styles
 }
 
 /* when the search bar is clicked on to type something*/
- #searchPlaceholder:focus {
+#searchPlaceholder:focus {
   color: white;
   background: inherit;
-} 
-
+}
 
 /*the button that allows you to scroll to About.js*/
 .scrollArrow {
@@ -944,7 +940,6 @@ Sidebar wrapper styles
   }
 }
 /*--------------------- End: Loading Page----------------------*/
-
 
 /*--------------------- Begin: Team members Info----------------------*/
 /* Styling for a column containing a team member card - AboutUs.js*/
@@ -1123,7 +1118,7 @@ Sidebar wrapper styles
   background-color: #282e34;
   border: none;
   width: 15%;
-  border-radius:1.5vw;
+  border-radius: 1.5vw;
 }
 .commentSubmit:hover {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
@@ -1146,7 +1141,9 @@ Sidebar wrapper styles
   padding-top: 1vw;
   padding-left: 20vw;
   font-family: "Lato" sans-serif;
+  color: white;
 }
+
 .remainingReview {
   font-size: 1.6vw;
   font-weight: 500;
@@ -1180,7 +1177,7 @@ Sidebar wrapper styles
   height: 5vw;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
-#backBtn{
+#backBtn {
   position: fixed;
   bottom: 20px;
   right: 30px;

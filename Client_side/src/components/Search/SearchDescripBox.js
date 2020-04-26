@@ -33,7 +33,7 @@ function SearchDescripBox(props) {
         </div>
         <div className="col-6 sentimentInfo">
           <div className="row m-3">
-            <div style={{ fontStyle: "italic" }}>"summary"</div>
+            <div style={{ fontStyle: "italic" }}>"{props.summary}"</div>
           </div>
           <div className="row m-3">Installs : {props.installs}</div>
           <div className="row m-3">Rating : {props.rating}</div>
