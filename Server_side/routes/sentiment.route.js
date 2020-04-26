@@ -14,6 +14,6 @@ var sentimentController = require("../controllers/sentiment.controller");
  * Route serving overall sentiment page.
  */
 
-router.get("/:appId", sentimentController.getSentiment);
+router.post("/:appId", sentimentController.getSentiment);
 
 module.exports = router;
