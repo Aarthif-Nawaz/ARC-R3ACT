@@ -23,7 +23,7 @@ class PlayStoreAppReviewClassifier:
         if len(sys.argv) == 3:
             # the list of keywords that should not be used to group the reviews
             notKeywords = ["driver", "rider", "fix", "issue",
-                           "problem", "application", "app", "not", "nt","update","feature"]
+                           "problem", "application", "app", "not", "nt","update","feature","error"]
             # retrieve the collection from the db
             collection = db["MobileApplications"]
             # uses the second argument passed
