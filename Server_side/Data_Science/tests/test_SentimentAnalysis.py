@@ -4,16 +4,16 @@
 import csv
 import unittest
 
-from Data_Science.PreProcess import PreProcess
-from Data_Science.SentimentAnalysis import SentimentAnalysis
+from Server_side.Data_Science.PreProcess import PreProcess
+from Server_side.Data_Science.SentimentAnalysis import SentimentAnalysis
 
-#when running the file line 11 in SentimentAnalysis.py needs to uncommented and line 12 needs to be commented
+# when running the file line 11 in SentimentAnalysis.py needs to uncommented and line 12 needs to be commented
 class TestSentimentAnalysis(unittest.TestCase):
 
-    #retrieving the testData and testLabels from the csv file
+    # retrieving the testData and testLabels from the csv file
     @classmethod
     def setUp(self):
-        file = open("../tests/TestingData.csv", 'r')
+        file = open("../tests/SentimentTestingData.csv", 'r')
         # all the records in the file are converted to a 2d array
         data = list(csv.reader(file, delimiter=','))
         self.testData = []
@@ -25,12 +25,13 @@ class TestSentimentAnalysis(unittest.TestCase):
         # closing the file
         file.close()
 
-    #using this function to test the predict sentiment values
+    # using this function to test the predict sentiment values
     def test_predict_sentiment(self):
-        #the preprocessed reviews and the labels are passed to find the accuracy and determine the overall sentiment of the given data
+        # the preprocessed reviews and the labels are passed to find
+        # the accuracy and determine the overall sentiment of the given data
         values = SentimentAnalysis.predict_sentiment(self.testData, self.testLabel)
-        self.assertEqual(values["overall_sentiment"], 49.54589647711921)
+        self.assertEqual(values["overall_sentiment"], 117.33776818246992)
 
-#used to start the test
+# used to start the test
 if __name__ == '__main__':
     unittest.main()
