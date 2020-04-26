@@ -7,3 +7,4 @@ requests==2.22.0
 sklearn==0.0
 spacy==2.2.3
 vaderSentiment==3.2.1
+dnspython==1.16.0
