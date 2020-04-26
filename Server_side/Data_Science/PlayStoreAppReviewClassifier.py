@@ -299,9 +299,9 @@ try:
     # #make an object of the class and call the classify_reviews function
     playStoreARC = PlayStoreAppReviewClassifier()
     message = playStoreARC.classify_reviews()
-except:
-    message = "DB Error"
-finally:
+# except:
+#     message = "DB Error"
+# finally:
     # print the message variable so the when sys.stdout.flush
     print(str(message))
     sys.stdout.flush()
