@@ -38,7 +38,7 @@ async function run(appId, titleParam, response) {
     // 1. type of script
     // 2. path of the script and arguments for the script
     const process = spawn("python", [
-      "/Server_side/Data_Science/PlayStoreAppReviewClassifier.py",
+      "./Server_side/Data_Science/PlayStoreAppReviewClassifier.py",
       appId,
       titleParam,
     ]);
