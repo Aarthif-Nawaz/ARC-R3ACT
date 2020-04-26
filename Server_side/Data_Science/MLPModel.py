@@ -10,8 +10,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # A Neural Network Classifier based of Multi Layer Perceptron
 from sklearn.neural_network import MLPClassifier
 
-# from Data_Science.FeatureExtraction import FeatureExtraction
-# from Data_Science.PreProcess import PreProcess
+#from Server_side.Data_Science.FeatureExtraction import FeatureExtraction
+#from Server_side.Data_Science.PreProcess import PreProcess
 
 from FeatureExtraction import FeatureExtraction
 from PreProcess import PreProcess
