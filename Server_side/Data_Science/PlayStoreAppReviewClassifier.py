@@ -289,19 +289,19 @@ class PlayStoreAppReviewClassifier:
 
 
 # the main program that runs when the script is called
-message = "fine"
-try:
-    # make connection with the cluster in mongo cloud
-    client = pymongo.MongoClient(
-        "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
-    # retrieve the db from the cluster
-    db = client['ARC']
-    # #make an object of the class and call the classify_reviews function
-    playStoreARC = PlayStoreAppReviewClassifier()
-    message = playStoreARC.classify_reviews()
+# message = "fine"
+# try:
+# make connection with the cluster in mongo cloud
+client = pymongo.MongoClient(
+    "mongodb+srv://User:1234@r3act-rludw.mongodb.net/test?retryWrites=true&w=majority")
+# retrieve the db from the cluster
+db = client['ARC']
+# #make an object of the class and call the classify_reviews function
+playStoreARC = PlayStoreAppReviewClassifier()
+message = playStoreARC.classify_reviews()
 # except:
 #     message = "DB Error"
 # finally:
-    # print the message variable so the when sys.stdout.flush
-    print(str(message))
-    sys.stdout.flush()
+# print the message variable so the when sys.stdout.flush
+print(str(message))
+sys.stdout.flush()
