@@ -23,7 +23,7 @@ client.connect((err,instance) => {
 });
 
 /**
- * Retrieves the  complete review and the related details from the database.
+ * Retrieves the complete review and the related details from the database.
  *
  * @param {string} query Specifies selection filter using query operators.
  * @returns {array} The arrat holding the results of the find query.

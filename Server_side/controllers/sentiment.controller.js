@@ -9,7 +9,7 @@ var sentimentService = require("../services/sentiment.service");
 
 /**
  * Retrieves and displays the overall sentiment of the
- * app from the database,
+ * app from the database.
  */
 exports.getSentiment = async function (request, response) {
   // An array to hold all the details related the overall
