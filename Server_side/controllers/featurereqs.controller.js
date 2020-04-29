@@ -24,7 +24,7 @@ exports.retrieveKeywords = async function (request, response) {
     for (var i in featurereqArray) {
       var keyword = featurereqArray[i].keyword;
       var sentiment = featurereqArray[i].sentiment_score;
-      var sentiment_score = parseFloat(sentiment).toFixed(1);
+      var sentiment_score = parseFloat(sentiment);
 
       // Store all the details except the empty keyword into an array
       if (keyword != "") {
@@ -33,8 +33,9 @@ exports.retrieveKeywords = async function (request, response) {
     }
 
     // Sorting the array in ascending order of the sentiment score
-    detailsArray.sort(sortSentimentScore);
-    return response.send(detailsArray);
+    // detailsArray.sort(sortSentimentScore);
+    var result = sortDescArray(detailsArray);
+    return response.send(result);
   } catch (error) {
     return response.status(500).send(error);
   }
@@ -153,20 +154,6 @@ exports.commonReviews = async function (request, response) {
   }
 };
 
-/**
- * Sorts the 2D array in descending order of the second element.
- *
- * @param {float} a An element of the sub array
- * @param {float} b Next element of the sub array.
- * @returns {array} The array sorted in descending order.
- */
-function sortSentimentScore(a, b) {
-  if (a[1] === b[1]) {
-    return 0;
-  } else {
-    return a[1] > b[1] ? -1 : 1;
-  }
-}
 
 /**
  * Splits the complete review into substrings using full stop, question mark
@@ -202,4 +189,28 @@ function partReviewWithKeyword(completeReview, keyword) {
     partReview = splitSentence;
   }
   return partReview;
+}
+
+/**
+ * Sorts the 2D array in descending order of the second element.
+ *
+ * @param {array} array An unsorted array
+ * @returns {array} The array sorted in descending order.
+ */
+function sortDescArray(array) {
+  var swap;
+  var n = array.length - 1;
+  do {
+    swap = false;
+    for (var i = 0; i < n; i++) {
+      if (array[i][1] < array[i + 1][1]) {
+        var temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        swap = true;
+      }
+    }
+    n--;
+  } while (swap);
+  return array;
 }
