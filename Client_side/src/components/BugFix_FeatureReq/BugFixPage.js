@@ -30,9 +30,30 @@ function BugFixPage(props) {
       
         {/*div contains the button to view the reviews without a particular keyword */}
         <div className="descrip-review">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row" style={{ width: "fit-content" }}>
-            
+           <div class="col-2">
+             <div className='sidenav'>
+                <a href="#">Navigation</a>
+                <a href="#">Services</a>
+                <a href="#">Code</a>
+                <a href="#">Contact</a>
+                <a href="#">Location</a>
+                <a href="#">Loading</a>
+                <a href="#">Map</a>
+                <a href="#">Routes</a>
+                <a href="#">Navigation</a>
+                <a href="#">Services</a>
+                <a href="#">Code</a>
+                <a href="#">Contact</a>
+                <a href="#">Location</a>
+                <a href="#">Loading</a>
+                <a href="#">Map</a>
+                <a href="#">Routes</a>
+            </div>
+          </div> 
+          <div className='col'>
+            <ReviewBox />
              <ReviewBox />
              <ReviewBox />
              <ReviewBox />
@@ -44,7 +65,8 @@ function BugFixPage(props) {
              <ReviewBox />
              <ReviewBox />
              <ReviewBox />
-             <ReviewBox />
+          </div>
+           
              
             </div>
           </div>

@@ -506,7 +506,7 @@ html {
 /* Style the counter cards */
 .card {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
-  padding: 2vw;
+  font-family: "Lato", sans-serif;;
   text-align: center;
   background-color: #f1f1f1;
   align-items: center;
@@ -1145,7 +1145,7 @@ Sidebar wrapper styles
 /* =======================BUG FIX=========== */
 .center-content {
   margin: 0 auto;
-  width: 60%;
+  width: 90%;
 }
 .sentimentBox {
   padding-top: 15%;
@@ -1210,12 +1210,12 @@ Sidebar wrapper styles
 .sidenav {
   width: 10%;
   position: fixed;
+  height: auto;
   z-index: 1;
   top: 2vw;
-  left: 3vw;
   background: rgba(5, 5, 5, 0.445);
   overflow-x: hidden;
-  padding:1vw;
+  text-transform: uppercase;
 }
 
 .sidenav a {
