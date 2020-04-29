@@ -446,7 +446,7 @@ html {
 }
 .bgimg-18 {
   min-height: 25vw;
-  background-image: url("/images/phone3.jpg");
+  background-image: url("/images/search.jpg");
 }
 .bgimg-19 {
   min-height: 53.3vw;
@@ -509,9 +509,9 @@ html {
   background-color: #111;
   color: #fff;
   padding: 1.2vw;
-  font-size: 2vw;
-  font-weight: 700;
-  letter-spacing: 0.4vw;
+  font: 2vw "Lato", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3vw;
 }
 
 /*styling for all the h3 heading*/
@@ -1173,8 +1173,6 @@ Sidebar wrapper styles
 
 .searchAppsImages {
   border-radius: 0.6vw;
-  width: 5vw;
-  height: 5vw;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
 #backBtn {

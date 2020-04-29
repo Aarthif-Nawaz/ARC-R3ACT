@@ -2,7 +2,7 @@
   Page      - Search.js page
   Function  - Displays application that contains or related to the app that passed from the url
   Parameter - @param {*} props
-  Author    - Christina Thambirajah
+  Author    - Sajani Sihara,Christina Thambirajah
 */
 import React, { useEffect, useState } from "react";
 import LoadingBox from "../Error/LoadingBox";

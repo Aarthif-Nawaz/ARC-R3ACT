@@ -2,7 +2,7 @@
   Page      - SearchDescripBox.js page
   Function  - Displays each value of the props
   Parameter - @param {*} props
-  Author    - Christina Thambirajah
+  Author    - Sajani Sihara, Christina Thambirajah
 */
 
 import React from "react";

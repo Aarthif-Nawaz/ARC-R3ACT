@@ -18,7 +18,7 @@ function NavBar() {
           className="bugLogo"
           src={process.env.PUBLIC_URL + "/images/logo1.png"}
           alt="ARC Logo"
-          style={{ margin: "1.3vw", position: "absolute", zIndex: 1000 }}
+          style={{ margin: "1.3vw", position: "absolute", zIndex: 1 }}
         />
       </Navbar.Brand>
       <div id="outer-container">
