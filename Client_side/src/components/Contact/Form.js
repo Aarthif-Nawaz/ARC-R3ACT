@@ -141,7 +141,7 @@ function Form() {
       <input
         className="commentSubmit"
         type="submit"
-        placeholder="GET IN TOUCH"
+        value="GET IN TOUCH"
         disabled={disable}
       />
     </form>
