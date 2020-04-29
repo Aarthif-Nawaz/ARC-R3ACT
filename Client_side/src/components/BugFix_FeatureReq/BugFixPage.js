@@ -7,7 +7,7 @@
 import React, { useEffect, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import KeywordBox from "./KeywordBox";
+import ReviewBox from "./ReviewBox";
 import Button from "react-bootstrap/Button";
 import "../../App.css";
 import Footer from "../NavigationBar/Footer";
@@ -27,83 +27,25 @@ function BugFixPage(props) {
 
       {/*The keywords will be in divs descrip-10 and descrip-11 alternatively*/}
       <div>
+      
         {/*div contains the button to view the reviews without a particular keyword */}
-        <div className="descrip-11">
-          <div className="container text-center">
+        <div className="descrip-review">
+          <div className="container">
             <div className="row" style={{ width: "fit-content" }}>
-              <div variant="secondary" className="KeywordBtn">
-                Navigation
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Code
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Map
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Driver
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Loading
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Consuming
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Lag
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Location
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Problems
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Loading
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Map
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Driver
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Loading
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Navigation
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Code
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Map
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Navigation
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Code
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Navigation
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Code
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Map
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Navigation
-              </div>
-              <div variant="secondary" className="KeywordBtn">
-                Code
-              </div>
-
-              <div variant="secondary" className="KeywordBtn">
-                rest of the reviews related to bug fixes
-              </div>
+            
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             <ReviewBox />
+             
             </div>
           </div>
         </div>
