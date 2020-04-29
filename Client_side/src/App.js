@@ -19,12 +19,14 @@ import Search from "./components/Search/Search";
 import RemainingBF from "./components/RemainingReviews/RemainingBF";
 import RemainingFR from "./components/RemainingReviews/RemainingFR";
 import SearchPage from "./components/Search/SearchPage";
+import BugFixPage from "./components/BugFix_FeatureReq/BugFixPage";
 
 function App() {
   return (
     <Router>
       {/*  */}
       <Route path="/searchpage" exact component={SearchPage} />
+      <Route path="/bugfixpage" exact component={BugFixPage} />
       <NavBar />
       <Route path="/aboutus" exact component={AboutUs} />
       <Route path="/support" exact component={Support} />

@@ -2,7 +2,7 @@
   Page      - SearchDescripBox.js page
   Function  - Displays each value of the props
   Parameter - @param {*} props
-  Author    - Sajani Sihara, Christina Thambirajah
+  Author    - Ridmi Amasha, Sajani Sihara
 */
 
 import React from "react";
@@ -36,18 +36,18 @@ function SearchBox(props) {
             </h3>{" "}
             </div>
             <div className="row m-2" style={{ marginTop: "0.5vw" }}>
-              <p>
+              <p style={{fontSize:"1.2rem"}}>
                 Facebook Developer
               </p>
             </div>
-            <div className="row m-2" style={{ marginTop: "0.5vw" }}>
+            <div className="row m-2" style={{ marginTop: "0.5vw", fontSize: "1.2rem" }}>
             <p  className='mr-3'>
               3.2<FontAwesomeIcon icon={ faStar } style={{ width: "2vw" }} /> 
               </p>
-              <p className='mr-3'>
+              <p className='mr-3' >
                Free
               </p>
-              <p style={{ fontSize: "1.1vw" }} className='mr-3'>
+              <p className='mr-3'>
               <FontAwesomeIcon icon={ faArrowCircleDown } style={{ width: "2vw" }} />100M+
               </p>
             </div>
@@ -59,7 +59,7 @@ function SearchBox(props) {
         </div> 
         <div className="row m-3">
           <div className='col'>
-            <p>Work hard.Have fun.Make history</p>
+            <p style={{fontSize:"1.2rem"}}>Work hard. Have fun. Make history</p>
           </div>
         </div>
       </div>
