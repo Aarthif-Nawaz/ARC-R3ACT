@@ -18,12 +18,13 @@ import IndividualReview from "./components/Individual_Review/IndividualReview";
 import Search from "./components/Search/Search";
 import RemainingBF from "./components/RemainingReviews/RemainingBF";
 import RemainingFR from "./components/RemainingReviews/RemainingFR";
+import SearchPage from "./components/Search/SearchPage";
 
 function App() {
   return (
     <Router>
       {/*  */}
-
+      <Route path="/searchpage" exact component={SearchPage} />
       <NavBar />
       <Route path="/aboutus" exact component={AboutUs} />
       <Route path="/support" exact component={Support} />

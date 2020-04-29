@@ -7,10 +7,17 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Footer from "../NavigationBar/Footer";
+import { Helmet } from "react-helmet";
+
+const TITLE = "About | ARC";
 
 function AboutUs() {
   return (
     <Container fluid style={{ boxSizing: "border-box" }}>
+        <Helmet>
+        <title>{TITLE}</title>
+        <link rel="icon" href="images/logo1.png" sizes="16x16"></link>
+      </Helmet>
       {/*Adding the background image*/}
       <div className="bgimg-7">
         {/*Adding the main heading */}

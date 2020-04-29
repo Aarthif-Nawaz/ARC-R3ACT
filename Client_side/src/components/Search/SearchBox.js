@@ -7,7 +7,7 @@
 
 import React from "react";
 
-function SearchDescripBox(props) {
+function SearchBox(props) {
   return (
     <div className="searchBox">
       <div className="row">
@@ -16,19 +16,20 @@ function SearchDescripBox(props) {
             <img
               className="searchAppsImages"
               alt="search app logo"
-              src={props.icon}
+              src={process.env.PUBLIC_URL + "/images/sajani.jpg"}
             />
-          </div>
-          <div className="row-3 ml-2">
+               <div className="col-10 ml-2">
             <h3
-              className="sentimentInfo"
-              style={{ fontSize: "1vw", color: "#fff", paddingTop: "1vw" }}
+          
+              style={{ fontSize: "1.5vw", color: "#000", paddingTop: "1vw" }}
             >
-              {props.title}
+              facebook
             </h3>{" "}
           </div>
-          <div className="row-3 ml-2" style={{ marginTop: "0.5vw" }}>
-            <p className="sentimentInfo">{props.developer}</p>
+          </div>
+       
+          <div className="row-6 ml-2" style={{ marginTop: "0.5vw"}}>
+            <p style={{fontSize:"1.1vw",color: "#000" }}>Facebook Developer</p>
           </div>
         </div>
         <div className="col-6 sentimentInfo">
@@ -43,4 +44,4 @@ function SearchDescripBox(props) {
     </div>
   );
 }
-export default SearchDescripBox;
+export default SearchBox;

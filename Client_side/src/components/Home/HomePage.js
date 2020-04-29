@@ -8,6 +8,9 @@ import React, { useRef } from "react";
 import SearchApps from "./searchapps";
 import About from "./About";
 import Footer from "../NavigationBar/Footer";
+import { Helmet } from "react-helmet";
+
+const TITLE = "Home | ARC";
 
 function HomePage() {
   /*Scroll down to the next div */
@@ -22,6 +25,10 @@ function HomePage() {
   }
   return (
     <div className="container-fluid" style={{ padding: 0 }}>
+      <Helmet>
+        <title>{TITLE}</title>
+        <link rel="icon" href="images/logo1.png" sizes="16x16"></link>
+      </Helmet>
       <div className="row">
         {/*the background of this page is a video */}
         <div className="conatiner-fluid introBox">

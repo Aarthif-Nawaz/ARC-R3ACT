@@ -15,11 +15,18 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import Form from "./Form.js";
+import { Helmet } from "react-helmet";
+
+const TITLE = "Contact | ARC";
 
 //Function Contact
 function Contact() {
   return (
     <div className="container-fluid" style={{ boxSizing: "border-box" }}>
+      <Helmet>
+        <title>{TITLE}</title>
+        <link rel="icon" href="images/logo1.png" sizes="16x16"></link>
+      </Helmet>
       {/*Adding the background image*/}
       <div className="bgimg-12">
         {/*Adding the main heading */}
