@@ -21,24 +21,32 @@ function CrashPage(props) {
               <img
                 src={process.env.PUBLIC_URL + "/images/error_icon.png"}
                 alt="error_image"
-                style={{ width: "90%" }}
+                style={{
+                  width: "80%",
+                  paddingLeft: "20vh",
+                  paddingTop: "15vh",
+                }}
               />
             </div>
             <div className="col error_content_headings">
-              <h1 style={{ color: "#fff", fontSize: "10vw" }}>Oops!</h1>
-              <h3 style={{ color: "#fff", fontSize: "2vw" }}>
-                Error : {props.errorDet}
+              <h1 style={{ color: "#fff", fontSize: "9vw" }}>Oops!</h1>
+              <h3 style={{ color: "#fff", fontSize: "1.5vw" }}>
+                {props.errorDet}
               </h3>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="container go_back_button_group" fluid>
-        <div className="row">
-          <div className="col">
-            <button variant="outline-primary" style={{ fontSize: "1.5vh" }} onClick={refreshPage}>
-              Try Loading Again!
-            </button>{" "}
+            <div className="container-fluid error_crash_bg go_back_button_group">
+              <div className="row">
+                <div className="col">
+                  <button
+                    variant="outline-primary"
+                    className="errorPageBtn"
+                    onClick={refreshPage}
+                  >
+                    Try Again!
+                  </button>{" "}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

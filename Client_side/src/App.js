@@ -20,6 +20,7 @@ import RemainingBF from "./components/RemainingReviews/RemainingBF";
 import RemainingFR from "./components/RemainingReviews/RemainingFR";
 import SearchPage from "./components/Search/SearchPage";
 import BugFixPage from "./components/BugFix_FeatureReq/BugFixPage";
+import FeatureRequestPage from "./components/BugFix_FeatureReq/FeatureRequestPage";
 import MenuPage from "./components/Menu/MenuPage";
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
     <Router>
       {/*  */}
       <Route path="/searchpage" exact component={SearchPage} />
-      <Route path="/bugfixpage" exact component={BugFixPage} />
+      <Route path="/bfpage" exact component={BugFixPage} />
+      <Route path="/frpage" exact component={FeatureRequestPage} />
       <Route path="/menupage" exact component={MenuPage} />
       <NavBar />
       <Route path="/aboutus" exact component={AboutUs} />

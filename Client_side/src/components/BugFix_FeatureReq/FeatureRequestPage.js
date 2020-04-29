@@ -13,9 +13,9 @@ import "../../App.css";
 import Footer from "../NavigationBar/Footer";
 import { Helmet } from "react-helmet";
 
-const TITLE = "Bug Fixes | ARC";
+const TITLE = "Feature Requests | ARC";
 
-function BugFixPage(props) {
+function FeatureRequestPage(props) {
   return (
     <div>
       <Helmet>
@@ -23,11 +23,11 @@ function BugFixPage(props) {
         <link rel="icon" href="images/logo1.png" sizes="16x16"></link>
       </Helmet>
       {/*Adding the background image*/}
-      <div className="bgimg-14">
+      <div className="bgimg-15">
         {/*Adding the main heading */}
         <div className="caption">
           <span className="border">
-            Bug fixes requested by the users of "Facebook"
+            Features requested by the users of "Facebook"
           </span>
         </div>
       </div>
@@ -82,4 +82,4 @@ function BugFixPage(props) {
     </div>
   );
 }
-export default BugFixPage;
+export default FeatureRequestPage;

@@ -142,7 +142,7 @@ function Footer() {
       >
         <div className="footer-copyright text-center py-3">
           © 2020 Copyright:
-          <a href="!#" style={{ color: "#fff", fontSize: "1vw" }}>
+          <a href="/" style={{ color: "#fff", fontSize: "1vw" }}>
             {" "}
             applicationreviewclassifier.com
           </a>

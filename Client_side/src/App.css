@@ -38,9 +38,8 @@ html {
   font-size: 1.2rem;
   background-color: #fff;
   padding: 2vw;
-  text-align:left;
+  text-align: left;
 }
-
 
 /* styling the text in AboutUs.js, About.js page*/
 .descrip-2 {
@@ -180,7 +179,6 @@ html {
   font-size: 0.9rem;
   text-transform: uppercase;
   padding: 0.4vw;
-  
 }
 #DescripBtn:hover {
   border: #fff 0.1vw solid;
@@ -222,7 +220,7 @@ html {
   margin: 0.5vw;
 }
 .KeywordBtn:hover {
-  color:#fff ;
+  color: #fff;
   background-color: #282e34;
   box-shadow: 0 0.2vw 0.5vw 0 rgba(12, 10, 10, 0.897);
 }
@@ -404,12 +402,12 @@ html {
 }
 .bgimg-6 {
   min-height: 53.3vw;
-  background-image: url("/images/laptop6.jpg");
+  background-image: url("/images/overall.jpg");
 }
 
 /* This is first background image of the About Us page*/
 .bgimg-7 {
-  min-height: 53.3vw;
+  min-height: 30vw;
   background-image: url("/images/team.jpg");
 }
 
@@ -425,7 +423,7 @@ html {
   background-image: url("/images/phone.jpg");
 }
 .bgimg-10 {
-  min-height: 53.3vw;
+  min-height: 30vw;
   background-image: url("/images/support1.jpeg");
 }
 .bgimg-11 {
@@ -434,7 +432,7 @@ html {
 }
 /* This is the first background image of the Contact.js page*/
 .bgimg-12 {
-  min-height: 53.3vw;
+  min-height: 30vw;
   background-image: url("/images/phone1.jpg");
 }
 
@@ -452,8 +450,8 @@ html {
 
 /* This is the background image of the FeatureRequest.js page*/
 .bgimg-15 {
-  min-height: 53.3vw;
-  background-image: url("/images/laptop1.jpg");
+  min-height: 25vw;
+  background-image: url("/images/reviews.jpg");
 }
 .bgimg-16 {
   min-height: 53.3vw;
@@ -506,9 +504,18 @@ html {
 /* Style the counter cards */
 .card {
   box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
-  font-family: "Lato", sans-serif;;
+  font-family: "Lato", sans-serif;
   text-align: center;
   background-color: #f1f1f1;
+  align-items: center;
+  width: 85%;
+}
+.card:hover {
+  box-shadow: 0 0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  background-color: #666464;
+  color: #fff;
   align-items: center;
   width: 85%;
 }
@@ -594,7 +601,9 @@ h3 {
   padding: 0vw;
   height: 0vw;
 }
-
+#navigation_bar:active{
+  text-decoration: none;
+}
 /*Burger menu bar*/
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -628,6 +637,14 @@ h3 {
   font-weight: 900;
   color: #111;
   padding: 2vw;
+  text-decoration: none;
+}
+
+.menu-item:hover{
+  text-decoration: none;
+}
+.menu-item a:active{
+  text-decoration: none;
 }
 
 /* Color/shape of close button cross */
@@ -1208,12 +1225,12 @@ Sidebar wrapper styles
   border-radius: 4px;
 }
 .sidenav {
-  width: 10%;
+  width: 13%;
   position: fixed;
   height: auto;
   z-index: 1;
   top: 2vw;
-  background: rgba(5, 5, 5, 0.445);
+  background: rgba(5, 5, 5, 0.377);
   overflow-x: hidden;
   text-transform: uppercase;
 }
@@ -1221,20 +1238,25 @@ Sidebar wrapper styles
 .sidenav a {
   padding: 0.4vw;
   text-decoration: none;
-  font:"Lato" sans-serif 1.2rem;
+  font: "Lato" sans-serif 1.3rem;
+  font-weight: 600;
   color: #ffffff;
   display: block;
 }
 
 .sidenav a:hover {
- font-weight: 600;
- text-decoration: none;
- font:"Lato" sans-serif 1.2rem;
- color: #ffffff;
+  text-decoration: none;
+  font: "Lato" sans-serif 1.3rem;
+  color: #130b5e;
 }
-
-.main {
-  margin-left: 140px; /* Same width as the sidebar + left position in px */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+.errorPageBtn {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1vw;
+  border-radius: 0.6vw;
+  width: 10%;
+}
+.errorPageBtn:hover {
+  background-color: #282e34;
+  color: #fff;
 }
