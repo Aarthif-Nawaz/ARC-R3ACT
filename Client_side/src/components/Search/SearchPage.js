@@ -20,7 +20,18 @@ function SearchPage() {
         </div>
       </div>
       <div>
-        <SearchBox />
+        <div className='row'>
+          <div className='col'> <SearchBox /></div>
+          <div className='col'> <SearchBox /></div>
+        </div>
+        <div className='row'>
+          <div className='col'> <SearchBox /></div>
+          <div className='col'> <SearchBox /></div>
+        </div>
+        <div className='row'>
+          <div className='col'> <SearchBox /></div>
+          <div className='col'> <SearchBox /></div>
+        </div>
       </div>
       
       <Footer />
