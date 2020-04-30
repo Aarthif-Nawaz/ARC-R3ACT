@@ -23,7 +23,7 @@ const TITLE = "Contact | ARC";
 //Function Contact
 function Contact() {
   return (
-    <div className="container-fluid" style={{ boxSizing: "border-box" }}>
+    <div className="container-fluid" style={{ padding: 0 }}>
       <Helmet>
         <title>{TITLE}</title>
         <link rel="icon" href="images/logo1.png" sizes="16x16"></link>
@@ -37,9 +37,10 @@ function Contact() {
           </span>
         </div>
       </div>
-      {/*Adding a div that will hold the comment form */}
-      <div className="descrip-1">
-        <div className="col-4" id = {"contactDescription"} style={{ float: "left",padding: "2vw",marginBottom: "2vw",marginLeft: "5vw"}}>
+       {/*Adding a div that will hold the comment form */}
+       <div className="descrip-1 row ">
+        <div className="col-6"  style={{ float: "left"}}>
+          <div id = {"contactDescription"} style ={{margin:"1vw",padding: "2vw",width:"30vw",marginLeft:"8vw"}}>
           <h3
             style={{
               textAlign: "center",
@@ -127,6 +128,7 @@ function Contact() {
             </p>
           </div>
         </div>
+        </div>
         <div className="col-6"style={{ float: "right" }}>
           <h3
             style={{
@@ -142,8 +144,8 @@ function Contact() {
           <Form />
         </div>
       </div>
-
-      {/*Adding the footer component */}
+      {/*adding the footer component */}
+      <Footer />
     </div>
   );
 }
