@@ -9,6 +9,12 @@ import React, { useState } from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 
+function handler(event) {
+  if (event.keyCode === 13) {
+    document.getElementById('searchBtnID').click();
+  }
+}
+
 function SearchAppsClass() {
   const [appName,setName] = useState("");
 
@@ -34,11 +40,13 @@ function SearchAppsClass() {
                   value={appName}
                   autocomplete="off"
                   onChange={e=> setName(e.target.value)}
+                  onKeyDown={handler}
                 />
                 <div className="input-group-append">
                   <Link to={{ pathname: "/search/" + appName }}>
                     {/*adding the search button */}
                     <button
+                      id="searchBtnID"
                       className="button searchbtn"
                       type="submit"
                       variant="outline-secondary"

@@ -27,7 +27,7 @@ html {
 
 /*styling the text in Contact.js, About.js page*/
 .descrip-1 {
-  color: rgb(70, 69, 69);
+  color: white;
   font-size: 1.5vw;
   background-color: #fff;
   text-align: center;
@@ -490,6 +490,10 @@ html {
   content: "";
   display: table;
   clear: both;
+}
+#contactDescription{
+  background-color: #282e34;
+  border-radius: 1vw;;
 }
 
 /* Responsive columns */

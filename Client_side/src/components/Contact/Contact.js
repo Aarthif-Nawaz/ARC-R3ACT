@@ -39,21 +39,22 @@ function Contact() {
       </div>
       {/*Adding a div that will hold the comment form */}
       <div className="descrip-1">
-        <div style={{ float: "left" }}>
+        <div className="col-4" id = {"contactDescription"} style={{ float: "left",padding: "2vw",marginBottom: "2vw",marginLeft: "5vw"}}>
           <h3
             style={{
               textAlign: "center",
-              fontSize: "2vw",
+              fontSize: "1.5vw",
               fontWeight: 700,
               paddingBottom: 30,
+              color:"#FFFFFF"
             }}
           >
             Contact details
           </h3>
-          <div style={{ textAlign: "left", padding: "1vh" }}>
+          <div style={{ textAlign: "left"}}>
             <p
               style={{
-                fontSize: "1.5vw",
+                fontSize: "1.3vw",
                 fontWeight: 600,
               }}
             >
@@ -62,14 +63,14 @@ function Contact() {
             </p>
             <p
               style={{
-                fontSize: "1.3vw",
+                fontSize: "1vw", paddingLeft:"2vw"
               }}
             >
               arc.r3act@gmail.com
             </p>
             <p
               style={{
-                fontSize: "1.5vw",
+                fontSize: "1.3vw",
                 fontWeight: 600,
               }}
             >
@@ -78,7 +79,7 @@ function Contact() {
 
             <p
               style={{
-                fontSize: "1.3vw",
+                fontSize: "1vw",paddingLeft:"2vw"
               }}
             >
               {" "}
@@ -86,45 +87,47 @@ function Contact() {
             </p>
             <p
               style={{
-                fontSize: "1.5vw",
+                fontSize: "1.3vw",
                 fontWeight: 600,
               }}
             >
               <FontAwesomeIcon icon={faHome} /> Post address{" "}
             </p>
-            <p> 244/3, Maharagama, Sri Lanka</p>
+            <p  style={{
+                fontSize: "1vw",paddingLeft:"2vw"
+              }}> 244/3, Maharagama, Sri Lanka</p>
             <p
               style={{
-                fontSize: "1.5vw",
+                fontSize: "1.3vw",
                 fontWeight: 600,
               }}
             >
               Social Media{" "}
             </p>
-            <p>
-              <a className="fb-ic mr-4">
-                <FontAwesomeIcon icon={faFacebook} style={{ width: "2vw" }} />
+            <p style={{paddingLeft:"2vw"}}>
+              <a className="fb-ic">
+                <FontAwesomeIcon icon={faFacebook} style={{ width: "2vw", marginRight:"2vw" }} />
               </a>
 
-              <a className="tw-ic mr-4">
-                <FontAwesomeIcon icon={faTwitter} style={{ width: "2vw" }} />
+              <a className="tw-ic">
+                <FontAwesomeIcon icon={faTwitter} style={{ width: "2vw",marginRight:"2vw" }} />
               </a>
 
-              <a className="gplus-ic mr-4">
-                <FontAwesomeIcon icon={faGooglePlus} style={{ width: "2vw" }} />
+              <a className="gplus-ic">
+                <FontAwesomeIcon icon={faGooglePlus} style={{ width: "2vw",marginRight:"2vw" }} />
               </a>
 
-              <a className="li-ic mr-4">
-                <FontAwesomeIcon icon={faLinkedin} style={{ width: "2vw" }} />
+              <a className="li-ic">
+                <FontAwesomeIcon icon={faLinkedin} style={{ width: "2vw",marginRight:"2vw" }} />
               </a>
 
-              <a className="ins-ic mr-4">
-                <FontAwesomeIcon icon={faInstagram} style={{ width: "2vw" }} />
+              <a className="ins-ic">
+                <FontAwesomeIcon icon={faInstagram} style={{ width: "2vw",marginRight:"2vw" }} />
               </a>
             </p>
           </div>
         </div>
-        <div style={{ float: "right" }}>
+        <div className="col-6"style={{ float: "right" }}>
           <h3
             style={{
               textAlign: "center",
