@@ -36,7 +36,7 @@ class FeatureExtraction:
 
     # get the topn items' feature names and tf-idf score
     @staticmethod
-    def extract_topn_features_from_vector(features, sorted_features, topn):
+    def extract_topn_features_from_vector(features, sorted_features, topn=10):
         # use top n number of items from the vector
         if topn != 0:
             sorted_features = sorted_features[:topn]
@@ -69,7 +69,6 @@ class FeatureExtraction:
         keywords = FeatureExtraction.extract_topn_features_from_vector(features, sorted_features, 0)
         # extract only the features and append it to an array
         words = FeatureExtraction.convertToArray(keywords)
-
         return words
 
     # append the labels of the given array to an array and return it

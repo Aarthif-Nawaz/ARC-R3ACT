@@ -1226,16 +1226,32 @@ Sidebar wrapper styles
   border-radius: 4px;
 }
 .sidenav {
-  width: 13%;
-  position: fixed;
-  height: auto;
-  z-index: 1;
-  top: 2vw;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 100;
+  top: 10px;
+  height: 95vh;
   background: rgba(5, 5, 5, 0.377);
   overflow-x: hidden;
+  overflow-y: auto;
   text-transform: uppercase;
 }
+/* width */
+.sidenav::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+.sidenav::-webkit-scrollbar-track {
+  background:transparent;
+  border-radius: 5px;
+}
+ 
+/* Handle */
+.sidenav::-webkit-scrollbar-thumb {
+  background: rgba(5, 5, 5, 0.377); 
+  border-radius: 5px;
+}
 .sidenav a {
   padding: 0.4vw;
   text-decoration: none;
