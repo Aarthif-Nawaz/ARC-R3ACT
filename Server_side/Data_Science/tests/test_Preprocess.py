@@ -1,6 +1,6 @@
 # Authour - Aarthif Nawaz
 # Purpose - Perform Unit tests for all the functions in preProcess.py file
-
+# Install - pip install unitest
 #Imports
 import unittest
 from Server_side.Data_Science.PreProcess import PreProcess
