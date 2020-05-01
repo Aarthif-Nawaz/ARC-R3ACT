@@ -6,34 +6,39 @@ import emoji
 import re
 import spacy
 
+# Creating a class
 class PreProcess:
+     #Load the spacy model to check all the words that do not come under english dictionary
     nlp = spacy.load('en_core_web_sm')
-    '''Load the spacy model to check all the words that do not come under english dictionary'''
+    #Getting all the alphabets lowercase letters into a list 
     alpha = list(string.ascii_lowercase)
-    ''' Getting all the alphabets lowercase letters into a list'''
-
+   
     # function used to pre_process a review depending on which type of algorithm is going to use the corpus.
     @staticmethod
     def pre_process_review(review, level):
         #if the reviews is None then "" is returned else the preprocessing takes place
         if review is not None:
+            # Assigning the review to pre_processed review
             pre_processed_review = review
             if level == "svr":
                 # pre-processing required by the SVR/MLP
                 pre_processed_review = PreProcess.pre_processing_labelled_data(review)
             elif level == "cluster":
                 # preprocessing required by the MLP model used to cluster the reviews
-                pre_processed_review = PreProcess.reg_preprocessing(review)
-                pre_processed_review = PreProcess.pre_processing_labelled_data(pre_processed_review)
+                pre_processed_review = PreProcess.reg_preprocessing(review) # Calling the MLP model's Preprocess function for the unpreprocessed review
+                pre_processed_review = PreProcess.pre_processing_labelled_data(pre_processed_review) # Calling the labelled data Preprocessing function for the unpreprocessed review
             elif level == "lexicon":
                 # pre_processing required for the lexicon sentiment analysis
+                # Preprocessing reviews to convert emojis to rextual format
                 pre_processed_review = PreProcess.de_emojize(review)
                 pre_processed_review = PreProcess.reg_preprocessing(pre_processed_review)
                 # preprocessing that is performed before feature extraction is performed
             elif level == "fe":
                 pre_processed_review = PreProcess.preprocessing_fe(review)
-            return pre_processed_review
+            # Returning the preprocessed reviews
+            return pre_processed_review 
         else:
+            # returning nothing if there was no review given
          return ""
 
     @staticmethod
@@ -60,6 +65,7 @@ class PreProcess:
         # phrase = re.sub(r"won\'t", "will not", phrase)
         # phrase = re.sub(r"can\'t", "can not", phrase)
         # general
+        # remove words that have contractions of ending words 'not'
         phrase = re.sub(r"n\'t", " not", phrase)
         phrase = re.sub(r"\'t", " not", phrase)
         return phrase
@@ -70,7 +76,9 @@ class PreProcess:
         if notProcessedText is not None:
             # for clustering deemojizing is not performed, this can be identified using the tode_emojize variable
             notProcessedText = PreProcess.expand_contractions(notProcessedText)
+            # Removing all the punctuations except for the punctuations specified below
             notProcessedText = re.sub('[^a-zA-Z\-|&#;@!?()/:\\\{}]', " ", notProcessedText)
+            # removing extra whitespaces from the text after the removing of punctuations
             notProcessedText = PreProcess.remove_whitespace(notProcessedText)
             # tokenizing the string and removing the stop words
             doc = PreProcess.nlp(notProcessedText)
@@ -91,7 +99,9 @@ class PreProcess:
     # preprocessing that is performed before feature extraction is performed
     @staticmethod
     def preprocessing_fe(notProcessedText):
-        if notProcessedText is not None:
+        # check if review was given then do the following functions
+        if notProcessedText is not None: 
+             # tokenizing the string and removing the stop words
             doc = PreProcess.nlp(notProcessedText)
             clean_text = ""
             for token in doc:
@@ -105,8 +115,10 @@ class PreProcess:
                     # append tokens edited and not removed to list
                 if edit != "" and flag:
                     clean_text = clean_text + edit + " "
-            return clean_text
+                    # return the cleaned text
+            return clean_text 
         else:
+             # otherwise return an empty string
             return ""
 
     # pre-processing required by the SVR/MLP
@@ -142,6 +154,9 @@ class PreProcess:
                     i = str(i)
                     if i.lower() in PreProcess.alpha:
                         clean_text.remove(i)
+                        
             return PreProcess.listToString(clean_text)
+        # return the cleaned text after converting the list of words to string
         else:
+            # otherwise return an empty string
             return ""
