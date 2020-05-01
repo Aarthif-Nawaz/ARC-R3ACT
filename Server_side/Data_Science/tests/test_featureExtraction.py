@@ -1,6 +1,6 @@
 # Authour - Aarthif Nawaz
 # Purpose - Perform Unit tests for all the functions in FeatureExtraction.py
-
+# Install - pip install unitest
 #Imports
 import unittest
 from sklearn.feature_extraction.text import TfidfVectorizer
